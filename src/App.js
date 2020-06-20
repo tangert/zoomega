@@ -7,7 +7,7 @@ import { omit } from 'lodash'
 import axios from 'axios';
 import styled from 'styled-components';
 import * as FlexSearch from 'flexsearch';
-import { CARD_SIZE, theme } from './constants'
+import { CARD_SIZE, DEFAULT_CARD_CONTENT, theme } from './constants'
 
 /*
 you want to build a basic zui like a blog.
@@ -140,13 +140,6 @@ const BreadcrumbSeparator = styled.div`
 `
 const genID = () => '_' + Math.random().toString(36).substr(2, 9);
 const SERVER_URL = 'https://zoomega-server.tangert.repl.co'
-
-const DEFAULT_CARD_CONTENT = [
-    {
-      type: 'paragraph',
-      children: [{ text: 'Start writing here.' }],
-    },
-]
 
 const App = () => {
 

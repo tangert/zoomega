@@ -4,10 +4,7 @@ import { Resizable } from 're-resizable';
 import { Rnd } from 'react-rnd';
 import styled from 'styled-components';
 import { CARD_SIZE, theme } from './../constants'
-// Import the Slate editor factory.
-import { createEditor } from 'slate'
-// Import the Slate components and React plugin.
-import { Slate, Editable, withReact } from 'slate-react'
+import Content from './Content'
 
 const CardWrapper = styled.div`
   display: flex;
@@ -23,6 +20,7 @@ const CardWrapper = styled.div`
   transition-property: box-shadow;
   transition-duration: .1s;
   box-shadow: 0px 4px 10px 2.5px rgba(0,0,0,0.10);
+  overflow: scroll;
   &:hover {
     box-shadow: 0px 4px 15px 2.5px rgba(0,0,0,0.20);
   }
@@ -67,19 +65,6 @@ const Input = styled.input`
     opacity: 1.0
   }
 `
-
-const Content = styled.textarea`
-  width: 100%;
-  resize: none;
-  border: none;
-  overflow: visible;
-  font-family: sans-serif;
-  font-size: ${theme.body}rem;
-  min-height: 150px;
-  padding: ${theme.padding}px;
-  flex-grow: 1;
-`
-
 const ActionButton = styled.button`
   color: black;
   background-color: transparent;
@@ -111,13 +96,6 @@ const Card = ({
   });
   const [isTyping, setIsTyping] = React.useState(false)
   const [isFocused, setIsFocused] = React.useState(false)
-  const editor = React.useMemo(() => withReact(createEditor()), [])
-  const [value, setValue] = React.useState([
-    {
-      type: 'paragraph',
-      children: [{ text: 'A line of text in a paragraph.' }],
-    },
-  ])
 
   const focusedStyles = {
     zIndex: 1000,
@@ -142,7 +120,7 @@ const Card = ({
       minWidth={CARD_SIZE * 1.5}
       minHeight={CARD_SIZE * 1.5}
       dragGrid={shiftDown ? [25, 25] : [1, 1]}
-      size={{ width: size.width, height: size.height }}
+      size={{ width: size || 'auto', height: size || 'auto' }}
       disableDragging={isTyping}
       onDrag={(e, d) => {
         setPos({ x: d.x, y: d.y });
@@ -158,6 +136,8 @@ const Card = ({
     >
       <Flipped flipId={id}>
         <CardWrapper>
+        
+        { /* Main controls for the card. */ }
           <ActionRow>
             <Flipped flipId={`layer-id-${id}`}>
               <Input onFocus={(e) => {
@@ -175,10 +155,11 @@ const Card = ({
               <ActionButton onClick={() => handleZoom(id)}>zoom</ActionButton>
             </div>
           </ActionRow>
-          <Slate editor={editor} value={content} onChange={newValue => onUpdate(id, 'content', newValue)}>
-            <Editable />
-          </Slate>
 
+          { /* This can be any arbitrary text editor, including code. */ }
+          <Content id={id} content={content} onUpdate={onUpdate}/>
+          
+          { /* Visualize which cards are in here! */ }
           <CardPreviewContainer>
             {children.map(c => {
               return (

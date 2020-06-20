@@ -9,3 +9,10 @@ export const theme = {
   header: 0.8,
   body: 1
 }
+
+export const DEFAULT_CARD_CONTENT = [
+    {
+      type: 'paragraph',
+      children: [{ text: '' }],
+    },
+]

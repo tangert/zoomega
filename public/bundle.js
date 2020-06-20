@@ -25818,9 +25818,79 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       header: 0.8,
       body: 1
     };
+    const DEFAULT_CARD_CONTENT = [{
+      type: "paragraph",
+      children: [{
+        text: ""
+      }]
+    }];
+
+    // src/components/Content.js
+    const React4 = require(68 /* react */, true /* ES6 import */), styled_components4 = require(78 /* styled-components */, true /* ES6 import */), slate = require(77 /* slate */, true /* ES6 import */), slate_react = require(76 /* slate-react */, true /* ES6 import */);
+    const ContentWrapper = styled_components4.default.div`
+  width: 100%;
+  resize: none;
+  border: none;
+  overflow: visible;
+  font-family: sans-serif;
+  font-size: ${theme.body}rem;
+  min-height: 150px;
+  padding: ${theme.padding}px;
+  flex-grow: 1;
+`;
+    const BoldMark = ({children}) => React4.createElement("strong", null, children);
+    const CodeElement = (props) => {
+      return React4.createElement("pre", {
+        ...props.attributes
+      }, React4.createElement("code", null, props.children));
+    };
+    const DefaultElement = (props) => {
+      return React4.createElement("p", {
+        ...props.attributes
+      }, props.children);
+    };
+    const Content3 = ({id, content, onUpdate}) => {
+      const editor = React4.useMemo(() => slate_react.withReact(slate.createEditor()), []);
+      const renderElement = React4.useCallback((props) => {
+        switch (props.element.type) {
+          case "code":
+            return React4.createElement(CodeElement, {
+              ...props
+            });
+          default:
+            return React4.createElement(DefaultElement, {
+              ...props
+            });
+        }
+      }, []);
+      return React4.createElement(ContentWrapper, null, React4.createElement(slate_react.Slate, {
+        editor,
+        value: content,
+        onChange: (newValue) => {
+          onUpdate(id, "content", newValue);
+        }
+      }, React4.createElement(slate_react.Editable, {
+        placeholder: "Start writing here",
+        renderElement,
+        onKeyDown: (event) => {
+          if (event.key === "`" && event.ctrlKey) {
+            event.preventDefault();
+            const [match] = slate.Editor.nodes(editor, {
+              match: (n) => n.type === "code"
+            });
+            slate.Transforms.setNodes(editor, {
+              type: match ? "paragraph" : "code"
+            }, {
+              match: (n) => slate.Editor.isBlock(editor, n)
+            });
+          }
+        }
+      })));
+    };
+    const default4 = Content3;
 
     // src/components/Card.js
-    const React3 = require(68 /* react */, true /* ES6 import */), react_flip_toolkit3 = require(61 /* react-flip-toolkit */, true /* ES6 import */), re_resizable = require(58 /* re-resizable */, true /* ES6 import */), react_rnd = require(64 /* react-rnd */, true /* ES6 import */), styled_components3 = require(78 /* styled-components */, true /* ES6 import */), slate = require(77 /* slate */, true /* ES6 import */), slate_react = require(76 /* slate-react */, true /* ES6 import */);
+    const React3 = require(68 /* react */, true /* ES6 import */), react_flip_toolkit3 = require(61 /* react-flip-toolkit */, true /* ES6 import */), re_resizable = require(58 /* re-resizable */, true /* ES6 import */), react_rnd = require(64 /* react-rnd */, true /* ES6 import */), styled_components3 = require(78 /* styled-components */, true /* ES6 import */);
     const CardWrapper = styled_components3.default.div`
   display: flex;
   flex-direction: column;
@@ -25835,6 +25905,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   transition-property: box-shadow;
   transition-duration: .1s;
   box-shadow: 0px 4px 10px 2.5px rgba(0,0,0,0.10);
+  overflow: scroll;
   &:hover {
     box-shadow: 0px 4px 15px 2.5px rgba(0,0,0,0.20);
   }
@@ -25876,17 +25947,6 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     opacity: 1.0
   }
 `;
-    const Content = styled_components3.default.textarea`
-  width: 100%;
-  resize: none;
-  border: none;
-  overflow: visible;
-  font-family: sans-serif;
-  font-size: ${theme.body}rem;
-  min-height: 150px;
-  padding: ${theme.padding}px;
-  flex-grow: 1;
-`;
     const ActionButton = styled_components3.default.button`
   color: black;
   background-color: transparent;
@@ -25905,13 +25965,6 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       });
       const [isTyping, setIsTyping] = React3.useState(false);
       const [isFocused, setIsFocused] = React3.useState(false);
-      const editor = React3.useMemo(() => slate_react.withReact(slate.createEditor()), []);
-      const [value, setValue] = React3.useState([{
-        type: "paragraph",
-        children: [{
-          text: "A line of text in a paragraph."
-        }]
-      }]);
       const focusedStyles = {
         zIndex: 1000,
         left: 0,
@@ -25937,8 +25990,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         minHeight: CARD_SIZE * 1.5,
         dragGrid: shiftDown ? [25, 25] : [1, 1],
         size: {
-          width: size.width,
-          height: size.height
+          width: size || "auto",
+          height: size || "auto"
         },
         disableDragging: isTyping,
         onDrag: (e, d) => {
@@ -25981,11 +26034,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onClick: () => onDelete(id)
       }, "x"), React3.createElement(ActionButton, {
         onClick: () => handleZoom(id)
-      }, "zoom"))), React3.createElement(slate_react.Slate, {
-        editor,
-        value: content,
-        onChange: (newValue) => onUpdate(id, "content", newValue)
-      }, React3.createElement(slate_react.Editable, null)), React3.createElement(CardPreviewContainer, null, children.map((c) => {
+      }, "zoom"))), React3.createElement(default4, {
+        id,
+        content,
+        onUpdate
+      }), React3.createElement(CardPreviewContainer, null, children.map((c) => {
         return React3.createElement(react_flip_toolkit3.Flipped, {
           key: `child-preview-${c.id}`,
           flipId: c.id
@@ -26045,12 +26098,6 @@ For more info, visit https://fb.me/react-mock-scheduler`);
 `;
     const genID = () => "_" + Math.random().toString(36).substr(2, 9);
     const SERVER_URL = "https://zoomega-server.tangert.repl.co";
-    const DEFAULT_CARD_CONTENT = [{
-      type: "paragraph",
-      children: [{
-        text: "Start writing here."
-      }]
-    }];
     const App2 = () => {
       React.useEffect(() => {
         document.addEventListener("keydown", onKeyDown);
