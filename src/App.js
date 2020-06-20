@@ -1,8 +1,13 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import Card from './Card'
+import Card from './components/Card'
+import Breadcrumb from './components/Breadcrumb'
 import { Flipper, Flipped } from 'react-flip-toolkit'
 import { omit } from 'lodash'
+import axios from 'axios';
+import styled from 'styled-components';
+import * as FlexSearch from 'flexsearch';
+import { CARD_SIZE, theme } from './constants'
 
 /*
 you want to build a basic zui like a blog.
@@ -24,26 +29,41 @@ BASICS:
 - [x] choosing path
 
 Refactoring:
-- [] change drag state updates to redux only based on drag end and then eveyrthing else is local state
-[] fix text input
+- [x] change drag state updates to redux only based on drag end and then eveyrthing else is local state
+[x] fix text input
+[x] fix localstorage
+
 
 
 Card UX:
 [x] resize cards
-[] make adding / text tool either t, shift, or command
-[] add new cards are location where you touch
-[] replace text area with contenteditable...?
-[] save state to db.json
+[x] make adding / text tool either t, shift, or command
+[x] add new cards are location where you touch
+[x] delete allcards in a layer
+[x] save title
+[x] navigate to immedaite children
+[] basic styles
+[] focused view of card 
+[] hook up react router
+[] select + group and make into a card or delete cards
+[] search + select individual, or select all matches
+
+
 
 Next steps:
-[] undo / redo
- - undo delte
-[] slash commands at the cursor level
 [] visualize content of first few immediate children in cards
+[] stacking cards  effect
+[] how do you visualize how large something is?
+
+More:
+[x] save state to db.json
+
+Extras:
+[] undo / redo
+[] slash commands at the cursor level
 [] a layers panel
 - brief overview of everything
 - can calculate the tree lazily by querying children of each component and only rendering one level at a time... essentially same as actual visualization
-
 [] CLUI!
  - CRUD operations through CLUI each card is content indexed. you can start typing 
  - delete [search by title or content], identify the card, then delete
@@ -51,14 +71,15 @@ Next steps:
  - connect 
  - move
 [] integrate with KSP
-[] sell this as a $40 note taking app, everything is exportable, your data is yours, 
+[] add optional title
 [] use Inter as font
 [] styled components
-[] warnings / modals for basic interaction, perhaps use an existing design system library like GitHub
-[] add optional title
 [] dark mode
 [] make preview of breadcrum the first 20 chars of the content of the card
 [] make breadcrumb itself editable
+
+[] warnings / modals for basic interaction, perhaps use an existing design system library like GitHub
+
 [] emoji selection for bread crumbs
 [] add pinch gestures
 
@@ -80,7 +101,22 @@ Next steps:
 [] export as markdown with folders and a file describing locations 
 */
 
-const initialState = {
+
+function useLocalStorage(defaultValue, key) {
+  const [value, setValue] = React.useState(() => {
+    const stickyValue = window.localStorage.getItem(key);
+    return stickyValue !== null
+      ? JSON.parse(stickyValue)
+      : defaultValue;
+  });
+  React.useEffect(() => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+  return [value, setValue];
+}
+
+
+const fallbackState = {
   /*
   - stored flat by UUID
   - have display names
@@ -90,6 +126,7 @@ const initialState = {
   path: ['root'],
   cards: {
     root: {
+      title: 'tyler\'s garden',
       id: 'root',
       children: [],
       parent: null,
@@ -97,9 +134,19 @@ const initialState = {
   }
 }
 
+const BreadcrumbSeparator = styled.div`
+  border: none;
+  padding: ${theme.padding/2}px ${theme.padding/2}px;
+`
 const genID = () => '_' + Math.random().toString(36).substr(2, 9);
-const CARD_WIDTH = 200
-const CARD_HEIGHT = 200
+const SERVER_URL = 'https://zoomega-server.tangert.repl.co'
+
+const DEFAULT_CARD_CONTENT = [
+    {
+      type: 'paragraph',
+      children: [{ text: 'Start writing here.' }],
+    },
+]
 
 const App = () => {
 
@@ -107,7 +154,7 @@ const App = () => {
     document.addEventListener('keydown', onKeyDown)
     document.addEventListener('keyup', onKeyUp)
   }, [])
-  
+
   const [shiftDown, setShiftDown] = React.useState()
   const onKeyDown = (event) => {
     if (event.key === 'Shift') {
@@ -118,12 +165,12 @@ const App = () => {
     setShiftDown(false)
   }
 
-  const createLayer = (parent, position) => ({
+  const createLayer = (parent, position, title) => ({
     id: genID(),
-    title: "",
-    content: "",
+    title: title,
+    content: DEFAULT_CARD_CONTENT,
     position: position || { x: 0, y: 0 },
-    size: { width: CARD_WIDTH, height: CARD_HEIGHT },
+    size: { width: CARD_SIZE, height: CARD_SIZE },
     children: [],
     parent: parent
   })
@@ -135,7 +182,8 @@ const App = () => {
       case 'ADD_CARD': {
         const { cards } = state;
         const { currLevel, position } = action.data
-        const newLayer = createLayer(currLevel, position)
+        const title = `Card ${cards[currLevel].children.length + 1}`
+        const newLayer = createLayer(currLevel, position, title);
         return {
           ...state,
           cards: {
@@ -181,6 +229,21 @@ const App = () => {
           }
         }
       }
+      case 'REMOVE_ALL_CARDS': {
+        const { cards } = state;
+        const { currLevel } = action.data
+        const newCards = omit(cards, cards[currLevel].children)
+        return {
+          ...state,
+          cards: {
+            ...newCards,
+            [currLevel]: {
+              ...newCards[currLevel],
+              children: []
+            }
+          }
+        }
+      }
       case 'SET_LEVEL': {
         const { level } = action.data
         return {
@@ -195,13 +258,19 @@ const App = () => {
           path: [...state.path, level]
         }
       }
+      // Loads json from the server and uses it as state.
+      case 'LOAD_STATE': {
+        const { data } = action.data
+        return data
+      }
       default:
         return state
     }
   }
 
-  const [state, dispatch] = React.useReducer(reducer, initialState);
 
+  const [savedState, setSavedState] = useLocalStorage(fallbackState, 'zoomega-state');
+  const [state, dispatch] = React.useReducer(reducer, savedState);
   const { cards, path } = state;
 
   // Standard set of breadcrumbs that are just pushed / popped like a stack
@@ -213,94 +282,114 @@ const App = () => {
   const [isZooming, setIsZooming] = React.useState(false)
 
   const handleCanvasDoubleClick = ({ clientX, clientY }) => {
-    if(shiftDown)
-    dispatch({
-      type: 'ADD_CARD',
-      data: {
-        currLevel: currLevel,
-        position: {
-          x: clientX - CARD_WIDTH / 2,
-          y: clientY - CARD_HEIGHT / 2
+    if (shiftDown)
+      dispatch({
+        type: 'ADD_CARD',
+        data: {
+          currLevel: currLevel,
+          // this places the card basically where the cursor is
+          position: {
+            x: clientX - CARD_SIZE / 2,
+            y: clientY - CARD_SIZE / 2
+          }
         }
-      }
-    })
+      })
   }
 
   return (
-    <Flipper flipKey={isZooming} onComplete={() => console.log(currLevel)}>
+    <Flipper flipKey={isZooming}>
       <div style={{
         width: '100%', height: '100vh',
         fontFamily: 'sans-serif'
       }}>
         <div style={{ display: 'flex' }}>{path.map((loc, idx) => {
           // if you're at the bottom of the path, render a div. Not a button
+          const card = cards[loc]
           if (idx === path.length - 1) {
             return (
               <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
-                <div key={idx}>{loc}</div>
+                <Breadcrumb>
+                  {card.title}
+                </Breadcrumb>
               </Flipped>
             )
           } else {
             // Navigate to higher levels
             return (
-              <div key={idx} style={{ display: 'inline-flex' }}>
-
+              <div key={idx} style={{ display: 'inline-flex', alignItems:'center', justifyContent:'flex-start'}}>
                 <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
-                  <button onClick={() => {
-                    dispatch({ type: 'SET_LEVEL', data: { level: idx + 1 } });
-                    setIsZooming(!isZooming);
-                  }}>
-                    {loc}
-                  </button>
+                  <Breadcrumb
+                    onClick={() => {
+                      dispatch({ type: 'SET_LEVEL', data: { level: idx + 1 } });
+                      setIsZooming(!isZooming);
+                    }}>
+                      {card.title}
+                  </Breadcrumb>
                 </Flipped>
-                <span>/</span>
+                <BreadcrumbSeparator>/</BreadcrumbSeparator>
               </div>
-            )
-          }
-        })}
-        </div>
-        <button onClick={() => dispatch({ type: 'ADD_CARD', data: { currLevel: currLevel } })}>
-          'new layer'
+                )
+              }
+            })}
+              </div>
+              <button onClick={() => dispatch({ type: 'ADD_CARD', data: { currLevel: currLevel } })}>
+                new layer
         </button>
-        <div onDoubleClick={(e) => handleCanvasDoubleClick(e)} style={{ width: '100%', height: '100vh' }}>
-          {currCards.map((l, idx) => {
-            const { id, content, position, size, children } = cards[l]
-            return (
-              <Card
-                handleZoom={(id) => {
-                  dispatch({ type: 'ZOOM_TO_LEVEL', data: { level: id } });
-                  setIsZooming(!isZooming);
+              <button onClick={() => {
+                const shouldDelete = confirm('this will delete all ur stuff from this layer. u sure?')
+                if (shouldDelete) {
+                  dispatch({ type: 'REMOVE_ALL_CARDS', data: { currLevel: currLevel } })
                 }
-                }
-                key={id}
-                id={id}
-                children={children}
-                content={content}
-                position={position}
-                size={size}
-                onDelete={(id) => dispatch({ type: 'REMOVE_CARD', data: { cardId: id, currLevel: currLevel } })}
-                onUpdate={(id, property, value) => dispatch({ type: 'UPDATE_CARD', data: { cardId: id, property: property, value: value } })}
-              />
-            )
-          })}
-        </div>
+              }}>
+                delete all! danger!
+        </button>
+              <button onClick={() => setSavedState(state)}>save</button>
+              <div onDoubleClick={(e) => handleCanvasDoubleClick(e)} style={{ width: '100%', height: '100vh' }}>
+                {currCards.map((l, idx) => {
+                  const { id, title, content, position, size, children } = cards[l]
+                  return (
+                    <Card
+                      key={id}
+                      handleZoom={(id) => {
+                        dispatch({ type: 'ZOOM_TO_LEVEL', data: { level: id } });
+                        setIsZooming(!isZooming);
+                      }}
+                      title={title}
+                      id={id}
+                      shiftDown={shiftDown}
+                      children={children.map(c => cards[c])}
+                      content={content}
+                      position={position}
+                      size={size}
+                      onDelete={(id) => {
+                        const shouldDelete = confirm('u sure?')
+                        if (shouldDelete) {
+                          dispatch({ type: 'REMOVE_CARD', data: { cardId: id, currLevel: currLevel } })
+                        }
+                      }
+                      }
+                      onUpdate={(id, property, value) => dispatch({ type: 'UPDATE_CARD', data: { cardId: id, property: property, value: value } })}
+                    />
+                  )
+                })}
+              </div>
       </div>
       <Flipped flipId={currLevel}>
-        <div style={{
-          backgroundColor: 'white',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100vh',
-          zIndex: -100
-        }} />
-      </Flipped>
+            <div style={{
+              backgroundColor: 'white',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100vh',
+              zIndex: -100
+            }} />
+          </Flipped>
     </Flipper>
-  )
-}
+        )
+      }
 
-ReactDOM.render(
+      ReactDOM.render(
   <App />,
-  document.getElementById('root')
+              document.getElementById('root')
 );

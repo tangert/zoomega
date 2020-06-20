@@ -42,7 +42,7 @@
   };
   return esbuildRequire(entryPoint);
 })({
-  2(require, exports, module) {
+  53(require, exports, module) {
     // node_modules/object-assign/index.js
     "use strict";
     var getOwnPropertySymbols = Object.getOwnPropertySymbols;
@@ -110,20 +110,20 @@
     };
   },
 
-  6(require, exports, module) {
+  57(require, exports, module) {
     // node_modules/prop-types/lib/ReactPropTypesSecret.js
     "use strict";
     var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
     module.exports = ReactPropTypesSecret;
   },
 
-  3(require, exports, module) {
+  54(require, exports, module) {
     // node_modules/prop-types/checkPropTypes.js
     "use strict";
     var printWarning = function() {
     };
     if (true) {
-      var ReactPropTypesSecret = require(6 /* ./lib/ReactPropTypesSecret */);
+      var ReactPropTypesSecret = require(57 /* ./lib/ReactPropTypesSecret */);
       var loggedTypeFailures = {};
       var has = Function.call.bind(Object.prototype.hasOwnProperty);
       printWarning = function(text) {
@@ -172,14 +172,14 @@
     module.exports = checkPropTypes;
   },
 
-  18(require, exports) {
+  67(require, exports) {
     // node_modules/react/cjs/react.development.js
     "use strict";
     if (true) {
       (function() {
         "use strict";
-        var _assign = require(2 /* object-assign */);
-        var checkPropTypes = require(3 /* prop-types/checkPropTypes */);
+        var _assign = require(53 /* object-assign */);
+        var checkPropTypes = require(54 /* prop-types/checkPropTypes */);
         var ReactVersion = "16.13.1";
         var hasSymbol = typeof Symbol === "function" && Symbol.for;
         var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 60103;
@@ -1382,17 +1382,17 @@
     }
   },
 
-  19(require, exports, module) {
+  68(require, exports, module) {
     // node_modules/react/index.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(18 /* ./cjs/react.development.js */);
+      module.exports = require(67 /* ./cjs/react.development.js */);
     }
   },
 
-  22(require, exports) {
+  71(require, exports) {
     // node_modules/scheduler/cjs/scheduler.development.js
     "use strict";
     if (true) {
@@ -2043,17 +2043,17 @@
     }
   },
 
-  23(require, exports, module) {
+  72(require, exports, module) {
     // node_modules/scheduler/index.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(22 /* ./cjs/scheduler.development.js */);
+      module.exports = require(71 /* ./cjs/scheduler.development.js */);
     }
   },
 
-  21(require, exports) {
+  70(require, exports) {
     // node_modules/scheduler/cjs/scheduler-tracing.development.js
     "use strict";
     if (true) {
@@ -2333,27 +2333,27 @@
     }
   },
 
-  24(require, exports, module) {
+  73(require, exports, module) {
     // node_modules/scheduler/tracing.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(21 /* ./cjs/scheduler-tracing.development.js */);
+      module.exports = require(70 /* ./cjs/scheduler-tracing.development.js */);
     }
   },
 
-  8(require, exports) {
+  59(require, exports) {
     // node_modules/react-dom/cjs/react-dom.development.js
     "use strict";
     if (true) {
       (function() {
         "use strict";
-        var React = require(19 /* react */);
-        var _assign = require(2 /* object-assign */);
-        var Scheduler = require(23 /* scheduler */);
-        var checkPropTypes = require(3 /* prop-types/checkPropTypes */);
-        var tracing = require(24 /* scheduler/tracing */);
+        var React = require(68 /* react */);
+        var _assign = require(53 /* object-assign */);
+        var Scheduler = require(72 /* scheduler */);
+        var checkPropTypes = require(54 /* prop-types/checkPropTypes */);
+        var tracing = require(73 /* scheduler/tracing */);
         var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         if (!ReactSharedInternals.hasOwnProperty("ReactCurrentDispatcher")) {
           ReactSharedInternals.ReactCurrentDispatcher = {
@@ -19189,7 +19189,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
   },
 
-  9(require, exports, module) {
+  60(require, exports, module) {
     // node_modules/react-dom/index.js
     "use strict";
     function checkDCE() {
@@ -19209,1592 +19209,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       checkDCE();
       module.exports = null;
     } else {
-      module.exports = require(8 /* ./cjs/react-dom.development.js */);
+      module.exports = require(59 /* ./cjs/react-dom.development.js */);
     }
   },
 
-  17(require, exports) {
-    // node_modules/react-use-gesture/dist/react-use-gesture.cjs.development.js
-    "use strict";
-    Object.defineProperty(exports, "__esModule", {
-      value: true
-    });
-    function _interopDefault(ex) {
-      return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
-    }
-    var React = _interopDefault(require(19 /* react */));
-    function addV(v1, v2) {
-      return v1.map(function(v, i) {
-        return v + v2[i];
-      });
-    }
-    function subV(v1, v2) {
-      return v1.map(function(v, i) {
-        return v - v2[i];
-      });
-    }
-    function calculateVelocity(delta, delta_t, len) {
-      len = len || Math.hypot.apply(Math, delta);
-      return delta_t ? len / delta_t : 0;
-    }
-    function calculateVelocities(delta, delta_t) {
-      return delta_t ? delta.map(function(v) {
-        return v / delta_t;
-      }) : Array(delta.length).fill(0);
-    }
-    function calculateDistance(movement) {
-      return Math.hypot.apply(Math, movement);
-    }
-    function calculateDirection(delta, len) {
-      len = len || Math.hypot.apply(Math, delta) || 1;
-      return delta.map(function(v) {
-        return v / len;
-      });
-    }
-    function calculateAllKinematics(movement, delta, delta_t) {
-      var len = Math.hypot.apply(Math, delta);
-      return {
-        velocities: calculateVelocities(delta, delta_t),
-        velocity: calculateVelocity(delta, delta_t, len),
-        distance: calculateDistance(movement),
-        direction: calculateDirection(delta, len)
-      };
-    }
-    function getIntentionalDisplacement(movement, threshold) {
-      var abs = Math.abs(movement);
-      return abs >= threshold ? Math.sign(movement) * threshold : false;
-    }
-    function minMax(value, min, max) {
-      return Math.max(min, Math.min(value, max));
-    }
-    function rubberband2(distance, constant) {
-      return Math.pow(distance, constant * 5);
-    }
-    function rubberband(distance, dimension, constant) {
-      if (dimension === 0 || Math.abs(dimension) === Infinity)
-        return rubberband2(distance, constant);
-      return distance * dimension * constant / (dimension + constant * distance);
-    }
-    function rubberbandIfOutOfBounds(position, min, max, constant) {
-      if (constant === void 0) {
-        constant = 0.15;
-      }
-      if (constant === 0)
-        return minMax(position, min, max);
-      if (position < min) {
-        return -rubberband(min - position, max - min, constant) + min;
-      }
-      if (position > max) {
-        return rubberband(position - max, max - min, constant) + max;
-      }
-      return position;
-    }
-    function _defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor)
-          descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-      }
-    }
-    function _createClass(Constructor, protoProps, staticProps) {
-      if (protoProps)
-        _defineProperties(Constructor.prototype, protoProps);
-      if (staticProps)
-        _defineProperties(Constructor, staticProps);
-      return Constructor;
-    }
-    function _extends() {
-      _extends = Object.assign || function(target) {
-        for (var i = 1; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-        return target;
-      };
-      return _extends.apply(this, arguments);
-    }
-    function _inheritsLoose(subClass, superClass) {
-      subClass.prototype = Object.create(superClass.prototype);
-      subClass.prototype.constructor = subClass;
-      subClass.__proto__ = superClass;
-    }
-    function _objectWithoutPropertiesLoose(source, excluded) {
-      if (source == null)
-        return {};
-      var target = {};
-      var sourceKeys = Object.keys(source);
-      var key, i;
-      for (i = 0; i < sourceKeys.length; i++) {
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0)
-          continue;
-        target[key] = source[key];
-      }
-      return target;
-    }
-    function _assertThisInitialized(self) {
-      if (self === void 0) {
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-      }
-      return self;
-    }
-    function _unsupportedIterableToArray(o, minLen) {
-      if (!o)
-        return;
-      if (typeof o === "string")
-        return _arrayLikeToArray(o, minLen);
-      var n = Object.prototype.toString.call(o).slice(8, -1);
-      if (n === "Object" && o.constructor)
-        n = o.constructor.name;
-      if (n === "Map" || n === "Set")
-        return Array.from(n);
-      if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-        return _arrayLikeToArray(o, minLen);
-    }
-    function _arrayLikeToArray(arr, len) {
-      if (len == null || len > arr.length)
-        len = arr.length;
-      for (var i = 0, arr2 = new Array(len); i < len; i++)
-        arr2[i] = arr[i];
-      return arr2;
-    }
-    function _createForOfIteratorHelperLoose(o) {
-      var i = 0;
-      if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
-        if (Array.isArray(o) || (o = _unsupportedIterableToArray(o)))
-          return function() {
-            if (i >= o.length)
-              return {
-                done: true
-              };
-            return {
-              done: false,
-              value: o[i++]
-            };
-          };
-        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-      }
-      i = o[Symbol.iterator]();
-      return i.next.bind(i);
-    }
-    function noop() {
-    }
-    var chainFns = function chainFns2() {
-      for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
-        fns[_key] = arguments[_key];
-      }
-      return function() {
-        for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          args[_key2] = arguments[_key2];
-        }
-        return fns.forEach(function(fn) {
-          return fn.apply(void 0, args);
-        });
-      };
-    };
-    var def = {
-      array: function array(value) {
-        return Array.isArray(value) ? value : [value, value];
-      },
-      withDefault: function withDefault(value, defaultIfUndefined) {
-        return value !== void 0 ? value : defaultIfUndefined;
-      }
-    };
-    function matchKeysFromObject(obj, matchingObject) {
-      var o = {};
-      Object.entries(obj).forEach(function(_ref) {
-        var key = _ref[0], value = _ref[1];
-        return (value !== void 0 || key in matchingObject) && (o[key] = value);
-      });
-      return o;
-    }
-    function valueFn(v) {
-      return typeof v === "function" ? v() : v;
-    }
-    function getInitialState() {
-      var initialCommon = {
-        _active: false,
-        _blocked: false,
-        _intentional: [false, false],
-        _movement: [0, 0],
-        _initial: [0, 0],
-        _lastEventType: void 0,
-        event: void 0,
-        values: [0, 0],
-        velocities: [0, 0],
-        delta: [0, 0],
-        movement: [0, 0],
-        offset: [0, 0],
-        lastOffset: [0, 0],
-        direction: [0, 0],
-        initial: [0, 0],
-        previous: [0, 0],
-        first: false,
-        last: false,
-        active: false,
-        timeStamp: 0,
-        startTime: 0,
-        elapsedTime: 0,
-        cancel: noop,
-        canceled: false,
-        memo: void 0,
-        args: void 0
-      };
-      var initialCoordinates = {
-        axis: void 0,
-        xy: [0, 0],
-        vxvy: [0, 0],
-        velocity: 0,
-        distance: 0
-      };
-      var initialDistanceAngle = {
-        da: [0, 0],
-        vdva: [0, 0],
-        origin: void 0,
-        turns: 0
-      };
-      return {
-        shared: {
-          hovering: false,
-          scrolling: false,
-          wheeling: false,
-          dragging: false,
-          moving: false,
-          pinching: false,
-          touches: 0,
-          buttons: 0,
-          down: false,
-          shiftKey: false,
-          altKey: false,
-          metaKey: false,
-          ctrlKey: false
-        },
-        drag: _extends({}, initialCommon, {}, initialCoordinates, {
-          _isTap: true,
-          _delayedEvent: false,
-          tap: false,
-          swipe: [0, 0]
-        }),
-        pinch: _extends({}, initialCommon, {}, initialDistanceAngle),
-        wheel: _extends({}, initialCommon, {}, initialCoordinates),
-        move: _extends({}, initialCommon, {}, initialCoordinates),
-        scroll: _extends({}, initialCommon, {}, initialCoordinates)
-      };
-    }
-    var setListeners = function setListeners2(add) {
-      return function(el, listeners, options) {
-        var action = add ? "addEventListener" : "removeEventListener";
-        listeners.forEach(function(_ref) {
-          var eventName = _ref[0], fn = _ref[1];
-          return el[action](eventName, fn, options);
-        });
-      };
-    };
-    function supportsGestureEvents() {
-      try {
-        return "constructor" in GestureEvent;
-      } catch (e) {
-        return false;
-      }
-    }
-    var addListeners = setListeners(true);
-    var removeListeners = setListeners(false);
-    function getModifierKeys(event) {
-      var shiftKey = event.shiftKey, altKey = event.altKey, metaKey = event.metaKey, ctrlKey = event.ctrlKey;
-      return {
-        shiftKey,
-        altKey,
-        metaKey,
-        ctrlKey
-      };
-    }
-    function getTouchEvents(event) {
-      if ("touches" in event) {
-        var touches = event.touches, changedTouches = event.changedTouches;
-        return touches.length > 0 ? touches : changedTouches;
-      }
-      return null;
-    }
-    function getGenericEventData(event) {
-      var buttons = "buttons" in event ? event.buttons : 0;
-      var touchEvents = getTouchEvents(event);
-      var touches = touchEvents && touchEvents.length || 0;
-      var down = touches > 0 || buttons > 0;
-      return _extends({
-        touches,
-        down,
-        buttons
-      }, getModifierKeys(event));
-    }
-    function getScrollEventValues(event) {
-      var _event$currentTarget = event.currentTarget, scrollX = _event$currentTarget.scrollX, scrollY = _event$currentTarget.scrollY, scrollLeft = _event$currentTarget.scrollLeft, scrollTop = _event$currentTarget.scrollTop;
-      return {
-        values: [scrollX || scrollLeft || 0, scrollY || scrollTop || 0]
-      };
-    }
-    function getWheelEventValues(event) {
-      var deltaX = event.deltaX, deltaY = event.deltaY;
-      return {
-        values: [deltaX, deltaY]
-      };
-    }
-    function getPointerEventValues(event) {
-      var touchEvents = getTouchEvents(event);
-      var _ref2 = touchEvents ? touchEvents[0] : event, clientX = _ref2.clientX, clientY = _ref2.clientY;
-      return {
-        values: [clientX, clientY]
-      };
-    }
-    var WEBKIT_DISTANCE_SCALE_FACTOR = 260;
-    function getWebkitGestureEventValues(event) {
-      return {
-        values: [event.scale * WEBKIT_DISTANCE_SCALE_FACTOR, event.rotation]
-      };
-    }
-    function getTwoTouchesEventData(event) {
-      var touches = event.touches;
-      var dx = touches[1].clientX - touches[0].clientX;
-      var dy = touches[1].clientY - touches[0].clientY;
-      var values = [Math.hypot(dx, dy), -(Math.atan2(dx, dy) * 180) / Math.PI];
-      var origin = [(touches[1].clientX + touches[0].clientX) / 2, (touches[1].clientY + touches[0].clientY) / 2];
-      return {
-        values,
-        origin
-      };
-    }
-    var Controller = function Controller2() {
-      var _this = this;
-      this.state = getInitialState();
-      this.timeouts = {};
-      this.domListeners = [];
-      this.windowListeners = {};
-      this.bindings = {};
-      this.clean = function() {
-        _this.resetBindings();
-        Object.values(_this.timeouts).forEach(clearTimeout);
-        Object.keys(_this.windowListeners).forEach(function(stateKey) {
-          return _this.removeWindowListeners(stateKey);
-        });
-      };
-      this.resetBindings = function() {
-        _this.bindings = {};
-        var domTarget = _this.getDomTarget();
-        if (domTarget) {
-          removeListeners(domTarget, _this.domListeners, _this.config.eventOptions);
-          _this.domListeners = [];
-        }
-      };
-      this.getDomTarget = function() {
-        var domTarget = _this.config.domTarget;
-        return domTarget && "current" in domTarget ? domTarget.current : domTarget;
-      };
-      this.addWindowListeners = function(stateKey, listeners) {
-        if (!_this.config.window)
-          return;
-        _this.windowListeners[stateKey] = listeners;
-        addListeners(_this.config.window, listeners, _this.config.eventOptions);
-      };
-      this.removeWindowListeners = function(stateKey) {
-        if (!_this.config.window)
-          return;
-        var listeners = _this.windowListeners[stateKey];
-        if (listeners) {
-          removeListeners(_this.config.window, listeners, _this.config.eventOptions);
-          delete _this.windowListeners[stateKey];
-        }
-      };
-      this.addDomTargetListeners = function(target) {
-        Object.entries(_this.bindings).forEach(function(_ref) {
-          var event = _ref[0], fns = _ref[1];
-          _this.domListeners.push([event.substr(2).toLowerCase(), chainFns.apply(void 0, fns)]);
-        });
-        addListeners(target, _this.domListeners, _this.config.eventOptions);
-      };
-      this.addBindings = function(eventNames, fn) {
-        var eventNamesArray = !Array.isArray(eventNames) ? [eventNames] : eventNames;
-        eventNamesArray.forEach(function(eventName) {
-          if (_this.bindings[eventName])
-            _this.bindings[eventName].push(fn);
-          else
-            _this.bindings[eventName] = [fn];
-        });
-      };
-      this.getBindings = function() {
-        var bindings = {};
-        var captureString = _this.config.captureString;
-        Object.entries(_this.bindings).forEach(function(_ref2) {
-          var event = _ref2[0], fns = _ref2[1];
-          var fnsArray = Array.isArray(fns) ? fns : [fns];
-          var key = event + captureString;
-          bindings[key] = chainFns.apply(void 0, fnsArray);
-        });
-        return bindings;
-      };
-      this.getBind = function() {
-        if (_this.config.domTarget) {
-          var domTarget = _this.getDomTarget();
-          domTarget && _this.addDomTargetListeners(domTarget);
-          return _this.clean;
-        }
-        return _this.getBindings();
-      };
-    };
-    function useRecognizers(handlers, classes, config, nativeHandlers) {
-      var controller = React.useMemo(function() {
-        var current = new Controller();
-        var bind = function bind2() {
-          current.resetBindings();
-          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-          }
-          for (var _iterator = _createForOfIteratorHelperLoose(classes), _step; !(_step = _iterator()).done; ) {
-            var RecognizerClass = _step.value;
-            new RecognizerClass(current, args).addBindings();
-          }
-          if (controller.nativeRefs) {
-            for (var eventName in controller.nativeRefs) {
-              current.addBindings(eventName, controller.nativeRefs[eventName]);
-            }
-          }
-          return current.getBind();
-        };
-        return {
-          nativeRefs: nativeHandlers,
-          current,
-          bind
-        };
-      }, []);
-      controller.current.config = config;
-      controller.current.handlers = handlers;
-      controller.nativeRefs = nativeHandlers;
-      React.useEffect(function() {
-        return controller.current.clean;
-      }, []);
-      return controller.bind;
-    }
-    var Recognizer = function() {
-      function Recognizer2(stateKey, controller, args) {
-        var _this = this;
-        if (args === void 0) {
-          args = [];
-        }
-        this.stateKey = stateKey;
-        this.controller = controller;
-        this.args = args;
-        this.debounced = true;
-        this.setTimeout = function(callback, ms) {
-          var _window;
-          if (ms === void 0) {
-            ms = 140;
-          }
-          for (var _len = arguments.length, args2 = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-            args2[_key - 2] = arguments[_key];
-          }
-          _this.controller.timeouts[_this.stateKey] = (_window = window).setTimeout.apply(_window, [callback, ms].concat(args2));
-        };
-        this.clearTimeout = function() {
-          clearTimeout(_this.controller.timeouts[_this.stateKey]);
-        };
-        this.addWindowListeners = function(listeners) {
-          _this.controller.addWindowListeners(_this.stateKey, listeners);
-        };
-        this.removeWindowListeners = function() {
-          _this.controller.removeWindowListeners(_this.stateKey);
-        };
-        this.getStartGestureState = function(values, event) {
-          return _extends({}, getInitialState()[_this.stateKey], {
-            _active: true,
-            values,
-            initial: values,
-            offset: _this.state.offset,
-            lastOffset: _this.state.offset,
-            startTime: event.timeStamp
-          });
-        };
-        this.rubberband = function(vector, rubberband3) {
-          var bounds = _this.config.bounds;
-          return vector.map(function(v, i) {
-            return rubberbandIfOutOfBounds(v, bounds[i][0], bounds[i][1], rubberband3[i]);
-          });
-        };
-        this.fireGestureHandler = function(forceFlag) {
-          if (_this.state._blocked) {
-            if (!_this.debounced) {
-              _this.state._active = false;
-              _this.clean();
-            }
-            return null;
-          }
-          var _this$state$_intentio = _this.state._intentional, intentionalX = _this$state$_intentio[0], intentionalY = _this$state$_intentio[1];
-          if (!forceFlag && intentionalX === false && intentionalY === false)
-            return null;
-          var _this$state = _this.state, _active = _this$state._active, active = _this$state.active;
-          _this.state.active = _active;
-          _this.state.first = _active && !active;
-          _this.state.last = active && !_active;
-          _this.controller.state.shared[_this.ingKey] = _active;
-          var state = _extends({}, _this.controller.state.shared, {}, _this.state, {}, _this.mapStateValues(_this.state));
-          var newMemo = _this.handler(state);
-          _this.state.memo = newMemo !== void 0 ? newMemo : _this.state.memo;
-          if (!_active)
-            _this.clean();
-          return state;
-        };
-      }
-      var _proto = Recognizer2.prototype;
-      _proto.updateSharedState = function updateSharedState(sharedState) {
-        Object.assign(this.controller.state.shared, sharedState);
-      };
-      _proto.updateGestureState = function updateGestureState(gestureState) {
-        Object.assign(this.state, gestureState);
-      };
-      _proto.getGenericPayload = function getGenericPayload(event, isStartEvent) {
-        var timeStamp = event.timeStamp, type = event.type;
-        var _this$state2 = this.state, values = _this$state2.values, startTime = _this$state2.startTime;
-        return {
-          _lastEventType: type,
-          event,
-          timeStamp,
-          elapsedTime: isStartEvent ? 0 : timeStamp - startTime,
-          args: this.args,
-          previous: values
-        };
-      };
-      _proto.checkIntentionality = function checkIntentionality(_intentional, _movement, _state) {
-        return {
-          _intentional,
-          _blocked: false
-        };
-      };
-      _proto.getMovement = function getMovement(values, state) {
-        if (state === void 0) {
-          state = this.state;
-        }
-        var _this$config = this.config, initial = _this$config.initial, threshold = _this$config.threshold, rubberband3 = _this$config.rubberband;
-        var t0 = threshold[0], t1 = threshold[1];
-        var _state2 = state, _initial = _state2._initial, _active = _state2._active, intentional = _state2._intentional, lastOffset = _state2.lastOffset, prevMovement = _state2.movement;
-        var i0 = intentional[0], i1 = intentional[1];
-        var _this$getInternalMove = this.getInternalMovement(values, state), _m0 = _this$getInternalMove[0], _m1 = _this$getInternalMove[1];
-        if (i0 === false) {
-          i0 = getIntentionalDisplacement(_m0, t0);
-        }
-        if (i1 === false) {
-          i1 = getIntentionalDisplacement(_m1, t1);
-        }
-        var intentionalityCheck = this.checkIntentionality([i0, i1], [_m0, _m1], state);
-        var _intentional = intentionalityCheck._intentional, _blocked = intentionalityCheck._blocked;
-        var _i0 = _intentional[0], _i1 = _intentional[1];
-        var _movement = [_m0, _m1];
-        if (_i0 !== false && intentional[0] === false)
-          _initial[0] = valueFn(initial)[0];
-        if (_i1 !== false && intentional[1] === false)
-          _initial[1] = valueFn(initial)[1];
-        if (_blocked)
-          return _extends({}, intentionalityCheck, {
-            _movement,
-            delta: [0, 0]
-          });
-        var movement = [_i0 !== false ? _m0 - _i0 : valueFn(initial)[0], _i1 !== false ? _m1 - _i1 : valueFn(initial)[1]];
-        var offset = addV(movement, lastOffset);
-        var _rubberband = _active ? rubberband3 : [0, 0];
-        movement = this.rubberband(addV(movement, _initial), _rubberband);
-        return _extends({}, intentionalityCheck, {
-          _initial,
-          _movement,
-          movement,
-          offset: this.rubberband(offset, _rubberband),
-          delta: subV(movement, prevMovement)
-        });
-      };
-      _proto.clean = function clean() {
-        this.clearTimeout();
-        this.removeWindowListeners();
-      };
-      _createClass(Recognizer2, [{
-        key: "config",
-        get: function get() {
-          return this.controller.config[this.stateKey];
-        }
-      }, {
-        key: "enabled",
-        get: function get() {
-          return this.controller.config.enabled && this.config.enabled;
-        }
-      }, {
-        key: "state",
-        get: function get() {
-          return this.controller.state[this.stateKey];
-        }
-      }, {
-        key: "handler",
-        get: function get() {
-          return this.controller.handlers[this.stateKey];
-        }
-      }]);
-      return Recognizer2;
-    }();
-    var CoordinatesRecognizer = function(_Recognizer) {
-      _inheritsLoose(CoordinatesRecognizer2, _Recognizer);
-      function CoordinatesRecognizer2() {
-        return _Recognizer.apply(this, arguments) || this;
-      }
-      var _proto = CoordinatesRecognizer2.prototype;
-      _proto.getInternalMovement = function getInternalMovement(values, state) {
-        return subV(values, state.initial);
-      };
-      _proto.checkIntentionality = function checkIntentionality(_intentional, _movement, state) {
-        var _intentional2 = _intentional, _ix = _intentional2[0], _iy = _intentional2[1];
-        var intentionalMovement = _ix !== false || _iy !== false;
-        var axis = state.axis;
-        var _blocked = false;
-        if (intentionalMovement) {
-          var _movement$map = _movement.map(Math.abs), absX = _movement$map[0], absY = _movement$map[1];
-          var _this$config = this.config, configAxis = _this$config.axis, lockDirection = _this$config.lockDirection;
-          axis = axis || (absX > absY ? "x" : absX < absY ? "y" : void 0);
-          if (!!configAxis || lockDirection) {
-            if (!!axis) {
-              if (!!configAxis && axis !== configAxis)
-                _blocked = true;
-              else {
-                var lockedIndex = axis === "x" ? 1 : 0;
-                _intentional[lockedIndex] = false;
-              }
-            } else {
-              _intentional = [false, false];
-            }
-          }
-        }
-        return {
-          _intentional,
-          _blocked,
-          axis
-        };
-      };
-      _proto.getKinematics = function getKinematics(values, event) {
-        var timeStamp = this.state.timeStamp;
-        var movementDetection = this.getMovement(values, this.state);
-        var _blocked = movementDetection._blocked, delta = movementDetection.delta, movement = movementDetection.movement;
-        if (_blocked)
-          return movementDetection;
-        var delta_t = event.timeStamp - timeStamp;
-        var kinematics = calculateAllKinematics(movement, delta, delta_t);
-        return _extends({
-          values,
-          delta
-        }, movementDetection, {}, kinematics);
-      };
-      _proto.mapStateValues = function mapStateValues(state) {
-        return {
-          xy: state.values,
-          vxvy: state.velocities
-        };
-      };
-      return CoordinatesRecognizer2;
-    }(Recognizer);
-    var TAP_DISTANCE_THRESHOLD = 3;
-    var SWIPE_MAX_ELAPSED_TIME = 220;
-    var FILTER_REPEATED_EVENTS_DELAY = 200;
-    var DragRecognizer = function(_CoordinatesRecognize) {
-      _inheritsLoose(DragRecognizer2, _CoordinatesRecognize);
-      function DragRecognizer2(controller, args) {
-        var _this;
-        _this = _CoordinatesRecognize.call(this, "drag", controller, args) || this;
-        _this.ingKey = "dragging";
-        _this.wasTouch = false;
-        _this.isEventTypeTouch = function(type) {
-          return !!type && type.indexOf("touch") === 0;
-        };
-        _this.dragShouldStart = function(event) {
-          var _getGenericEventData = getGenericEventData(event), touches = _getGenericEventData.touches;
-          var _lastEventType = _this.state._lastEventType;
-          if (!_this.controller.config.pointer && _this.isEventTypeTouch(_lastEventType) && !_this.isEventTypeTouch(event.type)) {
-            var delay = Math.abs(event.timeStamp - _this.state.startTime);
-            if (delay < FILTER_REPEATED_EVENTS_DELAY)
-              return false;
-          }
-          return _this.enabled && touches < 2;
-        };
-        _this.setPointers = function(event) {
-          var currentTarget = event.currentTarget, pointerId = event.pointerId;
-          if (currentTarget)
-            currentTarget.setPointerCapture(pointerId);
-          _this.updateGestureState({
-            currentTarget,
-            pointerId
-          });
-        };
-        _this.removePointers = function() {
-          var _this$state = _this.state, currentTarget = _this$state.currentTarget, pointerId = _this$state.pointerId;
-          if (currentTarget && pointerId)
-            currentTarget.releasePointerCapture(pointerId);
-        };
-        _this.setListeners = function(isTouch) {
-          _this.removeWindowListeners();
-          var dragListeners = isTouch ? [["touchmove", _this.onDragChange], ["touchend", _this.onDragEnd], ["touchcancel", _this.onDragEnd]] : [["mousemove", _this.onDragChange], ["mouseup", _this.onDragEnd]];
-          _this.addWindowListeners(dragListeners);
-        };
-        _this.onDragStart = function(event) {
-          if (!_this.dragShouldStart(event))
-            return;
-          if (_this.controller.config.pointer)
-            _this.setPointers(event);
-          else
-            _this.setListeners(_this.isEventTypeTouch(event.type));
-          if (_this.config.delay > 0) {
-            _this.state._delayedEvent = true;
-            if (typeof event.persist === "function")
-              event.persist();
-            _this.setTimeout(function() {
-              return _this.startDrag(event);
-            }, _this.config.delay);
-          } else {
-            _this.startDrag(event);
-          }
-        };
-        _this.onDragChange = function(event) {
-          var canceled = _this.state.canceled;
-          if (canceled)
-            return;
-          if (!_this.state._active) {
-            if (_this.state._delayedEvent) {
-              _this.clearTimeout();
-              _this.startDrag(event);
-            }
-            return;
-          }
-          var genericEventData = getGenericEventData(event);
-          if (!genericEventData.down) {
-            _this.onDragEnd(event);
-            return;
-          }
-          _this.updateSharedState(genericEventData);
-          var _getPointerEventValue = getPointerEventValues(event), values = _getPointerEventValue.values;
-          var kinematics = _this.getKinematics(values, event);
-          var _isTap = _this.state._isTap;
-          if (_isTap && calculateDistance(kinematics._movement) >= TAP_DISTANCE_THRESHOLD)
-            _isTap = false;
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics, {
-            _isTap,
-            cancel: function cancel() {
-              return _this.onCancel();
-            }
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onDragEnd = function(event) {
-          _this.state._active = false;
-          _this.updateSharedState({
-            down: false,
-            buttons: 0,
-            touches: 0
-          });
-          var _this$state2 = _this.state, _isTap = _this$state2._isTap, values = _this$state2.values, _this$state2$velociti = _this$state2.velocities, vx = _this$state2$velociti[0], vy = _this$state2$velociti[1], _this$state2$movement = _this$state2.movement, mx = _this$state2$movement[0], my = _this$state2$movement[1], _this$state2$_intenti = _this$state2._intentional, ix = _this$state2$_intenti[0], iy = _this$state2$_intenti[1];
-          var endState = _extends({}, _this.getGenericPayload(event), {}, _this.getMovement(values));
-          var elapsedTime = endState.elapsedTime;
-          var _this$config = _this.config, _this$config$swipeVel = _this$config.swipeVelocity, svx = _this$config$swipeVel[0], svy = _this$config$swipeVel[1], _this$config$swipeDis = _this$config.swipeDistance, sx = _this$config$swipeDis[0], sy = _this$config$swipeDis[1];
-          var swipe = [0, 0];
-          if (elapsedTime < SWIPE_MAX_ELAPSED_TIME) {
-            if (ix !== false && Math.abs(vx) > svx && Math.abs(mx) > sx)
-              swipe[0] = Math.sign(vx);
-            if (iy !== false && Math.abs(vy) > svy && Math.abs(my) > sy)
-              swipe[1] = Math.sign(vy);
-          }
-          _this.updateGestureState(_extends({
-            event
-          }, endState, {
-            tap: _isTap,
-            swipe
-          }));
-          _this.fireGestureHandler(_this.config.filterTaps && _this.state._isTap);
-        };
-        _this.clean = function() {
-          _CoordinatesRecognize.prototype.clean.call(_assertThisInitialized(_this));
-          _this.state._delayedEvent = false;
-          if (_this.controller.config.pointer)
-            _this.removePointers();
-        };
-        _this.onCancel = function() {
-          _this.updateGestureState({
-            canceled: true,
-            cancel: noop
-          });
-          _this.state._active = false;
-          _this.updateSharedState({
-            down: false,
-            buttons: 0,
-            touches: 0
-          });
-          requestAnimationFrame(function() {
-            return _this.fireGestureHandler();
-          });
-        };
-        return _this;
-      }
-      var _proto = DragRecognizer2.prototype;
-      _proto.startDrag = function startDrag(event) {
-        var _this2 = this;
-        var _getPointerEventValue2 = getPointerEventValues(event), values = _getPointerEventValue2.values;
-        this.updateSharedState(getGenericEventData(event));
-        var startState = _extends({}, this.getStartGestureState(values, event), {}, this.getGenericPayload(event, true));
-        this.updateGestureState(_extends({}, startState, {}, this.getMovement(values, startState), {
-          cancel: function cancel() {
-            return _this2.onCancel();
-          }
-        }));
-        this.fireGestureHandler();
-      };
-      _proto.addBindings = function addBindings() {
-        if (this.controller.config.pointer) {
-          this.controller.addBindings("onPointerDown", this.onDragStart);
-          this.controller.addBindings("onPointerMove", this.onDragChange);
-          this.controller.addBindings(["onPointerUp", "onPointerCancel"], this.onDragEnd);
-        } else {
-          this.controller.addBindings(["onTouchStart", "onMouseDown"], this.onDragStart);
-        }
-      };
-      return DragRecognizer2;
-    }(CoordinatesRecognizer);
-    var DEFAULT_DRAG_DELAY = 180;
-    var DEFAULT_RUBBERBAND = 0.15;
-    var DEFAULT_SWIPE_VELOCITY = 0.5;
-    var DEFAULT_SWIPE_DISTANCE = 60;
-    var defaultWindow = typeof window !== "undefined" ? window : void 0;
-    var defaultCoordinatesOptions = {
-      lockDirection: false,
-      axis: void 0,
-      bounds: void 0
-    };
-    function getInternalGenericOptions(config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, _config$eventOptions = _config.eventOptions;
-      _config$eventOptions = _config$eventOptions === void 0 ? {} : _config$eventOptions;
-      var _config$eventOptions$ = _config$eventOptions.passive, passive = _config$eventOptions$ === void 0 ? true : _config$eventOptions$, _config$eventOptions$2 = _config$eventOptions.capture, capture = _config$eventOptions$2 === void 0 ? false : _config$eventOptions$2, _config$eventOptions$3 = _config$eventOptions.pointer, pointer = _config$eventOptions$3 === void 0 ? false : _config$eventOptions$3, _config$window = _config.window, window2 = _config$window === void 0 ? defaultWindow : _config$window, _config$domTarget = _config.domTarget, domTarget = _config$domTarget === void 0 ? void 0 : _config$domTarget, _config$enabled = _config.enabled, enabled = _config$enabled === void 0 ? true : _config$enabled, restConfig = _objectWithoutPropertiesLoose(_config, ["eventOptions", "window", "domTarget", "enabled"]);
-      return _extends({}, restConfig, {
-        enabled,
-        domTarget,
-        window: window2,
-        eventOptions: {
-          passive: !domTarget || !!passive,
-          capture: !!capture
-        },
-        captureString: capture ? "Capture" : "",
-        pointer: !!pointer
-      });
-    }
-    function getInternalGestureOptions(gestureConfig) {
-      var _gestureConfig$thresh = gestureConfig.threshold, threshold = _gestureConfig$thresh === void 0 ? void 0 : _gestureConfig$thresh, _gestureConfig$rubber = gestureConfig.rubberband, rubberband3 = _gestureConfig$rubber === void 0 ? 0 : _gestureConfig$rubber, _gestureConfig$enable = gestureConfig.enabled, enabled = _gestureConfig$enable === void 0 ? true : _gestureConfig$enable, _gestureConfig$initia = gestureConfig.initial, initial = _gestureConfig$initia === void 0 ? [0, 0] : _gestureConfig$initia;
-      if (typeof rubberband3 === "boolean")
-        rubberband3 = rubberband3 ? DEFAULT_RUBBERBAND : 0;
-      if (threshold === void 0)
-        threshold = 0;
-      return {
-        enabled,
-        initial,
-        threshold: def.array(threshold),
-        rubberband: def.array(rubberband3)
-      };
-    }
-    function getInternalCoordinatesOptions(coordinatesConfig) {
-      if (coordinatesConfig === void 0) {
-        coordinatesConfig = {};
-      }
-      var _coordinatesConfig = coordinatesConfig, axis = _coordinatesConfig.axis, lockDirection = _coordinatesConfig.lockDirection, _coordinatesConfig$bo = _coordinatesConfig.bounds, bounds = _coordinatesConfig$bo === void 0 ? {} : _coordinatesConfig$bo, internalOptions = _objectWithoutPropertiesLoose(_coordinatesConfig, ["axis", "lockDirection", "bounds"]);
-      var boundsArray = [[def.withDefault(bounds.left, -Infinity), def.withDefault(bounds.right, Infinity)], [def.withDefault(bounds.top, -Infinity), def.withDefault(bounds.bottom, Infinity)]];
-      return _extends({}, getInternalGestureOptions(internalOptions), {}, defaultCoordinatesOptions, {}, matchKeysFromObject({
-        axis,
-        lockDirection
-      }, coordinatesConfig), {
-        bounds: boundsArray
-      });
-    }
-    function getInternalDistanceAngleOptions(distanceAngleConfig) {
-      if (distanceAngleConfig === void 0) {
-        distanceAngleConfig = {};
-      }
-      var _distanceAngleConfig = distanceAngleConfig, _distanceAngleConfig$ = _distanceAngleConfig.distanceBounds, distanceBounds = _distanceAngleConfig$ === void 0 ? {} : _distanceAngleConfig$, _distanceAngleConfig$2 = _distanceAngleConfig.angleBounds, angleBounds = _distanceAngleConfig$2 === void 0 ? {} : _distanceAngleConfig$2, internalOptions = _objectWithoutPropertiesLoose(_distanceAngleConfig, ["distanceBounds", "angleBounds"]);
-      var boundsArray = [[def.withDefault(distanceBounds.min, -Infinity), def.withDefault(distanceBounds.max, Infinity)], [def.withDefault(angleBounds.min, -Infinity), def.withDefault(angleBounds.max, Infinity)]];
-      return _extends({}, getInternalGestureOptions(internalOptions), {
-        bounds: boundsArray
-      });
-    }
-    function getInternalDragOptions(dragConfig) {
-      if (dragConfig === void 0) {
-        dragConfig = {};
-      }
-      var _dragConfig = dragConfig, enabled = _dragConfig.enabled, threshold = _dragConfig.threshold, bounds = _dragConfig.bounds, rubberband3 = _dragConfig.rubberband, initial = _dragConfig.initial, dragOptions = _objectWithoutPropertiesLoose(_dragConfig, ["enabled", "threshold", "bounds", "rubberband", "initial"]);
-      var _dragOptions$swipeVel = dragOptions.swipeVelocity, swipeVelocity = _dragOptions$swipeVel === void 0 ? DEFAULT_SWIPE_VELOCITY : _dragOptions$swipeVel, _dragOptions$swipeDis = dragOptions.swipeDistance, swipeDistance = _dragOptions$swipeDis === void 0 ? DEFAULT_SWIPE_DISTANCE : _dragOptions$swipeDis, _dragOptions$delay = dragOptions.delay, delay = _dragOptions$delay === void 0 ? false : _dragOptions$delay, _dragOptions$filterTa = dragOptions.filterTaps, filterTaps = _dragOptions$filterTa === void 0 ? false : _dragOptions$filterTa, axis = dragOptions.axis, lockDirection = dragOptions.lockDirection;
-      if (threshold === void 0) {
-        threshold = Math.max(0, filterTaps ? 3 : 0, lockDirection || axis ? 1 : 0);
-      } else {
-        filterTaps = true;
-      }
-      var internalCoordinatesOptions = getInternalCoordinatesOptions(matchKeysFromObject({
-        enabled,
-        threshold,
-        bounds,
-        rubberband: rubberband3,
-        axis,
-        lockDirection,
-        initial
-      }, dragConfig));
-      return _extends({}, internalCoordinatesOptions, {
-        filterTaps: filterTaps || internalCoordinatesOptions.threshold[0] + internalCoordinatesOptions.threshold[1] > 0,
-        swipeVelocity: def.array(swipeVelocity),
-        swipeDistance: def.array(swipeDistance),
-        delay: typeof delay === "number" ? delay : delay ? DEFAULT_DRAG_DELAY : 0
-      });
-    }
-    function useDrag(handler, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, domTarget = _config.domTarget, eventOptions = _config.eventOptions, window2 = _config.window, drag = _objectWithoutPropertiesLoose(_config, ["domTarget", "eventOptions", "window"]);
-      var mergedConfig = _extends({}, getInternalGenericOptions({
-        domTarget,
-        eventOptions,
-        window: window2
-      }), {
-        drag: getInternalDragOptions(drag)
-      });
-      return useRecognizers({
-        drag: handler
-      }, [DragRecognizer], mergedConfig);
-    }
-    var DistanceAngleRecognizer = function(_Recognizer) {
-      _inheritsLoose(DistanceAngleRecognizer2, _Recognizer);
-      function DistanceAngleRecognizer2() {
-        return _Recognizer.apply(this, arguments) || this;
-      }
-      var _proto = DistanceAngleRecognizer2.prototype;
-      _proto.getInternalMovement = function getInternalMovement(_ref, state) {
-        var d = _ref[0], a = _ref[1];
-        var da = state.values, turns = state.turns, initial = state.initial;
-        a = a !== void 0 ? a : da[1];
-        var delta_a = a - da[1];
-        var newTurns = Math.abs(delta_a) > 270 ? turns + Math.sign(delta_a) : turns;
-        var movement_d = d - initial[0];
-        var movement_a = a - 360 * newTurns - initial[1];
-        return [movement_d, movement_a];
-      };
-      _proto.getKinematics = function getKinematics(values, event) {
-        var _this$state = this.state, timeStamp = _this$state.timeStamp, initial = _this$state.initial;
-        var movementDetection = this.getMovement(values, this.state);
-        var delta = movementDetection.delta, movement = movementDetection.movement;
-        var turns = (values[1] - movement[1] - initial[1]) / 360;
-        var delta_t = event.timeStamp - timeStamp;
-        var kinematics = calculateAllKinematics(movement, delta, delta_t);
-        return _extends({
-          values,
-          delta,
-          turns
-        }, movementDetection, {}, kinematics);
-      };
-      _proto.mapStateValues = function mapStateValues(state) {
-        return {
-          da: state.values,
-          vdva: state.velocities
-        };
-      };
-      return DistanceAngleRecognizer2;
-    }(Recognizer);
-    var PinchRecognizer = function(_DistanceAngleRecogni) {
-      _inheritsLoose(PinchRecognizer2, _DistanceAngleRecogni);
-      function PinchRecognizer2(controller, args) {
-        var _this;
-        _this = _DistanceAngleRecogni.call(this, "pinch", controller, args) || this;
-        _this.ingKey = "pinching";
-        _this.pinchShouldStart = function(event) {
-          var _getGenericEventData = getGenericEventData(event), touches = _getGenericEventData.touches;
-          return _this.enabled && touches === 2;
-        };
-        _this.onPinchStart = function(event) {
-          if (!_this.pinchShouldStart(event))
-            return;
-          var _getTwoTouchesEventDa = getTwoTouchesEventData(event), values = _getTwoTouchesEventDa.values, origin = _getTwoTouchesEventDa.origin;
-          _this.updateSharedState(getGenericEventData(event));
-          var startState = _extends({}, _this.getStartGestureState(values, event), {}, _this.getGenericPayload(event, true));
-          _this.updateGestureState(_extends({}, startState, {}, _this.getMovement(values, startState), {
-            origin,
-            cancel: function cancel() {
-              return _this.onCancel();
-            }
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onPinchChange = function(event) {
-          var _this$state = _this.state, canceled = _this$state.canceled, timeStamp = _this$state.timeStamp, _active = _this$state._active;
-          if (canceled || !_active)
-            return;
-          var genericEventData = getGenericEventData(event);
-          if (genericEventData.touches !== 2 || event.timeStamp === timeStamp)
-            return;
-          _this.updateSharedState(genericEventData);
-          var _getTwoTouchesEventDa2 = getTwoTouchesEventData(event), values = _getTwoTouchesEventDa2.values, origin = _getTwoTouchesEventDa2.origin;
-          var kinematics = _this.getKinematics(values, event);
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics, {
-            origin,
-            cancel: function cancel() {
-              return _this.onCancel();
-            }
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onPinchEnd = function(event) {
-          if (!_this.state.active)
-            return;
-          _this.state._active = false;
-          _this.updateSharedState({
-            down: false,
-            touches: 0
-          });
-          _this.updateGestureState(_extends({
-            event
-          }, _this.getGenericPayload(event), {}, _this.getMovement(_this.state.values)));
-          _this.fireGestureHandler();
-        };
-        _this.onCancel = function() {
-          _this.state._active = false;
-          _this.updateGestureState({
-            canceled: true,
-            cancel: noop
-          });
-          _this.updateSharedState({
-            down: false,
-            touches: 0
-          });
-          requestAnimationFrame(function() {
-            return _this.fireGestureHandler();
-          });
-        };
-        _this.onGestureStart = function(event) {
-          if (!_this.enabled)
-            return;
-          event.preventDefault();
-          var _getWebkitGestureEven = getWebkitGestureEventValues(event), values = _getWebkitGestureEven.values;
-          _this.updateSharedState(getGenericEventData(event));
-          var startState = _extends({}, _this.getStartGestureState(values, event), {}, _this.getGenericPayload(event, true));
-          _this.updateGestureState(_extends({}, startState, {}, _this.getMovement(values, startState), {
-            cancel: function cancel() {
-              return _this.onCancel();
-            }
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onGestureChange = function(event) {
-          var _this$state2 = _this.state, canceled = _this$state2.canceled, _active = _this$state2._active;
-          if (canceled || !_active)
-            return;
-          event.preventDefault();
-          var genericEventData = getGenericEventData(event);
-          _this.updateSharedState(genericEventData);
-          var _getWebkitGestureEven2 = getWebkitGestureEventValues(event), values = _getWebkitGestureEven2.values;
-          var kinematics = _this.getKinematics(values, event);
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics, {
-            cancel: function cancel() {
-              return _this.onCancel();
-            }
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onGestureEnd = function(event) {
-          event.preventDefault();
-          if (!_this.state.active)
-            return;
-          _this.state._active = false;
-          _this.updateSharedState({
-            down: false,
-            touches: 0
-          });
-          _this.updateGestureState(_extends({
-            event
-          }, _this.getGenericPayload(event), {}, _this.getMovement(_this.state.values)));
-          _this.fireGestureHandler();
-        };
-        _this.updateTouchData = function(event) {
-          if (!_this.enabled || event.touches.length !== 2 || !_this.state._active)
-            return;
-          var _getTwoTouchesEventDa3 = getTwoTouchesEventData(event), origin = _getTwoTouchesEventDa3.origin;
-          _this.state.origin = origin;
-        };
-        _this.wheelShouldRun = function(event) {
-          return _this.enabled && event.ctrlKey;
-        };
-        _this.getWheelValuesFromEvent = function(event) {
-          var _getWheelEventValues = getWheelEventValues(event), _getWheelEventValues$ = _getWheelEventValues.values, delta_d = _getWheelEventValues$[1];
-          var _this$state$values = _this.state.values, prev_d = _this$state$values[0], prev_a = _this$state$values[1];
-          var d = prev_d - delta_d;
-          var a = prev_a !== void 0 ? prev_a : 0;
-          return {
-            values: [d, a],
-            origin: [event.clientX, event.clientY],
-            delta: [0, delta_d]
-          };
-        };
-        _this.onWheel = function(event) {
-          if (!_this.wheelShouldRun(event))
-            return;
-          _this.clearTimeout();
-          _this.setTimeout(_this.onWheelEnd);
-          if (!_this.state._active)
-            _this.onWheelStart(event);
-          else
-            _this.onWheelChange(event);
-        };
-        _this.onWheelStart = function(event) {
-          var _this$getWheelValuesF = _this.getWheelValuesFromEvent(event), values = _this$getWheelValuesF.values, delta = _this$getWheelValuesF.delta, origin = _this$getWheelValuesF.origin;
-          if (!_this.controller.config.eventOptions.passive) {
-            event.preventDefault();
-          } else {
-            console.warn("To support zoom on trackpads, try using the `domTarget` option and `config.event.passive` set to `false`. This message will only appear in development mode.");
-          }
-          _this.updateSharedState(getGenericEventData(event));
-          var startState = _extends({}, _this.getStartGestureState(values, event), {}, _this.getGenericPayload(event, true), {
-            initial: _this.state.values
-          });
-          _this.updateGestureState(_extends({}, startState, {}, _this.getMovement(values, startState), {
-            offset: values,
-            delta,
-            origin
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onWheelChange = function(event) {
-          var genericEventData = getGenericEventData(event);
-          _this.updateSharedState(genericEventData);
-          var _this$getWheelValuesF2 = _this.getWheelValuesFromEvent(event), values = _this$getWheelValuesF2.values, origin = _this$getWheelValuesF2.origin, delta = _this$getWheelValuesF2.delta;
-          var kinematics = _this.getKinematics(values, event);
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics, {
-            origin,
-            delta
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onWheelEnd = function() {
-          _this.state._active = false;
-          _this.updateGestureState(_this.getMovement(_this.state.values));
-          _this.fireGestureHandler();
-        };
-        return _this;
-      }
-      var _proto = PinchRecognizer2.prototype;
-      _proto.addBindings = function addBindings() {
-        if (this.controller.config.domTarget && supportsGestureEvents()) {
-          this.controller.addBindings("onGestureStart", this.onGestureStart);
-          this.controller.addBindings("onGestureChange", this.onGestureChange);
-          this.controller.addBindings(["onGestureEnd", "onTouchCancel"], this.onGestureEnd);
-          this.controller.addBindings(["onTouchStart", "onTouchMove"], this.updateTouchData);
-        } else {
-          this.controller.addBindings("onTouchStart", this.onPinchStart);
-          this.controller.addBindings("onTouchMove", this.onPinchChange);
-          this.controller.addBindings(["onTouchEnd", "onTouchCancel"], this.onPinchEnd);
-          this.controller.addBindings("onWheel", this.onWheel);
-        }
-      };
-      return PinchRecognizer2;
-    }(DistanceAngleRecognizer);
-    function usePinch(handler, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, domTarget = _config.domTarget, eventOptions = _config.eventOptions, window2 = _config.window, pinch = _objectWithoutPropertiesLoose(_config, ["domTarget", "eventOptions", "window"]);
-      var mergedConfig = _extends({}, getInternalGenericOptions({
-        domTarget,
-        eventOptions,
-        window: window2
-      }), {
-        pinch: getInternalDistanceAngleOptions(pinch)
-      });
-      return useRecognizers({
-        pinch: handler
-      }, [PinchRecognizer], mergedConfig);
-    }
-    var WheelRecognizer = function(_CoordinatesRecognize) {
-      _inheritsLoose(WheelRecognizer2, _CoordinatesRecognize);
-      function WheelRecognizer2(controller, args) {
-        var _this;
-        _this = _CoordinatesRecognize.call(this, "wheel", controller, args) || this;
-        _this.ingKey = "wheeling";
-        _this.debounced = true;
-        _this.wheelShouldRun = function(event) {
-          if (event.ctrlKey && "pinch" in _this.controller.handlers)
-            return false;
-          return _this.enabled;
-        };
-        _this.getValuesFromEvent = function(event) {
-          var prevValues = _this.state.values;
-          var _getWheelEventValues = getWheelEventValues(event), values = _getWheelEventValues.values;
-          return {
-            values: addV(values, prevValues)
-          };
-        };
-        _this.onWheel = function(event) {
-          if (!_this.wheelShouldRun(event))
-            return;
-          _this.clearTimeout();
-          _this.setTimeout(_this.onWheelEnd);
-          if (!_this.state._active)
-            _this.onWheelStart(event);
-          else
-            _this.onWheelChange(event);
-        };
-        _this.onWheelStart = function(event) {
-          var _this$getValuesFromEv = _this.getValuesFromEvent(event), values = _this$getValuesFromEv.values;
-          _this.updateSharedState(getGenericEventData(event));
-          var startState = _extends({}, _this.getStartGestureState(values, event), {}, _this.getGenericPayload(event, true), {
-            initial: _this.state.values
-          });
-          var movementDetection = _this.getMovement(values, startState);
-          var delta = movementDetection.delta;
-          _this.updateGestureState(_extends({}, startState, {}, movementDetection, {
-            distance: calculateDistance(delta),
-            direction: calculateDirection(delta)
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onWheelChange = function(event) {
-          var genericEventData = getGenericEventData(event);
-          _this.updateSharedState(genericEventData);
-          var _this$getValuesFromEv2 = _this.getValuesFromEvent(event), values = _this$getValuesFromEv2.values;
-          var kinematics = _this.getKinematics(values, event);
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics));
-          _this.fireGestureHandler();
-        };
-        _this.onWheelEnd = function() {
-          _this.state._active = false;
-          _this.updateGestureState(_extends({}, _this.getMovement(_this.state.values), {
-            velocities: [0, 0],
-            velocity: 0
-          }));
-          _this.fireGestureHandler();
-        };
-        return _this;
-      }
-      var _proto = WheelRecognizer2.prototype;
-      _proto.addBindings = function addBindings() {
-        this.controller.addBindings("onWheel", this.onWheel);
-      };
-      return WheelRecognizer2;
-    }(CoordinatesRecognizer);
-    function useWheel(handler, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, domTarget = _config.domTarget, eventOptions = _config.eventOptions, window2 = _config.window, wheel = _objectWithoutPropertiesLoose(_config, ["domTarget", "eventOptions", "window"]);
-      var mergedConfig = _extends({}, getInternalGenericOptions({
-        domTarget,
-        eventOptions,
-        window: window2
-      }), {
-        wheel: getInternalCoordinatesOptions(wheel)
-      });
-      return useRecognizers({
-        wheel: handler
-      }, [WheelRecognizer], mergedConfig);
-    }
-    var MoveRecognizer = function(_CoordinatesRecognize) {
-      _inheritsLoose(MoveRecognizer2, _CoordinatesRecognize);
-      function MoveRecognizer2(controller, args) {
-        var _this;
-        _this = _CoordinatesRecognize.call(this, "move", controller, args) || this;
-        _this.ingKey = "moving";
-        _this.debounced = true;
-        _this.moveShouldRun = function() {
-          return _this.enabled;
-        };
-        _this.onMove = function(event) {
-          if (!_this.moveShouldRun())
-            return;
-          _this.clearTimeout();
-          _this.setTimeout(_this.onMoveEnd);
-          if (!_this.state._active)
-            _this.onMoveStart(event);
-          else
-            _this.onMoveChange(event);
-        };
-        _this.onMoveStart = function(event) {
-          var _getPointerEventValue = getPointerEventValues(event), values = _getPointerEventValue.values;
-          _this.updateSharedState(getGenericEventData(event));
-          var startState = _extends({}, _this.getStartGestureState(values, event), {}, _this.getGenericPayload(event, true));
-          _this.updateGestureState(_extends({}, startState, {}, _this.getMovement(values, startState)));
-          _this.fireGestureHandler();
-        };
-        _this.onMoveChange = function(event) {
-          var genericEventData = getGenericEventData(event);
-          _this.updateSharedState(genericEventData);
-          var _getPointerEventValue2 = getPointerEventValues(event), values = _getPointerEventValue2.values;
-          var kinematics = _this.getKinematics(values, event);
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics));
-          _this.fireGestureHandler();
-        };
-        _this.onMoveEnd = function() {
-          _this.state._active = false;
-          _this.updateGestureState(_extends({}, _this.getMovement(_this.state.values), {
-            velocities: [0, 0],
-            velocity: 0
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onPointerEnter = function(event) {
-          _this.controller.state.shared.hovering = true;
-          if (!_this.controller.config.enabled)
-            return;
-          if (_this.controller.config.hover.enabled) {
-            var _getPointerEventValue3 = getPointerEventValues(event), values = _getPointerEventValue3.values;
-            var state = _extends({}, _this.controller.state.shared, {}, _this.state, {}, _this.getGenericPayload(event, true), {
-              values,
-              active: true,
-              hovering: true
-            });
-            _this.controller.handlers.hover(_extends({}, state, {}, _this.mapStateValues(state)));
-          }
-          if ("move" in _this.controller.handlers)
-            _this.onMoveStart(event);
-        };
-        _this.onPointerLeave = function(event) {
-          _this.controller.state.shared.hovering = false;
-          if ("move" in _this.controller.handlers)
-            _this.onMoveEnd();
-          if (_this.controller.config.hover.enabled) {
-            var _getPointerEventValue4 = getPointerEventValues(event), values = _getPointerEventValue4.values;
-            var state = _extends({}, _this.controller.state.shared, {}, _this.state, {}, _this.getGenericPayload(event), {
-              values,
-              active: false
-            });
-            _this.controller.handlers.hover(_extends({}, state, {}, _this.mapStateValues(state)));
-          }
-        };
-        return _this;
-      }
-      var _proto = MoveRecognizer2.prototype;
-      _proto.addBindings = function addBindings() {
-        if (this.controller.config.pointer) {
-          if ("move" in this.controller.handlers) {
-            this.controller.addBindings("onPointerMove", this.onMove);
-          }
-          if ("hover" in this.controller.handlers) {
-            this.controller.addBindings("onPointerEnter", this.onPointerEnter);
-            this.controller.addBindings("onPointerLeave", this.onPointerLeave);
-          }
-        } else {
-          if ("move" in this.controller.handlers) {
-            this.controller.addBindings("onMouseMove", this.onMove);
-          }
-          if ("hover" in this.controller.handlers) {
-            this.controller.addBindings("onMouseEnter", this.onPointerEnter);
-            this.controller.addBindings("onMouseLeave", this.onPointerLeave);
-          }
-        }
-      };
-      return MoveRecognizer2;
-    }(CoordinatesRecognizer);
-    function useMove(handler, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, domTarget = _config.domTarget, eventOptions = _config.eventOptions, window2 = _config.window, move = _objectWithoutPropertiesLoose(_config, ["domTarget", "eventOptions", "window"]);
-      var mergedConfig = _extends({}, getInternalGenericOptions({
-        domTarget,
-        eventOptions,
-        window: window2
-      }), {
-        move: getInternalCoordinatesOptions(move)
-      });
-      return useRecognizers({
-        move: handler
-      }, [MoveRecognizer], mergedConfig);
-    }
-    function useHover(handler, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, domTarget = _config.domTarget, eventOptions = _config.eventOptions, window2 = _config.window, hover = _objectWithoutPropertiesLoose(_config, ["domTarget", "eventOptions", "window"]);
-      var mergedConfig = _extends({}, getInternalGenericOptions({
-        domTarget,
-        eventOptions,
-        window: window2
-      }), {
-        hover: _extends({
-          enabled: true
-        }, hover)
-      });
-      return useRecognizers({
-        hover: handler
-      }, [MoveRecognizer], mergedConfig);
-    }
-    var ScrollRecognizer = function(_CoordinatesRecognize) {
-      _inheritsLoose(ScrollRecognizer2, _CoordinatesRecognize);
-      function ScrollRecognizer2(controller, args) {
-        var _this;
-        _this = _CoordinatesRecognize.call(this, "scroll", controller, args) || this;
-        _this.ingKey = "scrolling";
-        _this.debounced = true;
-        _this.scrollShouldRun = function() {
-          return _this.enabled;
-        };
-        _this.onScroll = function(event) {
-          if (!_this.scrollShouldRun())
-            return;
-          _this.clearTimeout();
-          _this.setTimeout(_this.onScrollEnd);
-          if (!_this.state._active)
-            _this.onScrollStart(event);
-          else
-            _this.onScrollChange(event);
-        };
-        _this.onScrollStart = function(event) {
-          var _getScrollEventValues = getScrollEventValues(event), values = _getScrollEventValues.values;
-          _this.updateSharedState(getGenericEventData(event));
-          var startState = _extends({}, _this.getStartGestureState(values, event), {}, _this.getGenericPayload(event, true), {
-            initial: _this.state.values
-          });
-          var movementDetection = _this.getMovement(values, startState);
-          var delta = movementDetection.delta;
-          _this.updateGestureState(_extends({}, startState, {}, movementDetection, {
-            distance: calculateDistance(delta),
-            direction: calculateDirection(delta)
-          }));
-          _this.fireGestureHandler();
-        };
-        _this.onScrollChange = function(event) {
-          var genericEventData = getGenericEventData(event);
-          _this.updateSharedState(genericEventData);
-          var _getScrollEventValues2 = getScrollEventValues(event), values = _getScrollEventValues2.values;
-          var kinematics = _this.getKinematics(values, event);
-          _this.updateGestureState(_extends({}, _this.getGenericPayload(event), {}, kinematics));
-          _this.fireGestureHandler();
-        };
-        _this.onScrollEnd = function() {
-          _this.state._active = false;
-          _this.updateGestureState(_extends({}, _this.getMovement(_this.state.values), {
-            velocities: [0, 0],
-            velocity: 0
-          }));
-          _this.fireGestureHandler();
-        };
-        return _this;
-      }
-      var _proto = ScrollRecognizer2.prototype;
-      _proto.addBindings = function addBindings() {
-        this.controller.addBindings("onScroll", this.onScroll);
-      };
-      return ScrollRecognizer2;
-    }(CoordinatesRecognizer);
-    function useScroll(handler, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _config = config, domTarget = _config.domTarget, eventOptions = _config.eventOptions, window2 = _config.window, scroll = _objectWithoutPropertiesLoose(_config, ["domTarget", "eventOptions", "window"]);
-      var mergedConfig = _extends({}, getInternalGenericOptions({
-        domTarget,
-        eventOptions,
-        window: window2
-      }), {
-        scroll: getInternalCoordinatesOptions(scroll)
-      });
-      return useRecognizers({
-        scroll: handler
-      }, [ScrollRecognizer], mergedConfig);
-    }
-    function useGesture(handlers, config) {
-      if (config === void 0) {
-        config = {};
-      }
-      var _React$useState = React.useState(function() {
-        return new Set(Object.keys(handlers).map(function(k) {
-          return k.replace(/End|Start/, "");
-        }));
-      }), actions = _React$useState[0];
-      var _config = config, drag = _config.drag, wheel = _config.wheel, move = _config.move, scroll = _config.scroll, pinch = _config.pinch, hover = _config.hover, restConfig = _objectWithoutPropertiesLoose(_config, ["drag", "wheel", "move", "scroll", "pinch", "hover"]);
-      var mergedConfig = getInternalGenericOptions(restConfig);
-      var classes = [];
-      var internalHandlers = {};
-      var _nativeHandlers = _extends({}, handlers);
-      if (actions.has("onDrag")) {
-        classes.push(DragRecognizer);
-        internalHandlers.drag = includeStartEndHandlers(handlers, "onDrag", _nativeHandlers);
-        mergedConfig.drag = getInternalDragOptions(drag);
-      }
-      if (actions.has("onWheel")) {
-        classes.push(WheelRecognizer);
-        internalHandlers.wheel = includeStartEndHandlers(handlers, "onWheel", _nativeHandlers);
-        mergedConfig.wheel = getInternalCoordinatesOptions(wheel);
-      }
-      if (actions.has("onScroll")) {
-        classes.push(ScrollRecognizer);
-        internalHandlers.scroll = includeStartEndHandlers(handlers, "onScroll", _nativeHandlers);
-        mergedConfig.scroll = getInternalCoordinatesOptions(scroll);
-      }
-      if (actions.has("onMove")) {
-        classes.push(MoveRecognizer);
-        internalHandlers.move = includeStartEndHandlers(handlers, "onMove", _nativeHandlers);
-        mergedConfig.move = getInternalCoordinatesOptions(move);
-      }
-      if (actions.has("onPinch")) {
-        classes.push(PinchRecognizer);
-        internalHandlers.pinch = includeStartEndHandlers(handlers, "onPinch", _nativeHandlers);
-        mergedConfig.pinch = getInternalDistanceAngleOptions(pinch);
-      }
-      if (actions.has("onHover")) {
-        if (!actions.has("onMove"))
-          classes.push(MoveRecognizer);
-        internalHandlers.hover = handlers.onHover;
-        mergedConfig.hover = _extends({
-          enabled: true
-        }, hover);
-        delete _nativeHandlers.onHover;
-      }
-      return useRecognizers(internalHandlers, classes, mergedConfig, _nativeHandlers);
-    }
-    function includeStartEndHandlers(handlers, handlerKey, _nativeHandlers) {
-      var startKey = handlerKey + "Start";
-      var endKey = handlerKey + "End";
-      delete _nativeHandlers[handlerKey];
-      delete _nativeHandlers[startKey];
-      delete _nativeHandlers[endKey];
-      var fn = function fn2(state) {
-        var memo = void 0;
-        if (state.first && startKey in handlers)
-          handlers[startKey](state);
-        if (handlerKey in handlers)
-          memo = handlers[handlerKey](state);
-        if (state.last && endKey in handlers)
-          handlers[endKey](state);
-        return memo;
-      };
-      return fn;
-    }
-    exports.addV = addV;
-    exports.rubberbandIfOutOfBounds = rubberbandIfOutOfBounds;
-    exports.subV = subV;
-    exports.useDrag = useDrag;
-    exports.useGesture = useGesture;
-    exports.useHover = useHover;
-    exports.useMove = useMove;
-    exports.usePinch = usePinch;
-    exports.useScroll = useScroll;
-    exports.useWheel = useWheel;
-  },
-
-  16(require, exports, module) {
-    // node_modules/react-use-gesture/dist/index.js
-    "use strict";
-    if (false) {
-      module.exports = null;
-    } else {
-      module.exports = require(17 /* ./react-use-gesture.cjs.development.js */);
-    }
-  },
-
-  20(require, exports, module) {
+  69(require, exports, module) {
     // node_modules/rematrix/dist/rematrix.js
     (function(global, factory) {
       typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : factory(global.Rematrix = {});
@@ -20990,7 +19409,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     });
   },
 
-  11(require, exports) {
+  62(require, exports) {
     // node_modules/react-is/cjs/react-is.development.js
     "use strict";
     if (true) {
@@ -21142,23 +19561,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
   },
 
-  12(require, exports, module) {
+  63(require, exports, module) {
     // node_modules/react-is/index.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(11 /* ./cjs/react-is.development.js */);
+      module.exports = require(62 /* ./cjs/react-is.development.js */);
     }
   },
 
-  4(require, exports, module) {
+  55(require, exports, module) {
     // node_modules/prop-types/factoryWithTypeCheckers.js
     "use strict";
-    var ReactIs = require(12 /* react-is */);
-    var assign = require(2 /* object-assign */);
-    var ReactPropTypesSecret = require(6 /* ./lib/ReactPropTypesSecret */);
-    var checkPropTypes = require(3 /* ./checkPropTypes */);
+    var ReactIs = require(63 /* react-is */);
+    var assign = require(53 /* object-assign */);
+    var ReactPropTypesSecret = require(57 /* ./lib/ReactPropTypesSecret */);
+    var checkPropTypes = require(54 /* ./checkPropTypes */);
     var has = Function.call.bind(Object.prototype.hasOwnProperty);
     var printWarning = function() {
     };
@@ -21563,23 +19982,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  5(require, exports, module) {
+  56(require, exports, module) {
     // node_modules/prop-types/index.js
     if (true) {
-      var ReactIs = require(12 /* react-is */);
+      var ReactIs = require(63 /* react-is */);
       var throwOnDirectAccess = true;
-      module.exports = require(4 /* ./factoryWithTypeCheckers */)(ReactIs.isElement, throwOnDirectAccess);
+      module.exports = require(55 /* ./factoryWithTypeCheckers */)(ReactIs.isElement, throwOnDirectAccess);
     } else {
       module.exports = null();
     }
   },
 
-  10(require, exports) {
+  61(require, exports) {
     // node_modules/react-flip-toolkit/lib/index.js
     function t(t2) {
       return t2 && "object" == typeof t2 && "default" in t2 ? t2.default : t2;
     }
-    var e = require(20 /* rematrix */), n = (t(require(5 /* prop-types */)), require(19 /* react */)), i = t(n), r = function(t2) {
+    var e = require(69 /* rematrix */), n = (t(require(56 /* prop-types */)), require(68 /* react */)), i = t(n), r = function(t2) {
       return "number" == typeof t2;
     }, o = function(t2) {
       return "[object Object]" === Object.prototype.toString.call(t2);
@@ -22297,7 +20716,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  0(require, exports, module) {
+  33(require, exports, module) {
     // node_modules/fast-memoize/src/index.js
     function memoize(fn, options) {
       var cache = options && options.cache ? options.cache : cacheDefault;
@@ -22372,7 +20791,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  7(require, exports) {
+  58(require, exports) {
     // node_modules/re-resizable/lib/index.es5.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -22381,8 +20800,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(19 /* react */);
-    var memoize = _interopDefault(require(0 /* fast-memoize */));
+    var React = require(68 /* react */);
+    var memoize = _interopDefault(require(33 /* fast-memoize */));
     var extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || {
         __proto__: []
@@ -23202,10 +21621,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.Resizable = Resizable;
   },
 
-  15(require, exports, module) {
+  66(require, exports, module) {
     // node_modules/react-rnd/node_modules/react-draggable/build/web/react-draggable.min.js
     !function(t, e) {
-      "object" == typeof exports && "object" == typeof module ? module.exports = e(require(19 /* react */), require(9 /* react-dom */)) : "function" == typeof define && define.amd ? define(["react", "react-dom"], e) : "object" == typeof exports ? exports.ReactDraggable = e(require(19 /* react */), require(9 /* react-dom */)) : t.ReactDraggable = e(t.React, t.ReactDOM);
+      "object" == typeof exports && "object" == typeof module ? module.exports = e(require(68 /* react */), require(60 /* react-dom */)) : "function" == typeof define && define.amd ? define(["react", "react-dom"], e) : "object" == typeof exports ? exports.ReactDraggable = e(require(68 /* react */), require(60 /* react-dom */)) : t.ReactDraggable = e(t.React, t.ReactDOM);
     }(window, function(t, e) {
       return function(t2) {
         var e2 = {};
@@ -24063,7 +22482,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     });
   },
 
-  14(require, exports) {
+  65(require, exports) {
     // node_modules/react-rnd/node_modules/re-resizable/lib/index.es5.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24072,8 +22491,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(19 /* react */);
-    var memoize = _interopDefault(require(0 /* fast-memoize */));
+    var React = require(68 /* react */);
+    var memoize = _interopDefault(require(33 /* fast-memoize */));
     var extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || {
         __proto__: []
@@ -24891,7 +23310,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.Resizable = Resizable;
   },
 
-  13(require, exports) {
+  64(require, exports) {
     // node_modules/react-rnd/lib/index.es5.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24900,9 +23319,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(19 /* react */);
-    var DraggableRoot = _interopDefault(require(15 /* react-draggable */));
-    var reResizable = require(14 /* re-resizable */);
+    var React = require(68 /* react */);
+    var DraggableRoot = _interopDefault(require(66 /* react-draggable */));
+    var reResizable = require(65 /* re-resizable */);
     var extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || {
         __proto__: []
@@ -25396,20 +23815,2127 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.Rnd = Rnd;
   },
 
-  25(require) {
-    // src/Card.js
-    const React2 = require(19 /* react */, true /* ES6 import */), react_use_gesture = require(16 /* react-use-gesture */, true /* ES6 import */), react_flip_toolkit2 = require(10 /* react-flip-toolkit */, true /* ES6 import */), re_resizable = require(7 /* re-resizable */, true /* ES6 import */), react_rnd = require(13 /* react-rnd */, true /* ES6 import */);
-    const Card2 = ({id, content, position, size, handleZoom, onUpdate, onDelete, children}) => {
-      const [{x, y}, setPos] = React2.useState({
+  75(require, exports, module) {
+    // node_modules/shallowequal/index.js
+    module.exports = function shallowEqual(objA, objB, compare, compareContext) {
+      var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
+      if (ret !== void 0) {
+        return !!ret;
+      }
+      if (objA === objB) {
+        return true;
+      }
+      if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) {
+        return false;
+      }
+      var keysA = Object.keys(objA);
+      var keysB = Object.keys(objB);
+      if (keysA.length !== keysB.length) {
+        return false;
+      }
+      var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
+      for (var idx = 0; idx < keysA.length; idx++) {
+        var key = keysA[idx];
+        if (!bHasOwnProperty(key)) {
+          return false;
+        }
+        var valueA = objA[key];
+        var valueB = objB[key];
+        ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
+        if (ret === false || ret === void 0 && valueA !== valueB) {
+          return false;
+        }
+      }
+      return true;
+    };
+  },
+
+  2(require, exports) {
+    // node_modules/@emotion/stylis/dist/stylis.browser.cjs.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function stylis_min(W) {
+      function M(d, c, e, h, a) {
+        for (var m = 0, b = 0, v = 0, n = 0, q, g, x = 0, K = 0, k, u = k = q = 0, l = 0, r = 0, I = 0, t = 0, B2 = e.length, J = B2 - 1, y, f = "", p = "", F2 = "", G2 = "", C; l < B2; ) {
+          g = e.charCodeAt(l);
+          l === J && 0 !== b + n + v + m && (0 !== b && (g = 47 === b ? 10 : 47), n = v = m = 0, B2++, J++);
+          if (0 === b + n + v + m) {
+            if (l === J && (0 < r && (f = f.replace(N, "")), 0 < f.trim().length)) {
+              switch (g) {
+                case 32:
+                case 9:
+                case 59:
+                case 13:
+                case 10:
+                  break;
+                default:
+                  f += e.charAt(l);
+              }
+              g = 59;
+            }
+            switch (g) {
+              case 123:
+                f = f.trim();
+                q = f.charCodeAt(0);
+                k = 1;
+                for (t = ++l; l < B2; ) {
+                  switch (g = e.charCodeAt(l)) {
+                    case 123:
+                      k++;
+                      break;
+                    case 125:
+                      k--;
+                      break;
+                    case 47:
+                      switch (g = e.charCodeAt(l + 1)) {
+                        case 42:
+                        case 47:
+                          a: {
+                            for (u = l + 1; u < J; ++u) {
+                              switch (e.charCodeAt(u)) {
+                                case 47:
+                                  if (42 === g && 42 === e.charCodeAt(u - 1) && l + 2 !== u) {
+                                    l = u + 1;
+                                    break a;
+                                  }
+                                  break;
+                                case 10:
+                                  if (47 === g) {
+                                    l = u + 1;
+                                    break a;
+                                  }
+                              }
+                            }
+                            l = u;
+                          }
+                      }
+                      break;
+                    case 91:
+                      g++;
+                    case 40:
+                      g++;
+                    case 34:
+                    case 39:
+                      for (; l++ < J && e.charCodeAt(l) !== g; ) {
+                      }
+                  }
+                  if (0 === k)
+                    break;
+                  l++;
+                }
+                k = e.substring(t, l);
+                0 === q && (q = (f = f.replace(ca, "").trim()).charCodeAt(0));
+                switch (q) {
+                  case 64:
+                    0 < r && (f = f.replace(N, ""));
+                    g = f.charCodeAt(1);
+                    switch (g) {
+                      case 100:
+                      case 109:
+                      case 115:
+                      case 45:
+                        r = c;
+                        break;
+                      default:
+                        r = O;
+                    }
+                    k = M(c, r, k, g, a + 1);
+                    t = k.length;
+                    0 < A && (r = X(O, f, I), C = H(3, k, r, c, D, z, t, g, a, h), f = r.join(""), void 0 !== C && 0 === (t = (k = C.trim()).length) && (g = 0, k = ""));
+                    if (0 < t)
+                      switch (g) {
+                        case 115:
+                          f = f.replace(da, ea);
+                        case 100:
+                        case 109:
+                        case 45:
+                          k = f + "{" + k + "}";
+                          break;
+                        case 107:
+                          f = f.replace(fa, "$1 $2");
+                          k = f + "{" + k + "}";
+                          k = 1 === w || 2 === w && L("@" + k, 3) ? "@-webkit-" + k + "@" + k : "@" + k;
+                          break;
+                        default:
+                          k = f + k, 112 === h && (k = (p += k, ""));
+                      }
+                    else
+                      k = "";
+                    break;
+                  default:
+                    k = M(c, X(c, f, I), k, h, a + 1);
+                }
+                F2 += k;
+                k = I = r = u = q = 0;
+                f = "";
+                g = e.charCodeAt(++l);
+                break;
+              case 125:
+              case 59:
+                f = (0 < r ? f.replace(N, "") : f).trim();
+                if (1 < (t = f.length))
+                  switch (0 === u && (q = f.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (f = f.replace(" ", ":")).length), 0 < A && void 0 !== (C = H(1, f, c, d, D, z, p.length, h, a, h)) && 0 === (t = (f = C.trim()).length) && (f = "\0\0"), q = f.charCodeAt(0), g = f.charCodeAt(1), q) {
+                    case 0:
+                      break;
+                    case 64:
+                      if (105 === g || 99 === g) {
+                        G2 += f + e.charAt(l);
+                        break;
+                      }
+                    default:
+                      58 !== f.charCodeAt(t - 1) && (p += P(f, q, g, f.charCodeAt(2)));
+                  }
+                I = r = u = q = 0;
+                f = "";
+                g = e.charCodeAt(++l);
+            }
+          }
+          switch (g) {
+            case 13:
+            case 10:
+              47 === b ? b = 0 : 0 === 1 + q && 107 !== h && 0 < f.length && (r = 1, f += "\0");
+              0 < A * Y && H(0, f, c, d, D, z, p.length, h, a, h);
+              z = 1;
+              D++;
+              break;
+            case 59:
+            case 125:
+              if (0 === b + n + v + m) {
+                z++;
+                break;
+              }
+            default:
+              z++;
+              y = e.charAt(l);
+              switch (g) {
+                case 9:
+                case 32:
+                  if (0 === n + m + b)
+                    switch (x) {
+                      case 44:
+                      case 58:
+                      case 9:
+                      case 32:
+                        y = "";
+                        break;
+                      default:
+                        32 !== g && (y = " ");
+                    }
+                  break;
+                case 0:
+                  y = "\\0";
+                  break;
+                case 12:
+                  y = "\\f";
+                  break;
+                case 11:
+                  y = "\\v";
+                  break;
+                case 38:
+                  0 === n + b + m && (r = I = 1, y = "\f" + y);
+                  break;
+                case 108:
+                  if (0 === n + b + m + E && 0 < u)
+                    switch (l - u) {
+                      case 2:
+                        112 === x && 58 === e.charCodeAt(l - 3) && (E = x);
+                      case 8:
+                        111 === K && (E = K);
+                    }
+                  break;
+                case 58:
+                  0 === n + b + m && (u = l);
+                  break;
+                case 44:
+                  0 === b + v + n + m && (r = 1, y += "\r");
+                  break;
+                case 34:
+                case 39:
+                  0 === b && (n = n === g ? 0 : 0 === n ? g : n);
+                  break;
+                case 91:
+                  0 === n + b + v && m++;
+                  break;
+                case 93:
+                  0 === n + b + v && m--;
+                  break;
+                case 41:
+                  0 === n + b + m && v--;
+                  break;
+                case 40:
+                  if (0 === n + b + m) {
+                    if (0 === q)
+                      switch (2 * x + 3 * K) {
+                        case 533:
+                          break;
+                        default:
+                          q = 1;
+                      }
+                    v++;
+                  }
+                  break;
+                case 64:
+                  0 === b + v + n + m + u + k && (k = 1);
+                  break;
+                case 42:
+                case 47:
+                  if (!(0 < n + m + v))
+                    switch (b) {
+                      case 0:
+                        switch (2 * g + 3 * e.charCodeAt(l + 1)) {
+                          case 235:
+                            b = 47;
+                            break;
+                          case 220:
+                            t = l, b = 42;
+                        }
+                        break;
+                      case 42:
+                        47 === g && 42 === x && t + 2 !== l && (33 === e.charCodeAt(t + 2) && (p += e.substring(t, l + 1)), y = "", b = 0);
+                    }
+              }
+              0 === b && (f += y);
+          }
+          K = x;
+          x = g;
+          l++;
+        }
+        t = p.length;
+        if (0 < t) {
+          r = c;
+          if (0 < A && (C = H(2, p, r, d, D, z, t, h, a, h), void 0 !== C && 0 === (p = C).length))
+            return G2 + p + F2;
+          p = r.join(",") + "{" + p + "}";
+          if (0 !== w * E) {
+            2 !== w || L(p, 2) || (E = 0);
+            switch (E) {
+              case 111:
+                p = p.replace(ha, ":-moz-$1") + p;
+                break;
+              case 112:
+                p = p.replace(Q, "::-webkit-input-$1") + p.replace(Q, "::-moz-$1") + p.replace(Q, ":-ms-input-$1") + p;
+            }
+            E = 0;
+          }
+        }
+        return G2 + p + F2;
+      }
+      function X(d, c, e) {
+        var h = c.trim().split(ia);
+        c = h;
+        var a = h.length, m = d.length;
+        switch (m) {
+          case 0:
+          case 1:
+            var b = 0;
+            for (d = 0 === m ? "" : d[0] + " "; b < a; ++b) {
+              c[b] = Z(d, c[b], e).trim();
+            }
+            break;
+          default:
+            var v = b = 0;
+            for (c = []; b < a; ++b) {
+              for (var n = 0; n < m; ++n) {
+                c[v++] = Z(d[n] + " ", h[b], e).trim();
+              }
+            }
+        }
+        return c;
+      }
+      function Z(d, c, e) {
+        var h = c.charCodeAt(0);
+        33 > h && (h = (c = c.trim()).charCodeAt(0));
+        switch (h) {
+          case 38:
+            return c.replace(F, "$1" + d.trim());
+          case 58:
+            return d.trim() + c.replace(F, "$1" + d.trim());
+          default:
+            if (0 < 1 * e && 0 < c.indexOf("\f"))
+              return c.replace(F, (58 === d.charCodeAt(0) ? "" : "$1") + d.trim());
+        }
+        return d + c;
+      }
+      function P(d, c, e, h) {
+        var a = d + ";", m = 2 * c + 3 * e + 4 * h;
+        if (944 === m) {
+          d = a.indexOf(":", 9) + 1;
+          var b = a.substring(d, a.length - 1).trim();
+          b = a.substring(0, d).trim() + b + ";";
+          return 1 === w || 2 === w && L(b, 1) ? "-webkit-" + b + b : b;
+        }
+        if (0 === w || 2 === w && !L(a, 1))
+          return a;
+        switch (m) {
+          case 1015:
+            return 97 === a.charCodeAt(10) ? "-webkit-" + a + a : a;
+          case 951:
+            return 116 === a.charCodeAt(3) ? "-webkit-" + a + a : a;
+          case 963:
+            return 110 === a.charCodeAt(5) ? "-webkit-" + a + a : a;
+          case 1009:
+            if (100 !== a.charCodeAt(4))
+              break;
+          case 969:
+          case 942:
+            return "-webkit-" + a + a;
+          case 978:
+            return "-webkit-" + a + "-moz-" + a + a;
+          case 1019:
+          case 983:
+            return "-webkit-" + a + "-moz-" + a + "-ms-" + a + a;
+          case 883:
+            if (45 === a.charCodeAt(8))
+              return "-webkit-" + a + a;
+            if (0 < a.indexOf("image-set(", 11))
+              return a.replace(ja, "$1-webkit-$2") + a;
+            break;
+          case 932:
+            if (45 === a.charCodeAt(4))
+              switch (a.charCodeAt(5)) {
+                case 103:
+                  return "-webkit-box-" + a.replace("-grow", "") + "-webkit-" + a + "-ms-" + a.replace("grow", "positive") + a;
+                case 115:
+                  return "-webkit-" + a + "-ms-" + a.replace("shrink", "negative") + a;
+                case 98:
+                  return "-webkit-" + a + "-ms-" + a.replace("basis", "preferred-size") + a;
+              }
+            return "-webkit-" + a + "-ms-" + a + a;
+          case 964:
+            return "-webkit-" + a + "-ms-flex-" + a + a;
+          case 1023:
+            if (99 !== a.charCodeAt(8))
+              break;
+            b = a.substring(a.indexOf(":", 15)).replace("flex-", "").replace("space-between", "justify");
+            return "-webkit-box-pack" + b + "-webkit-" + a + "-ms-flex-pack" + b + a;
+          case 1005:
+            return ka.test(a) ? a.replace(aa, ":-webkit-") + a.replace(aa, ":-moz-") + a : a;
+          case 1000:
+            b = a.substring(13).trim();
+            c = b.indexOf("-") + 1;
+            switch (b.charCodeAt(0) + b.charCodeAt(c)) {
+              case 226:
+                b = a.replace(G, "tb");
+                break;
+              case 232:
+                b = a.replace(G, "tb-rl");
+                break;
+              case 220:
+                b = a.replace(G, "lr");
+                break;
+              default:
+                return a;
+            }
+            return "-webkit-" + a + "-ms-" + b + a;
+          case 1017:
+            if (-1 === a.indexOf("sticky", 9))
+              break;
+          case 975:
+            c = (a = d).length - 10;
+            b = (33 === a.charCodeAt(c) ? a.substring(0, c) : a).substring(d.indexOf(":", 7) + 1).trim();
+            switch (m = b.charCodeAt(0) + (b.charCodeAt(7) | 0)) {
+              case 203:
+                if (111 > b.charCodeAt(8))
+                  break;
+              case 115:
+                a = a.replace(b, "-webkit-" + b) + ";" + a;
+                break;
+              case 207:
+              case 102:
+                a = a.replace(b, "-webkit-" + (102 < m ? "inline-" : "") + "box") + ";" + a.replace(b, "-webkit-" + b) + ";" + a.replace(b, "-ms-" + b + "box") + ";" + a;
+            }
+            return a + ";";
+          case 938:
+            if (45 === a.charCodeAt(5))
+              switch (a.charCodeAt(6)) {
+                case 105:
+                  return b = a.replace("-items", ""), "-webkit-" + a + "-webkit-box-" + b + "-ms-flex-" + b + a;
+                case 115:
+                  return "-webkit-" + a + "-ms-flex-item-" + a.replace(ba, "") + a;
+                default:
+                  return "-webkit-" + a + "-ms-flex-line-pack" + a.replace("align-content", "").replace(ba, "") + a;
+              }
+            break;
+          case 973:
+          case 989:
+            if (45 !== a.charCodeAt(3) || 122 === a.charCodeAt(4))
+              break;
+          case 931:
+          case 953:
+            if (true === la.test(d))
+              return 115 === (b = d.substring(d.indexOf(":") + 1)).charCodeAt(0) ? P(d.replace("stretch", "fill-available"), c, e, h).replace(":fill-available", ":stretch") : a.replace(b, "-webkit-" + b) + a.replace(b, "-moz-" + b.replace("fill-", "")) + a;
+            break;
+          case 962:
+            if (a = "-webkit-" + a + (102 === a.charCodeAt(5) ? "-ms-" + a : "") + a, 211 === e + h && 105 === a.charCodeAt(13) && 0 < a.indexOf("transform", 10))
+              return a.substring(0, a.indexOf(";", 27) + 1).replace(ma, "$1-webkit-$2") + a;
+        }
+        return a;
+      }
+      function L(d, c) {
+        var e = d.indexOf(1 === c ? ":" : "{"), h = d.substring(0, 3 !== c ? e : 10);
+        e = d.substring(e + 1, d.length - 1);
+        return R(2 !== c ? h : h.replace(na, "$1"), e, c);
+      }
+      function ea(d, c) {
+        var e = P(c, c.charCodeAt(0), c.charCodeAt(1), c.charCodeAt(2));
+        return e !== c + ";" ? e.replace(oa, " or ($1)").substring(4) : "(" + c + ")";
+      }
+      function H(d, c, e, h, a, m, b, v, n, q) {
+        for (var g = 0, x = c, w2; g < A; ++g) {
+          switch (w2 = S[g].call(B, d, x, e, h, a, m, b, v, n, q)) {
+            case void 0:
+            case false:
+            case true:
+            case null:
+              break;
+            default:
+              x = w2;
+          }
+        }
+        if (x !== c)
+          return x;
+      }
+      function T(d) {
+        switch (d) {
+          case void 0:
+          case null:
+            A = S.length = 0;
+            break;
+          default:
+            if ("function" === typeof d)
+              S[A++] = d;
+            else if ("object" === typeof d)
+              for (var c = 0, e = d.length; c < e; ++c) {
+                T(d[c]);
+              }
+            else
+              Y = !!d | 0;
+        }
+        return T;
+      }
+      function U(d) {
+        d = d.prefix;
+        void 0 !== d && (R = null, d ? "function" !== typeof d ? w = 1 : (w = 2, R = d) : w = 0);
+        return U;
+      }
+      function B(d, c) {
+        var e = d;
+        33 > e.charCodeAt(0) && (e = e.trim());
+        V = e;
+        e = [V];
+        if (0 < A) {
+          var h = H(-1, c, e, e, D, z, 0, 0, 0, 0);
+          void 0 !== h && "string" === typeof h && (c = h);
+        }
+        var a = M(O, e, c, 0, 0);
+        0 < A && (h = H(-2, a, e, e, D, z, a.length, 0, 0, 0), void 0 !== h && (a = h));
+        V = "";
+        E = 0;
+        z = D = 1;
+        return a;
+      }
+      var ca = /^\0+/g, N = /[\0\r\f]/g, aa = /: */g, ka = /zoo|gra/, ma = /([,: ])(transform)/g, ia = /,\r+?/g, F = /([\t\r\n ])*\f?&/g, fa = /@(k\w+)\s*(\S*)\s*/, Q = /::(place)/g, ha = /:(read-only)/g, G = /[svh]\w+-[tblr]{2}/, da = /\(\s*(.*)\s*\)/g, oa = /([\s\S]*?);/g, ba = /-self|flex-/g, na = /[^]*?(:[rp][el]a[\w-]+)[^]*/, la = /stretch|:\s*\w+\-(?:conte|avail)/, ja = /([^-])(image-set\()/, z = 1, D = 1, E = 0, w = 1, O = [], S = [], A = 0, R = null, Y = 0, V = "";
+      B.use = T;
+      B.set = U;
+      void 0 !== W && U(W);
+      return B;
+    }
+    exports.default = stylis_min;
+  },
+
+  3(require, exports) {
+    // node_modules/@emotion/unitless/dist/unitless.browser.cjs.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var unitlessKeys = {
+      animationIterationCount: 1,
+      borderImageOutset: 1,
+      borderImageSlice: 1,
+      borderImageWidth: 1,
+      boxFlex: 1,
+      boxFlexGroup: 1,
+      boxOrdinalGroup: 1,
+      columnCount: 1,
+      columns: 1,
+      flex: 1,
+      flexGrow: 1,
+      flexPositive: 1,
+      flexShrink: 1,
+      flexNegative: 1,
+      flexOrder: 1,
+      gridRow: 1,
+      gridRowEnd: 1,
+      gridRowSpan: 1,
+      gridRowStart: 1,
+      gridColumn: 1,
+      gridColumnEnd: 1,
+      gridColumnSpan: 1,
+      gridColumnStart: 1,
+      msGridRow: 1,
+      msGridRowSpan: 1,
+      msGridColumn: 1,
+      msGridColumnSpan: 1,
+      fontWeight: 1,
+      lineHeight: 1,
+      opacity: 1,
+      order: 1,
+      orphans: 1,
+      tabSize: 1,
+      widows: 1,
+      zIndex: 1,
+      zoom: 1,
+      WebkitLineClamp: 1,
+      fillOpacity: 1,
+      floodOpacity: 1,
+      stopOpacity: 1,
+      strokeDasharray: 1,
+      strokeDashoffset: 1,
+      strokeMiterlimit: 1,
+      strokeOpacity: 1,
+      strokeWidth: 1
+    };
+    exports.default = unitlessKeys;
+  },
+
+  1(require, exports) {
+    // node_modules/@emotion/memoize/dist/memoize.browser.cjs.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function memoize(fn) {
+      var cache = {};
+      return function(arg) {
+        if (cache[arg] === void 0)
+          cache[arg] = fn(arg);
+        return cache[arg];
+      };
+    }
+    exports.default = memoize;
+  },
+
+  0(require, exports) {
+    // node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.cjs.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function _interopDefault(ex) {
+      return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+    }
+    var memoize = _interopDefault(require(1 /* @emotion/memoize */));
+    var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|inert|itemProp|itemScope|itemType|itemID|itemRef|on|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/;
+    var index = memoize(function(prop) {
+      return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
+    });
+    exports.default = index;
+  },
+
+  35(require, exports, module) {
+    // node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js
+    "use strict";
+    var reactIs = require(63 /* react-is */);
+    var REACT_STATICS = {
+      childContextTypes: true,
+      contextType: true,
+      contextTypes: true,
+      defaultProps: true,
+      displayName: true,
+      getDefaultProps: true,
+      getDerivedStateFromError: true,
+      getDerivedStateFromProps: true,
+      mixins: true,
+      propTypes: true,
+      type: true
+    };
+    var KNOWN_STATICS = {
+      name: true,
+      length: true,
+      prototype: true,
+      caller: true,
+      callee: true,
+      arguments: true,
+      arity: true
+    };
+    var FORWARD_REF_STATICS = {
+      $$typeof: true,
+      render: true,
+      defaultProps: true,
+      displayName: true,
+      propTypes: true
+    };
+    var MEMO_STATICS = {
+      $$typeof: true,
+      compare: true,
+      defaultProps: true,
+      displayName: true,
+      propTypes: true,
+      type: true
+    };
+    var TYPE_STATICS = {};
+    TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+    TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+    function getStatics(component) {
+      if (reactIs.isMemo(component)) {
+        return MEMO_STATICS;
+      }
+      return TYPE_STATICS[component["$$typeof"]] || REACT_STATICS;
+    }
+    var defineProperty = Object.defineProperty;
+    var getOwnPropertyNames = Object.getOwnPropertyNames;
+    var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+    var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+    var getPrototypeOf = Object.getPrototypeOf;
+    var objectPrototype = Object.prototype;
+    function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+      if (typeof sourceComponent !== "string") {
+        if (objectPrototype) {
+          var inheritedComponent = getPrototypeOf(sourceComponent);
+          if (inheritedComponent && inheritedComponent !== objectPrototype) {
+            hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+          }
+        }
+        var keys = getOwnPropertyNames(sourceComponent);
+        if (getOwnPropertySymbols) {
+          keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+        var targetStatics = getStatics(targetComponent);
+        var sourceStatics = getStatics(sourceComponent);
+        for (var i = 0; i < keys.length; ++i) {
+          var key = keys[i];
+          if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+            var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+            try {
+              defineProperty(targetComponent, key, descriptor);
+            } catch (e) {
+            }
+          }
+        }
+      }
+      return targetComponent;
+    }
+    module.exports = hoistNonReactStatics;
+  },
+
+  78(require, exports) {
+    // node_modules/styled-components/dist/styled-components.browser.cjs.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function _interopDefault(ex) {
+      return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+    }
+    var reactIs = require(63 /* react-is */);
+    var React = require(68 /* react */);
+    var React__default = _interopDefault(React);
+    var shallowequal = _interopDefault(require(75 /* shallowequal */));
+    var Stylis = _interopDefault(require(2 /* @emotion/stylis */));
+    var unitless = _interopDefault(require(3 /* @emotion/unitless */));
+    var validAttr = _interopDefault(require(0 /* @emotion/is-prop-valid */));
+    var hoist = _interopDefault(require(35 /* hoist-non-react-statics */));
+    function _extends() {
+      _extends = Object.assign || function(target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      };
+      return _extends.apply(this, arguments);
+    }
+    function _objectWithoutPropertiesLoose(source, excluded) {
+      if (source == null)
+        return {};
+      var target = {};
+      var sourceKeys = Object.keys(source);
+      var key, i;
+      for (i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0)
+          continue;
+        target[key] = source[key];
+      }
+      return target;
+    }
+    var interleave = function(strings, interpolations) {
+      var result = [strings[0]];
+      for (var i = 0, len = interpolations.length; i < len; i += 1) {
+        result.push(interpolations[i], strings[i + 1]);
+      }
+      return result;
+    };
+    var isPlainObject = function(x) {
+      return x !== null && typeof x === "object" && (x.toString ? x.toString() : Object.prototype.toString.call(x)) === "[object Object]" && !reactIs.typeOf(x);
+    };
+    var EMPTY_ARRAY = Object.freeze([]);
+    var EMPTY_OBJECT = Object.freeze({});
+    function isFunction(test) {
+      return typeof test === "function";
+    }
+    function getComponentName(target) {
+      return typeof target === "string" && target || target.displayName || target.name || "Component";
+    }
+    function isStatelessFunction(test) {
+      return typeof test === "function" && !(test.prototype && test.prototype.isReactComponent);
+    }
+    function isStyledComponent(target) {
+      return target && typeof target.styledComponentId === "string";
+    }
+    var SC_ATTR = typeof process !== "undefined" && (process.env.REACT_APP_SC_ATTR || process.env.SC_ATTR) || "data-styled";
+    var SC_ATTR_ACTIVE = "active";
+    var SC_ATTR_VERSION = "data-styled-version";
+    var SC_VERSION = "5.1.1";
+    var SPLITTER = "/*!sc*/\n";
+    var IS_BROWSER = typeof window !== "undefined" && "HTMLElement" in window;
+    var DISABLE_SPEEDY = typeof SC_DISABLE_SPEEDY === "boolean" && SC_DISABLE_SPEEDY || typeof process !== "undefined" && (process.env.REACT_APP_SC_DISABLE_SPEEDY || process.env.SC_DISABLE_SPEEDY) || true;
+    var STATIC_EXECUTION_CONTEXT = {};
+    var getNonce = function getNonce2() {
+      return typeof __webpack_nonce__ !== "undefined" ? __webpack_nonce__ : null;
+    };
+    var errorMap = {
+      "1": "Cannot create styled-component for component: %s.\n\n",
+      "2": "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
+      "3": "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
+      "4": "The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",
+      "5": "The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",
+      "6": "Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",
+      "7": 'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',
+      "8": 'ThemeProvider: Please make your "theme" prop an object.\n\n',
+      "9": "Missing document `<head>`\n\n",
+      "10": "Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",
+      "11": "_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",
+      "12": "It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",
+      "13": "%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",
+      "14": 'ThemeProvider: "theme" prop is required.\n\n',
+      "15": "A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",
+      "16": "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
+      "17": "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"
+    };
+    var ERRORS = errorMap;
+    function format() {
+      var a = arguments.length <= 0 ? void 0 : arguments[0];
+      var b = [];
+      for (var c = 1, len = arguments.length; c < len; c += 1) {
+        b.push(c < 0 || arguments.length <= c ? void 0 : arguments[c]);
+      }
+      b.forEach(function(d) {
+        a = a.replace(/%[a-z]/, d);
+      });
+      return a;
+    }
+    function throwStyledComponentsError(code) {
+      for (var _len = arguments.length, interpolations = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        interpolations[_key - 1] = arguments[_key];
+      }
+      if (false) {
+        throw new Error("An error occurred. See https://github.com/styled-components/styled-components/blob/master/packages/styled-components/src/utils/errors.md#" + code + " for more information." + (interpolations.length > 0 ? " Additional arguments: " + interpolations.join(", ") : ""));
+      } else {
+        throw new Error(format.apply(void 0, [ERRORS[code]].concat(interpolations)).trim());
+      }
+    }
+    var ELEMENT_TYPE = 1;
+    var findLastStyleTag = function findLastStyleTag2(target) {
+      var childNodes = target.childNodes;
+      for (var i = childNodes.length; i >= 0; i--) {
+        var child = childNodes[i];
+        if (child && child.nodeType === ELEMENT_TYPE && child.hasAttribute(SC_ATTR)) {
+          return child;
+        }
+      }
+      return void 0;
+    };
+    var makeStyleTag = function makeStyleTag2(target) {
+      var head = document.head;
+      var parent = target || head;
+      var style = document.createElement("style");
+      var prevStyle = findLastStyleTag(parent);
+      var nextSibling = prevStyle !== void 0 ? prevStyle.nextSibling : null;
+      style.setAttribute(SC_ATTR, SC_ATTR_ACTIVE);
+      style.setAttribute(SC_ATTR_VERSION, SC_VERSION);
+      var nonce = getNonce();
+      if (nonce)
+        style.setAttribute("nonce", nonce);
+      parent.insertBefore(style, nextSibling);
+      return style;
+    };
+    var getSheet = function getSheet2(tag) {
+      if (tag.sheet) {
+        return tag.sheet;
+      }
+      var _document = document, styleSheets = _document.styleSheets;
+      for (var i = 0, l = styleSheets.length; i < l; i++) {
+        var sheet = styleSheets[i];
+        if (sheet.ownerNode === tag) {
+          return sheet;
+        }
+      }
+      throwStyledComponentsError(17);
+      return void 0;
+    };
+    var makeTag = function makeTag2(_ref) {
+      var isServer = _ref.isServer, useCSSOMInjection = _ref.useCSSOMInjection, target = _ref.target;
+      if (isServer) {
+        return new VirtualTag(target);
+      } else if (useCSSOMInjection) {
+        return new CSSOMTag(target);
+      } else {
+        return new TextTag(target);
+      }
+    };
+    var CSSOMTag = function() {
+      function CSSOMTag2(target) {
+        var element = this.element = makeStyleTag(target);
+        element.appendChild(document.createTextNode(""));
+        this.sheet = getSheet(element);
+        this.length = 0;
+      }
+      var _proto = CSSOMTag2.prototype;
+      _proto.insertRule = function insertRule(index, rule) {
+        try {
+          this.sheet.insertRule(rule, index);
+          this.length++;
+          return true;
+        } catch (_error) {
+          return false;
+        }
+      };
+      _proto.deleteRule = function deleteRule(index) {
+        this.sheet.deleteRule(index);
+        this.length--;
+      };
+      _proto.getRule = function getRule(index) {
+        var rule = this.sheet.cssRules[index];
+        if (rule !== void 0 && typeof rule.cssText === "string") {
+          return rule.cssText;
+        } else {
+          return "";
+        }
+      };
+      return CSSOMTag2;
+    }();
+    var TextTag = function() {
+      function TextTag2(target) {
+        var element = this.element = makeStyleTag(target);
+        this.nodes = element.childNodes;
+        this.length = 0;
+      }
+      var _proto2 = TextTag2.prototype;
+      _proto2.insertRule = function insertRule(index, rule) {
+        if (index <= this.length && index >= 0) {
+          var node = document.createTextNode(rule);
+          var refNode = this.nodes[index];
+          this.element.insertBefore(node, refNode || null);
+          this.length++;
+          return true;
+        } else {
+          return false;
+        }
+      };
+      _proto2.deleteRule = function deleteRule(index) {
+        this.element.removeChild(this.nodes[index]);
+        this.length--;
+      };
+      _proto2.getRule = function getRule(index) {
+        if (index < this.length) {
+          return this.nodes[index].textContent;
+        } else {
+          return "";
+        }
+      };
+      return TextTag2;
+    }();
+    var VirtualTag = function() {
+      function VirtualTag2(_target) {
+        this.rules = [];
+        this.length = 0;
+      }
+      var _proto3 = VirtualTag2.prototype;
+      _proto3.insertRule = function insertRule(index, rule) {
+        if (index <= this.length) {
+          this.rules.splice(index, 0, rule);
+          this.length++;
+          return true;
+        } else {
+          return false;
+        }
+      };
+      _proto3.deleteRule = function deleteRule(index) {
+        this.rules.splice(index, 1);
+        this.length--;
+      };
+      _proto3.getRule = function getRule(index) {
+        if (index < this.length) {
+          return this.rules[index];
+        } else {
+          return "";
+        }
+      };
+      return VirtualTag2;
+    }();
+    var makeGroupedTag = function makeGroupedTag2(tag) {
+      return new DefaultGroupedTag(tag);
+    };
+    var BASE_SIZE = 1 << 9;
+    var DefaultGroupedTag = function() {
+      function DefaultGroupedTag2(tag) {
+        this.groupSizes = new Uint32Array(BASE_SIZE);
+        this.length = BASE_SIZE;
+        this.tag = tag;
+      }
+      var _proto = DefaultGroupedTag2.prototype;
+      _proto.indexOfGroup = function indexOfGroup(group) {
+        var index = 0;
+        for (var i = 0; i < group; i++) {
+          index += this.groupSizes[i];
+        }
+        return index;
+      };
+      _proto.insertRules = function insertRules(group, rules) {
+        if (group >= this.groupSizes.length) {
+          var oldBuffer = this.groupSizes;
+          var oldSize = oldBuffer.length;
+          var newSize = oldSize;
+          while (group >= newSize) {
+            newSize <<= 1;
+            if (newSize < 0) {
+              throwStyledComponentsError(16, "" + group);
+            }
+          }
+          this.groupSizes = new Uint32Array(newSize);
+          this.groupSizes.set(oldBuffer);
+          this.length = newSize;
+          for (var i = oldSize; i < newSize; i++) {
+            this.groupSizes[i] = 0;
+          }
+        }
+        var ruleIndex = this.indexOfGroup(group + 1);
+        for (var _i = 0, l = rules.length; _i < l; _i++) {
+          if (this.tag.insertRule(ruleIndex, rules[_i])) {
+            this.groupSizes[group]++;
+            ruleIndex++;
+          }
+        }
+      };
+      _proto.clearGroup = function clearGroup(group) {
+        if (group < this.length) {
+          var length = this.groupSizes[group];
+          var startIndex = this.indexOfGroup(group);
+          var endIndex = startIndex + length;
+          this.groupSizes[group] = 0;
+          for (var i = startIndex; i < endIndex; i++) {
+            this.tag.deleteRule(startIndex);
+          }
+        }
+      };
+      _proto.getGroup = function getGroup(group) {
+        var css2 = "";
+        if (group >= this.length || this.groupSizes[group] === 0) {
+          return css2;
+        }
+        var length = this.groupSizes[group];
+        var startIndex = this.indexOfGroup(group);
+        var endIndex = startIndex + length;
+        for (var i = startIndex; i < endIndex; i++) {
+          css2 += "" + this.tag.getRule(i) + SPLITTER;
+        }
+        return css2;
+      };
+      return DefaultGroupedTag2;
+    }();
+    var MAX_SMI = 1 << 31 - 1;
+    var groupIDRegister = new Map();
+    var reverseRegister = new Map();
+    var nextFreeGroup = 1;
+    var getGroupForId = function getGroupForId2(id) {
+      if (groupIDRegister.has(id)) {
+        return groupIDRegister.get(id);
+      }
+      var group = nextFreeGroup++;
+      if ((group | 0) < 0 || group > MAX_SMI) {
+        throwStyledComponentsError(16, "" + group);
+      }
+      groupIDRegister.set(id, group);
+      reverseRegister.set(group, id);
+      return group;
+    };
+    var getIdForGroup = function getIdForGroup2(group) {
+      return reverseRegister.get(group);
+    };
+    var setGroupForId = function setGroupForId2(id, group) {
+      if (group >= nextFreeGroup) {
+        nextFreeGroup = group + 1;
+      }
+      groupIDRegister.set(id, group);
+      reverseRegister.set(group, id);
+    };
+    var SELECTOR = "style[" + SC_ATTR + "][" + SC_ATTR_VERSION + '="' + SC_VERSION + '"]';
+    var MARKER_RE = new RegExp("^" + SC_ATTR + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)');
+    var outputSheet = function outputSheet2(sheet) {
+      var tag = sheet.getTag();
+      var length = tag.length;
+      var css2 = "";
+      for (var group = 0; group < length; group++) {
+        var id = getIdForGroup(group);
+        if (id === void 0)
+          continue;
+        var names = sheet.names.get(id);
+        var rules = tag.getGroup(group);
+        if (names === void 0 || rules.length === 0)
+          continue;
+        var selector = SC_ATTR + ".g" + group + '[id="' + id + '"]';
+        var content = "";
+        if (names !== void 0) {
+          names.forEach(function(name) {
+            if (name.length > 0) {
+              content += name + ",";
+            }
+          });
+        }
+        css2 += "" + rules + selector + '{content:"' + content + '"}' + SPLITTER;
+      }
+      return css2;
+    };
+    var rehydrateNamesFromContent = function rehydrateNamesFromContent2(sheet, id, content) {
+      var names = content.split(",");
+      var name;
+      for (var i = 0, l = names.length; i < l; i++) {
+        if (name = names[i]) {
+          sheet.registerName(id, name);
+        }
+      }
+    };
+    var rehydrateSheetFromTag = function rehydrateSheetFromTag2(sheet, style) {
+      var parts = style.innerHTML.split(SPLITTER);
+      var rules = [];
+      for (var i = 0, l = parts.length; i < l; i++) {
+        var part = parts[i].trim();
+        if (!part)
+          continue;
+        var marker = part.match(MARKER_RE);
+        if (marker) {
+          var group = parseInt(marker[1], 10) | 0;
+          var id = marker[2];
+          if (group !== 0) {
+            setGroupForId(id, group);
+            rehydrateNamesFromContent(sheet, id, marker[3]);
+            sheet.getTag().insertRules(group, rules);
+          }
+          rules.length = 0;
+        } else {
+          rules.push(part);
+        }
+      }
+    };
+    var rehydrateSheet = function rehydrateSheet2(sheet) {
+      var nodes = document.querySelectorAll(SELECTOR);
+      for (var i = 0, l = nodes.length; i < l; i++) {
+        var node = nodes[i];
+        if (node && node.getAttribute(SC_ATTR) !== SC_ATTR_ACTIVE) {
+          rehydrateSheetFromTag(sheet, node);
+          if (node.parentNode) {
+            node.parentNode.removeChild(node);
+          }
+        }
+      }
+    };
+    var SHOULD_REHYDRATE = IS_BROWSER;
+    var defaultOptions = {
+      isServer: !IS_BROWSER,
+      useCSSOMInjection: !DISABLE_SPEEDY
+    };
+    var StyleSheet = function() {
+      StyleSheet2.registerId = function registerId(id) {
+        return getGroupForId(id);
+      };
+      function StyleSheet2(options, globalStyles, names) {
+        if (options === void 0) {
+          options = defaultOptions;
+        }
+        if (globalStyles === void 0) {
+          globalStyles = {};
+        }
+        this.options = _extends({}, defaultOptions, {}, options);
+        this.gs = globalStyles;
+        this.names = new Map(names);
+        if (!this.options.isServer && IS_BROWSER && SHOULD_REHYDRATE) {
+          SHOULD_REHYDRATE = false;
+          rehydrateSheet(this);
+        }
+      }
+      var _proto = StyleSheet2.prototype;
+      _proto.reconstructWithOptions = function reconstructWithOptions(options) {
+        return new StyleSheet2(_extends({}, this.options, {}, options), this.gs, this.names);
+      };
+      _proto.allocateGSInstance = function allocateGSInstance(id) {
+        return this.gs[id] = (this.gs[id] || 0) + 1;
+      };
+      _proto.getTag = function getTag() {
+        return this.tag || (this.tag = makeGroupedTag(makeTag(this.options)));
+      };
+      _proto.hasNameForId = function hasNameForId(id, name) {
+        return this.names.has(id) && this.names.get(id).has(name);
+      };
+      _proto.registerName = function registerName(id, name) {
+        getGroupForId(id);
+        if (!this.names.has(id)) {
+          var groupNames = new Set();
+          groupNames.add(name);
+          this.names.set(id, groupNames);
+        } else {
+          this.names.get(id).add(name);
+        }
+      };
+      _proto.insertRules = function insertRules(id, name, rules) {
+        this.registerName(id, name);
+        this.getTag().insertRules(getGroupForId(id), rules);
+      };
+      _proto.clearNames = function clearNames(id) {
+        if (this.names.has(id)) {
+          this.names.get(id).clear();
+        }
+      };
+      _proto.clearRules = function clearRules(id) {
+        this.getTag().clearGroup(getGroupForId(id));
+        this.clearNames(id);
+      };
+      _proto.clearTag = function clearTag() {
+        this.tag = void 0;
+      };
+      _proto.toString = function toString() {
+        return outputSheet(this);
+      };
+      return StyleSheet2;
+    }();
+    var SEED = 5381;
+    var phash = function phash2(h, x) {
+      var i = x.length;
+      while (i) {
+        h = h * 33 ^ x.charCodeAt(--i);
+      }
+      return h;
+    };
+    var hash = function hash2(x) {
+      return phash(SEED, x);
+    };
+    function insertRulePlugin(insertRule) {
+      var delimiter = "/*|*/";
+      var needle = delimiter + "}";
+      function toSheet(block) {
+        if (block) {
+          try {
+            insertRule(block + "}");
+          } catch (e) {
+          }
+        }
+      }
+      return function ruleSheet(context, content, selectors, parents, line, column, length, ns, depth, at) {
+        switch (context) {
+          case 1:
+            if (depth === 0 && content.charCodeAt(0) === 64)
+              return insertRule(content + ";"), "";
+            break;
+          case 2:
+            if (ns === 0)
+              return content + delimiter;
+            break;
+          case 3:
+            switch (ns) {
+              case 102:
+              case 112:
+                return insertRule(selectors[0] + content), "";
+              default:
+                return content + (at === 0 ? delimiter : "");
+            }
+          case -2:
+            content.split(needle).forEach(toSheet);
+        }
+      };
+    }
+    var COMMENT_REGEX = /^\s*\/\/.*$/gm;
+    function createStylisInstance(_temp) {
+      var _ref = _temp === void 0 ? EMPTY_OBJECT : _temp, _ref$options = _ref.options, options = _ref$options === void 0 ? EMPTY_OBJECT : _ref$options, _ref$plugins = _ref.plugins, plugins = _ref$plugins === void 0 ? EMPTY_ARRAY : _ref$plugins;
+      var stylis = new Stylis(options);
+      var parsingRules = [];
+      var returnRulesPlugin = function returnRulesPlugin2(context) {
+        if (context === -2) {
+          var parsedRules = parsingRules;
+          parsingRules = [];
+          return parsedRules;
+        }
+      };
+      var parseRulesPlugin = insertRulePlugin(function(rule) {
+        parsingRules.push(rule);
+      });
+      var _componentId;
+      var _selector;
+      var _selectorRegexp;
+      var selfReferenceReplacer = function selfReferenceReplacer2(match, offset, string) {
+        if (offset > 0 && string.slice(0, offset).indexOf(_selector) !== -1 && string.slice(offset - _selector.length, offset) !== _selector) {
+          return "." + _componentId;
+        }
+        return match;
+      };
+      var selfReferenceReplacementPlugin = function selfReferenceReplacementPlugin2(context, _, selectors) {
+        if (context === 2 && selectors.length && selectors[0].lastIndexOf(_selector) > 0) {
+          selectors[0] = selectors[0].replace(_selectorRegexp, selfReferenceReplacer);
+        }
+      };
+      stylis.use([].concat(plugins, [selfReferenceReplacementPlugin, parseRulesPlugin, returnRulesPlugin]));
+      function stringifyRules(css2, selector, prefix, componentId) {
+        if (componentId === void 0) {
+          componentId = "&";
+        }
+        var flatCSS = css2.replace(COMMENT_REGEX, "");
+        var cssStr = selector && prefix ? prefix + " " + selector + " { " + flatCSS + " }" : flatCSS;
+        _componentId = componentId;
+        _selector = selector;
+        _selectorRegexp = new RegExp("\\" + _selector + "\\b", "g");
+        return stylis(prefix || !selector ? "" : selector, cssStr);
+      }
+      stringifyRules.hash = plugins.length ? plugins.reduce(function(acc, plugin) {
+        if (!plugin.name) {
+          throwStyledComponentsError(15);
+        }
+        return phash(acc, plugin.name);
+      }, SEED).toString() : "";
+      return stringifyRules;
+    }
+    var StyleSheetContext = React__default.createContext();
+    var StyleSheetConsumer = StyleSheetContext.Consumer;
+    var StylisContext = React__default.createContext();
+    var StylisConsumer = StylisContext.Consumer;
+    var masterSheet = new StyleSheet();
+    var masterStylis = createStylisInstance();
+    function useStyleSheet() {
+      return React.useContext(StyleSheetContext) || masterSheet;
+    }
+    function useStylis() {
+      return React.useContext(StylisContext) || masterStylis;
+    }
+    function StyleSheetManager(props) {
+      var _useState = React.useState(props.stylisPlugins), plugins = _useState[0], setPlugins = _useState[1];
+      var contextStyleSheet = useStyleSheet();
+      var styleSheet = React.useMemo(function() {
+        var sheet = contextStyleSheet;
+        if (props.sheet) {
+          sheet = props.sheet;
+        } else if (props.target) {
+          sheet = sheet.reconstructWithOptions({
+            target: props.target
+          });
+        }
+        if (props.disableCSSOMInjection) {
+          sheet = sheet.reconstructWithOptions({
+            useCSSOMInjection: false
+          });
+        }
+        return sheet;
+      }, [props.disableCSSOMInjection, props.sheet, props.target]);
+      var stylis = React.useMemo(function() {
+        return createStylisInstance({
+          options: {
+            prefix: !props.disableVendorPrefixes
+          },
+          plugins
+        });
+      }, [props.disableVendorPrefixes, plugins]);
+      React.useEffect(function() {
+        if (!shallowequal(plugins, props.stylisPlugins))
+          setPlugins(props.stylisPlugins);
+      }, [props.stylisPlugins]);
+      return React__default.createElement(StyleSheetContext.Provider, {
+        value: styleSheet
+      }, React__default.createElement(StylisContext.Provider, {
+        value: stylis
+      }, React__default.Children.only(props.children)));
+    }
+    var Keyframes = function() {
+      function Keyframes2(name, stringifyArgs) {
+        var _this = this;
+        this.inject = function(styleSheet) {
+          if (!styleSheet.hasNameForId(_this.id, _this.name)) {
+            styleSheet.insertRules(_this.id, _this.name, masterStylis.apply(void 0, _this.stringifyArgs));
+          }
+        };
+        this.toString = function() {
+          return throwStyledComponentsError(12, String(_this.name));
+        };
+        this.name = name;
+        this.id = "sc-keyframes-" + name;
+        this.stringifyArgs = stringifyArgs;
+      }
+      var _proto = Keyframes2.prototype;
+      _proto.getName = function getName() {
+        return this.name;
+      };
+      return Keyframes2;
+    }();
+    var uppercasePattern = /([A-Z])/g;
+    var msPattern = /^ms-/;
+    function hyphenateStyleName(string) {
+      return string.replace(uppercasePattern, "-$1").toLowerCase().replace(msPattern, "-ms-");
+    }
+    function addUnitIfNeeded(name, value) {
+      if (value == null || typeof value === "boolean" || value === "") {
+        return "";
+      }
+      if (typeof value === "number" && value !== 0 && !(name in unitless)) {
+        return value + "px";
+      }
+      return String(value).trim();
+    }
+    var isFalsish = function isFalsish2(chunk) {
+      return chunk === void 0 || chunk === null || chunk === false || chunk === "";
+    };
+    var objToCssArray = function objToCssArray2(obj, prevKey) {
+      var rules = [];
+      var keys = Object.keys(obj);
+      keys.forEach(function(key) {
+        if (!isFalsish(obj[key])) {
+          if (isPlainObject(obj[key])) {
+            rules.push.apply(rules, objToCssArray2(obj[key], key));
+            return rules;
+          } else if (isFunction(obj[key])) {
+            rules.push(hyphenateStyleName(key) + ":", obj[key], ";");
+            return rules;
+          }
+          rules.push(hyphenateStyleName(key) + ": " + addUnitIfNeeded(key, obj[key]) + ";");
+        }
+        return rules;
+      });
+      return prevKey ? [prevKey + " {"].concat(rules, ["}"]) : rules;
+    };
+    function flatten(chunk, executionContext, styleSheet) {
+      if (Array.isArray(chunk)) {
+        var ruleSet = [];
+        for (var i = 0, len = chunk.length, result; i < len; i += 1) {
+          result = flatten(chunk[i], executionContext, styleSheet);
+          if (result === "")
+            continue;
+          else if (Array.isArray(result))
+            ruleSet.push.apply(ruleSet, result);
+          else
+            ruleSet.push(result);
+        }
+        return ruleSet;
+      }
+      if (isFalsish(chunk)) {
+        return "";
+      }
+      if (isStyledComponent(chunk)) {
+        return "." + chunk.styledComponentId;
+      }
+      if (isFunction(chunk)) {
+        if (isStatelessFunction(chunk) && executionContext) {
+          var _result = chunk(executionContext);
+          if (reactIs.isElement(_result)) {
+            console.warn(getComponentName(chunk) + " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.");
+          }
+          return flatten(_result, executionContext, styleSheet);
+        } else
+          return chunk;
+      }
+      if (chunk instanceof Keyframes) {
+        if (styleSheet) {
+          chunk.inject(styleSheet);
+          return chunk.getName();
+        } else
+          return chunk;
+      }
+      return isPlainObject(chunk) ? objToCssArray(chunk) : chunk.toString();
+    }
+    function css(styles) {
+      for (var _len = arguments.length, interpolations = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        interpolations[_key - 1] = arguments[_key];
+      }
+      if (isFunction(styles) || isPlainObject(styles)) {
+        return flatten(interleave(EMPTY_ARRAY, [styles].concat(interpolations)));
+      }
+      if (interpolations.length === 0 && styles.length === 1 && typeof styles[0] === "string") {
+        return styles;
+      }
+      return flatten(interleave(styles, interpolations));
+    }
+    function constructWithOptions(componentConstructor, tag, options) {
+      if (options === void 0) {
+        options = EMPTY_OBJECT;
+      }
+      if (!reactIs.isValidElementType(tag)) {
+        return throwStyledComponentsError(1, String(tag));
+      }
+      var templateFunction = function templateFunction2() {
+        return componentConstructor(tag, options, css.apply(void 0, arguments));
+      };
+      templateFunction.withConfig = function(config) {
+        return constructWithOptions(componentConstructor, tag, _extends({}, options, {}, config));
+      };
+      templateFunction.attrs = function(attrs) {
+        return constructWithOptions(componentConstructor, tag, _extends({}, options, {
+          attrs: Array.prototype.concat(options.attrs, attrs).filter(Boolean)
+        }));
+      };
+      return templateFunction;
+    }
+    var isObject = function isObject2(val) {
+      return typeof val === "function" || typeof val === "object" && val !== null && !Array.isArray(val);
+    };
+    var isValidKey = function isValidKey2(key) {
+      return key !== "__proto__" && key !== "constructor" && key !== "prototype";
+    };
+    function mixin(target, val, key) {
+      var obj = target[key];
+      if (isObject(val) && isObject(obj)) {
+        mixinDeep(obj, val);
+      } else {
+        target[key] = val;
+      }
+    }
+    function mixinDeep(target) {
+      for (var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        rest[_key - 1] = arguments[_key];
+      }
+      for (var _i = 0, _rest = rest; _i < _rest.length; _i++) {
+        var obj = _rest[_i];
+        if (isObject(obj)) {
+          for (var key in obj) {
+            if (isValidKey(key)) {
+              mixin(target, obj[key], key);
+            }
+          }
+        }
+      }
+      return target;
+    }
+    var AD_REPLACER_R = /(a)(d)/gi;
+    var charsLength = 52;
+    var getAlphabeticChar = function getAlphabeticChar2(code) {
+      return String.fromCharCode(code + (code > 25 ? 39 : 97));
+    };
+    function generateAlphabeticName(code) {
+      var name = "";
+      var x;
+      for (x = Math.abs(code); x > charsLength; x = x / charsLength | 0) {
+        name = getAlphabeticChar(x % charsLength) + name;
+      }
+      return (getAlphabeticChar(x % charsLength) + name).replace(AD_REPLACER_R, "$1-$2");
+    }
+    function isStaticRules(rules) {
+      for (var i = 0; i < rules.length; i += 1) {
+        var rule = rules[i];
+        if (isFunction(rule) && !isStyledComponent(rule)) {
+          return false;
+        }
+      }
+      return true;
+    }
+    var ComponentStyle = function() {
+      function ComponentStyle2(rules, componentId) {
+        this.rules = rules;
+        this.staticRulesId = "";
+        this.isStatic = false;
+        this.componentId = componentId;
+        this.baseHash = hash(componentId);
+        StyleSheet.registerId(componentId);
+      }
+      var _proto = ComponentStyle2.prototype;
+      _proto.generateAndInjectStyles = function generateAndInjectStyles(executionContext, styleSheet, stylis) {
+        var componentId = this.componentId;
+        if (this.isStatic && !stylis.hash) {
+          if (this.staticRulesId && styleSheet.hasNameForId(componentId, this.staticRulesId)) {
+            return this.staticRulesId;
+          }
+          var cssStatic = flatten(this.rules, executionContext, styleSheet).join("");
+          var name = generateAlphabeticName(phash(this.baseHash, cssStatic.length) >>> 0);
+          if (!styleSheet.hasNameForId(componentId, name)) {
+            var cssStaticFormatted = stylis(cssStatic, "." + name, void 0, componentId);
+            styleSheet.insertRules(componentId, name, cssStaticFormatted);
+          }
+          this.staticRulesId = name;
+          return name;
+        } else {
+          var length = this.rules.length;
+          var dynamicHash = phash(this.baseHash, stylis.hash);
+          var css2 = "";
+          for (var i = 0; i < length; i++) {
+            var partRule = this.rules[i];
+            if (typeof partRule === "string") {
+              css2 += partRule;
+              if (true)
+                dynamicHash = phash(dynamicHash, partRule + i);
+            } else {
+              var partChunk = flatten(partRule, executionContext, styleSheet);
+              var partString = Array.isArray(partChunk) ? partChunk.join("") : partChunk;
+              dynamicHash = phash(dynamicHash, partString + i);
+              css2 += partString;
+            }
+          }
+          var _name = generateAlphabeticName(dynamicHash >>> 0);
+          if (!styleSheet.hasNameForId(componentId, _name)) {
+            var cssFormatted = stylis(css2, "." + _name, void 0, componentId);
+            styleSheet.insertRules(componentId, _name, cssFormatted);
+          }
+          return _name;
+        }
+      };
+      return ComponentStyle2;
+    }();
+    var LIMIT = 200;
+    var createWarnTooManyClasses = function(displayName, componentId) {
+      var generatedClasses = {};
+      var warningSeen = false;
+      return function(className) {
+        if (!warningSeen) {
+          generatedClasses[className] = true;
+          if (Object.keys(generatedClasses).length >= LIMIT) {
+            var parsedIdString = componentId ? ' with the id of "' + componentId + '"' : "";
+            console.warn("Over " + LIMIT + " classes were generated for component " + displayName + parsedIdString + ".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />");
+            warningSeen = true;
+            generatedClasses = {};
+          }
+        }
+      };
+    };
+    var invalidHookCallRe = /invalid hook call/i;
+    var seen = new Set();
+    var checkDynamicCreation = function checkDynamicCreation2(displayName, componentId) {
+      if (true) {
+        var parsedIdString = componentId ? ' with the id of "' + componentId + '"' : "";
+        var message = "The component " + displayName + parsedIdString + " has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.";
+        try {
+          React.useRef();
+          if (!seen.has(message)) {
+            console.warn(message);
+            seen.add(message);
+          }
+        } catch (error) {
+          if (invalidHookCallRe.test(error.message)) {
+            seen["delete"](message);
+          }
+        }
+      }
+    };
+    var determineTheme = function(props, providedTheme, defaultProps) {
+      if (defaultProps === void 0) {
+        defaultProps = EMPTY_OBJECT;
+      }
+      return props.theme !== defaultProps.theme && props.theme || providedTheme || defaultProps.theme;
+    };
+    var escapeRegex = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g;
+    var dashesAtEnds = /(^-|-$)/g;
+    function escape(str) {
+      return str.replace(escapeRegex, "-").replace(dashesAtEnds, "");
+    }
+    function isTag(target) {
+      return typeof target === "string" && target.charAt(0) === target.charAt(0).toLowerCase();
+    }
+    function generateDisplayName(target) {
+      return isTag(target) ? "styled." + target : "Styled(" + getComponentName(target) + ")";
+    }
+    var generateComponentId = function(str) {
+      return generateAlphabeticName(hash(str) >>> 0);
+    };
+    function joinStrings(a, b) {
+      return a && b ? a + " " + b : a || b;
+    }
+    var ThemeContext = React__default.createContext();
+    var ThemeConsumer = ThemeContext.Consumer;
+    function mergeTheme(theme, outerTheme) {
+      if (!theme) {
+        return throwStyledComponentsError(14);
+      }
+      if (isFunction(theme)) {
+        var mergedTheme = theme(outerTheme);
+        if (mergedTheme === null || Array.isArray(mergedTheme) || typeof mergedTheme !== "object") {
+          return throwStyledComponentsError(7);
+        }
+        return mergedTheme;
+      }
+      if (Array.isArray(theme) || typeof theme !== "object") {
+        return throwStyledComponentsError(8);
+      }
+      return outerTheme ? _extends({}, outerTheme, {}, theme) : theme;
+    }
+    function ThemeProvider(props) {
+      var outerTheme = React.useContext(ThemeContext);
+      var themeContext = React.useMemo(function() {
+        return mergeTheme(props.theme, outerTheme);
+      }, [props.theme, outerTheme]);
+      if (!props.children) {
+        return null;
+      }
+      return React__default.createElement(ThemeContext.Provider, {
+        value: themeContext
+      }, props.children);
+    }
+    var identifiers = {};
+    function generateId(displayName, parentComponentId) {
+      var name = typeof displayName !== "string" ? "sc" : escape(displayName);
+      identifiers[name] = (identifiers[name] || 0) + 1;
+      var componentId = name + "-" + generateComponentId(name + identifiers[name]);
+      return parentComponentId ? parentComponentId + "-" + componentId : componentId;
+    }
+    function useResolvedAttrs(theme, props, attrs) {
+      if (theme === void 0) {
+        theme = EMPTY_OBJECT;
+      }
+      var context = _extends({}, props, {
+        theme
+      });
+      var resolvedAttrs = {};
+      attrs.forEach(function(attrDef) {
+        var resolvedAttrDef = attrDef;
+        var key;
+        if (isFunction(resolvedAttrDef)) {
+          resolvedAttrDef = resolvedAttrDef(context);
+        }
+        for (key in resolvedAttrDef) {
+          context[key] = resolvedAttrs[key] = key === "className" ? joinStrings(resolvedAttrs[key], resolvedAttrDef[key]) : resolvedAttrDef[key];
+        }
+      });
+      return [context, resolvedAttrs];
+    }
+    function useInjectedStyle(componentStyle, hasAttrs, resolvedAttrs, warnTooManyClasses) {
+      var styleSheet = useStyleSheet();
+      var stylis = useStylis();
+      var isStatic = componentStyle.isStatic && !hasAttrs;
+      var className = isStatic ? componentStyle.generateAndInjectStyles(EMPTY_OBJECT, styleSheet, stylis) : componentStyle.generateAndInjectStyles(resolvedAttrs, styleSheet, stylis);
+      React.useDebugValue(className);
+      if (!isStatic && warnTooManyClasses) {
+        warnTooManyClasses(className);
+      }
+      return className;
+    }
+    function useStyledComponentImpl(forwardedComponent, props, forwardedRef) {
+      var componentAttrs = forwardedComponent.attrs, componentStyle = forwardedComponent.componentStyle, defaultProps = forwardedComponent.defaultProps, foldedComponentIds = forwardedComponent.foldedComponentIds, shouldForwardProp = forwardedComponent.shouldForwardProp, styledComponentId = forwardedComponent.styledComponentId, target = forwardedComponent.target;
+      React.useDebugValue(styledComponentId);
+      var theme = determineTheme(props, React.useContext(ThemeContext), defaultProps);
+      var _useResolvedAttrs = useResolvedAttrs(theme || EMPTY_OBJECT, props, componentAttrs), context = _useResolvedAttrs[0], attrs = _useResolvedAttrs[1];
+      var generatedClassName = useInjectedStyle(componentStyle, componentAttrs.length > 0, context, forwardedComponent.warnTooManyClasses);
+      var refToForward = forwardedRef;
+      var elementToBeCreated = attrs.$as || props.$as || attrs.as || props.as || target;
+      var isTargetTag = isTag(elementToBeCreated);
+      var computedProps = attrs !== props ? _extends({}, props, {}, attrs) : props;
+      var propFilterFn = shouldForwardProp || isTargetTag && validAttr;
+      var propsForElement = {};
+      for (var key in computedProps) {
+        if (key[0] === "$" || key === "as")
+          continue;
+        else if (key === "forwardedAs") {
+          propsForElement.as = computedProps[key];
+        } else if (!propFilterFn || propFilterFn(key, validAttr)) {
+          propsForElement[key] = computedProps[key];
+        }
+      }
+      if (props.style && attrs.style !== props.style) {
+        propsForElement.style = _extends({}, props.style, {}, attrs.style);
+      }
+      propsForElement.className = Array.prototype.concat(foldedComponentIds, styledComponentId, generatedClassName !== styledComponentId ? generatedClassName : null, props.className, attrs.className).filter(Boolean).join(" ");
+      propsForElement.ref = refToForward;
+      return React.createElement(elementToBeCreated, propsForElement);
+    }
+    function createStyledComponent(target, options, rules) {
+      var isTargetStyledComp = isStyledComponent(target);
+      var isCompositeComponent = !isTag(target);
+      var _options$displayName = options.displayName, displayName = _options$displayName === void 0 ? generateDisplayName(target) : _options$displayName, _options$componentId = options.componentId, componentId = _options$componentId === void 0 ? generateId(options.displayName, options.parentComponentId) : _options$componentId, _options$attrs = options.attrs, attrs = _options$attrs === void 0 ? EMPTY_ARRAY : _options$attrs;
+      var styledComponentId = options.displayName && options.componentId ? escape(options.displayName) + "-" + options.componentId : options.componentId || componentId;
+      var finalAttrs = isTargetStyledComp && target.attrs ? Array.prototype.concat(target.attrs, attrs).filter(Boolean) : attrs;
+      var shouldForwardProp = options.shouldForwardProp;
+      if (isTargetStyledComp && target.shouldForwardProp) {
+        if (shouldForwardProp) {
+          shouldForwardProp = function shouldForwardProp2(prop, filterFn) {
+            return target.shouldForwardProp(prop, filterFn) && options.shouldForwardProp(prop, filterFn);
+          };
+        } else {
+          shouldForwardProp = target.shouldForwardProp;
+        }
+      }
+      var componentStyle = new ComponentStyle(isTargetStyledComp ? target.componentStyle.rules.concat(rules) : rules, styledComponentId);
+      var WrappedStyledComponent;
+      var forwardRef = function forwardRef2(props, ref) {
+        return useStyledComponentImpl(WrappedStyledComponent, props, ref);
+      };
+      forwardRef.displayName = displayName;
+      WrappedStyledComponent = React__default.forwardRef(forwardRef);
+      WrappedStyledComponent.attrs = finalAttrs;
+      WrappedStyledComponent.componentStyle = componentStyle;
+      WrappedStyledComponent.displayName = displayName;
+      WrappedStyledComponent.shouldForwardProp = shouldForwardProp;
+      WrappedStyledComponent.foldedComponentIds = isTargetStyledComp ? Array.prototype.concat(target.foldedComponentIds, target.styledComponentId) : EMPTY_ARRAY;
+      WrappedStyledComponent.styledComponentId = styledComponentId;
+      WrappedStyledComponent.target = isTargetStyledComp ? target.target : target;
+      WrappedStyledComponent.withComponent = function withComponent(tag) {
+        var previousComponentId = options.componentId, optionsToCopy = _objectWithoutPropertiesLoose(options, ["componentId"]);
+        var newComponentId = previousComponentId && previousComponentId + "-" + (isTag(tag) ? tag : escape(getComponentName(tag)));
+        var newOptions = _extends({}, optionsToCopy, {
+          attrs: finalAttrs,
+          componentId: newComponentId
+        });
+        return createStyledComponent(tag, newOptions, rules);
+      };
+      Object.defineProperty(WrappedStyledComponent, "defaultProps", {
+        get: function get() {
+          return this._foldedDefaultProps;
+        },
+        set: function set(obj) {
+          this._foldedDefaultProps = isTargetStyledComp ? mixinDeep({}, target.defaultProps, obj) : obj;
+        }
+      });
+      if (true) {
+        checkDynamicCreation(displayName, styledComponentId);
+        WrappedStyledComponent.warnTooManyClasses = createWarnTooManyClasses(displayName, styledComponentId);
+      }
+      WrappedStyledComponent.toString = function() {
+        return "." + WrappedStyledComponent.styledComponentId;
+      };
+      if (isCompositeComponent) {
+        hoist(WrappedStyledComponent, target, {
+          attrs: true,
+          componentStyle: true,
+          displayName: true,
+          foldedComponentIds: true,
+          shouldForwardProp: true,
+          self: true,
+          styledComponentId: true,
+          target: true,
+          withComponent: true
+        });
+      }
+      return WrappedStyledComponent;
+    }
+    var domElements = ["a", "abbr", "address", "area", "article", "aside", "audio", "b", "base", "bdi", "bdo", "big", "blockquote", "body", "br", "button", "canvas", "caption", "cite", "code", "col", "colgroup", "data", "datalist", "dd", "del", "details", "dfn", "dialog", "div", "dl", "dt", "em", "embed", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hgroup", "hr", "html", "i", "iframe", "img", "input", "ins", "kbd", "keygen", "label", "legend", "li", "link", "main", "map", "mark", "marquee", "menu", "menuitem", "meta", "meter", "nav", "noscript", "object", "ol", "optgroup", "option", "output", "p", "param", "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "script", "section", "select", "small", "source", "span", "strong", "style", "sub", "summary", "sup", "table", "tbody", "td", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track", "u", "ul", "var", "video", "wbr", "circle", "clipPath", "defs", "ellipse", "foreignObject", "g", "image", "line", "linearGradient", "marker", "mask", "path", "pattern", "polygon", "polyline", "radialGradient", "rect", "stop", "svg", "text", "tspan"];
+    var styled = function styled2(tag) {
+      return constructWithOptions(createStyledComponent, tag);
+    };
+    domElements.forEach(function(domElement) {
+      styled[domElement] = styled(domElement);
+    });
+    var GlobalStyle = function() {
+      function GlobalStyle2(rules, componentId) {
+        this.rules = rules;
+        this.componentId = componentId;
+        this.isStatic = isStaticRules(rules);
+      }
+      var _proto = GlobalStyle2.prototype;
+      _proto.createStyles = function createStyles(instance, executionContext, styleSheet, stylis) {
+        var flatCSS = flatten(this.rules, executionContext, styleSheet);
+        var css2 = stylis(flatCSS.join(""), "");
+        var id = this.componentId + instance;
+        styleSheet.insertRules(id, id, css2);
+      };
+      _proto.removeStyles = function removeStyles(instance, styleSheet) {
+        styleSheet.clearRules(this.componentId + instance);
+      };
+      _proto.renderStyles = function renderStyles(instance, executionContext, styleSheet, stylis) {
+        StyleSheet.registerId(this.componentId + instance);
+        this.removeStyles(instance, styleSheet);
+        this.createStyles(instance, executionContext, styleSheet, stylis);
+      };
+      return GlobalStyle2;
+    }();
+    function createGlobalStyle(strings) {
+      for (var _len = arguments.length, interpolations = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        interpolations[_key - 1] = arguments[_key];
+      }
+      var rules = css.apply(void 0, [strings].concat(interpolations));
+      var styledComponentId = "sc-global-" + generateComponentId(JSON.stringify(rules));
+      var globalStyle = new GlobalStyle(rules, styledComponentId);
+      if (true) {
+        checkDynamicCreation(styledComponentId);
+      }
+      function GlobalStyleComponent(props) {
+        var styleSheet = useStyleSheet();
+        var stylis = useStylis();
+        var theme = React.useContext(ThemeContext);
+        var instanceRef = React.useRef(null);
+        if (instanceRef.current === null) {
+          instanceRef.current = styleSheet.allocateGSInstance(styledComponentId);
+        }
+        var instance = instanceRef.current;
+        if (React__default.Children.count(props.children)) {
+          console.warn("The global style component " + styledComponentId + " was given child JSX. createGlobalStyle does not render children.");
+        }
+        if (rules.some(function(rule) {
+          return typeof rule === "string" && rule.indexOf("@import") !== -1;
+        })) {
+          console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app.");
+        }
+        if (globalStyle.isStatic) {
+          globalStyle.renderStyles(instance, STATIC_EXECUTION_CONTEXT, styleSheet, stylis);
+        } else {
+          var context = _extends({}, props, {
+            theme: determineTheme(props, theme, GlobalStyleComponent.defaultProps)
+          });
+          globalStyle.renderStyles(instance, context, styleSheet, stylis);
+        }
+        React.useEffect(function() {
+          return function() {
+            return globalStyle.removeStyles(instance, styleSheet);
+          };
+        }, EMPTY_ARRAY);
+        return null;
+      }
+      return React__default.memo(GlobalStyleComponent);
+    }
+    function keyframes(strings) {
+      if (typeof navigator !== "undefined" && navigator.product === "ReactNative") {
+        console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
+      }
+      for (var _len = arguments.length, interpolations = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        interpolations[_key - 1] = arguments[_key];
+      }
+      var rules = css.apply(void 0, [strings].concat(interpolations)).join("");
+      var name = generateComponentId(rules);
+      return new Keyframes(name, [rules, name, "@keyframes"]);
+    }
+    var ServerStyleSheet = function() {
+      function ServerStyleSheet2() {
+        var _this = this;
+        this._emitSheetCSS = function() {
+          var css2 = _this.instance.toString();
+          var nonce = getNonce();
+          var attrs = [nonce && 'nonce="' + nonce + '"', SC_ATTR + '="true"', SC_ATTR_VERSION + '="' + SC_VERSION + '"'];
+          var htmlAttr = attrs.filter(Boolean).join(" ");
+          return "<style " + htmlAttr + ">" + css2 + "</style>";
+        };
+        this.getStyleTags = function() {
+          if (_this.sealed) {
+            return throwStyledComponentsError(2);
+          }
+          return _this._emitSheetCSS();
+        };
+        this.getStyleElement = function() {
+          var _props;
+          if (_this.sealed) {
+            return throwStyledComponentsError(2);
+          }
+          var props = (_props = {}, _props[SC_ATTR] = "", _props[SC_ATTR_VERSION] = SC_VERSION, _props.dangerouslySetInnerHTML = {
+            __html: _this.instance.toString()
+          }, _props);
+          var nonce = getNonce();
+          if (nonce) {
+            props.nonce = nonce;
+          }
+          return [React__default.createElement("style", _extends({}, props, {
+            key: "sc-0-0"
+          }))];
+        };
+        this.seal = function() {
+          _this.sealed = true;
+        };
+        this.instance = new StyleSheet({
+          isServer: true
+        });
+        this.sealed = false;
+      }
+      var _proto = ServerStyleSheet2.prototype;
+      _proto.collectStyles = function collectStyles(children) {
+        if (this.sealed) {
+          return throwStyledComponentsError(2);
+        }
+        return React__default.createElement(StyleSheetManager, {
+          sheet: this.instance
+        }, children);
+      };
+      _proto.interleaveWithNodeStream = function interleaveWithNodeStream(input) {
+        {
+          return throwStyledComponentsError(3);
+        }
+      };
+      return ServerStyleSheet2;
+    }();
+    var withTheme = function(Component) {
+      var WithTheme = React__default.forwardRef(function(props, ref) {
+        var theme = React.useContext(ThemeContext);
+        var defaultProps = Component.defaultProps;
+        var themeProp = determineTheme(props, theme, defaultProps);
+        if (themeProp === void 0) {
+          console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "' + getComponentName(Component) + '"');
+        }
+        return React__default.createElement(Component, _extends({}, props, {
+          theme: themeProp,
+          ref
+        }));
+      });
+      hoist(WithTheme, Component);
+      WithTheme.displayName = "WithTheme(" + getComponentName(Component) + ")";
+      return WithTheme;
+    };
+    var useTheme = function useTheme2() {
+      return React.useContext(ThemeContext);
+    };
+    var __PRIVATE__ = {
+      StyleSheet,
+      masterSheet
+    };
+    var version = "5.1.1";
+    if (typeof navigator !== "undefined" && navigator.product === "ReactNative") {
+      console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");
+    }
+    if (typeof window !== "undefined") {
+      window["__styled-components-init__"] = window["__styled-components-init__"] || 0;
+      if (window["__styled-components-init__"] === 1) {
+        console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles not rendering properly, errors happening during rehydration process, missing theme prop, and makes your application bigger without a good reason.\n\nSee https://s-c.sh/2BAXzed for more info.");
+      }
+      window["__styled-components-init__"] += 1;
+    }
+    exports.ServerStyleSheet = ServerStyleSheet;
+    exports.StyleSheetConsumer = StyleSheetConsumer;
+    exports.StyleSheetContext = StyleSheetContext;
+    exports.StyleSheetManager = StyleSheetManager;
+    exports.ThemeConsumer = ThemeConsumer;
+    exports.ThemeContext = ThemeContext;
+    exports.ThemeProvider = ThemeProvider;
+    exports.__PRIVATE__ = __PRIVATE__;
+    exports.createGlobalStyle = createGlobalStyle;
+    exports.css = css;
+    exports.default = styled;
+    exports.isStyledComponent = isStyledComponent;
+    exports.keyframes = keyframes;
+    exports.useTheme = useTheme;
+    exports.version = version;
+    exports.withTheme = withTheme;
+  },
+
+  79(require) {
+    // src/constants.js
+    const CARD_SIZE = 200;
+    const theme = {
+      padding: 8,
+      background: "white",
+      foreground: "white",
+      textPrimary: "rgba(0,0,0,1)",
+      textSecondary: "rgba(0,0,0,0.6)",
+      border: "rgba(0,0,0,0.25)",
+      header: 0.8,
+      body: 1
+    };
+
+    // src/components/Card.js
+    const React3 = require(68 /* react */, true /* ES6 import */), react_flip_toolkit3 = require(61 /* react-flip-toolkit */, true /* ES6 import */), re_resizable = require(58 /* re-resizable */, true /* ES6 import */), react_rnd = require(64 /* react-rnd */, true /* ES6 import */), styled_components3 = require(78 /* styled-components */, true /* ES6 import */), slate = require(77 /* slate */, true /* ES6 import */), slate_react = require(76 /* slate-react */, true /* ES6 import */);
+    const CardWrapper = styled_components3.default.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: ${theme.padding * 2}px;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition-property: box-shadow;
+  transition-duration: .1s;
+  box-shadow: 0px 4px 10px 2.5px rgba(0,0,0,0.10);
+  &:hover {
+    box-shadow: 0px 4px 15px 2.5px rgba(0,0,0,0.20);
+  }
+`;
+    const CardPreviewContainer = styled_components3.default.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content flex-start;
+  padding-top: ${theme.padding}px;
+  overflow-x: scroll;
+`;
+    const CardPreview = styled_components3.default.div`
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  white-space: nowrap;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: box-shadow, color;
+  transition: .1s;
+  color: rgba(0,0,0,0.7);
+  font-size:  ${theme.header}rem;
+  padding: ${theme.padding}px;
+  margin-right: ${theme.padding / 2}px;
+  border-radius: 5px;
+`;
+    const ActionRow = styled_components3.default.div`
+  display: flex;
+  padding-bottom: 8px;
+  justify-content: space-between;
+  width: 100%;
+`;
+    const Input = styled_components3.default.input`
+  border: none;
+  font-size: ${theme.header}rem;
+  opacity: 0.7;
+  &:focus {
+    opacity: 1.0
+  }
+`;
+    const Content = styled_components3.default.textarea`
+  width: 100%;
+  resize: none;
+  border: none;
+  overflow: visible;
+  font-family: sans-serif;
+  font-size: ${theme.body}rem;
+  min-height: 150px;
+  padding: ${theme.padding}px;
+  flex-grow: 1;
+`;
+    const ActionButton = styled_components3.default.button`
+  color: black;
+  background-color: transparent;
+  border: grey;
+  border-radius: 50px;
+  opacity: 0;
+  transition: 0.2s;
+  ${CardWrapper}:hover & {
+    opacity: 1;
+  }
+`;
+    const Card3 = ({id, title, content, position, size, handleZoom, onUpdate, onDelete, shiftDown, children, ...props}) => {
+      const [{x, y}, setPos] = React3.useState({
         x: position.x,
         y: position.y
       });
-      const [isTyping, setIsTyping] = React2.useState(false);
-      return React2.createElement(react_rnd.Rnd, {
+      const [isTyping, setIsTyping] = React3.useState(false);
+      const [isFocused, setIsFocused] = React3.useState(false);
+      const editor = React3.useMemo(() => slate_react.withReact(slate.createEditor()), []);
+      const [value, setValue] = React3.useState([{
+        type: "paragraph",
+        children: [{
+          text: "A line of text in a paragraph."
+        }]
+      }]);
+      const focusedStyles = {
+        zIndex: 1000,
+        left: 0,
+        right: 0,
+        marginLeft: "auto",
+        marginRight: "auto",
+        width: "50%",
+        height: "50%"
+      };
+      return React3.createElement(react_rnd.Rnd, {
         position: {
           x,
           y
         },
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "transparent",
+          padding: `${theme.padding * 2}px`
+        },
+        minWidth: CARD_SIZE * 1.5,
+        minHeight: CARD_SIZE * 1.5,
+        dragGrid: shiftDown ? [25, 25] : [1, 1],
         size: {
           width: size.width,
           height: size.height
@@ -25436,30 +25962,26 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             width: ref.offsetWidth,
             height: ref.offsetHeight
           });
-        }
-      }, React2.createElement(react_flip_toolkit2.Flipped, {
-        key: id,
+        },
+        ...props
+      }, React3.createElement(react_flip_toolkit3.Flipped, {
         flipId: id
-      }, React2.createElement("div", {
-        style: {
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: "white",
-          borderRadius: "10px",
-          overflow: "visible",
-          height: "100%",
-          width: "100%",
-          padding: "8px",
-          border: "1px solid rgba(0,0,0,0.25)"
-        }
-      }, React2.createElement(react_flip_toolkit2.Flipped, {
+      }, React3.createElement(CardWrapper, null, React3.createElement(ActionRow, null, React3.createElement(react_flip_toolkit3.Flipped, {
         flipId: `layer-id-${id}`
-      }, React2.createElement("div", null, React2.createElement(react_flip_toolkit2.Flipped, {
-        inverseFlipId: `layer-id-${id}`
-      }, React2.createElement("div", {
-        contentEditable: true,
-        suppressContentEditableWarning: true
-      }, id)))), React2.createElement("textarea", {
+      }, React3.createElement(Input, {
+        onFocus: (e) => {
+          setIsTyping(true);
+          e.stopPropagation();
+          e.preventDefault();
+        },
+        onBlur: () => setIsTyping(false),
+        onChange: (e) => onUpdate(id, "title", e.target.value),
+        value: title
+      })), React3.createElement("div", null, React3.createElement(ActionButton, {
+        onClick: () => onDelete(id)
+      }, "x"), React3.createElement(ActionButton, {
+        onClick: () => handleZoom(id)
+      }, "zoom"))), React3.createElement(Content, {
         value: content,
         onFocus: (e) => {
           setIsTyping(true);
@@ -25467,50 +25989,77 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           e.preventDefault();
         },
         onBlur: () => setIsTyping(false),
-        onChange: (e) => onUpdate(id, "content", e.target.value),
-        style: {
-          width: "100%",
-          height: "100%",
-          resize: "none",
-          border: "none",
-          overflow: "visible"
-        }
-      }), React2.createElement("button", {
-        onClick: () => handleZoom(id)
-      }, "zoom zoom"), React2.createElement("button", {
-        onClick: () => onDelete(id)
-      }, "delete"), React2.createElement("div", null, children.map((c) => {
-        return React2.createElement(react_flip_toolkit2.Flipped, {
-          key: `child-preview-${c}`,
-          flipId: c
-        }, React2.createElement("div", {
-          style: {
-            padding: "8px",
-            backgroundColor: "lightgreen",
-            borderRadius: "10px"
-          }
-        }, React2.createElement(react_flip_toolkit2.Flipped, {
-          inverseFlipId: c
-        }, React2.createElement("div", null, c))));
+        onChange: (e) => onUpdate(id, "content", e.target.value)
+      }), React3.createElement(slate_react.Slate, {
+        editor,
+        value: content,
+        onChange: (newValue) => onUpdate(id, "content", newValue)
+      }, React3.createElement(slate_react.Editable, null)), React3.createElement(CardPreviewContainer, null, children.map((c) => {
+        return React3.createElement(react_flip_toolkit3.Flipped, {
+          key: `child-preview-${c.id}`,
+          flipId: c.id
+        }, React3.createElement(CardPreview, null, c.title));
       })))));
     };
-    const default2 = Card2;
+    const default2 = Card3;
+
+    // src/components/Breadcrumb.js
+    const React2 = require(68 /* react */, true /* ES6 import */), react_flip_toolkit2 = require(61 /* react-flip-toolkit */, true /* ES6 import */), styled_components2 = require(78 /* styled-components */, true /* ES6 import */);
+    const BreadcrumbWrapper = styled_components2.default.button`
+    padding: ${theme.padding / 2}px ${theme.padding}px;
+    background-color: transparent;
+    color: ${theme.textPrimary};
+    border-radius: 5px;
+    pointer-events: all;
+    border: none;
+    font-size: 1.2rem;
+    transition: 0.2s background-color;
+    &:hover {
+      background-color: #E5E5E5;
+    }
+`;
+    const Breadcrumb3 = ({isActive, children, ...props}) => {
+      return React2.createElement(BreadcrumbWrapper, {
+        ...props
+      }, children);
+    };
+    const default3 = Breadcrumb3;
 
     // src/App.js
-    const React = require(19 /* react */, true /* ES6 import */), ReactDOM = require(9 /* react-dom */, true /* ES6 import */), react_flip_toolkit = require(10 /* react-flip-toolkit */, true /* ES6 import */), lodash = require(1 /* lodash */, true /* ES6 import */);
-    const initialState = {
+    const React = require(68 /* react */, true /* ES6 import */), ReactDOM = require(60 /* react-dom */, true /* ES6 import */), react_flip_toolkit = require(61 /* react-flip-toolkit */, true /* ES6 import */), lodash = require(49 /* lodash */, true /* ES6 import */), axios = require(4 /* axios */, true /* ES6 import */), styled_components = require(78 /* styled-components */, true /* ES6 import */), FlexSearch = require(34 /* flexsearch */, true /* ES6 import */);
+    function useLocalStorage(defaultValue, key) {
+      const [value, setValue] = React.useState(() => {
+        const stickyValue = window.localStorage.getItem(key);
+        return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+      });
+      React.useEffect(() => {
+        window.localStorage.setItem(key, JSON.stringify(value));
+      }, [key, value]);
+      return [value, setValue];
+    }
+    const fallbackState = {
       path: ["root"],
       cards: {
         root: {
+          title: "tyler's garden",
           id: "root",
           children: [],
           parent: null
         }
       }
     };
+    const BreadcrumbSeparator = styled_components.default.div`
+  border: none;
+  padding: ${theme.padding / 2}px ${theme.padding / 2}px;
+`;
     const genID = () => "_" + Math.random().toString(36).substr(2, 9);
-    const CARD_WIDTH = 200;
-    const CARD_HEIGHT = 200;
+    const SERVER_URL = "https://zoomega-server.tangert.repl.co";
+    const DEFAULT_CARD_CONTENT = [{
+      type: "paragraph",
+      children: [{
+        text: "Start writing here."
+      }]
+    }];
     const App2 = () => {
       React.useEffect(() => {
         document.addEventListener("keydown", onKeyDown);
@@ -25525,17 +26074,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const onKeyUp = (event) => {
         setShiftDown(false);
       };
-      const createLayer = (parent, position) => ({
+      const createLayer = (parent, position, title) => ({
         id: genID(),
-        title: "",
-        content: "",
+        title,
+        content: DEFAULT_CARD_CONTENT,
         position: position || {
           x: 0,
           y: 0
         },
         size: {
-          width: CARD_WIDTH,
-          height: CARD_HEIGHT
+          width: CARD_SIZE,
+          height: CARD_SIZE
         },
         children: [],
         parent
@@ -25545,7 +26094,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           case "ADD_CARD": {
             const {cards: cards2} = state2;
             const {currLevel: currLevel2, position} = action.data;
-            const newLayer = createLayer(currLevel2, position);
+            const title = `Card ${cards2[currLevel2].children.length + 1}`;
+            const newLayer = createLayer(currLevel2, position, title);
             return {
               ...state2,
               cards: {
@@ -25588,6 +26138,21 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               }
             };
           }
+          case "REMOVE_ALL_CARDS": {
+            const {cards: cards2} = state2;
+            const {currLevel: currLevel2} = action.data;
+            const newCards = lodash.omit(cards2, cards2[currLevel2].children);
+            return {
+              ...state2,
+              cards: {
+                ...newCards,
+                [currLevel2]: {
+                  ...newCards[currLevel2],
+                  children: []
+                }
+              }
+            };
+          }
           case "SET_LEVEL": {
             const {level} = action.data;
             return {
@@ -25602,11 +26167,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               path: [...state2.path, level]
             };
           }
+          case "LOAD_STATE": {
+            const {data} = action.data;
+            return data;
+          }
           default:
             return state2;
         }
       };
-      const [state, dispatch] = React.useReducer(reducer, initialState);
+      const [savedState, setSavedState] = useLocalStorage(fallbackState, "zoomega-state");
+      const [state, dispatch] = React.useReducer(reducer, savedState);
       const {cards, path} = state;
       const currLevel = path[path.length - 1];
       const currCards = cards[currLevel].children;
@@ -25618,15 +26188,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             data: {
               currLevel,
               position: {
-                x: clientX - CARD_WIDTH / 2,
-                y: clientY - CARD_HEIGHT / 2
+                x: clientX - CARD_SIZE / 2,
+                y: clientY - CARD_SIZE / 2
               }
             }
           });
       };
       return React.createElement(react_flip_toolkit.Flipper, {
-        flipKey: isZooming,
-        onComplete: () => console.log(currLevel)
+        flipKey: isZooming
       }, React.createElement("div", {
         style: {
           width: "100%",
@@ -25638,23 +26207,24 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           display: "flex"
         }
       }, path.map((loc, idx) => {
+        const card = cards[loc];
         if (idx === path.length - 1) {
           return React.createElement(react_flip_toolkit.Flipped, {
             key: `layer-id-${loc}`,
             flipId: `layer-id-${loc}`
-          }, React.createElement("div", {
-            key: idx
-          }, loc));
+          }, React.createElement(default3, null, card.title));
         } else {
           return React.createElement("div", {
             key: idx,
             style: {
-              display: "inline-flex"
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "flex-start"
             }
           }, React.createElement(react_flip_toolkit.Flipped, {
             key: `layer-id-${loc}`,
             flipId: `layer-id-${loc}`
-          }, React.createElement("button", {
+          }, React.createElement(default3, {
             onClick: () => {
               dispatch({
                 type: "SET_LEVEL",
@@ -25664,7 +26234,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               });
               setIsZooming(!isZooming);
             }
-          }, loc)), React.createElement("span", null, "/"));
+          }, card.title)), React.createElement(BreadcrumbSeparator, null, "/"));
         }
       })), React.createElement("button", {
         onClick: () => dispatch({
@@ -25673,15 +26243,30 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             currLevel
           }
         })
-      }, "'new layer'"), React.createElement("div", {
+      }, "new layer"), React.createElement("button", {
+        onClick: () => {
+          const shouldDelete = confirm("this will delete all ur stuff from this layer. u sure?");
+          if (shouldDelete) {
+            dispatch({
+              type: "REMOVE_ALL_CARDS",
+              data: {
+                currLevel
+              }
+            });
+          }
+        }
+      }, "delete all! danger!"), React.createElement("button", {
+        onClick: () => setSavedState(state)
+      }, "save"), React.createElement("div", {
         onDoubleClick: (e) => handleCanvasDoubleClick(e),
         style: {
           width: "100%",
           height: "100vh"
         }
       }, currCards.map((l, idx) => {
-        const {id, content, position, size, children} = cards[l];
+        const {id, title, content, position, size, children} = cards[l];
         return React.createElement(default2, {
+          key: id,
           handleZoom: (id2) => {
             dispatch({
               type: "ZOOM_TO_LEVEL",
@@ -25691,19 +26276,25 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             });
             setIsZooming(!isZooming);
           },
-          key: id,
+          title,
           id,
-          children,
+          shiftDown,
+          children: children.map((c) => cards[c]),
           content,
           position,
           size,
-          onDelete: (id2) => dispatch({
-            type: "REMOVE_CARD",
-            data: {
-              cardId: id2,
-              currLevel
+          onDelete: (id2) => {
+            const shouldDelete = confirm("u sure?");
+            if (shouldDelete) {
+              dispatch({
+                type: "REMOVE_CARD",
+                data: {
+                  cardId: id2,
+                  currLevel
+                }
+              });
             }
-          }),
+          },
           onUpdate: (id2, property, value) => dispatch({
             type: "UPDATE_CARD",
             data: {
@@ -25730,7 +26321,8893 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     ReactDOM.render(React.createElement(App2, null), document.getElementById("root"));
   },
 
-  1(require, exports, module) {
+  38(require, exports, module) {
+    // node_modules/is-plain-object/index.cjs.js
+    "use strict";
+    function isObject(val) {
+      return val != null && typeof val === "object" && Array.isArray(val) === false;
+    }
+    function isObjectObject(o) {
+      return isObject(o) === true && Object.prototype.toString.call(o) === "[object Object]";
+    }
+    function isPlainObject(o) {
+      var ctor, prot;
+      if (isObjectObject(o) === false)
+        return false;
+      ctor = o.constructor;
+      if (typeof ctor !== "function")
+        return false;
+      prot = ctor.prototype;
+      if (isObjectObject(prot) === false)
+        return false;
+      if (prot.hasOwnProperty("isPrototypeOf") === false) {
+        return false;
+      }
+      return true;
+    }
+    module.exports = isPlainObject;
+  },
+
+  36(require, exports) {
+    // node_modules/immer/dist/immer.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var _a;
+    var hasSymbol = typeof Symbol !== "undefined";
+    var hasMap = typeof Map !== "undefined";
+    var hasSet = typeof Set !== "undefined";
+    var NOTHING = hasSymbol ? Symbol("immer-nothing") : (_a = {}, _a["immer-nothing"] = true, _a);
+    var DRAFTABLE = hasSymbol ? Symbol("immer-draftable") : "__$immer_draftable";
+    var DRAFT_STATE = hasSymbol ? Symbol("immer-state") : "__$immer_state";
+    var iteratorSymbol = hasSymbol ? Symbol.iterator : "@@iterator";
+    var extendStatics = function(d, b) {
+      extendStatics = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function(d2, b2) {
+        d2.__proto__ = b2;
+      } || function(d2, b2) {
+        for (var p in b2) {
+          if (b2.hasOwnProperty(p)) {
+            d2[p] = b2[p];
+          }
+        }
+      };
+      return extendStatics(d, b);
+    };
+    function __extends(d, b) {
+      extendStatics(d, b);
+      function __() {
+        this.constructor = d;
+      }
+      d.prototype = (__.prototype = b.prototype, new __());
+    }
+    var Archtype;
+    (function(Archtype2) {
+      Archtype2[Archtype2["Object"] = 0] = "Object";
+      Archtype2[Archtype2["Array"] = 1] = "Array";
+      Archtype2[Archtype2["Map"] = 2] = "Map";
+      Archtype2[Archtype2["Set"] = 3] = "Set";
+    })(Archtype || (Archtype = {}));
+    var ProxyType;
+    (function(ProxyType2) {
+      ProxyType2[ProxyType2["ProxyObject"] = 0] = "ProxyObject";
+      ProxyType2[ProxyType2["ProxyArray"] = 1] = "ProxyArray";
+      ProxyType2[ProxyType2["ES5Object"] = 2] = "ES5Object";
+      ProxyType2[ProxyType2["ES5Array"] = 3] = "ES5Array";
+      ProxyType2[ProxyType2["Map"] = 4] = "Map";
+      ProxyType2[ProxyType2["Set"] = 5] = "Set";
+    })(ProxyType || (ProxyType = {}));
+    function isDraft(value) {
+      return !!value && !!value[DRAFT_STATE];
+    }
+    function isDraftable(value) {
+      if (!value) {
+        return false;
+      }
+      return isPlainObject(value) || Array.isArray(value) || !!value[DRAFTABLE] || !!value.constructor[DRAFTABLE] || isMap(value) || isSet(value);
+    }
+    function isPlainObject(value) {
+      if (!value || typeof value !== "object") {
+        return false;
+      }
+      var proto = Object.getPrototypeOf(value);
+      return !proto || proto === Object.prototype;
+    }
+    function original(value) {
+      if (value && value[DRAFT_STATE]) {
+        return value[DRAFT_STATE].base;
+      }
+    }
+    var ownKeys = typeof Reflect !== "undefined" && Reflect.ownKeys ? Reflect.ownKeys : typeof Object.getOwnPropertySymbols !== "undefined" ? function(obj) {
+      return Object.getOwnPropertyNames(obj).concat(Object.getOwnPropertySymbols(obj));
+    } : Object.getOwnPropertyNames;
+    function each(obj, iter) {
+      if (getArchtype(obj) === Archtype.Object) {
+        ownKeys(obj).forEach(function(key) {
+          return iter(key, obj[key], obj);
+        });
+      } else {
+        obj.forEach(function(entry, index) {
+          return iter(index, entry, obj);
+        });
+      }
+    }
+    function isEnumerable(base, prop) {
+      var desc = Object.getOwnPropertyDescriptor(base, prop);
+      return desc && desc.enumerable ? true : false;
+    }
+    function getArchtype(thing) {
+      if (!thing) {
+        die();
+      }
+      if (thing[DRAFT_STATE]) {
+        switch (thing[DRAFT_STATE].type) {
+          case ProxyType.ES5Object:
+          case ProxyType.ProxyObject:
+            return Archtype.Object;
+          case ProxyType.ES5Array:
+          case ProxyType.ProxyArray:
+            return Archtype.Array;
+          case ProxyType.Map:
+            return Archtype.Map;
+          case ProxyType.Set:
+            return Archtype.Set;
+        }
+      }
+      return Array.isArray(thing) ? Archtype.Array : isMap(thing) ? Archtype.Map : isSet(thing) ? Archtype.Set : Archtype.Object;
+    }
+    function has(thing, prop) {
+      return getArchtype(thing) === Archtype.Map ? thing.has(prop) : Object.prototype.hasOwnProperty.call(thing, prop);
+    }
+    function get(thing, prop) {
+      return getArchtype(thing) === Archtype.Map ? thing.get(prop) : thing[prop];
+    }
+    function set(thing, propOrOldValue, value) {
+      switch (getArchtype(thing)) {
+        case Archtype.Map:
+          thing.set(propOrOldValue, value);
+          break;
+        case Archtype.Set:
+          thing.delete(propOrOldValue);
+          thing.add(value);
+          break;
+        default:
+          thing[propOrOldValue] = value;
+      }
+    }
+    function is(x, y) {
+      if (x === y) {
+        return x !== 0 || 1 / x === 1 / y;
+      } else {
+        return x !== x && y !== y;
+      }
+    }
+    function isMap(target) {
+      return hasMap && target instanceof Map;
+    }
+    function isSet(target) {
+      return hasSet && target instanceof Set;
+    }
+    function latest(state) {
+      return state.copy || state.base;
+    }
+    function shallowCopy(base, invokeGetters) {
+      if (invokeGetters === void 0) {
+        invokeGetters = false;
+      }
+      if (Array.isArray(base)) {
+        return base.slice();
+      }
+      var clone = Object.create(Object.getPrototypeOf(base));
+      ownKeys(base).forEach(function(key) {
+        if (key === DRAFT_STATE) {
+          return;
+        }
+        var desc = Object.getOwnPropertyDescriptor(base, key);
+        var value = desc.value;
+        if (desc.get) {
+          if (!invokeGetters) {
+            throw new Error("Immer drafts cannot have computed properties");
+          }
+          value = desc.get.call(base);
+        }
+        if (desc.enumerable) {
+          clone[key] = value;
+        } else {
+          Object.defineProperty(clone, key, {
+            value,
+            writable: true,
+            configurable: true
+          });
+        }
+      });
+      return clone;
+    }
+    function freeze(obj, deep) {
+      if (!isDraftable(obj) || isDraft(obj) || Object.isFrozen(obj)) {
+        return;
+      }
+      var type = getArchtype(obj);
+      if (type === Archtype.Set) {
+        obj.add = obj.clear = obj.delete = dontMutateFrozenCollections;
+      } else if (type === Archtype.Map) {
+        obj.set = obj.clear = obj.delete = dontMutateFrozenCollections;
+      }
+      Object.freeze(obj);
+      if (deep) {
+        each(obj, function(_, value) {
+          return freeze(value, true);
+        });
+      }
+    }
+    function dontMutateFrozenCollections() {
+      throw new Error("This object has been frozen and should not be mutated");
+    }
+    function createHiddenProperty(target, prop, value) {
+      Object.defineProperty(target, prop, {
+        value,
+        enumerable: false,
+        writable: true
+      });
+    }
+    function die() {
+      throw new Error("Illegal state, please file a bug");
+    }
+    var ImmerScope = function() {
+      function ImmerScope2(parent, immer2) {
+        this.drafts = [];
+        this.parent = parent;
+        this.immer = immer2;
+        this.canAutoFreeze = true;
+      }
+      ImmerScope2.prototype.usePatches = function(patchListener) {
+        if (patchListener) {
+          this.patches = [];
+          this.inversePatches = [];
+          this.patchListener = patchListener;
+        }
+      };
+      ImmerScope2.prototype.revoke = function() {
+        this.leave();
+        this.drafts.forEach(revoke);
+        this.drafts = null;
+      };
+      ImmerScope2.prototype.leave = function() {
+        if (this === ImmerScope2.current) {
+          ImmerScope2.current = this.parent;
+        }
+      };
+      ImmerScope2.enter = function(immer2) {
+        var scope = new ImmerScope2(ImmerScope2.current, immer2);
+        ImmerScope2.current = scope;
+        return scope;
+      };
+      return ImmerScope2;
+    }();
+    function revoke(draft) {
+      var state = draft[DRAFT_STATE];
+      if (state.type === ProxyType.ProxyObject || state.type === ProxyType.ProxyArray) {
+        state.revoke();
+      } else {
+        state.revoked = true;
+      }
+    }
+    function processResult(immer2, result, scope) {
+      var baseDraft = scope.drafts[0];
+      var isReplaced = result !== void 0 && result !== baseDraft;
+      immer2.willFinalize(scope, result, isReplaced);
+      if (isReplaced) {
+        if (baseDraft[DRAFT_STATE].modified) {
+          scope.revoke();
+          throw new Error("An immer producer returned a new value *and* modified its draft. Either return a new value *or* modify the draft.");
+        }
+        if (isDraftable(result)) {
+          result = finalize(immer2, result, scope);
+          if (!scope.parent) {
+            maybeFreeze(immer2, result);
+          }
+        }
+        if (scope.patches) {
+          scope.patches.push({
+            op: "replace",
+            path: [],
+            value: result
+          });
+          scope.inversePatches.push({
+            op: "replace",
+            path: [],
+            value: baseDraft[DRAFT_STATE].base
+          });
+        }
+      } else {
+        result = finalize(immer2, baseDraft, scope, []);
+      }
+      scope.revoke();
+      if (scope.patches) {
+        scope.patchListener(scope.patches, scope.inversePatches);
+      }
+      return result !== NOTHING ? result : void 0;
+    }
+    function finalize(immer2, draft, scope, path) {
+      var state = draft[DRAFT_STATE];
+      if (!state) {
+        if (Object.isFrozen(draft)) {
+          return draft;
+        }
+        return finalizeTree(immer2, draft, scope);
+      }
+      if (state.scope !== scope) {
+        return draft;
+      }
+      if (!state.modified) {
+        maybeFreeze(immer2, state.base, true);
+        return state.base;
+      }
+      if (!state.finalized) {
+        state.finalized = true;
+        finalizeTree(immer2, state.draft, scope, path);
+        if (immer2.onDelete && state.type !== ProxyType.Set) {
+          if (immer2.useProxies) {
+            var assigned = state.assigned;
+            each(assigned, function(prop, exists) {
+              if (!exists) {
+                immer2.onDelete(state, prop);
+              }
+            });
+          } else {
+            var base = state.base, copy_1 = state.copy;
+            each(base, function(prop) {
+              if (!has(copy_1, prop)) {
+                immer2.onDelete(state, prop);
+              }
+            });
+          }
+        }
+        if (immer2.onCopy) {
+          immer2.onCopy(state);
+        }
+        if (immer2.autoFreeze && scope.canAutoFreeze) {
+          freeze(state.copy, false);
+        }
+        if (path && scope.patches) {
+          generatePatches(state, path, scope.patches, scope.inversePatches);
+        }
+      }
+      return state.copy;
+    }
+    function finalizeTree(immer2, root, scope, rootPath) {
+      var state = root[DRAFT_STATE];
+      if (state) {
+        if (state.type === ProxyType.ES5Object || state.type === ProxyType.ES5Array) {
+          state.copy = shallowCopy(state.draft, true);
+        }
+        root = state.copy;
+      }
+      each(root, function(key, value) {
+        return finalizeProperty(immer2, scope, root, state, root, key, value, rootPath);
+      });
+      return root;
+    }
+    function finalizeProperty(immer2, scope, root, rootState, parentValue, prop, childValue, rootPath) {
+      if (childValue === parentValue) {
+        throw Error("Immer forbids circular references");
+      }
+      var isDraftProp = !!rootState && parentValue === root;
+      var isSetMember = isSet(parentValue);
+      if (isDraft(childValue)) {
+        var path = rootPath && isDraftProp && !isSetMember && !has(rootState.assigned, prop) ? rootPath.concat(prop) : void 0;
+        childValue = finalize(immer2, childValue, scope, path);
+        set(parentValue, prop, childValue);
+        if (isDraft(childValue)) {
+          scope.canAutoFreeze = false;
+        }
+      } else if (isDraftProp && is(childValue, get(rootState.base, prop))) {
+        return;
+      } else if (isDraftable(childValue)) {
+        each(childValue, function(key, grandChild) {
+          return finalizeProperty(immer2, scope, root, rootState, childValue, key, grandChild, rootPath);
+        });
+        if (!scope.parent) {
+          maybeFreeze(immer2, childValue);
+        }
+      }
+      if (isDraftProp && immer2.onAssign && !isSetMember) {
+        immer2.onAssign(rootState, prop, childValue);
+      }
+    }
+    function maybeFreeze(immer2, value, deep) {
+      if (deep === void 0) {
+        deep = false;
+      }
+      if (immer2.autoFreeze && !isDraft(value)) {
+        freeze(value, deep);
+      }
+    }
+    function createProxy(base, parent) {
+      var isArray = Array.isArray(base);
+      var state = {
+        type: isArray ? ProxyType.ProxyArray : ProxyType.ProxyObject,
+        scope: parent ? parent.scope : ImmerScope.current,
+        modified: false,
+        finalized: false,
+        assigned: {},
+        parent,
+        base,
+        draft: null,
+        drafts: {},
+        copy: null,
+        revoke: null,
+        isManual: false
+      };
+      var target = state;
+      var traps = objectTraps;
+      if (isArray) {
+        target = [state];
+        traps = arrayTraps;
+      }
+      var _a2 = Proxy.revocable(target, traps), revoke2 = _a2.revoke, proxy = _a2.proxy;
+      state.draft = proxy;
+      state.revoke = revoke2;
+      return proxy;
+    }
+    var objectTraps = {
+      get: function(state, prop) {
+        if (prop === DRAFT_STATE) {
+          return state;
+        }
+        var drafts = state.drafts;
+        if (!state.modified && has(drafts, prop)) {
+          return drafts[prop];
+        }
+        var value = latest(state)[prop];
+        if (state.finalized || !isDraftable(value)) {
+          return value;
+        }
+        if (state.modified) {
+          if (value !== peek(state.base, prop)) {
+            return value;
+          }
+          drafts = state.copy;
+        }
+        return drafts[prop] = state.scope.immer.createProxy(value, state);
+      },
+      has: function(state, prop) {
+        return prop in latest(state);
+      },
+      ownKeys: function(state) {
+        return Reflect.ownKeys(latest(state));
+      },
+      set: function(state, prop, value) {
+        if (!state.modified) {
+          var baseValue = peek(state.base, prop);
+          var isUnchanged = value ? is(baseValue, value) || value === state.drafts[prop] : is(baseValue, value) && prop in state.base;
+          if (isUnchanged) {
+            return true;
+          }
+          prepareCopy(state);
+          markChanged(state);
+        }
+        state.assigned[prop] = true;
+        state.copy[prop] = value;
+        return true;
+      },
+      deleteProperty: function(state, prop) {
+        if (peek(state.base, prop) !== void 0 || prop in state.base) {
+          state.assigned[prop] = false;
+          prepareCopy(state);
+          markChanged(state);
+        } else if (state.assigned[prop]) {
+          delete state.assigned[prop];
+        }
+        if (state.copy) {
+          delete state.copy[prop];
+        }
+        return true;
+      },
+      getOwnPropertyDescriptor: function(state, prop) {
+        var owner = latest(state);
+        var desc = Reflect.getOwnPropertyDescriptor(owner, prop);
+        if (desc) {
+          desc.writable = true;
+          desc.configurable = state.type !== ProxyType.ProxyArray || prop !== "length";
+        }
+        return desc;
+      },
+      defineProperty: function() {
+        throw new Error("Object.defineProperty() cannot be used on an Immer draft");
+      },
+      getPrototypeOf: function(state) {
+        return Object.getPrototypeOf(state.base);
+      },
+      setPrototypeOf: function() {
+        throw new Error("Object.setPrototypeOf() cannot be used on an Immer draft");
+      }
+    };
+    var arrayTraps = {};
+    each(objectTraps, function(key, fn) {
+      arrayTraps[key] = function() {
+        arguments[0] = arguments[0][0];
+        return fn.apply(this, arguments);
+      };
+    });
+    arrayTraps.deleteProperty = function(state, prop) {
+      if (isNaN(parseInt(prop))) {
+        throw new Error("Immer only supports deleting array indices");
+      }
+      return objectTraps.deleteProperty.call(this, state[0], prop);
+    };
+    arrayTraps.set = function(state, prop, value) {
+      if (prop !== "length" && isNaN(parseInt(prop))) {
+        throw new Error("Immer only supports setting array indices and the 'length' property");
+      }
+      return objectTraps.set.call(this, state[0], prop, value, state[0]);
+    };
+    function peek(draft, prop) {
+      var state = draft[DRAFT_STATE];
+      var desc = Reflect.getOwnPropertyDescriptor(state ? latest(state) : draft, prop);
+      return desc && desc.value;
+    }
+    function markChanged(state) {
+      if (!state.modified) {
+        state.modified = true;
+        if (state.type === ProxyType.ProxyObject || state.type === ProxyType.ProxyArray) {
+          var copy_1 = state.copy = shallowCopy(state.base);
+          each(state.drafts, function(key, value) {
+            copy_1[key] = value;
+          });
+          state.drafts = void 0;
+        }
+        if (state.parent) {
+          markChanged(state.parent);
+        }
+      }
+    }
+    function prepareCopy(state) {
+      if (!state.copy) {
+        state.copy = shallowCopy(state.base);
+      }
+    }
+    function willFinalizeES5(scope, result, isReplaced) {
+      scope.drafts.forEach(function(draft) {
+        draft[DRAFT_STATE].finalizing = true;
+      });
+      if (!isReplaced) {
+        if (scope.patches) {
+          markChangesRecursively(scope.drafts[0]);
+        }
+        markChangesSweep(scope.drafts);
+      } else if (isDraft(result) && result[DRAFT_STATE].scope === scope) {
+        markChangesSweep(scope.drafts);
+      }
+    }
+    function createES5Proxy(base, parent) {
+      var isArray = Array.isArray(base);
+      var draft = clonePotentialDraft(base);
+      each(draft, function(prop) {
+        proxyProperty(draft, prop, isArray || isEnumerable(base, prop));
+      });
+      var state = {
+        type: isArray ? ProxyType.ES5Array : ProxyType.ES5Object,
+        scope: parent ? parent.scope : ImmerScope.current,
+        modified: false,
+        finalizing: false,
+        finalized: false,
+        assigned: {},
+        parent,
+        base,
+        draft,
+        copy: null,
+        revoked: false,
+        isManual: false
+      };
+      createHiddenProperty(draft, DRAFT_STATE, state);
+      return draft;
+    }
+    function peek$1(draft, prop) {
+      var state = draft[DRAFT_STATE];
+      if (state && !state.finalizing) {
+        state.finalizing = true;
+        var value = draft[prop];
+        state.finalizing = false;
+        return value;
+      }
+      return draft[prop];
+    }
+    function get$1(state, prop) {
+      assertUnrevoked(state);
+      var value = peek$1(latest(state), prop);
+      if (state.finalizing) {
+        return value;
+      }
+      if (value === peek$1(state.base, prop) && isDraftable(value)) {
+        prepareCopy$1(state);
+        return state.copy[prop] = state.scope.immer.createProxy(value, state);
+      }
+      return value;
+    }
+    function set$1(state, prop, value) {
+      assertUnrevoked(state);
+      state.assigned[prop] = true;
+      if (!state.modified) {
+        if (is(value, peek$1(latest(state), prop))) {
+          return;
+        }
+        markChangedES5(state);
+        prepareCopy$1(state);
+      }
+      state.copy[prop] = value;
+    }
+    function markChangedES5(state) {
+      if (!state.modified) {
+        state.modified = true;
+        if (state.parent) {
+          markChangedES5(state.parent);
+        }
+      }
+    }
+    function prepareCopy$1(state) {
+      if (!state.copy) {
+        state.copy = clonePotentialDraft(state.base);
+      }
+    }
+    function clonePotentialDraft(base) {
+      var state = base && base[DRAFT_STATE];
+      if (state) {
+        state.finalizing = true;
+        var draft = shallowCopy(state.draft, true);
+        state.finalizing = false;
+        return draft;
+      }
+      return shallowCopy(base);
+    }
+    var descriptors = {};
+    function proxyProperty(draft, prop, enumerable) {
+      var desc = descriptors[prop];
+      if (desc) {
+        desc.enumerable = enumerable;
+      } else {
+        descriptors[prop] = desc = {
+          configurable: true,
+          enumerable,
+          get: function() {
+            return get$1(this[DRAFT_STATE], prop);
+          },
+          set: function(value) {
+            set$1(this[DRAFT_STATE], prop, value);
+          }
+        };
+      }
+      Object.defineProperty(draft, prop, desc);
+    }
+    function assertUnrevoked(state) {
+      if (state.revoked === true) {
+        throw new Error("Cannot use a proxy that has been revoked. Did you pass an object from inside an immer function to an async process? " + JSON.stringify(latest(state)));
+      }
+    }
+    function markChangesSweep(drafts) {
+      for (var i = drafts.length - 1; i >= 0; i--) {
+        var state = drafts[i][DRAFT_STATE];
+        if (!state.modified) {
+          switch (state.type) {
+            case ProxyType.ES5Array:
+              if (hasArrayChanges(state)) {
+                markChangedES5(state);
+              }
+              break;
+            case ProxyType.ES5Object:
+              if (hasObjectChanges(state)) {
+                markChangedES5(state);
+              }
+              break;
+          }
+        }
+      }
+    }
+    function markChangesRecursively(object) {
+      if (!object || typeof object !== "object") {
+        return;
+      }
+      var state = object[DRAFT_STATE];
+      if (!state) {
+        return;
+      }
+      var base = state.base, draft = state.draft, assigned = state.assigned, type = state.type;
+      if (type === ProxyType.ES5Object) {
+        each(draft, function(key) {
+          if (key === DRAFT_STATE) {
+            return;
+          }
+          if (base[key] === void 0 && !has(base, key)) {
+            assigned[key] = true;
+            markChangedES5(state);
+          } else if (!assigned[key]) {
+            markChangesRecursively(draft[key]);
+          }
+        });
+        each(base, function(key) {
+          if (draft[key] === void 0 && !has(draft, key)) {
+            assigned[key] = false;
+            markChangedES5(state);
+          }
+        });
+      } else if (type === ProxyType.ES5Array) {
+        if (hasArrayChanges(state)) {
+          markChangedES5(state);
+          assigned.length = true;
+        }
+        if (draft.length < base.length) {
+          for (var i = draft.length; i < base.length; i++) {
+            assigned[i] = false;
+          }
+        } else {
+          for (var i = base.length; i < draft.length; i++) {
+            assigned[i] = true;
+          }
+        }
+        var min = Math.min(draft.length, base.length);
+        for (var i = 0; i < min; i++) {
+          if (assigned[i] === void 0) {
+            markChangesRecursively(draft[i]);
+          }
+        }
+      }
+    }
+    function hasObjectChanges(state) {
+      var base = state.base, draft = state.draft;
+      var keys = Object.keys(draft);
+      for (var i = keys.length - 1; i >= 0; i--) {
+        var key = keys[i];
+        var baseValue = base[key];
+        if (baseValue === void 0 && !has(base, key)) {
+          return true;
+        } else {
+          var value = draft[key];
+          var state_1 = value && value[DRAFT_STATE];
+          if (state_1 ? state_1.base !== baseValue : !is(value, baseValue)) {
+            return true;
+          }
+        }
+      }
+      return keys.length !== Object.keys(base).length;
+    }
+    function hasArrayChanges(state) {
+      var draft = state.draft;
+      if (draft.length !== state.base.length) {
+        return true;
+      }
+      var descriptor = Object.getOwnPropertyDescriptor(draft, draft.length - 1);
+      if (descriptor && !descriptor.get) {
+        return true;
+      }
+      return false;
+    }
+    var DraftMap = function(_super) {
+      if (!_super) {
+        throw new Error("Map is not polyfilled");
+      }
+      __extends(DraftMap2, _super);
+      function DraftMap2(target, parent) {
+        this[DRAFT_STATE] = {
+          type: ProxyType.Map,
+          parent,
+          scope: parent ? parent.scope : ImmerScope.current,
+          modified: false,
+          finalized: false,
+          copy: void 0,
+          assigned: void 0,
+          base: target,
+          draft: this,
+          isManual: false,
+          revoked: false
+        };
+        return this;
+      }
+      var p = DraftMap2.prototype;
+      Object.defineProperty(p, "size", {
+        get: function() {
+          return latest(this[DRAFT_STATE]).size;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      p.has = function(key) {
+        return latest(this[DRAFT_STATE]).has(key);
+      };
+      p.set = function(key, value) {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        if (latest(state).get(key) !== value) {
+          prepareCopy$2(state);
+          state.scope.immer.markChanged(state);
+          state.assigned.set(key, true);
+          state.copy.set(key, value);
+          state.assigned.set(key, true);
+        }
+        return this;
+      };
+      p.delete = function(key) {
+        if (!this.has(key)) {
+          return false;
+        }
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        prepareCopy$2(state);
+        state.scope.immer.markChanged(state);
+        state.assigned.set(key, false);
+        state.copy.delete(key);
+        return true;
+      };
+      p.clear = function() {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        prepareCopy$2(state);
+        state.scope.immer.markChanged(state);
+        state.assigned = new Map();
+        return state.copy.clear();
+      };
+      p.forEach = function(cb, thisArg) {
+        var _this = this;
+        var state = this[DRAFT_STATE];
+        latest(state).forEach(function(_value, key, _map) {
+          cb.call(thisArg, _this.get(key), key, _this);
+        });
+      };
+      p.get = function(key) {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        var value = latest(state).get(key);
+        if (state.finalized || !isDraftable(value)) {
+          return value;
+        }
+        if (value !== state.base.get(key)) {
+          return value;
+        }
+        var draft = state.scope.immer.createProxy(value, state);
+        prepareCopy$2(state);
+        state.copy.set(key, draft);
+        return draft;
+      };
+      p.keys = function() {
+        return latest(this[DRAFT_STATE]).keys();
+      };
+      p.values = function() {
+        var _a2;
+        var _this = this;
+        var iterator = this.keys();
+        return _a2 = {}, _a2[iteratorSymbol] = function() {
+          return _this.values();
+        }, _a2.next = function() {
+          var r = iterator.next();
+          if (r.done) {
+            return r;
+          }
+          var value = _this.get(r.value);
+          return {
+            done: false,
+            value
+          };
+        }, _a2;
+      };
+      p.entries = function() {
+        var _a2;
+        var _this = this;
+        var iterator = this.keys();
+        return _a2 = {}, _a2[iteratorSymbol] = function() {
+          return _this.entries();
+        }, _a2.next = function() {
+          var r = iterator.next();
+          if (r.done) {
+            return r;
+          }
+          var value = _this.get(r.value);
+          return {
+            done: false,
+            value: [r.value, value]
+          };
+        }, _a2;
+      };
+      p[iteratorSymbol] = function() {
+        return this.entries();
+      };
+      return DraftMap2;
+    }(Map);
+    function proxyMap(target, parent) {
+      return new DraftMap(target, parent);
+    }
+    function prepareCopy$2(state) {
+      if (!state.copy) {
+        state.assigned = new Map();
+        state.copy = new Map(state.base);
+      }
+    }
+    var DraftSet = function(_super) {
+      if (!_super) {
+        throw new Error("Set is not polyfilled");
+      }
+      __extends(DraftSet2, _super);
+      function DraftSet2(target, parent) {
+        this[DRAFT_STATE] = {
+          type: ProxyType.Set,
+          parent,
+          scope: parent ? parent.scope : ImmerScope.current,
+          modified: false,
+          finalized: false,
+          copy: void 0,
+          base: target,
+          draft: this,
+          drafts: new Map(),
+          revoked: false,
+          isManual: false
+        };
+        return this;
+      }
+      var p = DraftSet2.prototype;
+      Object.defineProperty(p, "size", {
+        get: function() {
+          return latest(this[DRAFT_STATE]).size;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      p.has = function(value) {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        if (!state.copy) {
+          return state.base.has(value);
+        }
+        if (state.copy.has(value)) {
+          return true;
+        }
+        if (state.drafts.has(value) && state.copy.has(state.drafts.get(value))) {
+          return true;
+        }
+        return false;
+      };
+      p.add = function(value) {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        if (state.copy) {
+          state.copy.add(value);
+        } else if (!state.base.has(value)) {
+          prepareCopy$3(state);
+          state.scope.immer.markChanged(state);
+          state.copy.add(value);
+        }
+        return this;
+      };
+      p.delete = function(value) {
+        if (!this.has(value)) {
+          return false;
+        }
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        prepareCopy$3(state);
+        state.scope.immer.markChanged(state);
+        return state.copy.delete(value) || (state.drafts.has(value) ? state.copy.delete(state.drafts.get(value)) : false);
+      };
+      p.clear = function() {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        prepareCopy$3(state);
+        state.scope.immer.markChanged(state);
+        return state.copy.clear();
+      };
+      p.values = function() {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        prepareCopy$3(state);
+        return state.copy.values();
+      };
+      p.entries = function entries() {
+        var state = this[DRAFT_STATE];
+        assertUnrevoked(state);
+        prepareCopy$3(state);
+        return state.copy.entries();
+      };
+      p.keys = function() {
+        return this.values();
+      };
+      p[iteratorSymbol] = function() {
+        return this.values();
+      };
+      p.forEach = function forEach(cb, thisArg) {
+        var iterator = this.values();
+        var result = iterator.next();
+        while (!result.done) {
+          cb.call(thisArg, result.value, result.value, this);
+          result = iterator.next();
+        }
+      };
+      return DraftSet2;
+    }(Set);
+    function proxySet(target, parent) {
+      return new DraftSet(target, parent);
+    }
+    function prepareCopy$3(state) {
+      if (!state.copy) {
+        state.copy = new Set();
+        state.base.forEach(function(value) {
+          if (isDraftable(value)) {
+            var draft = state.scope.immer.createProxy(value, state);
+            state.drafts.set(value, draft);
+            state.copy.add(draft);
+          } else {
+            state.copy.add(value);
+          }
+        });
+      }
+    }
+    function generatePatches(state, basePath, patches, inversePatches) {
+      switch (state.type) {
+        case ProxyType.ProxyObject:
+        case ProxyType.ES5Object:
+        case ProxyType.Map:
+          return generatePatchesFromAssigned(state, basePath, patches, inversePatches);
+        case ProxyType.ES5Array:
+        case ProxyType.ProxyArray:
+          return generateArrayPatches(state, basePath, patches, inversePatches);
+        case ProxyType.Set:
+          return generateSetPatches(state, basePath, patches, inversePatches);
+      }
+    }
+    function generateArrayPatches(state, basePath, patches, inversePatches) {
+      var _a2, _b;
+      var base = state.base, assigned = state.assigned, copy = state.copy;
+      if (!copy) {
+        die();
+      }
+      if (copy.length < base.length) {
+        _a2 = [copy, base], base = _a2[0], copy = _a2[1];
+        _b = [inversePatches, patches], patches = _b[0], inversePatches = _b[1];
+      }
+      var delta = copy.length - base.length;
+      var start = 0;
+      while (base[start] === copy[start] && start < base.length) {
+        ++start;
+      }
+      var end = base.length;
+      while (end > start && base[end - 1] === copy[end + delta - 1]) {
+        --end;
+      }
+      for (var i = start; i < end; ++i) {
+        if (assigned[i] && copy[i] !== base[i]) {
+          var path = basePath.concat([i]);
+          patches.push({
+            op: "replace",
+            path,
+            value: copy[i]
+          });
+          inversePatches.push({
+            op: "replace",
+            path,
+            value: base[i]
+          });
+        }
+      }
+      var replaceCount = patches.length;
+      for (var i = end + delta - 1; i >= end; --i) {
+        var path = basePath.concat([i]);
+        patches[replaceCount + i - end] = {
+          op: "add",
+          path,
+          value: copy[i]
+        };
+        inversePatches.push({
+          op: "remove",
+          path
+        });
+      }
+    }
+    function generatePatchesFromAssigned(state, basePath, patches, inversePatches) {
+      var base = state.base, copy = state.copy;
+      each(state.assigned, function(key, assignedValue) {
+        var origValue = get(base, key);
+        var value = get(copy, key);
+        var op = !assignedValue ? "remove" : has(base, key) ? "replace" : "add";
+        if (origValue === value && op === "replace") {
+          return;
+        }
+        var path = basePath.concat(key);
+        patches.push(op === "remove" ? {
+          op,
+          path
+        } : {
+          op,
+          path,
+          value
+        });
+        inversePatches.push(op === "add" ? {
+          op: "remove",
+          path
+        } : op === "remove" ? {
+          op: "add",
+          path,
+          value: origValue
+        } : {
+          op: "replace",
+          path,
+          value: origValue
+        });
+      });
+    }
+    function generateSetPatches(state, basePath, patches, inversePatches) {
+      var base = state.base, copy = state.copy;
+      var i = 0;
+      base.forEach(function(value) {
+        if (!copy.has(value)) {
+          var path = basePath.concat([i]);
+          patches.push({
+            op: "remove",
+            path,
+            value
+          });
+          inversePatches.unshift({
+            op: "add",
+            path,
+            value
+          });
+        }
+        i++;
+      });
+      i = 0;
+      copy.forEach(function(value) {
+        if (!base.has(value)) {
+          var path = basePath.concat([i]);
+          patches.push({
+            op: "add",
+            path,
+            value
+          });
+          inversePatches.unshift({
+            op: "remove",
+            path,
+            value
+          });
+        }
+        i++;
+      });
+    }
+    function applyPatches(draft, patches) {
+      patches.forEach(function(patch) {
+        var path = patch.path, op = patch.op;
+        if (!path.length) {
+          die();
+        }
+        var base = draft;
+        for (var i = 0; i < path.length - 1; i++) {
+          base = get(base, path[i]);
+          if (!base || typeof base !== "object") {
+            throw new Error("Cannot apply patch, path doesn't resolve: " + path.join("/"));
+          }
+        }
+        var type = getArchtype(base);
+        var value = deepClonePatchValue(patch.value);
+        var key = path[path.length - 1];
+        switch (op) {
+          case "replace":
+            switch (type) {
+              case Archtype.Map:
+                return base.set(key, value);
+              case Archtype.Set:
+                throw new Error('Sets cannot have "replace" patches.');
+              default:
+                return base[key] = value;
+            }
+          case "add":
+            switch (type) {
+              case Archtype.Array:
+                return base.splice(key, 0, value);
+              case Archtype.Map:
+                return base.set(key, value);
+              case Archtype.Set:
+                return base.add(value);
+              default:
+                return base[key] = value;
+            }
+          case "remove":
+            switch (type) {
+              case Archtype.Array:
+                return base.splice(key, 1);
+              case Archtype.Map:
+                return base.delete(key);
+              case Archtype.Set:
+                return base.delete(patch.value);
+              default:
+                return delete base[key];
+            }
+          default:
+            throw new Error("Unsupported patch operation: " + op);
+        }
+      });
+      return draft;
+    }
+    function deepClonePatchValue(obj) {
+      if (!obj || typeof obj !== "object") {
+        return obj;
+      }
+      if (Array.isArray(obj)) {
+        return obj.map(deepClonePatchValue);
+      }
+      if (isMap(obj)) {
+        return new Map(Array.from(obj.entries()).map(function(_a2) {
+          var k = _a2[0], v = _a2[1];
+          return [k, deepClonePatchValue(v)];
+        }));
+      }
+      if (isSet(obj)) {
+        return new Set(Array.from(obj).map(deepClonePatchValue));
+      }
+      var cloned = Object.create(Object.getPrototypeOf(obj));
+      for (var key in obj) {
+        cloned[key] = deepClonePatchValue(obj[key]);
+      }
+      return cloned;
+    }
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+        s += arguments[i].length;
+      for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+          r[k] = a[j];
+      return r;
+    }
+    function verifyMinified() {
+    }
+    var configDefaults = {
+      useProxies: typeof Proxy !== "undefined" && typeof Proxy.revocable !== "undefined" && typeof Reflect !== "undefined",
+      autoFreeze: typeof process !== "undefined" ? true : verifyMinified.name === "verifyMinified",
+      onAssign: null,
+      onDelete: null,
+      onCopy: null
+    };
+    var Immer = function() {
+      function Immer2(config) {
+        var _this = this;
+        this.useProxies = false;
+        this.autoFreeze = false;
+        each(configDefaults, function(key, value) {
+          var _a2, _b;
+          _this[key] = (_b = (_a2 = config) === null || _a2 === void 0 ? void 0 : _a2[key], _b !== null && _b !== void 0 ? _b : value);
+        });
+        this.setUseProxies(this.useProxies);
+        this.produce = this.produce.bind(this);
+        this.produceWithPatches = this.produceWithPatches.bind(this);
+      }
+      Immer2.prototype.produce = function(base, recipe, patchListener) {
+        var _this = this;
+        if (typeof base === "function" && typeof recipe !== "function") {
+          var defaultBase_1 = recipe;
+          recipe = base;
+          var self_1 = this;
+          return function curriedProduce(base2) {
+            var arguments$1 = arguments;
+            var _this2 = this;
+            if (base2 === void 0) {
+              base2 = defaultBase_1;
+            }
+            var args = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+              args[_i - 1] = arguments$1[_i];
+            }
+            return self_1.produce(base2, function(draft) {
+              return recipe.call.apply(recipe, __spreadArrays([_this2, draft], args));
+            });
+          };
+        }
+        {
+          if (typeof recipe !== "function") {
+            throw new Error("The first or second argument to `produce` must be a function");
+          }
+          if (patchListener !== void 0 && typeof patchListener !== "function") {
+            throw new Error("The third argument to `produce` must be a function or undefined");
+          }
+        }
+        var result;
+        if (isDraftable(base)) {
+          var scope_1 = ImmerScope.enter(this);
+          var proxy = this.createProxy(base, void 0);
+          var hasError = true;
+          try {
+            result = recipe(proxy);
+            hasError = false;
+          } finally {
+            if (hasError) {
+              scope_1.revoke();
+            } else {
+              scope_1.leave();
+            }
+          }
+          if (typeof Promise !== "undefined" && result instanceof Promise) {
+            return result.then(function(result2) {
+              scope_1.usePatches(patchListener);
+              return processResult(_this, result2, scope_1);
+            }, function(error) {
+              scope_1.revoke();
+              throw error;
+            });
+          }
+          scope_1.usePatches(patchListener);
+          return processResult(this, result, scope_1);
+        } else {
+          result = recipe(base);
+          if (result === NOTHING) {
+            return void 0;
+          }
+          if (result === void 0) {
+            result = base;
+          }
+          maybeFreeze(this, result, true);
+          return result;
+        }
+      };
+      Immer2.prototype.produceWithPatches = function(arg1, arg2, arg3) {
+        var _this = this;
+        if (typeof arg1 === "function") {
+          return function(state) {
+            var arguments$1 = arguments;
+            var args = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+              args[_i - 1] = arguments$1[_i];
+            }
+            return _this.produceWithPatches(state, function(draft) {
+              return arg1.apply(void 0, __spreadArrays([draft], args));
+            });
+          };
+        }
+        if (arg3) {
+          die();
+        }
+        var patches, inversePatches;
+        var nextState = this.produce(arg1, arg2, function(p, ip) {
+          patches = p;
+          inversePatches = ip;
+        });
+        return [nextState, patches, inversePatches];
+      };
+      Immer2.prototype.createDraft = function(base) {
+        if (!isDraftable(base)) {
+          throw new Error("First argument to `createDraft` must be a plain object, an array, or an immerable object");
+        }
+        var scope = ImmerScope.enter(this);
+        var proxy = this.createProxy(base, void 0);
+        proxy[DRAFT_STATE].isManual = true;
+        scope.leave();
+        return proxy;
+      };
+      Immer2.prototype.finishDraft = function(draft, patchListener) {
+        var state = draft && draft[DRAFT_STATE];
+        if (!state || !state.isManual) {
+          throw new Error("First argument to `finishDraft` must be a draft returned by `createDraft`");
+        }
+        if (state.finalized) {
+          throw new Error("The given draft is already finalized");
+        }
+        var scope = state.scope;
+        scope.usePatches(patchListener);
+        return processResult(this, void 0, scope);
+      };
+      Immer2.prototype.setAutoFreeze = function(value) {
+        this.autoFreeze = value;
+      };
+      Immer2.prototype.setUseProxies = function(value) {
+        this.useProxies = value;
+      };
+      Immer2.prototype.applyPatches = function(base, patches) {
+        var i;
+        for (i = patches.length - 1; i >= 0; i--) {
+          var patch = patches[i];
+          if (patch.path.length === 0 && patch.op === "replace") {
+            base = patch.value;
+            break;
+          }
+        }
+        if (isDraft(base)) {
+          return applyPatches(base, patches);
+        }
+        return this.produce(base, function(draft) {
+          return applyPatches(draft, patches.slice(i + 1));
+        });
+      };
+      Immer2.prototype.createProxy = function(value, parent) {
+        var draft = isMap(value) ? proxyMap(value, parent) : isSet(value) ? proxySet(value, parent) : this.useProxies ? createProxy(value, parent) : createES5Proxy(value, parent);
+        var scope = parent ? parent.scope : ImmerScope.current;
+        scope.drafts.push(draft);
+        return draft;
+      };
+      Immer2.prototype.willFinalize = function(scope, thing, isReplaced) {
+        if (!this.useProxies) {
+          willFinalizeES5(scope, thing, isReplaced);
+        }
+      };
+      Immer2.prototype.markChanged = function(state) {
+        if (this.useProxies) {
+          markChanged(state);
+        } else {
+          markChangedES5(state);
+        }
+      };
+      return Immer2;
+    }();
+    var immer = new Immer();
+    var produce = immer.produce;
+    var produceWithPatches = immer.produceWithPatches.bind(immer);
+    var setAutoFreeze = immer.setAutoFreeze.bind(immer);
+    var setUseProxies = immer.setUseProxies.bind(immer);
+    var applyPatches$1 = immer.applyPatches.bind(immer);
+    var createDraft = immer.createDraft.bind(immer);
+    var finishDraft = immer.finishDraft.bind(immer);
+    function castDraft(value) {
+      return value;
+    }
+    function castImmutable(value) {
+      return value;
+    }
+    exports.Immer = Immer;
+    exports.applyPatches = applyPatches$1;
+    exports.castDraft = castDraft;
+    exports.castImmutable = castImmutable;
+    exports.createDraft = createDraft;
+    exports.default = produce;
+    exports.finishDraft = finishDraft;
+    exports.immerable = DRAFTABLE;
+    exports.isDraft = isDraft;
+    exports.isDraftable = isDraftable;
+    exports.nothing = NOTHING;
+    exports.original = original;
+    exports.produce = produce;
+    exports.produceWithPatches = produceWithPatches;
+    exports.setAutoFreeze = setAutoFreeze;
+    exports.setUseProxies = setUseProxies;
+  },
+
+  32(require, exports, module) {
+    // node_modules/esrever/esrever.js
+    ;
+    (function(root) {
+      var freeExports = typeof exports == "object" && exports;
+      var freeModule = typeof module == "object" && module && module.exports == freeExports && module;
+      var freeGlobal = typeof global == "object" && global;
+      if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal) {
+        root = freeGlobal;
+      }
+      var regexSymbolWithCombiningMarks = /([\0-\u02FF\u0370-\u1AAF\u1B00-\u1DBF\u1E00-\u20CF\u2100-\uD7FF\uE000-\uFE1F\uFE30-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])([\u0300-\u036F\u1AB0-\u1AFF\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]+)/g;
+      var regexSurrogatePair = /([\uD800-\uDBFF])([\uDC00-\uDFFF])/g;
+      var reverse = function(string) {
+        string = string.replace(regexSymbolWithCombiningMarks, function($0, $1, $2) {
+          return reverse($2) + $1;
+        }).replace(regexSurrogatePair, "$2$1");
+        var result = "";
+        var index = string.length;
+        while (index--) {
+          result += string.charAt(index);
+        }
+        return result;
+      };
+      var esrever = {
+        version: "0.2.0",
+        reverse
+      };
+      if (typeof define == "function" && typeof define.amd == "object" && define.amd) {
+        define(function() {
+          return esrever;
+        });
+      } else if (freeExports && !freeExports.nodeType) {
+        if (freeModule) {
+          freeModule.exports = esrever;
+        } else {
+          for (var key in esrever) {
+            esrever.hasOwnProperty(key) && (freeExports[key] = esrever[key]);
+          }
+        }
+      } else {
+        root.esrever = esrever;
+      }
+    })(this);
+  },
+
+  77(require, exports) {
+    // node_modules/slate/dist/index.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function _interopDefault(ex) {
+      return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+    }
+    var isPlainObject = _interopDefault(require(38 /* is-plain-object */));
+    var immer = require(36 /* immer */);
+    var esrever = require(32 /* esrever */);
+    function _arrayWithoutHoles(arr) {
+      if (Array.isArray(arr)) {
+        for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+          arr2[i] = arr[i];
+        }
+        return arr2;
+      }
+    }
+    var arrayWithoutHoles = _arrayWithoutHoles;
+    function _iterableToArray(iter) {
+      if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]")
+        return Array.from(iter);
+    }
+    var iterableToArray = _iterableToArray;
+    function _nonIterableSpread() {
+      throw new TypeError("Invalid attempt to spread non-iterable instance");
+    }
+    var nonIterableSpread = _nonIterableSpread;
+    function _toConsumableArray(arr) {
+      return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+    }
+    var toConsumableArray = _toConsumableArray;
+    function _arrayWithHoles(arr) {
+      if (Array.isArray(arr))
+        return arr;
+    }
+    var arrayWithHoles = _arrayWithHoles;
+    function _iterableToArrayLimit(arr, i) {
+      if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+        return;
+      }
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = void 0;
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+          if (i && _arr.length === i)
+            break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"] != null)
+            _i["return"]();
+        } finally {
+          if (_d)
+            throw _e;
+        }
+      }
+      return _arr;
+    }
+    var iterableToArrayLimit = _iterableToArrayLimit;
+    function _nonIterableRest() {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+    var nonIterableRest = _nonIterableRest;
+    function _slicedToArray(arr, i) {
+      return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
+    }
+    var slicedToArray = _slicedToArray;
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, {
+          value,
+          enumerable: true,
+          configurable: true,
+          writable: true
+        });
+      } else {
+        obj[key] = value;
+      }
+      return obj;
+    }
+    var defineProperty = _defineProperty;
+    function _objectWithoutPropertiesLoose(source, excluded) {
+      if (source == null)
+        return {};
+      var target = {};
+      var sourceKeys = Object.keys(source);
+      var key, i;
+      for (i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0)
+          continue;
+        target[key] = source[key];
+      }
+      return target;
+    }
+    var objectWithoutPropertiesLoose = _objectWithoutPropertiesLoose;
+    function _objectWithoutProperties(source, excluded) {
+      if (source == null)
+        return {};
+      var target = objectWithoutPropertiesLoose(source, excluded);
+      var key, i;
+      if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for (i = 0; i < sourceSymbolKeys.length; i++) {
+          key = sourceSymbolKeys[i];
+          if (excluded.indexOf(key) >= 0)
+            continue;
+          if (!Object.prototype.propertyIsEnumerable.call(source, key))
+            continue;
+          target[key] = source[key];
+        }
+      }
+      return target;
+    }
+    var objectWithoutProperties = _objectWithoutProperties;
+    var DIRTY_PATHS = new WeakMap();
+    var FLUSHING = new WeakMap();
+    var NORMALIZING = new WeakMap();
+    var PATH_REFS = new WeakMap();
+    var POINT_REFS = new WeakMap();
+    var RANGE_REFS = new WeakMap();
+    var SPACE = /\s/;
+    var PUNCTUATION = /[\u0021-\u0023\u0025-\u002A\u002C-\u002F\u003A\u003B\u003F\u0040\u005B-\u005D\u005F\u007B\u007D\u00A1\u00A7\u00AB\u00B6\u00B7\u00BB\u00BF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u0AF0\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E3B\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]/;
+    var CHAMELEON = /['\u2018\u2019]/;
+    var SURROGATE_START = 55296;
+    var SURROGATE_END = 57343;
+    var ZERO_WIDTH_JOINER = 8205;
+    var getCharacterDistance = function getCharacterDistance2(text) {
+      var offset = 0;
+      var prev = null;
+      var charCode = text.charCodeAt(0);
+      while (charCode) {
+        if (isSurrogate(charCode)) {
+          var modifier = isModifier(charCode, text, offset);
+          if (prev === "SURR" || prev === "BMP") {
+            break;
+          }
+          offset += 2;
+          prev = modifier ? "MOD" : "SURR";
+          charCode = text.charCodeAt(offset);
+          continue;
+        }
+        if (charCode === ZERO_WIDTH_JOINER) {
+          offset += 1;
+          prev = "ZWJ";
+          charCode = text.charCodeAt(offset);
+          continue;
+        }
+        if (isBMPEmoji(charCode)) {
+          if (prev && prev !== "ZWJ" && prev !== "VAR") {
+            break;
+          }
+          offset += 1;
+          prev = "BMP";
+          charCode = text.charCodeAt(offset);
+          continue;
+        }
+        if (isVariationSelector(charCode)) {
+          if (prev && prev !== "ZWJ") {
+            break;
+          }
+          offset += 1;
+          prev = "VAR";
+          charCode = text.charCodeAt(offset);
+          continue;
+        }
+        if (prev === "MOD") {
+          offset += 1;
+          break;
+        }
+        break;
+      }
+      return offset || 1;
+    };
+    var getWordDistance = function getWordDistance2(text) {
+      var length = 0;
+      var i = 0;
+      var started = false;
+      var _char;
+      while (_char = text.charAt(i)) {
+        var l = getCharacterDistance(_char);
+        _char = text.slice(i, i + l);
+        var rest = text.slice(i + l);
+        if (isWordCharacter(_char, rest)) {
+          started = true;
+          length += l;
+        } else if (!started) {
+          length += l;
+        } else {
+          break;
+        }
+        i += l;
+      }
+      return length;
+    };
+    var isWordCharacter = function isWordCharacter2(_char2, remaining) {
+      if (SPACE.test(_char2)) {
+        return false;
+      }
+      if (CHAMELEON.test(_char2)) {
+        var next = remaining.charAt(0);
+        var length = getCharacterDistance(next);
+        next = remaining.slice(0, length);
+        var rest = remaining.slice(length);
+        if (isWordCharacter2(next, rest)) {
+          return true;
+        }
+      }
+      if (PUNCTUATION.test(_char2)) {
+        return false;
+      }
+      return true;
+    };
+    var isSurrogate = function isSurrogate2(code) {
+      return SURROGATE_START <= code && code <= SURROGATE_END;
+    };
+    var isModifier = function isModifier2(code, text, offset) {
+      if (code === 55356) {
+        var next = text.charCodeAt(offset + 1);
+        return next <= 57343 && next >= 57339;
+      }
+      return false;
+    };
+    var isVariationSelector = function isVariationSelector2(code) {
+      return code <= 65039 && code >= 65024;
+    };
+    var isBMPEmoji = function isBMPEmoji2(code) {
+      return code === 10084 || code === 9794 || code === 9792 || code === 9760 || code === 9877 || code === 9992 || code === 9711;
+    };
+    function ownKeys(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var Editor = {
+      above: function above(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$voids = options.voids, voids = _options$voids === void 0 ? false : _options$voids, _options$mode = options.mode, mode = _options$mode === void 0 ? "lowest" : _options$mode, _options$at = options.at, at = _options$at === void 0 ? editor.selection : _options$at, match = options.match;
+        if (!at) {
+          return;
+        }
+        var path = Editor.path(editor, at);
+        var reverse = mode === "lowest";
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = void 0;
+        try {
+          for (var _iterator = Editor.levels(editor, {
+            at: path,
+            voids,
+            match,
+            reverse
+          })[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var _step$value = slicedToArray(_step.value, 2), n = _step$value[0], p = _step$value[1];
+            if (!Text.isText(n) && !Path.equals(path, p)) {
+              return [n, p];
+            }
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      },
+      addMark: function addMark(editor, key, value) {
+        editor.addMark(key, value);
+      },
+      after: function after(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var anchor = Editor.point(editor, at, {
+          edge: "end"
+        });
+        var focus = Editor.end(editor, []);
+        var range = {
+          anchor,
+          focus
+        };
+        var _options$distance = options.distance, distance = _options$distance === void 0 ? 1 : _options$distance;
+        var d = 0;
+        var target;
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = void 0;
+        try {
+          for (var _iterator2 = Editor.positions(editor, _objectSpread({}, options, {
+            at: range
+          }))[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var p = _step2.value;
+            if (d > distance) {
+              break;
+            }
+            if (d !== 0) {
+              target = p;
+            }
+            d++;
+          }
+        } catch (err) {
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+              _iterator2["return"]();
+            }
+          } finally {
+            if (_didIteratorError2) {
+              throw _iteratorError2;
+            }
+          }
+        }
+        return target;
+      },
+      before: function before(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var anchor = Editor.start(editor, []);
+        var focus = Editor.point(editor, at, {
+          edge: "start"
+        });
+        var range = {
+          anchor,
+          focus
+        };
+        var _options$distance2 = options.distance, distance = _options$distance2 === void 0 ? 1 : _options$distance2;
+        var d = 0;
+        var target;
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = void 0;
+        try {
+          for (var _iterator3 = Editor.positions(editor, _objectSpread({}, options, {
+            at: range,
+            reverse: true
+          }))[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            var p = _step3.value;
+            if (d > distance) {
+              break;
+            }
+            if (d !== 0) {
+              target = p;
+            }
+            d++;
+          }
+        } catch (err) {
+          _didIteratorError3 = true;
+          _iteratorError3 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+              _iterator3["return"]();
+            }
+          } finally {
+            if (_didIteratorError3) {
+              throw _iteratorError3;
+            }
+          }
+        }
+        return target;
+      },
+      deleteBackward: function deleteBackward(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$unit = options.unit, unit = _options$unit === void 0 ? "character" : _options$unit;
+        editor.deleteBackward(unit);
+      },
+      deleteForward: function deleteForward(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$unit2 = options.unit, unit = _options$unit2 === void 0 ? "character" : _options$unit2;
+        editor.deleteForward(unit);
+      },
+      deleteFragment: function deleteFragment(editor) {
+        editor.deleteFragment();
+      },
+      edges: function edges(editor, at) {
+        return [Editor.start(editor, at), Editor.end(editor, at)];
+      },
+      end: function end(editor, at) {
+        return Editor.point(editor, at, {
+          edge: "end"
+        });
+      },
+      first: function first(editor, at) {
+        var path = Editor.path(editor, at, {
+          edge: "start"
+        });
+        return Editor.node(editor, path);
+      },
+      fragment: function fragment(editor, at) {
+        var range = Editor.range(editor, at);
+        var fragment2 = Node.fragment(editor, range);
+        return fragment2;
+      },
+      hasBlocks: function hasBlocks(editor, element) {
+        return element.children.some(function(n) {
+          return Editor.isBlock(editor, n);
+        });
+      },
+      hasInlines: function hasInlines(editor, element) {
+        return element.children.some(function(n) {
+          return Text.isText(n) || Editor.isInline(editor, n);
+        });
+      },
+      hasTexts: function hasTexts(editor, element) {
+        return element.children.every(function(n) {
+          return Text.isText(n);
+        });
+      },
+      insertBreak: function insertBreak(editor) {
+        editor.insertBreak();
+      },
+      insertFragment: function insertFragment(editor, fragment) {
+        editor.insertFragment(fragment);
+      },
+      insertNode: function insertNode(editor, node) {
+        editor.insertNode(node);
+      },
+      insertText: function insertText(editor, text) {
+        editor.insertText(text);
+      },
+      isBlock: function isBlock(editor, value) {
+        return Element.isElement(value) && !editor.isInline(value);
+      },
+      isEditor: function isEditor(value) {
+        return isPlainObject(value) && typeof value.addMark === "function" && typeof value.apply === "function" && typeof value.deleteBackward === "function" && typeof value.deleteForward === "function" && typeof value.deleteFragment === "function" && typeof value.insertBreak === "function" && typeof value.insertFragment === "function" && typeof value.insertNode === "function" && typeof value.insertText === "function" && typeof value.isInline === "function" && typeof value.isVoid === "function" && typeof value.normalizeNode === "function" && typeof value.onChange === "function" && typeof value.removeMark === "function" && (value.marks === null || isPlainObject(value.marks)) && (value.selection === null || Range.isRange(value.selection)) && Node.isNodeList(value.children) && Operation.isOperationList(value.operations);
+      },
+      isEnd: function isEnd(editor, point, at) {
+        var end = Editor.end(editor, at);
+        return Point.equals(point, end);
+      },
+      isEdge: function isEdge(editor, point, at) {
+        return Editor.isStart(editor, point, at) || Editor.isEnd(editor, point, at);
+      },
+      isEmpty: function isEmpty(editor, element) {
+        var children = element.children;
+        var _children = slicedToArray(children, 1), first = _children[0];
+        return children.length === 0 || children.length === 1 && Text.isText(first) && first.text === "" && !editor.isVoid(element);
+      },
+      isInline: function isInline(editor, value) {
+        return Element.isElement(value) && editor.isInline(value);
+      },
+      isNormalizing: function isNormalizing(editor) {
+        var isNormalizing2 = NORMALIZING.get(editor);
+        return isNormalizing2 === void 0 ? true : isNormalizing2;
+      },
+      isStart: function isStart(editor, point, at) {
+        if (point.offset !== 0) {
+          return false;
+        }
+        var start = Editor.start(editor, at);
+        return Point.equals(point, start);
+      },
+      isVoid: function isVoid(editor, value) {
+        return Element.isElement(value) && editor.isVoid(value);
+      },
+      last: function last(editor, at) {
+        var path = Editor.path(editor, at, {
+          edge: "end"
+        });
+        return Editor.node(editor, path);
+      },
+      leaf: function leaf(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var path = Editor.path(editor, at, options);
+        var node = Node.leaf(editor, path);
+        return [node, path];
+      },
+      levels: function* levels(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$at2 = options.at, at = _options$at2 === void 0 ? editor.selection : _options$at2, _options$reverse = options.reverse, reverse = _options$reverse === void 0 ? false : _options$reverse, _options$voids2 = options.voids, voids = _options$voids2 === void 0 ? false : _options$voids2;
+        var match = options.match;
+        if (match == null) {
+          match = function match2() {
+            return true;
+          };
+        }
+        if (!at) {
+          return;
+        }
+        var levels2 = [];
+        var path = Editor.path(editor, at);
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = void 0;
+        try {
+          for (var _iterator4 = Node.levels(editor, path)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var _step4$value = slicedToArray(_step4.value, 2), n = _step4$value[0], p = _step4$value[1];
+            if (!match(n)) {
+              continue;
+            }
+            levels2.push([n, p]);
+            if (!voids && Editor.isVoid(editor, n)) {
+              break;
+            }
+          }
+        } catch (err) {
+          _didIteratorError4 = true;
+          _iteratorError4 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+              _iterator4["return"]();
+            }
+          } finally {
+            if (_didIteratorError4) {
+              throw _iteratorError4;
+            }
+          }
+        }
+        if (reverse) {
+          levels2.reverse();
+        }
+        yield* levels2;
+      },
+      marks: function marks(editor) {
+        var marks2 = editor.marks, selection = editor.selection;
+        if (!selection) {
+          return null;
+        }
+        if (marks2) {
+          return marks2;
+        }
+        if (Range.isExpanded(selection)) {
+          var _Editor$nodes = Editor.nodes(editor, {
+            match: Text.isText
+          }), _Editor$nodes2 = slicedToArray(_Editor$nodes, 1), match = _Editor$nodes2[0];
+          if (match) {
+            var _match = slicedToArray(match, 1), _node = _match[0];
+            var _text = _node.text, _rest = objectWithoutProperties(_node, ["text"]);
+            return _rest;
+          } else {
+            return {};
+          }
+        }
+        var anchor = selection.anchor;
+        var path = anchor.path;
+        var _Editor$leaf = Editor.leaf(editor, path), _Editor$leaf2 = slicedToArray(_Editor$leaf, 1), node = _Editor$leaf2[0];
+        if (anchor.offset === 0) {
+          var prev = Editor.previous(editor, {
+            at: path,
+            match: Text.isText
+          });
+          var block = Editor.above(editor, {
+            match: function match2(n) {
+              return Editor.isBlock(editor, n);
+            }
+          });
+          if (prev && block) {
+            var _prev = slicedToArray(prev, 2), prevNode = _prev[0], prevPath = _prev[1];
+            var _block = slicedToArray(block, 2), blockPath = _block[1];
+            if (Path.isAncestor(blockPath, prevPath)) {
+              node = prevNode;
+            }
+          }
+        }
+        var _node2 = node, text = _node2.text, rest = objectWithoutProperties(_node2, ["text"]);
+        return rest;
+      },
+      next: function next(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$mode2 = options.mode, mode = _options$mode2 === void 0 ? "lowest" : _options$mode2, _options$voids3 = options.voids, voids = _options$voids3 === void 0 ? false : _options$voids3;
+        var match = options.match, _options$at3 = options.at, at = _options$at3 === void 0 ? editor.selection : _options$at3;
+        if (!at) {
+          return;
+        }
+        var _Editor$last = Editor.last(editor, at), _Editor$last2 = slicedToArray(_Editor$last, 2), from = _Editor$last2[1];
+        var _Editor$last3 = Editor.last(editor, []), _Editor$last4 = slicedToArray(_Editor$last3, 2), to = _Editor$last4[1];
+        var span = [from, to];
+        if (Path.isPath(at) && at.length === 0) {
+          throw new Error("Cannot get the next node from the root node!");
+        }
+        if (match == null) {
+          if (Path.isPath(at)) {
+            var _Editor$parent = Editor.parent(editor, at), _Editor$parent2 = slicedToArray(_Editor$parent, 1), parent = _Editor$parent2[0];
+            match = function match2(n) {
+              return parent.children.includes(n);
+            };
+          } else {
+            match = function match2() {
+              return true;
+            };
+          }
+        }
+        var _Editor$nodes3 = Editor.nodes(editor, {
+          at: span,
+          match,
+          mode,
+          voids
+        }), _Editor$nodes4 = slicedToArray(_Editor$nodes3, 2), next2 = _Editor$nodes4[1];
+        return next2;
+      },
+      node: function node(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var path = Editor.path(editor, at, options);
+        var node2 = Node.get(editor, path);
+        return [node2, path];
+      },
+      nodes: function* nodes(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$at4 = options.at, at = _options$at4 === void 0 ? editor.selection : _options$at4, _options$mode3 = options.mode, mode = _options$mode3 === void 0 ? "all" : _options$mode3, _options$universal = options.universal, universal = _options$universal === void 0 ? false : _options$universal, _options$reverse2 = options.reverse, reverse = _options$reverse2 === void 0 ? false : _options$reverse2, _options$voids4 = options.voids, voids = _options$voids4 === void 0 ? false : _options$voids4;
+        var match = options.match;
+        if (!match) {
+          match = function match2() {
+            return true;
+          };
+        }
+        if (!at) {
+          return;
+        }
+        var from;
+        var to;
+        if (Span.isSpan(at)) {
+          from = at[0];
+          to = at[1];
+        } else {
+          var first = Editor.path(editor, at, {
+            edge: "start"
+          });
+          var last = Editor.path(editor, at, {
+            edge: "end"
+          });
+          from = reverse ? last : first;
+          to = reverse ? first : last;
+        }
+        var iterable = Node.nodes(editor, {
+          reverse,
+          from,
+          to,
+          pass: function pass(_ref) {
+            var _ref2 = slicedToArray(_ref, 1), n = _ref2[0];
+            return voids ? false : Editor.isVoid(editor, n);
+          }
+        });
+        var matches = [];
+        var hit;
+        var _iteratorNormalCompletion5 = true;
+        var _didIteratorError5 = false;
+        var _iteratorError5 = void 0;
+        try {
+          for (var _iterator5 = iterable[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+            var _step5$value = slicedToArray(_step5.value, 2), node = _step5$value[0], path = _step5$value[1];
+            var isLower = hit && Path.compare(path, hit[1]) === 0;
+            if (mode === "highest" && isLower) {
+              continue;
+            }
+            if (!match(node)) {
+              if (universal && !isLower && Text.isText(node)) {
+                return;
+              } else {
+                continue;
+              }
+            }
+            if (mode === "lowest" && isLower) {
+              hit = [node, path];
+              continue;
+            }
+            var emit = mode === "lowest" ? hit : [node, path];
+            if (emit) {
+              if (universal) {
+                matches.push(emit);
+              } else {
+                yield emit;
+              }
+            }
+            hit = [node, path];
+          }
+        } catch (err) {
+          _didIteratorError5 = true;
+          _iteratorError5 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+              _iterator5["return"]();
+            }
+          } finally {
+            if (_didIteratorError5) {
+              throw _iteratorError5;
+            }
+          }
+        }
+        if (mode === "lowest" && hit) {
+          if (universal) {
+            matches.push(hit);
+          } else {
+            yield hit;
+          }
+        }
+        if (universal) {
+          yield* matches;
+        }
+      },
+      normalize: function normalize(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$force = options.force, force = _options$force === void 0 ? false : _options$force;
+        var getDirtyPaths2 = function getDirtyPaths3(editor2) {
+          return DIRTY_PATHS.get(editor2) || [];
+        };
+        if (!Editor.isNormalizing(editor)) {
+          return;
+        }
+        if (force) {
+          var allPaths = Array.from(Node.nodes(editor), function(_ref3) {
+            var _ref4 = slicedToArray(_ref3, 2), p = _ref4[1];
+            return p;
+          });
+          DIRTY_PATHS.set(editor, allPaths);
+        }
+        if (getDirtyPaths2(editor).length === 0) {
+          return;
+        }
+        Editor.withoutNormalizing(editor, function() {
+          var max = getDirtyPaths2(editor).length * 42;
+          var m = 0;
+          while (getDirtyPaths2(editor).length !== 0) {
+            if (m > max) {
+              throw new Error("\n            Could not completely normalize the editor after ".concat(max, " iterations! This is usually due to incorrect normalization logic that leaves a node in an invalid state.\n          "));
+            }
+            var path = getDirtyPaths2(editor).pop();
+            var entry = Editor.node(editor, path);
+            editor.normalizeNode(entry);
+            m++;
+          }
+        });
+      },
+      parent: function parent(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var path = Editor.path(editor, at, options);
+        var parentPath = Path.parent(path);
+        var entry = Editor.node(editor, parentPath);
+        return entry;
+      },
+      path: function path(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var depth = options.depth, edge = options.edge;
+        if (Path.isPath(at)) {
+          if (edge === "start") {
+            var _Node$first = Node.first(editor, at), _Node$first2 = slicedToArray(_Node$first, 2), firstPath = _Node$first2[1];
+            at = firstPath;
+          } else if (edge === "end") {
+            var _Node$last = Node.last(editor, at), _Node$last2 = slicedToArray(_Node$last, 2), lastPath = _Node$last2[1];
+            at = lastPath;
+          }
+        }
+        if (Range.isRange(at)) {
+          if (edge === "start") {
+            at = Range.start(at);
+          } else if (edge === "end") {
+            at = Range.end(at);
+          } else {
+            at = Path.common(at.anchor.path, at.focus.path);
+          }
+        }
+        if (Point.isPoint(at)) {
+          at = at.path;
+        }
+        if (depth != null) {
+          at = at.slice(0, depth);
+        }
+        return at;
+      },
+      pathRef: function pathRef(editor, path) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$affinity = options.affinity, affinity = _options$affinity === void 0 ? "forward" : _options$affinity;
+        var ref = {
+          current: path,
+          affinity,
+          unref: function unref() {
+            var current = ref.current;
+            var pathRefs = Editor.pathRefs(editor);
+            pathRefs["delete"](ref);
+            ref.current = null;
+            return current;
+          }
+        };
+        var refs = Editor.pathRefs(editor);
+        refs.add(ref);
+        return ref;
+      },
+      pathRefs: function pathRefs(editor) {
+        var refs = PATH_REFS.get(editor);
+        if (!refs) {
+          refs = new Set();
+          PATH_REFS.set(editor, refs);
+        }
+        return refs;
+      },
+      point: function point(editor, at) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$edge = options.edge, edge = _options$edge === void 0 ? "start" : _options$edge;
+        if (Path.isPath(at)) {
+          var path;
+          if (edge === "end") {
+            var _Node$last3 = Node.last(editor, at), _Node$last4 = slicedToArray(_Node$last3, 2), lastPath = _Node$last4[1];
+            path = lastPath;
+          } else {
+            var _Node$first3 = Node.first(editor, at), _Node$first4 = slicedToArray(_Node$first3, 2), firstPath = _Node$first4[1];
+            path = firstPath;
+          }
+          var node = Node.get(editor, path);
+          if (!Text.isText(node)) {
+            throw new Error("Cannot get the ".concat(edge, " point in the node at path [").concat(at, "] because it has no ").concat(edge, " text node."));
+          }
+          return {
+            path,
+            offset: edge === "end" ? node.text.length : 0
+          };
+        }
+        if (Range.isRange(at)) {
+          var _Range$edges = Range.edges(at), _Range$edges2 = slicedToArray(_Range$edges, 2), start = _Range$edges2[0], end = _Range$edges2[1];
+          return edge === "start" ? start : end;
+        }
+        return at;
+      },
+      pointRef: function pointRef(editor, point) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$affinity2 = options.affinity, affinity = _options$affinity2 === void 0 ? "forward" : _options$affinity2;
+        var ref = {
+          current: point,
+          affinity,
+          unref: function unref() {
+            var current = ref.current;
+            var pointRefs = Editor.pointRefs(editor);
+            pointRefs["delete"](ref);
+            ref.current = null;
+            return current;
+          }
+        };
+        var refs = Editor.pointRefs(editor);
+        refs.add(ref);
+        return ref;
+      },
+      pointRefs: function pointRefs(editor) {
+        var refs = POINT_REFS.get(editor);
+        if (!refs) {
+          refs = new Set();
+          POINT_REFS.set(editor, refs);
+        }
+        return refs;
+      },
+      positions: function* positions(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$at5 = options.at, at = _options$at5 === void 0 ? editor.selection : _options$at5, _options$unit3 = options.unit, unit = _options$unit3 === void 0 ? "offset" : _options$unit3, _options$reverse3 = options.reverse, reverse = _options$reverse3 === void 0 ? false : _options$reverse3;
+        if (!at) {
+          return;
+        }
+        var range = Editor.range(editor, at);
+        var _Range$edges3 = Range.edges(range), _Range$edges4 = slicedToArray(_Range$edges3, 2), start = _Range$edges4[0], end = _Range$edges4[1];
+        var first = reverse ? end : start;
+        var string = "";
+        var available = 0;
+        var offset = 0;
+        var distance = null;
+        var isNewBlock = false;
+        var advance = function advance2() {
+          if (distance == null) {
+            if (unit === "character") {
+              distance = getCharacterDistance(string);
+            } else if (unit === "word") {
+              distance = getWordDistance(string);
+            } else if (unit === "line" || unit === "block") {
+              distance = string.length;
+            } else {
+              distance = 1;
+            }
+            string = string.slice(distance);
+          }
+          offset = reverse ? offset - distance : offset + distance;
+          available = available - distance;
+          distance = available >= 0 ? null : 0 - available;
+        };
+        var _iteratorNormalCompletion6 = true;
+        var _didIteratorError6 = false;
+        var _iteratorError6 = void 0;
+        try {
+          for (var _iterator6 = Editor.nodes(editor, {
+            at,
+            reverse
+          })[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+            var _step6$value = slicedToArray(_step6.value, 2), node = _step6$value[0], path = _step6$value[1];
+            if (Element.isElement(node)) {
+              if (editor.isVoid(node)) {
+                yield Editor.start(editor, path);
+                continue;
+              }
+              if (editor.isInline(node)) {
+                continue;
+              }
+              if (Editor.hasInlines(editor, node)) {
+                var e = Path.isAncestor(path, end.path) ? end : Editor.end(editor, path);
+                var s = Path.isAncestor(path, start.path) ? start : Editor.start(editor, path);
+                var text = Editor.string(editor, {
+                  anchor: s,
+                  focus: e
+                });
+                string = reverse ? esrever.reverse(text) : text;
+                isNewBlock = true;
+              }
+            }
+            if (Text.isText(node)) {
+              var isFirst = Path.equals(path, first.path);
+              available = node.text.length;
+              offset = reverse ? available : 0;
+              if (isFirst) {
+                available = reverse ? first.offset : available - first.offset;
+                offset = first.offset;
+              }
+              if (isFirst || isNewBlock || unit === "offset") {
+                yield {
+                  path,
+                  offset
+                };
+              }
+              while (true) {
+                if (string === "") {
+                  break;
+                } else {
+                  advance();
+                }
+                if (available >= 0) {
+                  yield {
+                    path,
+                    offset
+                  };
+                } else {
+                  break;
+                }
+              }
+              isNewBlock = false;
+            }
+          }
+        } catch (err) {
+          _didIteratorError6 = true;
+          _iteratorError6 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+              _iterator6["return"]();
+            }
+          } finally {
+            if (_didIteratorError6) {
+              throw _iteratorError6;
+            }
+          }
+        }
+      },
+      previous: function previous(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$mode4 = options.mode, mode = _options$mode4 === void 0 ? "lowest" : _options$mode4, _options$voids5 = options.voids, voids = _options$voids5 === void 0 ? false : _options$voids5;
+        var match = options.match, _options$at6 = options.at, at = _options$at6 === void 0 ? editor.selection : _options$at6;
+        if (!at) {
+          return;
+        }
+        var _Editor$first = Editor.first(editor, at), _Editor$first2 = slicedToArray(_Editor$first, 2), from = _Editor$first2[1];
+        var _Editor$first3 = Editor.first(editor, []), _Editor$first4 = slicedToArray(_Editor$first3, 2), to = _Editor$first4[1];
+        var span = [from, to];
+        if (Path.isPath(at) && at.length === 0) {
+          throw new Error("Cannot get the previous node from the root node!");
+        }
+        if (match == null) {
+          if (Path.isPath(at)) {
+            var _Editor$parent3 = Editor.parent(editor, at), _Editor$parent4 = slicedToArray(_Editor$parent3, 1), parent = _Editor$parent4[0];
+            match = function match2(n) {
+              return parent.children.includes(n);
+            };
+          } else {
+            match = function match2() {
+              return true;
+            };
+          }
+        }
+        var _Editor$nodes5 = Editor.nodes(editor, {
+          reverse: true,
+          at: span,
+          match,
+          mode,
+          voids
+        }), _Editor$nodes6 = slicedToArray(_Editor$nodes5, 2), previous2 = _Editor$nodes6[1];
+        return previous2;
+      },
+      range: function range(editor, at, to) {
+        if (Range.isRange(at) && !to) {
+          return at;
+        }
+        var start = Editor.start(editor, at);
+        var end = Editor.end(editor, to || at);
+        return {
+          anchor: start,
+          focus: end
+        };
+      },
+      rangeRef: function rangeRef(editor, range) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$affinity3 = options.affinity, affinity = _options$affinity3 === void 0 ? "forward" : _options$affinity3;
+        var ref = {
+          current: range,
+          affinity,
+          unref: function unref() {
+            var current = ref.current;
+            var rangeRefs = Editor.rangeRefs(editor);
+            rangeRefs["delete"](ref);
+            ref.current = null;
+            return current;
+          }
+        };
+        var refs = Editor.rangeRefs(editor);
+        refs.add(ref);
+        return ref;
+      },
+      rangeRefs: function rangeRefs(editor) {
+        var refs = RANGE_REFS.get(editor);
+        if (!refs) {
+          refs = new Set();
+          RANGE_REFS.set(editor, refs);
+        }
+        return refs;
+      },
+      removeMark: function removeMark(editor, key) {
+        editor.removeMark(key);
+      },
+      start: function start(editor, at) {
+        return Editor.point(editor, at, {
+          edge: "start"
+        });
+      },
+      string: function string(editor, at) {
+        var range = Editor.range(editor, at);
+        var _Range$edges5 = Range.edges(range), _Range$edges6 = slicedToArray(_Range$edges5, 2), start = _Range$edges6[0], end = _Range$edges6[1];
+        var text = "";
+        var _iteratorNormalCompletion7 = true;
+        var _didIteratorError7 = false;
+        var _iteratorError7 = void 0;
+        try {
+          for (var _iterator7 = Editor.nodes(editor, {
+            at: range,
+            match: Text.isText
+          })[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+            var _step7$value = slicedToArray(_step7.value, 2), node = _step7$value[0], path = _step7$value[1];
+            var t = node.text;
+            if (Path.equals(path, end.path)) {
+              t = t.slice(0, end.offset);
+            }
+            if (Path.equals(path, start.path)) {
+              t = t.slice(start.offset);
+            }
+            text += t;
+          }
+        } catch (err) {
+          _didIteratorError7 = true;
+          _iteratorError7 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion7 && _iterator7["return"] != null) {
+              _iterator7["return"]();
+            }
+          } finally {
+            if (_didIteratorError7) {
+              throw _iteratorError7;
+            }
+          }
+        }
+        return text;
+      },
+      transform: function transform(editor, op) {
+        editor.children = immer.createDraft(editor.children);
+        var selection = editor.selection && immer.createDraft(editor.selection);
+        switch (op.type) {
+          case "insert_node": {
+            var path = op.path, node = op.node;
+            var parent = Node.parent(editor, path);
+            var index = path[path.length - 1];
+            parent.children.splice(index, 0, node);
+            if (selection) {
+              var _iteratorNormalCompletion8 = true;
+              var _didIteratorError8 = false;
+              var _iteratorError8 = void 0;
+              try {
+                for (var _iterator8 = Range.points(selection)[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+                  var _step8$value = slicedToArray(_step8.value, 2), point = _step8$value[0], key = _step8$value[1];
+                  selection[key] = Point.transform(point, op);
+                }
+              } catch (err) {
+                _didIteratorError8 = true;
+                _iteratorError8 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion8 && _iterator8["return"] != null) {
+                    _iterator8["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError8) {
+                    throw _iteratorError8;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "insert_text": {
+            var _path = op.path, offset = op.offset, text = op.text;
+            var _node3 = Node.leaf(editor, _path);
+            var before = _node3.text.slice(0, offset);
+            var after = _node3.text.slice(offset);
+            _node3.text = before + text + after;
+            if (selection) {
+              var _iteratorNormalCompletion9 = true;
+              var _didIteratorError9 = false;
+              var _iteratorError9 = void 0;
+              try {
+                for (var _iterator9 = Range.points(selection)[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+                  var _step9$value = slicedToArray(_step9.value, 2), _point = _step9$value[0], _key = _step9$value[1];
+                  selection[_key] = Point.transform(_point, op);
+                }
+              } catch (err) {
+                _didIteratorError9 = true;
+                _iteratorError9 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion9 && _iterator9["return"] != null) {
+                    _iterator9["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError9) {
+                    throw _iteratorError9;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "merge_node": {
+            var _path2 = op.path;
+            var _node4 = Node.get(editor, _path2);
+            var prevPath = Path.previous(_path2);
+            var prev = Node.get(editor, prevPath);
+            var _parent = Node.parent(editor, _path2);
+            var _index = _path2[_path2.length - 1];
+            if (Text.isText(_node4) && Text.isText(prev)) {
+              prev.text += _node4.text;
+            } else if (!Text.isText(_node4) && !Text.isText(prev)) {
+              var _prev$children;
+              (_prev$children = prev.children).push.apply(_prev$children, toConsumableArray(_node4.children));
+            } else {
+              throw new Error('Cannot apply a "merge_node" operation at path ['.concat(_path2, "] to nodes of different interaces: ").concat(_node4, " ").concat(prev));
+            }
+            _parent.children.splice(_index, 1);
+            if (selection) {
+              var _iteratorNormalCompletion10 = true;
+              var _didIteratorError10 = false;
+              var _iteratorError10 = void 0;
+              try {
+                for (var _iterator10 = Range.points(selection)[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+                  var _step10$value = slicedToArray(_step10.value, 2), _point2 = _step10$value[0], _key2 = _step10$value[1];
+                  selection[_key2] = Point.transform(_point2, op);
+                }
+              } catch (err) {
+                _didIteratorError10 = true;
+                _iteratorError10 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion10 && _iterator10["return"] != null) {
+                    _iterator10["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError10) {
+                    throw _iteratorError10;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "move_node": {
+            var _path3 = op.path, newPath = op.newPath;
+            if (Path.isAncestor(_path3, newPath)) {
+              throw new Error("Cannot move a path [".concat(_path3, "] to new path [").concat(newPath, "] because the destination is inside itself."));
+            }
+            var _node5 = Node.get(editor, _path3);
+            var _parent2 = Node.parent(editor, _path3);
+            var _index2 = _path3[_path3.length - 1];
+            _parent2.children.splice(_index2, 1);
+            var truePath = Path.transform(_path3, op);
+            var newParent = Node.get(editor, Path.parent(truePath));
+            var newIndex = truePath[truePath.length - 1];
+            newParent.children.splice(newIndex, 0, _node5);
+            if (selection) {
+              var _iteratorNormalCompletion11 = true;
+              var _didIteratorError11 = false;
+              var _iteratorError11 = void 0;
+              try {
+                for (var _iterator11 = Range.points(selection)[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+                  var _step11$value = slicedToArray(_step11.value, 2), _point3 = _step11$value[0], _key3 = _step11$value[1];
+                  selection[_key3] = Point.transform(_point3, op);
+                }
+              } catch (err) {
+                _didIteratorError11 = true;
+                _iteratorError11 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion11 && _iterator11["return"] != null) {
+                    _iterator11["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError11) {
+                    throw _iteratorError11;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "remove_node": {
+            var _path4 = op.path;
+            var _index3 = _path4[_path4.length - 1];
+            var _parent3 = Node.parent(editor, _path4);
+            _parent3.children.splice(_index3, 1);
+            if (selection) {
+              var _iteratorNormalCompletion12 = true;
+              var _didIteratorError12 = false;
+              var _iteratorError12 = void 0;
+              try {
+                for (var _iterator12 = Range.points(selection)[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+                  var _step12$value = slicedToArray(_step12.value, 2), _point4 = _step12$value[0], _key4 = _step12$value[1];
+                  var result = Point.transform(_point4, op);
+                  if (selection != null && result != null) {
+                    selection[_key4] = result;
+                  } else {
+                    var _prev2 = void 0;
+                    var next = void 0;
+                    var _iteratorNormalCompletion13 = true;
+                    var _didIteratorError13 = false;
+                    var _iteratorError13 = void 0;
+                    try {
+                      for (var _iterator13 = Node.texts(editor)[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
+                        var _step13$value = slicedToArray(_step13.value, 2), n = _step13$value[0], p = _step13$value[1];
+                        if (Path.compare(p, _path4) === -1) {
+                          _prev2 = [n, p];
+                        } else {
+                          next = [n, p];
+                          break;
+                        }
+                      }
+                    } catch (err) {
+                      _didIteratorError13 = true;
+                      _iteratorError13 = err;
+                    } finally {
+                      try {
+                        if (!_iteratorNormalCompletion13 && _iterator13["return"] != null) {
+                          _iterator13["return"]();
+                        }
+                      } finally {
+                        if (_didIteratorError13) {
+                          throw _iteratorError13;
+                        }
+                      }
+                    }
+                    if (_prev2) {
+                      _point4.path = _prev2[1];
+                      _point4.offset = _prev2[0].text.length;
+                    } else if (next) {
+                      _point4.path = next[1];
+                      _point4.offset = 0;
+                    } else {
+                      selection = null;
+                    }
+                  }
+                }
+              } catch (err) {
+                _didIteratorError12 = true;
+                _iteratorError12 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion12 && _iterator12["return"] != null) {
+                    _iterator12["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError12) {
+                    throw _iteratorError12;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "remove_text": {
+            var _path5 = op.path, _offset = op.offset, _text2 = op.text;
+            var _node6 = Node.leaf(editor, _path5);
+            var _before = _node6.text.slice(0, _offset);
+            var _after = _node6.text.slice(_offset + _text2.length);
+            _node6.text = _before + _after;
+            if (selection) {
+              var _iteratorNormalCompletion14 = true;
+              var _didIteratorError14 = false;
+              var _iteratorError14 = void 0;
+              try {
+                for (var _iterator14 = Range.points(selection)[Symbol.iterator](), _step14; !(_iteratorNormalCompletion14 = (_step14 = _iterator14.next()).done); _iteratorNormalCompletion14 = true) {
+                  var _step14$value = slicedToArray(_step14.value, 2), _point5 = _step14$value[0], _key5 = _step14$value[1];
+                  selection[_key5] = Point.transform(_point5, op);
+                }
+              } catch (err) {
+                _didIteratorError14 = true;
+                _iteratorError14 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion14 && _iterator14["return"] != null) {
+                    _iterator14["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError14) {
+                    throw _iteratorError14;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "set_node": {
+            var _path6 = op.path, newProperties = op.newProperties;
+            if (_path6.length === 0) {
+              throw new Error("Cannot set properties on the root node!");
+            }
+            var _node7 = Node.get(editor, _path6);
+            for (var _key6 in newProperties) {
+              if (_key6 === "children" || _key6 === "text") {
+                throw new Error('Cannot set the "'.concat(_key6, '" property of nodes!'));
+              }
+              var value = newProperties[_key6];
+              if (value == null) {
+                delete _node7[_key6];
+              } else {
+                _node7[_key6] = value;
+              }
+            }
+            break;
+          }
+          case "set_selection": {
+            var _newProperties = op.newProperties;
+            if (_newProperties == null) {
+              selection = _newProperties;
+            } else if (selection == null) {
+              if (!Range.isRange(_newProperties)) {
+                throw new Error('Cannot apply an incomplete "set_selection" operation properties '.concat(JSON.stringify(_newProperties), " when there is no current selection."));
+              }
+              selection = _newProperties;
+            } else {
+              Object.assign(selection, _newProperties);
+            }
+            break;
+          }
+          case "split_node": {
+            var _path7 = op.path, position = op.position, properties = op.properties;
+            if (_path7.length === 0) {
+              throw new Error('Cannot apply a "split_node" operation at path ['.concat(_path7, "] because the root node cannot be split."));
+            }
+            var _node8 = Node.get(editor, _path7);
+            var _parent4 = Node.parent(editor, _path7);
+            var _index4 = _path7[_path7.length - 1];
+            var newNode;
+            if (Text.isText(_node8)) {
+              var _before2 = _node8.text.slice(0, position);
+              var _after2 = _node8.text.slice(position);
+              _node8.text = _before2;
+              newNode = _objectSpread({}, _node8, {}, properties, {
+                text: _after2
+              });
+            } else {
+              var _before3 = _node8.children.slice(0, position);
+              var _after3 = _node8.children.slice(position);
+              _node8.children = _before3;
+              newNode = _objectSpread({}, _node8, {}, properties, {
+                children: _after3
+              });
+            }
+            _parent4.children.splice(_index4 + 1, 0, newNode);
+            if (selection) {
+              var _iteratorNormalCompletion15 = true;
+              var _didIteratorError15 = false;
+              var _iteratorError15 = void 0;
+              try {
+                for (var _iterator15 = Range.points(selection)[Symbol.iterator](), _step15; !(_iteratorNormalCompletion15 = (_step15 = _iterator15.next()).done); _iteratorNormalCompletion15 = true) {
+                  var _step15$value = slicedToArray(_step15.value, 2), _point6 = _step15$value[0], _key7 = _step15$value[1];
+                  selection[_key7] = Point.transform(_point6, op);
+                }
+              } catch (err) {
+                _didIteratorError15 = true;
+                _iteratorError15 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion15 && _iterator15["return"] != null) {
+                    _iterator15["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError15) {
+                    throw _iteratorError15;
+                  }
+                }
+              }
+            }
+            break;
+          }
+        }
+        editor.children = immer.finishDraft(editor.children);
+        if (selection) {
+          editor.selection = immer.isDraft(selection) ? immer.finishDraft(selection) : selection;
+        } else {
+          editor.selection = null;
+        }
+      },
+      unhangRange: function unhangRange(editor, range) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$voids6 = options.voids, voids = _options$voids6 === void 0 ? false : _options$voids6;
+        var _Range$edges7 = Range.edges(range), _Range$edges8 = slicedToArray(_Range$edges7, 2), start = _Range$edges8[0], end = _Range$edges8[1];
+        if (start.offset !== 0 || end.offset !== 0 || Range.isCollapsed(range)) {
+          return range;
+        }
+        var endBlock = Editor.above(editor, {
+          at: end,
+          match: function match(n) {
+            return Editor.isBlock(editor, n);
+          }
+        });
+        var blockPath = endBlock ? endBlock[1] : [];
+        var first = Editor.start(editor, []);
+        var before = {
+          anchor: first,
+          focus: end
+        };
+        var skip = true;
+        var _iteratorNormalCompletion16 = true;
+        var _didIteratorError16 = false;
+        var _iteratorError16 = void 0;
+        try {
+          for (var _iterator16 = Editor.nodes(editor, {
+            at: before,
+            match: Text.isText,
+            reverse: true,
+            voids
+          })[Symbol.iterator](), _step16; !(_iteratorNormalCompletion16 = (_step16 = _iterator16.next()).done); _iteratorNormalCompletion16 = true) {
+            var _step16$value = slicedToArray(_step16.value, 2), node = _step16$value[0], path = _step16$value[1];
+            if (skip) {
+              skip = false;
+              continue;
+            }
+            if (node.text !== "" || Path.isBefore(path, blockPath)) {
+              end = {
+                path,
+                offset: node.text.length
+              };
+              break;
+            }
+          }
+        } catch (err) {
+          _didIteratorError16 = true;
+          _iteratorError16 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion16 && _iterator16["return"] != null) {
+              _iterator16["return"]();
+            }
+          } finally {
+            if (_didIteratorError16) {
+              throw _iteratorError16;
+            }
+          }
+        }
+        return {
+          anchor: start,
+          focus: end
+        };
+      },
+      void: function _void(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        return Editor.above(editor, _objectSpread({}, options, {
+          match: function match(n) {
+            return Editor.isVoid(editor, n);
+          }
+        }));
+      },
+      withoutNormalizing: function withoutNormalizing(editor, fn) {
+        var value = Editor.isNormalizing(editor);
+        NORMALIZING.set(editor, false);
+        fn();
+        NORMALIZING.set(editor, value);
+        Editor.normalize(editor);
+      }
+    };
+    var Element = {
+      isElement: function isElement(value) {
+        return isPlainObject(value) && Node.isNodeList(value.children) && !Editor.isEditor(value);
+      },
+      isElementList: function isElementList(value) {
+        return Array.isArray(value) && (value.length === 0 || Element.isElement(value[0]));
+      },
+      matches: function matches(element, props) {
+        for (var key in props) {
+          if (key === "children") {
+            continue;
+          }
+          if (element[key] !== props[key]) {
+            return false;
+          }
+        }
+        return true;
+      }
+    };
+    var Location = {
+      isLocation: function isLocation(value) {
+        return Path.isPath(value) || Point.isPoint(value) || Range.isRange(value);
+      }
+    };
+    var Span = {
+      isSpan: function isSpan(value) {
+        return Array.isArray(value) && value.length === 2 && value.every(Path.isPath);
+      }
+    };
+    var Node = {
+      ancestor: function ancestor(root, path) {
+        var node = Node.get(root, path);
+        if (Text.isText(node)) {
+          throw new Error("Cannot get the ancestor node at path [".concat(path, "] because it refers to a text node instead: ").concat(node));
+        }
+        return node;
+      },
+      ancestors: function* ancestors(root, path) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = void 0;
+        try {
+          for (var _iterator = Path.ancestors(path, options)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var p = _step.value;
+            var n = Node.ancestor(root, p);
+            var entry = [n, p];
+            yield entry;
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      },
+      child: function child(root, index) {
+        if (Text.isText(root)) {
+          throw new Error("Cannot get the child of a text node: ".concat(JSON.stringify(root)));
+        }
+        var c = root.children[index];
+        if (c == null) {
+          throw new Error("Cannot get child at index `".concat(index, "` in node: ").concat(JSON.stringify(root)));
+        }
+        return c;
+      },
+      children: function* children(root, path) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$reverse = options.reverse, reverse = _options$reverse === void 0 ? false : _options$reverse;
+        var ancestor = Node.ancestor(root, path);
+        var children2 = ancestor.children;
+        var index = reverse ? children2.length - 1 : 0;
+        while (reverse ? index >= 0 : index < children2.length) {
+          var child = Node.child(ancestor, index);
+          var childPath = path.concat(index);
+          yield [child, childPath];
+          index = reverse ? index - 1 : index + 1;
+        }
+      },
+      common: function common(root, path, another) {
+        var p = Path.common(path, another);
+        var n = Node.get(root, p);
+        return [n, p];
+      },
+      descendant: function descendant(root, path) {
+        var node = Node.get(root, path);
+        if (Editor.isEditor(node)) {
+          throw new Error("Cannot get the descendant node at path [".concat(path, "] because it refers to the root editor node instead: ").concat(node));
+        }
+        return node;
+      },
+      descendants: function* descendants(root) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = void 0;
+        try {
+          for (var _iterator2 = Node.nodes(root, options)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var _step2$value = slicedToArray(_step2.value, 2), node = _step2$value[0], path = _step2$value[1];
+            if (path.length !== 0) {
+              yield [node, path];
+            }
+          }
+        } catch (err) {
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+              _iterator2["return"]();
+            }
+          } finally {
+            if (_didIteratorError2) {
+              throw _iteratorError2;
+            }
+          }
+        }
+      },
+      elements: function* elements(root) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = void 0;
+        try {
+          for (var _iterator3 = Node.nodes(root, options)[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            var _step3$value = slicedToArray(_step3.value, 2), node = _step3$value[0], path = _step3$value[1];
+            if (Element.isElement(node)) {
+              yield [node, path];
+            }
+          }
+        } catch (err) {
+          _didIteratorError3 = true;
+          _iteratorError3 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+              _iterator3["return"]();
+            }
+          } finally {
+            if (_didIteratorError3) {
+              throw _iteratorError3;
+            }
+          }
+        }
+      },
+      first: function first(root, path) {
+        var p = path.slice();
+        var n = Node.get(root, p);
+        while (n) {
+          if (Text.isText(n) || n.children.length === 0) {
+            break;
+          } else {
+            n = n.children[0];
+            p.push(0);
+          }
+        }
+        return [n, p];
+      },
+      fragment: function fragment(root, range) {
+        if (Text.isText(root)) {
+          throw new Error("Cannot get a fragment starting from a root text node: ".concat(JSON.stringify(root)));
+        }
+        var newRoot = immer.produce(root, function(r) {
+          var _Range$edges = Range.edges(range), _Range$edges2 = slicedToArray(_Range$edges, 2), start = _Range$edges2[0], end = _Range$edges2[1];
+          var iterable = Node.nodes(r, {
+            reverse: true,
+            pass: function pass(_ref) {
+              var _ref2 = slicedToArray(_ref, 2), path2 = _ref2[1];
+              return !Range.includes(range, path2);
+            }
+          });
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = void 0;
+          try {
+            for (var _iterator4 = iterable[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var _step4$value = slicedToArray(_step4.value, 2), path = _step4$value[1];
+              if (!Range.includes(range, path)) {
+                var parent = Node.parent(r, path);
+                var index = path[path.length - 1];
+                parent.children.splice(index, 1);
+              }
+              if (Path.equals(path, end.path)) {
+                var leaf = Node.leaf(r, path);
+                leaf.text = leaf.text.slice(0, end.offset);
+              }
+              if (Path.equals(path, start.path)) {
+                var _leaf = Node.leaf(r, path);
+                _leaf.text = _leaf.text.slice(start.offset);
+              }
+            }
+          } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+                _iterator4["return"]();
+              }
+            } finally {
+              if (_didIteratorError4) {
+                throw _iteratorError4;
+              }
+            }
+          }
+          delete r.selection;
+        });
+        return newRoot.children;
+      },
+      get: function get(root, path) {
+        var node = root;
+        for (var i = 0; i < path.length; i++) {
+          var p = path[i];
+          if (Text.isText(node) || !node.children[p]) {
+            throw new Error("Cannot find a descendant at path [".concat(path, "] in node: ").concat(JSON.stringify(root)));
+          }
+          node = node.children[p];
+        }
+        return node;
+      },
+      has: function has(root, path) {
+        var node = root;
+        for (var i = 0; i < path.length; i++) {
+          var p = path[i];
+          if (Text.isText(node) || !node.children[p]) {
+            return false;
+          }
+          node = node.children[p];
+        }
+        return true;
+      },
+      isNode: function isNode(value) {
+        return Text.isText(value) || Element.isElement(value) || Editor.isEditor(value);
+      },
+      isNodeList: function isNodeList(value) {
+        return Array.isArray(value) && (value.length === 0 || Node.isNode(value[0]));
+      },
+      last: function last(root, path) {
+        var p = path.slice();
+        var n = Node.get(root, p);
+        while (n) {
+          if (Text.isText(n) || n.children.length === 0) {
+            break;
+          } else {
+            var i = n.children.length - 1;
+            n = n.children[i];
+            p.push(i);
+          }
+        }
+        return [n, p];
+      },
+      leaf: function leaf(root, path) {
+        var node = Node.get(root, path);
+        if (!Text.isText(node)) {
+          throw new Error("Cannot get the leaf node at path [".concat(path, "] because it refers to a non-leaf node: ").concat(node));
+        }
+        return node;
+      },
+      levels: function* levels(root, path) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _iteratorNormalCompletion5 = true;
+        var _didIteratorError5 = false;
+        var _iteratorError5 = void 0;
+        try {
+          for (var _iterator5 = Path.levels(path, options)[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+            var p = _step5.value;
+            var n = Node.get(root, p);
+            yield [n, p];
+          }
+        } catch (err) {
+          _didIteratorError5 = true;
+          _iteratorError5 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+              _iterator5["return"]();
+            }
+          } finally {
+            if (_didIteratorError5) {
+              throw _iteratorError5;
+            }
+          }
+        }
+      },
+      matches: function matches(node, props) {
+        return Element.isElement(node) && Element.matches(node, props) || Text.isText(node) && Text.matches(node, props);
+      },
+      nodes: function* nodes(root) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var pass = options.pass, _options$reverse2 = options.reverse, reverse = _options$reverse2 === void 0 ? false : _options$reverse2;
+        var _options$from = options.from, from = _options$from === void 0 ? [] : _options$from, to = options.to;
+        var visited = new Set();
+        var p = [];
+        var n = root;
+        while (true) {
+          if (to && (reverse ? Path.isBefore(p, to) : Path.isAfter(p, to))) {
+            break;
+          }
+          if (!visited.has(n)) {
+            yield [n, p];
+          }
+          if (!visited.has(n) && !Text.isText(n) && n.children.length !== 0 && (pass == null || pass([n, p]) === false)) {
+            visited.add(n);
+            var nextIndex = reverse ? n.children.length - 1 : 0;
+            if (Path.isAncestor(p, from)) {
+              nextIndex = from[p.length];
+            }
+            p = p.concat(nextIndex);
+            n = Node.get(root, p);
+            continue;
+          }
+          if (p.length === 0) {
+            break;
+          }
+          if (!reverse) {
+            var newPath = Path.next(p);
+            if (Node.has(root, newPath)) {
+              p = newPath;
+              n = Node.get(root, p);
+              continue;
+            }
+          }
+          if (reverse && p[p.length - 1] !== 0) {
+            var _newPath = Path.previous(p);
+            p = _newPath;
+            n = Node.get(root, p);
+            continue;
+          }
+          p = Path.parent(p);
+          n = Node.get(root, p);
+          visited.add(n);
+        }
+      },
+      parent: function parent(root, path) {
+        var parentPath = Path.parent(path);
+        var p = Node.get(root, parentPath);
+        if (Text.isText(p)) {
+          throw new Error("Cannot get the parent of path [".concat(path, "] because it does not exist in the root."));
+        }
+        return p;
+      },
+      string: function string(node) {
+        if (Text.isText(node)) {
+          return node.text;
+        } else {
+          return node.children.map(Node.string).join("");
+        }
+      },
+      texts: function* texts(root) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _iteratorNormalCompletion6 = true;
+        var _didIteratorError6 = false;
+        var _iteratorError6 = void 0;
+        try {
+          for (var _iterator6 = Node.nodes(root, options)[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+            var _step6$value = slicedToArray(_step6.value, 2), node = _step6$value[0], path = _step6$value[1];
+            if (Text.isText(node)) {
+              yield [node, path];
+            }
+          }
+        } catch (err) {
+          _didIteratorError6 = true;
+          _iteratorError6 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+              _iterator6["return"]();
+            }
+          } finally {
+            if (_didIteratorError6) {
+              throw _iteratorError6;
+            }
+          }
+        }
+      }
+    };
+    function ownKeys$1(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$1(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$1(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$1(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var Operation = {
+      isNodeOperation: function isNodeOperation(value) {
+        return Operation.isOperation(value) && value.type.endsWith("_node");
+      },
+      isOperation: function isOperation(value) {
+        if (!isPlainObject(value)) {
+          return false;
+        }
+        switch (value.type) {
+          case "insert_node":
+            return Path.isPath(value.path) && Node.isNode(value.node);
+          case "insert_text":
+            return typeof value.offset === "number" && typeof value.text === "string" && Path.isPath(value.path);
+          case "merge_node":
+            return typeof value.position === "number" && (typeof value.target === "number" || value.target === null) && Path.isPath(value.path) && isPlainObject(value.properties);
+          case "move_node":
+            return Path.isPath(value.path) && Path.isPath(value.newPath);
+          case "remove_node":
+            return Path.isPath(value.path) && Node.isNode(value.node);
+          case "remove_text":
+            return typeof value.offset === "number" && typeof value.text === "string" && Path.isPath(value.path);
+          case "set_node":
+            return Path.isPath(value.path) && isPlainObject(value.properties) && isPlainObject(value.newProperties);
+          case "set_selection":
+            return value.properties === null && Range.isRange(value.newProperties) || value.newProperties === null && Range.isRange(value.properties) || isPlainObject(value.properties) && isPlainObject(value.newProperties);
+          case "split_node":
+            return Path.isPath(value.path) && typeof value.position === "number" && (typeof value.target === "number" || value.target === null) && isPlainObject(value.properties);
+          default:
+            return false;
+        }
+      },
+      isOperationList: function isOperationList(value) {
+        return Array.isArray(value) && (value.length === 0 || Operation.isOperation(value[0]));
+      },
+      isSelectionOperation: function isSelectionOperation(value) {
+        return Operation.isOperation(value) && value.type.endsWith("_selection");
+      },
+      isTextOperation: function isTextOperation(value) {
+        return Operation.isOperation(value) && value.type.endsWith("_text");
+      },
+      inverse: function inverse(op) {
+        switch (op.type) {
+          case "insert_node": {
+            return _objectSpread$1({}, op, {
+              type: "remove_node"
+            });
+          }
+          case "insert_text": {
+            return _objectSpread$1({}, op, {
+              type: "remove_text"
+            });
+          }
+          case "merge_node": {
+            return _objectSpread$1({}, op, {
+              type: "split_node",
+              path: Path.previous(op.path)
+            });
+          }
+          case "move_node": {
+            var newPath = op.newPath, path = op.path;
+            if (Path.equals(newPath, path)) {
+              return op;
+            }
+            if (Path.isSibling(path, newPath)) {
+              return _objectSpread$1({}, op, {
+                path: newPath,
+                newPath: path
+              });
+            }
+            var inversePath = Path.transform(path, op);
+            var inverseNewPath = Path.transform(Path.next(path), op);
+            return _objectSpread$1({}, op, {
+              path: inversePath,
+              newPath: inverseNewPath
+            });
+          }
+          case "remove_node": {
+            return _objectSpread$1({}, op, {
+              type: "insert_node"
+            });
+          }
+          case "remove_text": {
+            return _objectSpread$1({}, op, {
+              type: "insert_text"
+            });
+          }
+          case "set_node": {
+            var properties = op.properties, newProperties = op.newProperties;
+            return _objectSpread$1({}, op, {
+              properties: newProperties,
+              newProperties: properties
+            });
+          }
+          case "set_selection": {
+            var _properties = op.properties, _newProperties = op.newProperties;
+            if (_properties == null) {
+              return _objectSpread$1({}, op, {
+                properties: _newProperties,
+                newProperties: null
+              });
+            } else if (_newProperties == null) {
+              return _objectSpread$1({}, op, {
+                properties: null,
+                newProperties: _properties
+              });
+            } else {
+              return _objectSpread$1({}, op, {
+                properties: _newProperties,
+                newProperties: _properties
+              });
+            }
+          }
+          case "split_node": {
+            return _objectSpread$1({}, op, {
+              type: "merge_node",
+              path: Path.next(op.path)
+            });
+          }
+        }
+      }
+    };
+    var Path = {
+      ancestors: function ancestors(path) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$reverse = options.reverse, reverse = _options$reverse === void 0 ? false : _options$reverse;
+        var paths = Path.levels(path, options);
+        if (reverse) {
+          paths = paths.slice(1);
+        } else {
+          paths = paths.slice(0, -1);
+        }
+        return paths;
+      },
+      common: function common(path, another) {
+        var common2 = [];
+        for (var i = 0; i < path.length && i < another.length; i++) {
+          var av = path[i];
+          var bv = another[i];
+          if (av !== bv) {
+            break;
+          }
+          common2.push(av);
+        }
+        return common2;
+      },
+      compare: function compare(path, another) {
+        var min = Math.min(path.length, another.length);
+        for (var i = 0; i < min; i++) {
+          if (path[i] < another[i])
+            return -1;
+          if (path[i] > another[i])
+            return 1;
+        }
+        return 0;
+      },
+      endsAfter: function endsAfter(path, another) {
+        var i = path.length - 1;
+        var as = path.slice(0, i);
+        var bs = another.slice(0, i);
+        var av = path[i];
+        var bv = another[i];
+        return Path.equals(as, bs) && av > bv;
+      },
+      endsAt: function endsAt(path, another) {
+        var i = path.length;
+        var as = path.slice(0, i);
+        var bs = another.slice(0, i);
+        return Path.equals(as, bs);
+      },
+      endsBefore: function endsBefore(path, another) {
+        var i = path.length - 1;
+        var as = path.slice(0, i);
+        var bs = another.slice(0, i);
+        var av = path[i];
+        var bv = another[i];
+        return Path.equals(as, bs) && av < bv;
+      },
+      equals: function equals(path, another) {
+        return path.length === another.length && path.every(function(n, i) {
+          return n === another[i];
+        });
+      },
+      isAfter: function isAfter(path, another) {
+        return Path.compare(path, another) === 1;
+      },
+      isAncestor: function isAncestor(path, another) {
+        return path.length < another.length && Path.compare(path, another) === 0;
+      },
+      isBefore: function isBefore(path, another) {
+        return Path.compare(path, another) === -1;
+      },
+      isChild: function isChild(path, another) {
+        return path.length === another.length + 1 && Path.compare(path, another) === 0;
+      },
+      isCommon: function isCommon(path, another) {
+        return path.length <= another.length && Path.compare(path, another) === 0;
+      },
+      isDescendant: function isDescendant(path, another) {
+        return path.length > another.length && Path.compare(path, another) === 0;
+      },
+      isParent: function isParent(path, another) {
+        return path.length + 1 === another.length && Path.compare(path, another) === 0;
+      },
+      isPath: function isPath(value) {
+        return Array.isArray(value) && (value.length === 0 || typeof value[0] === "number");
+      },
+      isSibling: function isSibling(path, another) {
+        if (path.length !== another.length) {
+          return false;
+        }
+        var as = path.slice(0, -1);
+        var bs = another.slice(0, -1);
+        var al = path[path.length - 1];
+        var bl = another[another.length - 1];
+        return al !== bl && Path.equals(as, bs);
+      },
+      levels: function levels(path) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$reverse2 = options.reverse, reverse = _options$reverse2 === void 0 ? false : _options$reverse2;
+        var list = [];
+        for (var i = 0; i <= path.length; i++) {
+          list.push(path.slice(0, i));
+        }
+        if (reverse) {
+          list.reverse();
+        }
+        return list;
+      },
+      next: function next(path) {
+        if (path.length === 0) {
+          throw new Error("Cannot get the next path of a root path [".concat(path, "], because it has no next index."));
+        }
+        var last = path[path.length - 1];
+        return path.slice(0, -1).concat(last + 1);
+      },
+      parent: function parent(path) {
+        if (path.length === 0) {
+          throw new Error("Cannot get the parent path of the root path [".concat(path, "]."));
+        }
+        return path.slice(0, -1);
+      },
+      previous: function previous(path) {
+        if (path.length === 0) {
+          throw new Error("Cannot get the previous path of a root path [".concat(path, "], because it has no previous index."));
+        }
+        var last = path[path.length - 1];
+        if (last <= 0) {
+          throw new Error("Cannot get the previous path of a first child path [".concat(path, "] because it would result in a negative index."));
+        }
+        return path.slice(0, -1).concat(last - 1);
+      },
+      relative: function relative(path, ancestor) {
+        if (!Path.isAncestor(ancestor, path) && !Path.equals(path, ancestor)) {
+          throw new Error("Cannot get the relative path of [".concat(path, "] inside ancestor [").concat(ancestor, "], because it is not above or equal to the path."));
+        }
+        return path.slice(ancestor.length);
+      },
+      transform: function transform(path, operation) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        return immer.produce(path, function(p) {
+          var _options$affinity = options.affinity, affinity = _options$affinity === void 0 ? "forward" : _options$affinity;
+          if (path.length === 0) {
+            return;
+          }
+          switch (operation.type) {
+            case "insert_node": {
+              var op = operation.path;
+              if (Path.equals(op, p) || Path.endsBefore(op, p) || Path.isAncestor(op, p)) {
+                p[op.length - 1] += 1;
+              }
+              break;
+            }
+            case "remove_node": {
+              var _op = operation.path;
+              if (Path.equals(_op, p) || Path.isAncestor(_op, p)) {
+                return null;
+              } else if (Path.endsBefore(_op, p)) {
+                p[_op.length - 1] -= 1;
+              }
+              break;
+            }
+            case "merge_node": {
+              var _op2 = operation.path, position = operation.position;
+              if (Path.equals(_op2, p) || Path.endsBefore(_op2, p)) {
+                p[_op2.length - 1] -= 1;
+              } else if (Path.isAncestor(_op2, p)) {
+                p[_op2.length - 1] -= 1;
+                p[_op2.length] += position;
+              }
+              break;
+            }
+            case "split_node": {
+              var _op3 = operation.path, _position = operation.position;
+              if (Path.equals(_op3, p)) {
+                if (affinity === "forward") {
+                  p[p.length - 1] += 1;
+                } else if (affinity === "backward")
+                  ;
+                else {
+                  return null;
+                }
+              } else if (Path.endsBefore(_op3, p)) {
+                p[_op3.length - 1] += 1;
+              } else if (Path.isAncestor(_op3, p) && path[_op3.length] >= _position) {
+                p[_op3.length - 1] += 1;
+                p[_op3.length] -= _position;
+              }
+              break;
+            }
+            case "move_node": {
+              var _op4 = operation.path, onp = operation.newPath;
+              if (Path.equals(_op4, onp)) {
+                return;
+              }
+              if (Path.isAncestor(_op4, p) || Path.equals(_op4, p)) {
+                var copy = onp.slice();
+                if (Path.endsBefore(_op4, onp) && _op4.length < onp.length) {
+                  copy[_op4.length - 1] -= 1;
+                }
+                return copy.concat(p.slice(_op4.length));
+              } else if (Path.isSibling(_op4, onp) && (Path.isAncestor(onp, p) || Path.equals(onp, p))) {
+                if (Path.endsBefore(_op4, p)) {
+                  p[_op4.length - 1] -= 1;
+                } else {
+                  p[_op4.length - 1] += 1;
+                }
+              } else if (Path.endsBefore(onp, p) || Path.equals(onp, p) || Path.isAncestor(onp, p)) {
+                if (Path.endsBefore(_op4, p)) {
+                  p[_op4.length - 1] -= 1;
+                }
+                p[onp.length - 1] += 1;
+              } else if (Path.endsBefore(_op4, p)) {
+                if (Path.equals(onp, p)) {
+                  p[onp.length - 1] += 1;
+                }
+                p[_op4.length - 1] -= 1;
+              }
+              break;
+            }
+          }
+        });
+      }
+    };
+    var PathRef = {
+      transform: function transform(ref, op) {
+        var current = ref.current, affinity = ref.affinity;
+        if (current == null) {
+          return;
+        }
+        var path = Path.transform(current, op, {
+          affinity
+        });
+        ref.current = path;
+        if (path == null) {
+          ref.unref();
+        }
+      }
+    };
+    function ownKeys$2(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$2(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$2(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$2(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var Point = {
+      compare: function compare(point, another) {
+        var result = Path.compare(point.path, another.path);
+        if (result === 0) {
+          if (point.offset < another.offset)
+            return -1;
+          if (point.offset > another.offset)
+            return 1;
+          return 0;
+        }
+        return result;
+      },
+      isAfter: function isAfter(point, another) {
+        return Point.compare(point, another) === 1;
+      },
+      isBefore: function isBefore(point, another) {
+        return Point.compare(point, another) === -1;
+      },
+      equals: function equals(point, another) {
+        return point.offset === another.offset && Path.equals(point.path, another.path);
+      },
+      isPoint: function isPoint(value) {
+        return isPlainObject(value) && typeof value.offset === "number" && Path.isPath(value.path);
+      },
+      transform: function transform(point, op) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        return immer.produce(point, function(p) {
+          var _options$affinity = options.affinity, affinity = _options$affinity === void 0 ? "forward" : _options$affinity;
+          var path = p.path, offset = p.offset;
+          switch (op.type) {
+            case "insert_node":
+            case "move_node": {
+              p.path = Path.transform(path, op, options);
+              break;
+            }
+            case "insert_text": {
+              if (Path.equals(op.path, path) && op.offset <= offset) {
+                p.offset += op.text.length;
+              }
+              break;
+            }
+            case "merge_node": {
+              if (Path.equals(op.path, path)) {
+                p.offset += op.position;
+              }
+              p.path = Path.transform(path, op, options);
+              break;
+            }
+            case "remove_text": {
+              if (Path.equals(op.path, path) && op.offset <= offset) {
+                p.offset -= Math.min(offset - op.offset, op.text.length);
+              }
+              break;
+            }
+            case "remove_node": {
+              if (Path.equals(op.path, path) || Path.isAncestor(op.path, path)) {
+                return null;
+              }
+              p.path = Path.transform(path, op, options);
+              break;
+            }
+            case "split_node": {
+              if (Path.equals(op.path, path)) {
+                if (op.position === offset && affinity == null) {
+                  return null;
+                } else if (op.position < offset || op.position === offset && affinity === "forward") {
+                  p.offset -= op.position;
+                  p.path = Path.transform(path, op, _objectSpread$2({}, options, {
+                    affinity: "forward"
+                  }));
+                }
+              } else {
+                p.path = Path.transform(path, op, options);
+              }
+              break;
+            }
+          }
+        });
+      }
+    };
+    var PointRef = {
+      transform: function transform(ref, op) {
+        var current = ref.current, affinity = ref.affinity;
+        if (current == null) {
+          return;
+        }
+        var point = Point.transform(current, op, {
+          affinity
+        });
+        ref.current = point;
+        if (point == null) {
+          ref.unref();
+        }
+      }
+    };
+    function ownKeys$3(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$3(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$3(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$3(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var Range = {
+      edges: function edges(range) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$reverse = options.reverse, reverse = _options$reverse === void 0 ? false : _options$reverse;
+        var anchor = range.anchor, focus = range.focus;
+        return Range.isBackward(range) === reverse ? [anchor, focus] : [focus, anchor];
+      },
+      end: function end(range) {
+        var _Range$edges = Range.edges(range), _Range$edges2 = slicedToArray(_Range$edges, 2), end2 = _Range$edges2[1];
+        return end2;
+      },
+      equals: function equals(range, another) {
+        return Point.equals(range.anchor, another.anchor) && Point.equals(range.focus, another.focus);
+      },
+      includes: function includes(range, target) {
+        if (Range.isRange(target)) {
+          if (Range.includes(range, target.anchor) || Range.includes(range, target.focus)) {
+            return true;
+          }
+          var _Range$edges3 = Range.edges(range), _Range$edges4 = slicedToArray(_Range$edges3, 2), rs = _Range$edges4[0], re = _Range$edges4[1];
+          var _Range$edges5 = Range.edges(target), _Range$edges6 = slicedToArray(_Range$edges5, 2), ts = _Range$edges6[0], te = _Range$edges6[1];
+          return Point.isBefore(rs, ts) && Point.isAfter(re, te);
+        }
+        var _Range$edges7 = Range.edges(range), _Range$edges8 = slicedToArray(_Range$edges7, 2), start = _Range$edges8[0], end = _Range$edges8[1];
+        var isAfterStart = false;
+        var isBeforeEnd = false;
+        if (Point.isPoint(target)) {
+          isAfterStart = Point.compare(target, start) >= 0;
+          isBeforeEnd = Point.compare(target, end) <= 0;
+        } else {
+          isAfterStart = Path.compare(target, start.path) >= 0;
+          isBeforeEnd = Path.compare(target, end.path) <= 0;
+        }
+        return isAfterStart && isBeforeEnd;
+      },
+      intersection: function intersection(range, another) {
+        var anchor = range.anchor, focus = range.focus, rest = objectWithoutProperties(range, ["anchor", "focus"]);
+        var _Range$edges9 = Range.edges(range), _Range$edges10 = slicedToArray(_Range$edges9, 2), s1 = _Range$edges10[0], e1 = _Range$edges10[1];
+        var _Range$edges11 = Range.edges(another), _Range$edges12 = slicedToArray(_Range$edges11, 2), s2 = _Range$edges12[0], e2 = _Range$edges12[1];
+        var start = Point.isBefore(s1, s2) ? s2 : s1;
+        var end = Point.isBefore(e1, e2) ? e1 : e2;
+        if (Point.isBefore(end, start)) {
+          return null;
+        } else {
+          return _objectSpread$3({
+            anchor: start,
+            focus: end
+          }, rest);
+        }
+      },
+      isBackward: function isBackward(range) {
+        var anchor = range.anchor, focus = range.focus;
+        return Point.isAfter(anchor, focus);
+      },
+      isCollapsed: function isCollapsed(range) {
+        var anchor = range.anchor, focus = range.focus;
+        return Point.equals(anchor, focus);
+      },
+      isExpanded: function isExpanded(range) {
+        return !Range.isCollapsed(range);
+      },
+      isForward: function isForward(range) {
+        return !Range.isBackward(range);
+      },
+      isRange: function isRange(value) {
+        return isPlainObject(value) && Point.isPoint(value.anchor) && Point.isPoint(value.focus);
+      },
+      points: function* points(range) {
+        yield [range.anchor, "anchor"];
+        yield [range.focus, "focus"];
+      },
+      start: function start(range) {
+        var _Range$edges13 = Range.edges(range), _Range$edges14 = slicedToArray(_Range$edges13, 1), start2 = _Range$edges14[0];
+        return start2;
+      },
+      transform: function transform(range, op, options) {
+        var _options$affinity = options.affinity, affinity = _options$affinity === void 0 ? "inward" : _options$affinity;
+        var affinityAnchor;
+        var affinityFocus;
+        if (affinity === "inward") {
+          if (Range.isForward(range)) {
+            affinityAnchor = "forward";
+            affinityFocus = "backward";
+          } else {
+            affinityAnchor = "backward";
+            affinityFocus = "forward";
+          }
+        } else if (affinity === "outward") {
+          if (Range.isForward(range)) {
+            affinityAnchor = "backward";
+            affinityFocus = "forward";
+          } else {
+            affinityAnchor = "forward";
+            affinityFocus = "backward";
+          }
+        } else {
+          affinityAnchor = affinity;
+          affinityFocus = affinity;
+        }
+        return immer.produce(range, function(r) {
+          var anchor = Point.transform(r.anchor, op, {
+            affinity: affinityAnchor
+          });
+          var focus = Point.transform(r.focus, op, {
+            affinity: affinityFocus
+          });
+          if (!anchor || !focus) {
+            return null;
+          }
+          r.anchor = anchor;
+          r.focus = focus;
+        });
+      }
+    };
+    var RangeRef = {
+      transform: function transform(ref, op) {
+        var current = ref.current, affinity = ref.affinity;
+        if (current == null) {
+          return;
+        }
+        var path = Range.transform(current, op, {
+          affinity
+        });
+        ref.current = path;
+        if (path == null) {
+          ref.unref();
+        }
+      }
+    };
+    function ownKeys$4(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$4(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$4(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$4(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var Text = {
+      equals: function equals(text, another) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$loose = options.loose, loose = _options$loose === void 0 ? false : _options$loose;
+        for (var key in text) {
+          if (loose && key === "text") {
+            continue;
+          }
+          if (text[key] !== another[key]) {
+            return false;
+          }
+        }
+        for (var _key in another) {
+          if (loose && _key === "text") {
+            continue;
+          }
+          if (text[_key] !== another[_key]) {
+            return false;
+          }
+        }
+        return true;
+      },
+      isText: function isText(value) {
+        return isPlainObject(value) && typeof value.text === "string";
+      },
+      isTextList: function isTextList(value) {
+        return Array.isArray(value) && (value.length === 0 || Text.isText(value[0]));
+      },
+      matches: function matches(text, props) {
+        for (var key in props) {
+          if (key === "text") {
+            continue;
+          }
+          if (text[key] !== props[key]) {
+            return false;
+          }
+        }
+        return true;
+      },
+      decorations: function decorations(node, _decorations) {
+        var leaves = [_objectSpread$4({}, node)];
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = void 0;
+        try {
+          for (var _iterator = _decorations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var dec = _step.value;
+            var anchor = dec.anchor, focus = dec.focus, rest = objectWithoutProperties(dec, ["anchor", "focus"]);
+            var _Range$edges = Range.edges(dec), _Range$edges2 = slicedToArray(_Range$edges, 2), start = _Range$edges2[0], end = _Range$edges2[1];
+            var next = [];
+            var o = 0;
+            var _iteratorNormalCompletion2 = true;
+            var _didIteratorError2 = false;
+            var _iteratorError2 = void 0;
+            try {
+              for (var _iterator2 = leaves[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var leaf = _step2.value;
+                var length = leaf.text.length;
+                var offset = o;
+                o += length;
+                if (start.offset <= offset && end.offset >= offset + length) {
+                  Object.assign(leaf, rest);
+                  next.push(leaf);
+                  continue;
+                }
+                if (start.offset > offset + length || end.offset < offset || end.offset === offset && offset !== 0) {
+                  next.push(leaf);
+                  continue;
+                }
+                var middle = leaf;
+                var before = void 0;
+                var after = void 0;
+                if (end.offset < offset + length) {
+                  var off = end.offset - offset;
+                  after = _objectSpread$4({}, middle, {
+                    text: middle.text.slice(off)
+                  });
+                  middle = _objectSpread$4({}, middle, {
+                    text: middle.text.slice(0, off)
+                  });
+                }
+                if (start.offset > offset) {
+                  var _off = start.offset - offset;
+                  before = _objectSpread$4({}, middle, {
+                    text: middle.text.slice(0, _off)
+                  });
+                  middle = _objectSpread$4({}, middle, {
+                    text: middle.text.slice(_off)
+                  });
+                }
+                Object.assign(middle, rest);
+                if (before) {
+                  next.push(before);
+                }
+                next.push(middle);
+                if (after) {
+                  next.push(after);
+                }
+              }
+            } catch (err) {
+              _didIteratorError2 = true;
+              _iteratorError2 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                  _iterator2["return"]();
+                }
+              } finally {
+                if (_didIteratorError2) {
+                  throw _iteratorError2;
+                }
+              }
+            }
+            leaves = next;
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+        return leaves;
+      }
+    };
+    function ownKeys$5(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$5(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$5(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$5(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var GeneralTransforms = {
+      transform: function transform(editor, op) {
+        editor.children = immer.createDraft(editor.children);
+        var selection = editor.selection && immer.createDraft(editor.selection);
+        switch (op.type) {
+          case "insert_node": {
+            var path = op.path, node = op.node;
+            var parent = Node.parent(editor, path);
+            var index = path[path.length - 1];
+            parent.children.splice(index, 0, node);
+            if (selection) {
+              var _iteratorNormalCompletion = true;
+              var _didIteratorError = false;
+              var _iteratorError = void 0;
+              try {
+                for (var _iterator = Range.points(selection)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                  var _step$value = slicedToArray(_step.value, 2), point = _step$value[0], key = _step$value[1];
+                  selection[key] = Point.transform(point, op);
+                }
+              } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                    _iterator["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError) {
+                    throw _iteratorError;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "insert_text": {
+            var _path = op.path, offset = op.offset, text = op.text;
+            var _node = Node.leaf(editor, _path);
+            var before = _node.text.slice(0, offset);
+            var after = _node.text.slice(offset);
+            _node.text = before + text + after;
+            if (selection) {
+              var _iteratorNormalCompletion2 = true;
+              var _didIteratorError2 = false;
+              var _iteratorError2 = void 0;
+              try {
+                for (var _iterator2 = Range.points(selection)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                  var _step2$value = slicedToArray(_step2.value, 2), _point = _step2$value[0], _key = _step2$value[1];
+                  selection[_key] = Point.transform(_point, op);
+                }
+              } catch (err) {
+                _didIteratorError2 = true;
+                _iteratorError2 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                    _iterator2["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError2) {
+                    throw _iteratorError2;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "merge_node": {
+            var _path2 = op.path;
+            var _node2 = Node.get(editor, _path2);
+            var prevPath = Path.previous(_path2);
+            var prev = Node.get(editor, prevPath);
+            var _parent = Node.parent(editor, _path2);
+            var _index = _path2[_path2.length - 1];
+            if (Text.isText(_node2) && Text.isText(prev)) {
+              prev.text += _node2.text;
+            } else if (!Text.isText(_node2) && !Text.isText(prev)) {
+              var _prev$children;
+              (_prev$children = prev.children).push.apply(_prev$children, toConsumableArray(_node2.children));
+            } else {
+              throw new Error('Cannot apply a "merge_node" operation at path ['.concat(_path2, "] to nodes of different interaces: ").concat(_node2, " ").concat(prev));
+            }
+            _parent.children.splice(_index, 1);
+            if (selection) {
+              var _iteratorNormalCompletion3 = true;
+              var _didIteratorError3 = false;
+              var _iteratorError3 = void 0;
+              try {
+                for (var _iterator3 = Range.points(selection)[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                  var _step3$value = slicedToArray(_step3.value, 2), _point2 = _step3$value[0], _key2 = _step3$value[1];
+                  selection[_key2] = Point.transform(_point2, op);
+                }
+              } catch (err) {
+                _didIteratorError3 = true;
+                _iteratorError3 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+                    _iterator3["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError3) {
+                    throw _iteratorError3;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "move_node": {
+            var _path3 = op.path, newPath = op.newPath;
+            if (Path.isAncestor(_path3, newPath)) {
+              throw new Error("Cannot move a path [".concat(_path3, "] to new path [").concat(newPath, "] because the destination is inside itself."));
+            }
+            var _node3 = Node.get(editor, _path3);
+            var _parent2 = Node.parent(editor, _path3);
+            var _index2 = _path3[_path3.length - 1];
+            _parent2.children.splice(_index2, 1);
+            var truePath = Path.transform(_path3, op);
+            var newParent = Node.get(editor, Path.parent(truePath));
+            var newIndex = truePath[truePath.length - 1];
+            newParent.children.splice(newIndex, 0, _node3);
+            if (selection) {
+              var _iteratorNormalCompletion4 = true;
+              var _didIteratorError4 = false;
+              var _iteratorError4 = void 0;
+              try {
+                for (var _iterator4 = Range.points(selection)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                  var _step4$value = slicedToArray(_step4.value, 2), _point3 = _step4$value[0], _key3 = _step4$value[1];
+                  selection[_key3] = Point.transform(_point3, op);
+                }
+              } catch (err) {
+                _didIteratorError4 = true;
+                _iteratorError4 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+                    _iterator4["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError4) {
+                    throw _iteratorError4;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "remove_node": {
+            var _path4 = op.path;
+            var _index3 = _path4[_path4.length - 1];
+            var _parent3 = Node.parent(editor, _path4);
+            _parent3.children.splice(_index3, 1);
+            if (selection) {
+              var _iteratorNormalCompletion5 = true;
+              var _didIteratorError5 = false;
+              var _iteratorError5 = void 0;
+              try {
+                for (var _iterator5 = Range.points(selection)[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                  var _step5$value = slicedToArray(_step5.value, 2), _point4 = _step5$value[0], _key4 = _step5$value[1];
+                  var result = Point.transform(_point4, op);
+                  if (selection != null && result != null) {
+                    selection[_key4] = result;
+                  } else {
+                    var _prev = void 0;
+                    var next = void 0;
+                    var _iteratorNormalCompletion6 = true;
+                    var _didIteratorError6 = false;
+                    var _iteratorError6 = void 0;
+                    try {
+                      for (var _iterator6 = Node.texts(editor)[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+                        var _step6$value = slicedToArray(_step6.value, 2), n = _step6$value[0], p = _step6$value[1];
+                        if (Path.compare(p, _path4) === -1) {
+                          _prev = [n, p];
+                        } else {
+                          next = [n, p];
+                          break;
+                        }
+                      }
+                    } catch (err) {
+                      _didIteratorError6 = true;
+                      _iteratorError6 = err;
+                    } finally {
+                      try {
+                        if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+                          _iterator6["return"]();
+                        }
+                      } finally {
+                        if (_didIteratorError6) {
+                          throw _iteratorError6;
+                        }
+                      }
+                    }
+                    if (_prev) {
+                      _point4.path = _prev[1];
+                      _point4.offset = _prev[0].text.length;
+                    } else if (next) {
+                      _point4.path = next[1];
+                      _point4.offset = 0;
+                    } else {
+                      selection = null;
+                    }
+                  }
+                }
+              } catch (err) {
+                _didIteratorError5 = true;
+                _iteratorError5 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+                    _iterator5["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError5) {
+                    throw _iteratorError5;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "remove_text": {
+            var _path5 = op.path, _offset = op.offset, _text = op.text;
+            var _node4 = Node.leaf(editor, _path5);
+            var _before = _node4.text.slice(0, _offset);
+            var _after = _node4.text.slice(_offset + _text.length);
+            _node4.text = _before + _after;
+            if (selection) {
+              var _iteratorNormalCompletion7 = true;
+              var _didIteratorError7 = false;
+              var _iteratorError7 = void 0;
+              try {
+                for (var _iterator7 = Range.points(selection)[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                  var _step7$value = slicedToArray(_step7.value, 2), _point5 = _step7$value[0], _key5 = _step7$value[1];
+                  selection[_key5] = Point.transform(_point5, op);
+                }
+              } catch (err) {
+                _didIteratorError7 = true;
+                _iteratorError7 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion7 && _iterator7["return"] != null) {
+                    _iterator7["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError7) {
+                    throw _iteratorError7;
+                  }
+                }
+              }
+            }
+            break;
+          }
+          case "set_node": {
+            var _path6 = op.path, newProperties = op.newProperties;
+            if (_path6.length === 0) {
+              throw new Error("Cannot set properties on the root node!");
+            }
+            var _node5 = Node.get(editor, _path6);
+            for (var _key6 in newProperties) {
+              if (_key6 === "children" || _key6 === "text") {
+                throw new Error('Cannot set the "'.concat(_key6, '" property of nodes!'));
+              }
+              var value = newProperties[_key6];
+              if (value == null) {
+                delete _node5[_key6];
+              } else {
+                _node5[_key6] = value;
+              }
+            }
+            break;
+          }
+          case "set_selection": {
+            var _newProperties = op.newProperties;
+            if (_newProperties == null) {
+              selection = _newProperties;
+            } else if (selection == null) {
+              if (!Range.isRange(_newProperties)) {
+                throw new Error('Cannot apply an incomplete "set_selection" operation properties '.concat(JSON.stringify(_newProperties), " when there is no current selection."));
+              }
+              selection = _newProperties;
+            } else {
+              Object.assign(selection, _newProperties);
+            }
+            break;
+          }
+          case "split_node": {
+            var _path7 = op.path, position = op.position, properties = op.properties;
+            if (_path7.length === 0) {
+              throw new Error('Cannot apply a "split_node" operation at path ['.concat(_path7, "] because the root node cannot be split."));
+            }
+            var _node6 = Node.get(editor, _path7);
+            var _parent4 = Node.parent(editor, _path7);
+            var _index4 = _path7[_path7.length - 1];
+            var newNode;
+            if (Text.isText(_node6)) {
+              var _before2 = _node6.text.slice(0, position);
+              var _after2 = _node6.text.slice(position);
+              _node6.text = _before2;
+              newNode = _objectSpread$5({}, _node6, {}, properties, {
+                text: _after2
+              });
+            } else {
+              var _before3 = _node6.children.slice(0, position);
+              var _after3 = _node6.children.slice(position);
+              _node6.children = _before3;
+              newNode = _objectSpread$5({}, _node6, {}, properties, {
+                children: _after3
+              });
+            }
+            _parent4.children.splice(_index4 + 1, 0, newNode);
+            if (selection) {
+              var _iteratorNormalCompletion8 = true;
+              var _didIteratorError8 = false;
+              var _iteratorError8 = void 0;
+              try {
+                for (var _iterator8 = Range.points(selection)[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+                  var _step8$value = slicedToArray(_step8.value, 2), _point6 = _step8$value[0], _key7 = _step8$value[1];
+                  selection[_key7] = Point.transform(_point6, op);
+                }
+              } catch (err) {
+                _didIteratorError8 = true;
+                _iteratorError8 = err;
+              } finally {
+                try {
+                  if (!_iteratorNormalCompletion8 && _iterator8["return"] != null) {
+                    _iterator8["return"]();
+                  }
+                } finally {
+                  if (_didIteratorError8) {
+                    throw _iteratorError8;
+                  }
+                }
+              }
+            }
+            break;
+          }
+        }
+        editor.children = immer.finishDraft(editor.children);
+        if (selection) {
+          editor.selection = immer.isDraft(selection) ? immer.finishDraft(selection) : selection;
+        } else {
+          editor.selection = null;
+        }
+      }
+    };
+    function ownKeys$6(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$6(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$6(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$6(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var NodeTransforms = {
+      insertNodes: function insertNodes(editor, nodes) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$hanging = options.hanging, hanging = _options$hanging === void 0 ? false : _options$hanging, _options$voids = options.voids, voids = _options$voids === void 0 ? false : _options$voids, _options$mode = options.mode, mode = _options$mode === void 0 ? "lowest" : _options$mode;
+          var at = options.at, match = options.match, select = options.select;
+          if (Node.isNode(nodes)) {
+            nodes = [nodes];
+          }
+          if (nodes.length === 0) {
+            return;
+          }
+          var _nodes = nodes, _nodes2 = slicedToArray(_nodes, 1), node = _nodes2[0];
+          if (!at) {
+            if (editor.selection) {
+              at = editor.selection;
+            } else if (editor.children.length > 0) {
+              at = Editor.end(editor, []);
+            } else {
+              at = [0];
+            }
+            select = true;
+          }
+          if (select == null) {
+            select = false;
+          }
+          if (Range.isRange(at)) {
+            if (!hanging) {
+              at = Editor.unhangRange(editor, at);
+            }
+            if (Range.isCollapsed(at)) {
+              at = at.anchor;
+            } else {
+              var _Range$edges = Range.edges(at), _Range$edges2 = slicedToArray(_Range$edges, 2), end = _Range$edges2[1];
+              var pointRef = Editor.pointRef(editor, end);
+              Transforms["delete"](editor, {
+                at
+              });
+              at = pointRef.unref();
+            }
+          }
+          if (Point.isPoint(at)) {
+            if (match == null) {
+              if (Text.isText(node)) {
+                match = function match2(n) {
+                  return Text.isText(n);
+                };
+              } else if (editor.isInline(node)) {
+                match = function match2(n) {
+                  return Text.isText(n) || Editor.isInline(editor, n);
+                };
+              } else {
+                match = function match2(n) {
+                  return Editor.isBlock(editor, n);
+                };
+              }
+            }
+            var _Editor$nodes = Editor.nodes(editor, {
+              at: at.path,
+              match,
+              mode,
+              voids
+            }), _Editor$nodes2 = slicedToArray(_Editor$nodes, 1), entry = _Editor$nodes2[0];
+            if (entry) {
+              var _entry = slicedToArray(entry, 2), _matchPath = _entry[1];
+              var pathRef = Editor.pathRef(editor, _matchPath);
+              var isAtEnd = Editor.isEnd(editor, at, _matchPath);
+              Transforms.splitNodes(editor, {
+                at,
+                match,
+                mode,
+                voids
+              });
+              var path = pathRef.unref();
+              at = isAtEnd ? Path.next(path) : path;
+            } else {
+              return;
+            }
+          }
+          var parentPath = Path.parent(at);
+          var index = at[at.length - 1];
+          if (!voids && Editor["void"](editor, {
+            at: parentPath
+          })) {
+            return;
+          }
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = void 0;
+          try {
+            for (var _iterator = nodes[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var _node = _step.value;
+              var _path = parentPath.concat(index);
+              index++;
+              editor.apply({
+                type: "insert_node",
+                path: _path,
+                node: _node
+              });
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                _iterator["return"]();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+          if (select) {
+            var point = Editor.end(editor, at);
+            if (point) {
+              Transforms.select(editor, point);
+            }
+          }
+        });
+      },
+      liftNodes: function liftNodes(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$at = options.at, at = _options$at === void 0 ? editor.selection : _options$at, _options$mode2 = options.mode, mode = _options$mode2 === void 0 ? "lowest" : _options$mode2, _options$voids2 = options.voids, voids = _options$voids2 === void 0 ? false : _options$voids2;
+          var match = options.match;
+          if (match == null) {
+            match = Path.isPath(at) ? matchPath(editor, at) : function(n) {
+              return Editor.isBlock(editor, n);
+            };
+          }
+          if (!at) {
+            return;
+          }
+          var matches = Editor.nodes(editor, {
+            at,
+            match,
+            mode,
+            voids
+          });
+          var pathRefs = Array.from(matches, function(_ref) {
+            var _ref2 = slicedToArray(_ref, 2), p = _ref2[1];
+            return Editor.pathRef(editor, p);
+          });
+          for (var _i = 0, _pathRefs = pathRefs; _i < _pathRefs.length; _i++) {
+            var pathRef = _pathRefs[_i];
+            var path = pathRef.unref();
+            if (path.length < 2) {
+              throw new Error("Cannot lift node at a path [".concat(path, "] because it has a depth of less than `2`."));
+            }
+            var parentNodeEntry = Editor.node(editor, Path.parent(path));
+            var _parentNodeEntry = slicedToArray(parentNodeEntry, 2), parent = _parentNodeEntry[0], parentPath = _parentNodeEntry[1];
+            var index = path[path.length - 1];
+            var length = parent.children.length;
+            if (length === 1) {
+              var toPath = Path.next(parentPath);
+              Transforms.moveNodes(editor, {
+                at: path,
+                to: toPath,
+                voids
+              });
+              Transforms.removeNodes(editor, {
+                at: parentPath,
+                voids
+              });
+            } else if (index === 0) {
+              Transforms.moveNodes(editor, {
+                at: path,
+                to: parentPath,
+                voids
+              });
+            } else if (index === length - 1) {
+              var _toPath = Path.next(parentPath);
+              Transforms.moveNodes(editor, {
+                at: path,
+                to: _toPath,
+                voids
+              });
+            } else {
+              var splitPath = Path.next(path);
+              var _toPath2 = Path.next(parentPath);
+              Transforms.splitNodes(editor, {
+                at: splitPath,
+                voids
+              });
+              Transforms.moveNodes(editor, {
+                at: path,
+                to: _toPath2,
+                voids
+              });
+            }
+          }
+        });
+      },
+      mergeNodes: function mergeNodes(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var match = options.match, _options$at2 = options.at, at = _options$at2 === void 0 ? editor.selection : _options$at2;
+          var _options$hanging2 = options.hanging, hanging = _options$hanging2 === void 0 ? false : _options$hanging2, _options$voids3 = options.voids, voids = _options$voids3 === void 0 ? false : _options$voids3, _options$mode3 = options.mode, mode = _options$mode3 === void 0 ? "lowest" : _options$mode3;
+          if (!at) {
+            return;
+          }
+          if (match == null) {
+            if (Path.isPath(at)) {
+              var _Editor$parent = Editor.parent(editor, at), _Editor$parent2 = slicedToArray(_Editor$parent, 1), parent = _Editor$parent2[0];
+              match = function match2(n) {
+                return parent.children.includes(n);
+              };
+            } else {
+              match = function match2(n) {
+                return Editor.isBlock(editor, n);
+              };
+            }
+          }
+          if (!hanging && Range.isRange(at)) {
+            at = Editor.unhangRange(editor, at);
+          }
+          if (Range.isRange(at)) {
+            if (Range.isCollapsed(at)) {
+              at = at.anchor;
+            } else {
+              var _Range$edges3 = Range.edges(at), _Range$edges4 = slicedToArray(_Range$edges3, 2), end = _Range$edges4[1];
+              var pointRef = Editor.pointRef(editor, end);
+              Transforms["delete"](editor, {
+                at
+              });
+              at = pointRef.unref();
+              if (options.at == null) {
+                Transforms.select(editor, at);
+              }
+            }
+          }
+          var _Editor$nodes3 = Editor.nodes(editor, {
+            at,
+            match,
+            voids,
+            mode
+          }), _Editor$nodes4 = slicedToArray(_Editor$nodes3, 1), current = _Editor$nodes4[0];
+          var prev = Editor.previous(editor, {
+            at,
+            match,
+            voids,
+            mode
+          });
+          if (!current || !prev) {
+            return;
+          }
+          var _current = slicedToArray(current, 2), node = _current[0], path = _current[1];
+          var _prev = slicedToArray(prev, 2), prevNode = _prev[0], prevPath = _prev[1];
+          if (path.length === 0 || prevPath.length === 0) {
+            return;
+          }
+          var newPath = Path.next(prevPath);
+          var commonPath = Path.common(path, prevPath);
+          var isPreviousSibling = Path.isSibling(path, prevPath);
+          var levels = Array.from(Editor.levels(editor, {
+            at: path
+          }), function(_ref3) {
+            var _ref4 = slicedToArray(_ref3, 1), n = _ref4[0];
+            return n;
+          }).slice(commonPath.length).slice(0, -1);
+          var emptyAncestor = Editor.above(editor, {
+            at: path,
+            mode: "highest",
+            match: function match2(n) {
+              return levels.includes(n) && Element.isElement(n) && n.children.length === 1;
+            }
+          });
+          var emptyRef = emptyAncestor && Editor.pathRef(editor, emptyAncestor[1]);
+          var properties;
+          var position;
+          if (Text.isText(node) && Text.isText(prevNode)) {
+            var text = node.text, rest = objectWithoutProperties(node, ["text"]);
+            position = prevNode.text.length;
+            properties = rest;
+          } else if (Element.isElement(node) && Element.isElement(prevNode)) {
+            var children = node.children, _rest = objectWithoutProperties(node, ["children"]);
+            position = prevNode.children.length;
+            properties = _rest;
+          } else {
+            throw new Error("Cannot merge the node at path [".concat(path, "] with the previous sibling because it is not the same kind: ").concat(JSON.stringify(node), " ").concat(JSON.stringify(prevNode)));
+          }
+          if (!isPreviousSibling) {
+            Transforms.moveNodes(editor, {
+              at: path,
+              to: newPath,
+              voids
+            });
+          }
+          if (emptyRef) {
+            Transforms.removeNodes(editor, {
+              at: emptyRef.current,
+              voids
+            });
+          }
+          if (Element.isElement(prevNode) && Editor.isEmpty(editor, prevNode) || Text.isText(prevNode) && prevNode.text === "") {
+            Transforms.removeNodes(editor, {
+              at: prevPath,
+              voids
+            });
+          } else {
+            editor.apply({
+              type: "merge_node",
+              path: newPath,
+              position,
+              target: null,
+              properties
+            });
+          }
+          if (emptyRef) {
+            emptyRef.unref();
+          }
+        });
+      },
+      moveNodes: function moveNodes(editor, options) {
+        Editor.withoutNormalizing(editor, function() {
+          var to = options.to, _options$at3 = options.at, at = _options$at3 === void 0 ? editor.selection : _options$at3, _options$mode4 = options.mode, mode = _options$mode4 === void 0 ? "lowest" : _options$mode4, _options$voids4 = options.voids, voids = _options$voids4 === void 0 ? false : _options$voids4;
+          var match = options.match;
+          if (!at) {
+            return;
+          }
+          if (match == null) {
+            match = Path.isPath(at) ? matchPath(editor, at) : function(n) {
+              return Editor.isBlock(editor, n);
+            };
+          }
+          var toRef = Editor.pathRef(editor, to);
+          var targets = Editor.nodes(editor, {
+            at,
+            match,
+            mode,
+            voids
+          });
+          var pathRefs = Array.from(targets, function(_ref5) {
+            var _ref6 = slicedToArray(_ref5, 2), p = _ref6[1];
+            return Editor.pathRef(editor, p);
+          });
+          for (var _i2 = 0, _pathRefs2 = pathRefs; _i2 < _pathRefs2.length; _i2++) {
+            var pathRef = _pathRefs2[_i2];
+            var path = pathRef.unref();
+            var newPath = toRef.current;
+            if (path.length !== 0) {
+              editor.apply({
+                type: "move_node",
+                path,
+                newPath
+              });
+            }
+          }
+          toRef.unref();
+        });
+      },
+      removeNodes: function removeNodes(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$hanging3 = options.hanging, hanging = _options$hanging3 === void 0 ? false : _options$hanging3, _options$voids5 = options.voids, voids = _options$voids5 === void 0 ? false : _options$voids5, _options$mode5 = options.mode, mode = _options$mode5 === void 0 ? "lowest" : _options$mode5;
+          var _options$at4 = options.at, at = _options$at4 === void 0 ? editor.selection : _options$at4, match = options.match;
+          if (!at) {
+            return;
+          }
+          if (match == null) {
+            match = Path.isPath(at) ? matchPath(editor, at) : function(n) {
+              return Editor.isBlock(editor, n);
+            };
+          }
+          if (!hanging && Range.isRange(at)) {
+            at = Editor.unhangRange(editor, at);
+          }
+          var depths = Editor.nodes(editor, {
+            at,
+            match,
+            mode,
+            voids
+          });
+          var pathRefs = Array.from(depths, function(_ref7) {
+            var _ref8 = slicedToArray(_ref7, 2), p = _ref8[1];
+            return Editor.pathRef(editor, p);
+          });
+          for (var _i3 = 0, _pathRefs3 = pathRefs; _i3 < _pathRefs3.length; _i3++) {
+            var pathRef = _pathRefs3[_i3];
+            var path = pathRef.unref();
+            if (path) {
+              var _Editor$node = Editor.node(editor, path), _Editor$node2 = slicedToArray(_Editor$node, 1), node = _Editor$node2[0];
+              editor.apply({
+                type: "remove_node",
+                path,
+                node
+              });
+            }
+          }
+        });
+      },
+      setNodes: function setNodes(editor, props) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var match = options.match, _options$at5 = options.at, at = _options$at5 === void 0 ? editor.selection : _options$at5;
+          var _options$hanging4 = options.hanging, hanging = _options$hanging4 === void 0 ? false : _options$hanging4, _options$mode6 = options.mode, mode = _options$mode6 === void 0 ? "lowest" : _options$mode6, _options$split = options.split, split = _options$split === void 0 ? false : _options$split, _options$voids6 = options.voids, voids = _options$voids6 === void 0 ? false : _options$voids6;
+          if (!at) {
+            return;
+          }
+          if (match == null) {
+            match = Path.isPath(at) ? matchPath(editor, at) : function(n) {
+              return Editor.isBlock(editor, n);
+            };
+          }
+          if (!hanging && Range.isRange(at)) {
+            at = Editor.unhangRange(editor, at);
+          }
+          if (split && Range.isRange(at)) {
+            var rangeRef = Editor.rangeRef(editor, at, {
+              affinity: "inward"
+            });
+            var _Range$edges5 = Range.edges(at), _Range$edges6 = slicedToArray(_Range$edges5, 2), start = _Range$edges6[0], end = _Range$edges6[1];
+            var splitMode = mode === "lowest" ? "lowest" : "highest";
+            Transforms.splitNodes(editor, {
+              at: end,
+              match,
+              mode: splitMode,
+              voids
+            });
+            Transforms.splitNodes(editor, {
+              at: start,
+              match,
+              mode: splitMode,
+              voids
+            });
+            at = rangeRef.unref();
+            if (options.at == null) {
+              Transforms.select(editor, at);
+            }
+          }
+          var _iteratorNormalCompletion2 = true;
+          var _didIteratorError2 = false;
+          var _iteratorError2 = void 0;
+          try {
+            for (var _iterator2 = Editor.nodes(editor, {
+              at,
+              match,
+              mode,
+              voids
+            })[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              var _step2$value = slicedToArray(_step2.value, 2), node = _step2$value[0], path = _step2$value[1];
+              var properties = {};
+              var newProperties = {};
+              if (path.length === 0) {
+                continue;
+              }
+              for (var k in props) {
+                if (k === "children" || k === "text") {
+                  continue;
+                }
+                if (props[k] !== node[k]) {
+                  properties[k] = node[k];
+                  newProperties[k] = props[k];
+                }
+              }
+              if (Object.keys(newProperties).length !== 0) {
+                editor.apply({
+                  type: "set_node",
+                  path,
+                  properties,
+                  newProperties
+                });
+              }
+            }
+          } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                _iterator2["return"]();
+              }
+            } finally {
+              if (_didIteratorError2) {
+                throw _iteratorError2;
+              }
+            }
+          }
+        });
+      },
+      splitNodes: function splitNodes(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$mode7 = options.mode, mode = _options$mode7 === void 0 ? "lowest" : _options$mode7, _options$voids7 = options.voids, voids = _options$voids7 === void 0 ? false : _options$voids7;
+          var match = options.match, _options$at6 = options.at, at = _options$at6 === void 0 ? editor.selection : _options$at6, _options$height = options.height, height = _options$height === void 0 ? 0 : _options$height, _options$always = options.always, always = _options$always === void 0 ? false : _options$always;
+          if (match == null) {
+            match = function match2(n) {
+              return Editor.isBlock(editor, n);
+            };
+          }
+          if (Range.isRange(at)) {
+            at = deleteRange(editor, at);
+          }
+          if (Path.isPath(at)) {
+            var path = at;
+            var point = Editor.point(editor, path);
+            var _Editor$parent3 = Editor.parent(editor, path), _Editor$parent4 = slicedToArray(_Editor$parent3, 1), parent = _Editor$parent4[0];
+            match = function match2(n) {
+              return n === parent;
+            };
+            height = point.path.length - path.length + 1;
+            at = point;
+            always = true;
+          }
+          if (!at) {
+            return;
+          }
+          var beforeRef = Editor.pointRef(editor, at, {
+            affinity: "backward"
+          });
+          var _Editor$nodes5 = Editor.nodes(editor, {
+            at,
+            match,
+            mode,
+            voids
+          }), _Editor$nodes6 = slicedToArray(_Editor$nodes5, 1), highest = _Editor$nodes6[0];
+          if (!highest) {
+            return;
+          }
+          var voidMatch = Editor["void"](editor, {
+            at,
+            mode: "highest"
+          });
+          var nudge = 0;
+          if (!voids && voidMatch) {
+            var _voidMatch = slicedToArray(voidMatch, 2), voidNode = _voidMatch[0], voidPath = _voidMatch[1];
+            if (Element.isElement(voidNode) && editor.isInline(voidNode)) {
+              var after = Editor.after(editor, voidPath);
+              if (!after) {
+                var text = {
+                  text: ""
+                };
+                var afterPath = Path.next(voidPath);
+                Transforms.insertNodes(editor, text, {
+                  at: afterPath,
+                  voids
+                });
+                after = Editor.point(editor, afterPath);
+              }
+              at = after;
+              always = true;
+            }
+            var siblingHeight = at.path.length - voidPath.length;
+            height = siblingHeight + 1;
+            always = true;
+          }
+          var afterRef = Editor.pointRef(editor, at);
+          var depth = at.path.length - height;
+          var _highest = slicedToArray(highest, 2), highestPath = _highest[1];
+          var lowestPath = at.path.slice(0, depth);
+          var position = height === 0 ? at.offset : at.path[depth] + nudge;
+          var target = null;
+          var _iteratorNormalCompletion3 = true;
+          var _didIteratorError3 = false;
+          var _iteratorError3 = void 0;
+          try {
+            for (var _iterator3 = Editor.levels(editor, {
+              at: lowestPath,
+              reverse: true,
+              voids
+            })[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+              var _step3$value = slicedToArray(_step3.value, 2), node = _step3$value[0], _path2 = _step3$value[1];
+              var split = false;
+              if (_path2.length < highestPath.length || _path2.length === 0 || !voids && Editor.isVoid(editor, node)) {
+                break;
+              }
+              var _point2 = beforeRef.current;
+              var isEnd = Editor.isEnd(editor, _point2, _path2);
+              if (always || !beforeRef || !Editor.isEdge(editor, _point2, _path2)) {
+                split = true;
+                var _text = node.text, children = node.children, properties = objectWithoutProperties(node, ["text", "children"]);
+                editor.apply({
+                  type: "split_node",
+                  path: _path2,
+                  position,
+                  target,
+                  properties
+                });
+              }
+              target = position;
+              position = _path2[_path2.length - 1] + (split || isEnd ? 1 : 0);
+            }
+          } catch (err) {
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+                _iterator3["return"]();
+              }
+            } finally {
+              if (_didIteratorError3) {
+                throw _iteratorError3;
+              }
+            }
+          }
+          if (options.at == null) {
+            var _point = afterRef.current || Editor.end(editor, []);
+            Transforms.select(editor, _point);
+          }
+          beforeRef.unref();
+          afterRef.unref();
+        });
+      },
+      unsetNodes: function unsetNodes(editor, props) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        if (!Array.isArray(props)) {
+          props = [props];
+        }
+        var obj = {};
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = void 0;
+        try {
+          for (var _iterator4 = props[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var key = _step4.value;
+            obj[key] = null;
+          }
+        } catch (err) {
+          _didIteratorError4 = true;
+          _iteratorError4 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+              _iterator4["return"]();
+            }
+          } finally {
+            if (_didIteratorError4) {
+              throw _iteratorError4;
+            }
+          }
+        }
+        Transforms.setNodes(editor, obj, options);
+      },
+      unwrapNodes: function unwrapNodes(editor, options) {
+        Editor.withoutNormalizing(editor, function() {
+          var _options$mode8 = options.mode, mode = _options$mode8 === void 0 ? "lowest" : _options$mode8, _options$split2 = options.split, split = _options$split2 === void 0 ? false : _options$split2, _options$voids8 = options.voids, voids = _options$voids8 === void 0 ? false : _options$voids8;
+          var _options$at7 = options.at, at = _options$at7 === void 0 ? editor.selection : _options$at7, match = options.match;
+          if (!at) {
+            return;
+          }
+          if (match == null) {
+            match = Path.isPath(at) ? matchPath(editor, at) : function(n) {
+              return Editor.isBlock(editor, n);
+            };
+          }
+          if (Path.isPath(at)) {
+            at = Editor.range(editor, at);
+          }
+          var rangeRef = Range.isRange(at) ? Editor.rangeRef(editor, at) : null;
+          var matches = Editor.nodes(editor, {
+            at,
+            match,
+            mode,
+            voids
+          });
+          var pathRefs = Array.from(matches, function(_ref9) {
+            var _ref10 = slicedToArray(_ref9, 2), p = _ref10[1];
+            return Editor.pathRef(editor, p);
+          });
+          var _loop = function _loop2() {
+            var pathRef = _pathRefs4[_i4];
+            var path = pathRef.unref();
+            var _Editor$node3 = Editor.node(editor, path), _Editor$node4 = slicedToArray(_Editor$node3, 1), node = _Editor$node4[0];
+            var range = Editor.range(editor, path);
+            if (split && rangeRef) {
+              range = Range.intersection(rangeRef.current, range);
+            }
+            Transforms.liftNodes(editor, {
+              at: range,
+              match: function match2(n) {
+                return node.children.includes(n);
+              },
+              voids
+            });
+          };
+          for (var _i4 = 0, _pathRefs4 = pathRefs; _i4 < _pathRefs4.length; _i4++) {
+            _loop();
+          }
+          if (rangeRef) {
+            rangeRef.unref();
+          }
+        });
+      },
+      wrapNodes: function wrapNodes(editor, element) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$mode9 = options.mode, mode = _options$mode9 === void 0 ? "lowest" : _options$mode9, _options$split3 = options.split, split = _options$split3 === void 0 ? false : _options$split3, _options$voids9 = options.voids, voids = _options$voids9 === void 0 ? false : _options$voids9;
+          var match = options.match, _options$at8 = options.at, at = _options$at8 === void 0 ? editor.selection : _options$at8;
+          if (!at) {
+            return;
+          }
+          if (match == null) {
+            if (Path.isPath(at)) {
+              match = matchPath(editor, at);
+            } else if (editor.isInline(element)) {
+              match = function match2(n) {
+                return Editor.isInline(editor, n) || Text.isText(n);
+              };
+            } else {
+              match = function match2(n) {
+                return Editor.isBlock(editor, n);
+              };
+            }
+          }
+          if (split && Range.isRange(at)) {
+            var _Range$edges7 = Range.edges(at), _Range$edges8 = slicedToArray(_Range$edges7, 2), start = _Range$edges8[0], end = _Range$edges8[1];
+            var rangeRef = Editor.rangeRef(editor, at, {
+              affinity: "inward"
+            });
+            Transforms.splitNodes(editor, {
+              at: end,
+              match,
+              voids
+            });
+            Transforms.splitNodes(editor, {
+              at: start,
+              match,
+              voids
+            });
+            at = rangeRef.unref();
+            if (options.at == null) {
+              Transforms.select(editor, at);
+            }
+          }
+          var roots = Array.from(Editor.nodes(editor, {
+            at,
+            match: editor.isInline(element) ? function(n) {
+              return Editor.isBlock(editor, n);
+            } : function(n) {
+              return Editor.isEditor(n);
+            },
+            mode: "lowest",
+            voids
+          }));
+          for (var _i5 = 0, _roots = roots; _i5 < _roots.length; _i5++) {
+            var _roots$_i = slicedToArray(_roots[_i5], 2), rootPath = _roots$_i[1];
+            var a = Range.isRange(at) ? Range.intersection(at, Editor.range(editor, rootPath)) : at;
+            if (!a) {
+              continue;
+            }
+            var matches = Array.from(Editor.nodes(editor, {
+              at: a,
+              match,
+              mode,
+              voids
+            }));
+            if (matches.length > 0) {
+              (function() {
+                var _matches = slicedToArray(matches, 1), first = _matches[0];
+                var last = matches[matches.length - 1];
+                var _first = slicedToArray(first, 2), firstPath = _first[1];
+                var _last = slicedToArray(last, 2), lastPath = _last[1];
+                var commonPath = Path.equals(firstPath, lastPath) ? Path.parent(firstPath) : Path.common(firstPath, lastPath);
+                var range = Editor.range(editor, firstPath, lastPath);
+                var commonNodeEntry = Editor.node(editor, commonPath);
+                var _commonNodeEntry = slicedToArray(commonNodeEntry, 1), commonNode = _commonNodeEntry[0];
+                var depth = commonPath.length + 1;
+                var wrapperPath = Path.next(lastPath.slice(0, depth));
+                var wrapper = _objectSpread$6({}, element, {
+                  children: []
+                });
+                Transforms.insertNodes(editor, wrapper, {
+                  at: wrapperPath,
+                  voids
+                });
+                Transforms.moveNodes(editor, {
+                  at: range,
+                  match: function match2(n) {
+                    return commonNode.children.includes(n);
+                  },
+                  to: wrapperPath.concat(0),
+                  voids
+                });
+              })();
+            }
+          }
+        });
+      }
+    };
+    var deleteRange = function deleteRange2(editor, range) {
+      if (Range.isCollapsed(range)) {
+        return range.anchor;
+      } else {
+        var _Range$edges9 = Range.edges(range), _Range$edges10 = slicedToArray(_Range$edges9, 2), end = _Range$edges10[1];
+        var pointRef = Editor.pointRef(editor, end);
+        Transforms["delete"](editor, {
+          at: range
+        });
+        return pointRef.unref();
+      }
+    };
+    var matchPath = function matchPath2(editor, path) {
+      var _Editor$node5 = Editor.node(editor, path), _Editor$node6 = slicedToArray(_Editor$node5, 1), node = _Editor$node6[0];
+      return function(n) {
+        return n === node;
+      };
+    };
+    function ownKeys$7(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$7(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$7(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$7(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var SelectionTransforms = {
+      collapse: function collapse(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$edge = options.edge, edge = _options$edge === void 0 ? "anchor" : _options$edge;
+        var selection = editor.selection;
+        if (!selection) {
+          return;
+        } else if (edge === "anchor") {
+          Transforms.select(editor, selection.anchor);
+        } else if (edge === "focus") {
+          Transforms.select(editor, selection.focus);
+        } else if (edge === "start") {
+          var _Range$edges = Range.edges(selection), _Range$edges2 = slicedToArray(_Range$edges, 1), start = _Range$edges2[0];
+          Transforms.select(editor, start);
+        } else if (edge === "end") {
+          var _Range$edges3 = Range.edges(selection), _Range$edges4 = slicedToArray(_Range$edges3, 2), end = _Range$edges4[1];
+          Transforms.select(editor, end);
+        }
+      },
+      deselect: function deselect(editor) {
+        var selection = editor.selection;
+        if (selection) {
+          editor.apply({
+            type: "set_selection",
+            properties: selection,
+            newProperties: null
+          });
+        }
+      },
+      move: function move(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var selection = editor.selection;
+        var _options$distance = options.distance, distance = _options$distance === void 0 ? 1 : _options$distance, _options$unit = options.unit, unit = _options$unit === void 0 ? "character" : _options$unit, _options$reverse = options.reverse, reverse = _options$reverse === void 0 ? false : _options$reverse;
+        var _options$edge2 = options.edge, edge = _options$edge2 === void 0 ? null : _options$edge2;
+        if (!selection) {
+          return;
+        }
+        if (edge === "start") {
+          edge = Range.isBackward(selection) ? "focus" : "anchor";
+        }
+        if (edge === "end") {
+          edge = Range.isBackward(selection) ? "anchor" : "focus";
+        }
+        var anchor = selection.anchor, focus = selection.focus;
+        var opts = {
+          distance,
+          unit
+        };
+        var props = {};
+        if (edge == null || edge === "anchor") {
+          var point = reverse ? Editor.before(editor, anchor, opts) : Editor.after(editor, anchor, opts);
+          if (point) {
+            props.anchor = point;
+          }
+        }
+        if (edge == null || edge === "focus") {
+          var _point = reverse ? Editor.before(editor, focus, opts) : Editor.after(editor, focus, opts);
+          if (_point) {
+            props.focus = _point;
+          }
+        }
+        Transforms.setSelection(editor, props);
+      },
+      select: function select(editor, target) {
+        var selection = editor.selection;
+        target = Editor.range(editor, target);
+        if (selection) {
+          Transforms.setSelection(editor, target);
+          return;
+        }
+        if (!Range.isRange(target)) {
+          throw new Error("When setting the selection and the current selection is `null` you must provide at least an `anchor` and `focus`, but you passed: ".concat(JSON.stringify(target)));
+        }
+        editor.apply({
+          type: "set_selection",
+          properties: selection,
+          newProperties: target
+        });
+      },
+      setPoint: function setPoint(editor, props, options) {
+        var selection = editor.selection;
+        var _options$edge3 = options.edge, edge = _options$edge3 === void 0 ? "both" : _options$edge3;
+        if (!selection) {
+          return;
+        }
+        if (edge === "start") {
+          edge = Range.isBackward(selection) ? "focus" : "anchor";
+        }
+        if (edge === "end") {
+          edge = Range.isBackward(selection) ? "anchor" : "focus";
+        }
+        var anchor = selection.anchor, focus = selection.focus;
+        var point = edge === "anchor" ? anchor : focus;
+        Transforms.setSelection(editor, defineProperty({}, edge === "anchor" ? "anchor" : "focus", _objectSpread$7({}, point, {}, props)));
+      },
+      setSelection: function setSelection(editor, props) {
+        var selection = editor.selection;
+        var oldProps = {};
+        var newProps = {};
+        if (!selection) {
+          return;
+        }
+        for (var k in props) {
+          if (k === "anchor" && props.anchor != null && !Point.equals(props.anchor, selection.anchor) || k === "focus" && props.focus != null && !Point.equals(props.focus, selection.focus) || k !== "anchor" && k !== "focus" && props[k] !== selection[k]) {
+            oldProps[k] = selection[k];
+            newProps[k] = props[k];
+          }
+        }
+        if (Object.keys(oldProps).length > 0) {
+          editor.apply({
+            type: "set_selection",
+            properties: oldProps,
+            newProperties: newProps
+          });
+        }
+      }
+    };
+    var TextTransforms = {
+      delete: function _delete(editor) {
+        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$reverse = options.reverse, reverse = _options$reverse === void 0 ? false : _options$reverse, _options$unit = options.unit, unit = _options$unit === void 0 ? "character" : _options$unit, _options$distance = options.distance, distance = _options$distance === void 0 ? 1 : _options$distance, _options$voids = options.voids, voids = _options$voids === void 0 ? false : _options$voids;
+          var _options$at = options.at, at = _options$at === void 0 ? editor.selection : _options$at, _options$hanging = options.hanging, hanging = _options$hanging === void 0 ? false : _options$hanging;
+          if (!at) {
+            return;
+          }
+          if (Range.isRange(at) && Range.isCollapsed(at)) {
+            at = at.anchor;
+          }
+          if (Point.isPoint(at)) {
+            var furthestVoid = Editor["void"](editor, {
+              at,
+              mode: "highest"
+            });
+            if (!voids && furthestVoid) {
+              var _furthestVoid = slicedToArray(furthestVoid, 2), voidPath = _furthestVoid[1];
+              at = voidPath;
+            } else {
+              var opts = {
+                unit,
+                distance
+              };
+              var target = reverse ? Editor.before(editor, at, opts) || Editor.start(editor, []) : Editor.after(editor, at, opts) || Editor.end(editor, []);
+              at = {
+                anchor: at,
+                focus: target
+              };
+              hanging = true;
+            }
+          }
+          if (Path.isPath(at)) {
+            Transforms.removeNodes(editor, {
+              at,
+              voids
+            });
+            return;
+          }
+          if (Range.isCollapsed(at)) {
+            return;
+          }
+          if (!hanging) {
+            at = Editor.unhangRange(editor, at, {
+              voids
+            });
+          }
+          var _Range$edges = Range.edges(at), _Range$edges2 = slicedToArray(_Range$edges, 2), start = _Range$edges2[0], end = _Range$edges2[1];
+          var startBlock = Editor.above(editor, {
+            match: function match(n) {
+              return Editor.isBlock(editor, n);
+            },
+            at: start,
+            voids
+          });
+          var endBlock = Editor.above(editor, {
+            match: function match(n) {
+              return Editor.isBlock(editor, n);
+            },
+            at: end,
+            voids
+          });
+          var isAcrossBlocks = startBlock && endBlock && !Path.equals(startBlock[1], endBlock[1]);
+          var isSingleText = Path.equals(start.path, end.path);
+          var startVoid = voids ? null : Editor["void"](editor, {
+            at: start,
+            mode: "highest"
+          });
+          var endVoid = voids ? null : Editor["void"](editor, {
+            at: end,
+            mode: "highest"
+          });
+          if (startVoid) {
+            var before = Editor.before(editor, start);
+            if (before && startBlock && Path.isAncestor(startBlock[1], before.path)) {
+              start = before;
+            }
+          }
+          if (endVoid) {
+            var after = Editor.after(editor, end);
+            if (after && endBlock && Path.isAncestor(endBlock[1], after.path)) {
+              end = after;
+            }
+          }
+          var matches = [];
+          var lastPath;
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = void 0;
+          try {
+            for (var _iterator = Editor.nodes(editor, {
+              at,
+              voids
+            })[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var entry = _step.value;
+              var _entry = slicedToArray(entry, 2), _node2 = _entry[0], _path2 = _entry[1];
+              if (lastPath && Path.compare(_path2, lastPath) === 0) {
+                continue;
+              }
+              if (!voids && Editor.isVoid(editor, _node2) || !Path.isCommon(_path2, start.path) && !Path.isCommon(_path2, end.path)) {
+                matches.push(entry);
+                lastPath = _path2;
+              }
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                _iterator["return"]();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+          var pathRefs = Array.from(matches, function(_ref) {
+            var _ref2 = slicedToArray(_ref, 2), p = _ref2[1];
+            return Editor.pathRef(editor, p);
+          });
+          var startRef = Editor.pointRef(editor, start);
+          var endRef = Editor.pointRef(editor, end);
+          if (!isSingleText && !startVoid) {
+            var _point = startRef.current;
+            var _Editor$leaf = Editor.leaf(editor, _point), _Editor$leaf2 = slicedToArray(_Editor$leaf, 1), node = _Editor$leaf2[0];
+            var path = _point.path;
+            var _start = start, offset = _start.offset;
+            var text = node.text.slice(offset);
+            editor.apply({
+              type: "remove_text",
+              path,
+              offset,
+              text
+            });
+          }
+          for (var _i = 0, _pathRefs = pathRefs; _i < _pathRefs.length; _i++) {
+            var pathRef = _pathRefs[_i];
+            var _path3 = pathRef.unref();
+            Transforms.removeNodes(editor, {
+              at: _path3,
+              voids
+            });
+          }
+          if (!endVoid) {
+            var _point2 = endRef.current;
+            var _Editor$leaf3 = Editor.leaf(editor, _point2), _Editor$leaf4 = slicedToArray(_Editor$leaf3, 1), _node = _Editor$leaf4[0];
+            var _path = _point2.path;
+            var _offset = isSingleText ? start.offset : 0;
+            var _text = _node.text.slice(_offset, end.offset);
+            editor.apply({
+              type: "remove_text",
+              path: _path,
+              offset: _offset,
+              text: _text
+            });
+          }
+          if (!isSingleText && isAcrossBlocks && endRef.current && startRef.current) {
+            Transforms.mergeNodes(editor, {
+              at: endRef.current,
+              hanging: true,
+              voids
+            });
+          }
+          var point = endRef.unref() || startRef.unref();
+          if (options.at == null && point) {
+            Transforms.select(editor, point);
+          }
+        });
+      },
+      insertFragment: function insertFragment(editor, fragment) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$hanging2 = options.hanging, hanging = _options$hanging2 === void 0 ? false : _options$hanging2, _options$voids2 = options.voids, voids = _options$voids2 === void 0 ? false : _options$voids2;
+          var _options$at2 = options.at, at = _options$at2 === void 0 ? editor.selection : _options$at2;
+          if (!fragment.length) {
+            return;
+          }
+          if (!at) {
+            return;
+          } else if (Range.isRange(at)) {
+            if (!hanging) {
+              at = Editor.unhangRange(editor, at);
+            }
+            if (Range.isCollapsed(at)) {
+              at = at.anchor;
+            } else {
+              var _Range$edges3 = Range.edges(at), _Range$edges4 = slicedToArray(_Range$edges3, 2), end = _Range$edges4[1];
+              if (!voids && Editor["void"](editor, {
+                at: end
+              })) {
+                return;
+              }
+              var pointRef = Editor.pointRef(editor, end);
+              Transforms["delete"](editor, {
+                at
+              });
+              at = pointRef.unref();
+            }
+          } else if (Path.isPath(at)) {
+            at = Editor.start(editor, at);
+          }
+          if (!voids && Editor["void"](editor, {
+            at
+          })) {
+            return;
+          }
+          var inlineElementMatch = Editor.above(editor, {
+            at,
+            match: function match(n) {
+              return Editor.isInline(editor, n);
+            },
+            mode: "highest",
+            voids
+          });
+          if (inlineElementMatch) {
+            var _inlineElementMatch = slicedToArray(inlineElementMatch, 2), _inlinePath = _inlineElementMatch[1];
+            if (Editor.isEnd(editor, at, _inlinePath)) {
+              var after = Editor.after(editor, _inlinePath);
+              at = after;
+            } else if (Editor.isStart(editor, at, _inlinePath)) {
+              var before = Editor.before(editor, _inlinePath);
+              at = before;
+            }
+          }
+          var blockMatch = Editor.above(editor, {
+            match: function match(n) {
+              return Editor.isBlock(editor, n);
+            },
+            at,
+            voids
+          });
+          var _blockMatch = slicedToArray(blockMatch, 2), blockPath = _blockMatch[1];
+          var isBlockStart = Editor.isStart(editor, at, blockPath);
+          var isBlockEnd = Editor.isEnd(editor, at, blockPath);
+          var mergeStart = !isBlockStart || isBlockStart && isBlockEnd;
+          var mergeEnd = !isBlockEnd;
+          var _Node$first = Node.first({
+            children: fragment
+          }, []), _Node$first2 = slicedToArray(_Node$first, 2), firstPath = _Node$first2[1];
+          var _Node$last = Node.last({
+            children: fragment
+          }, []), _Node$last2 = slicedToArray(_Node$last, 2), lastPath = _Node$last2[1];
+          var matches = [];
+          var matcher = function matcher2(_ref3) {
+            var _ref4 = slicedToArray(_ref3, 2), n = _ref4[0], p = _ref4[1];
+            if (mergeStart && Path.isAncestor(p, firstPath) && Element.isElement(n) && !editor.isVoid(n) && !editor.isInline(n)) {
+              return false;
+            }
+            if (mergeEnd && Path.isAncestor(p, lastPath) && Element.isElement(n) && !editor.isVoid(n) && !editor.isInline(n)) {
+              return false;
+            }
+            return true;
+          };
+          var _iteratorNormalCompletion2 = true;
+          var _didIteratorError2 = false;
+          var _iteratorError2 = void 0;
+          try {
+            for (var _iterator2 = Node.nodes({
+              children: fragment
+            }, {
+              pass: matcher
+            })[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              var entry = _step2.value;
+              if (entry[1].length > 0 && matcher(entry)) {
+                matches.push(entry);
+              }
+            }
+          } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                _iterator2["return"]();
+              }
+            } finally {
+              if (_didIteratorError2) {
+                throw _iteratorError2;
+              }
+            }
+          }
+          var starts = [];
+          var middles = [];
+          var ends = [];
+          var starting = true;
+          var hasBlocks = false;
+          for (var _i2 = 0, _matches = matches; _i2 < _matches.length; _i2++) {
+            var _matches$_i = slicedToArray(_matches[_i2], 1), node = _matches$_i[0];
+            if (Element.isElement(node) && !editor.isInline(node)) {
+              starting = false;
+              hasBlocks = true;
+              middles.push(node);
+            } else if (starting) {
+              starts.push(node);
+            } else {
+              ends.push(node);
+            }
+          }
+          var _Editor$nodes = Editor.nodes(editor, {
+            at,
+            match: function match(n) {
+              return Text.isText(n) || Editor.isInline(editor, n);
+            },
+            mode: "highest",
+            voids
+          }), _Editor$nodes2 = slicedToArray(_Editor$nodes, 1), inlineMatch = _Editor$nodes2[0];
+          var _inlineMatch = slicedToArray(inlineMatch, 2), inlinePath = _inlineMatch[1];
+          var isInlineStart = Editor.isStart(editor, at, inlinePath);
+          var isInlineEnd = Editor.isEnd(editor, at, inlinePath);
+          var middleRef = Editor.pathRef(editor, isBlockEnd ? Path.next(blockPath) : blockPath);
+          var endRef = Editor.pathRef(editor, isInlineEnd ? Path.next(inlinePath) : inlinePath);
+          Transforms.splitNodes(editor, {
+            at,
+            match: function match(n) {
+              return hasBlocks ? Editor.isBlock(editor, n) : Text.isText(n) || Editor.isInline(editor, n);
+            },
+            mode: hasBlocks ? "lowest" : "highest",
+            voids
+          });
+          var startRef = Editor.pathRef(editor, !isInlineStart || isInlineStart && isInlineEnd ? Path.next(inlinePath) : inlinePath);
+          Transforms.insertNodes(editor, starts, {
+            at: startRef.current,
+            match: function match(n) {
+              return Text.isText(n) || Editor.isInline(editor, n);
+            },
+            mode: "highest",
+            voids
+          });
+          Transforms.insertNodes(editor, middles, {
+            at: middleRef.current,
+            match: function match(n) {
+              return Editor.isBlock(editor, n);
+            },
+            mode: "lowest",
+            voids
+          });
+          Transforms.insertNodes(editor, ends, {
+            at: endRef.current,
+            match: function match(n) {
+              return Text.isText(n) || Editor.isInline(editor, n);
+            },
+            mode: "highest",
+            voids
+          });
+          if (!options.at) {
+            var path;
+            if (ends.length > 0) {
+              path = Path.previous(endRef.current);
+            } else if (middles.length > 0) {
+              path = Path.previous(middleRef.current);
+            } else {
+              path = Path.previous(startRef.current);
+            }
+            var _end = Editor.end(editor, path);
+            Transforms.select(editor, _end);
+          }
+          startRef.unref();
+          middleRef.unref();
+          endRef.unref();
+        });
+      },
+      insertText: function insertText(editor, text) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        Editor.withoutNormalizing(editor, function() {
+          var _options$voids3 = options.voids, voids = _options$voids3 === void 0 ? false : _options$voids3;
+          var _options$at3 = options.at, at = _options$at3 === void 0 ? editor.selection : _options$at3;
+          if (!at) {
+            return;
+          }
+          if (Path.isPath(at)) {
+            at = Editor.range(editor, at);
+          }
+          if (Range.isRange(at)) {
+            if (Range.isCollapsed(at)) {
+              at = at.anchor;
+            } else {
+              var end = Range.end(at);
+              if (!voids && Editor["void"](editor, {
+                at: end
+              })) {
+                return;
+              }
+              var pointRef = Editor.pointRef(editor, end);
+              Transforms["delete"](editor, {
+                at,
+                voids
+              });
+              at = pointRef.unref();
+              Transforms.setSelection(editor, {
+                anchor: at,
+                focus: at
+              });
+            }
+          }
+          if (!voids && Editor["void"](editor, {
+            at
+          })) {
+            return;
+          }
+          var _at = at, path = _at.path, offset = _at.offset;
+          editor.apply({
+            type: "insert_text",
+            path,
+            offset,
+            text
+          });
+        });
+      }
+    };
+    function ownKeys$8(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$8(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$8(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$8(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var Transforms = _objectSpread$8({}, GeneralTransforms, {}, NodeTransforms, {}, SelectionTransforms, {}, TextTransforms);
+    function ownKeys$9(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread$9(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys$9(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys$9(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var createEditor = function createEditor2() {
+      var editor = {
+        children: [],
+        operations: [],
+        selection: null,
+        marks: null,
+        isInline: function isInline() {
+          return false;
+        },
+        isVoid: function isVoid() {
+          return false;
+        },
+        onChange: function onChange() {
+        },
+        apply: function apply(op) {
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = void 0;
+          try {
+            for (var _iterator = Editor.pathRefs(editor)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var ref = _step.value;
+              PathRef.transform(ref, op);
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                _iterator["return"]();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+          var _iteratorNormalCompletion2 = true;
+          var _didIteratorError2 = false;
+          var _iteratorError2 = void 0;
+          try {
+            for (var _iterator2 = Editor.pointRefs(editor)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+              var _ref = _step2.value;
+              PointRef.transform(_ref, op);
+            }
+          } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                _iterator2["return"]();
+              }
+            } finally {
+              if (_didIteratorError2) {
+                throw _iteratorError2;
+              }
+            }
+          }
+          var _iteratorNormalCompletion3 = true;
+          var _didIteratorError3 = false;
+          var _iteratorError3 = void 0;
+          try {
+            for (var _iterator3 = Editor.rangeRefs(editor)[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+              var _ref2 = _step3.value;
+              RangeRef.transform(_ref2, op);
+            }
+          } catch (err) {
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+                _iterator3["return"]();
+              }
+            } finally {
+              if (_didIteratorError3) {
+                throw _iteratorError3;
+              }
+            }
+          }
+          var set = new Set();
+          var dirtyPaths = [];
+          var add = function add2(path2) {
+            if (path2) {
+              var key = path2.join(",");
+              if (!set.has(key)) {
+                set.add(key);
+                dirtyPaths.push(path2);
+              }
+            }
+          };
+          var oldDirtyPaths = DIRTY_PATHS.get(editor) || [];
+          var newDirtyPaths = getDirtyPaths(op);
+          var _iteratorNormalCompletion4 = true;
+          var _didIteratorError4 = false;
+          var _iteratorError4 = void 0;
+          try {
+            for (var _iterator4 = oldDirtyPaths[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+              var path = _step4.value;
+              var newPath = Path.transform(path, op);
+              add(newPath);
+            }
+          } catch (err) {
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+                _iterator4["return"]();
+              }
+            } finally {
+              if (_didIteratorError4) {
+                throw _iteratorError4;
+              }
+            }
+          }
+          var _iteratorNormalCompletion5 = true;
+          var _didIteratorError5 = false;
+          var _iteratorError5 = void 0;
+          try {
+            for (var _iterator5 = newDirtyPaths[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+              var _path = _step5.value;
+              add(_path);
+            }
+          } catch (err) {
+            _didIteratorError5 = true;
+            _iteratorError5 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+                _iterator5["return"]();
+              }
+            } finally {
+              if (_didIteratorError5) {
+                throw _iteratorError5;
+              }
+            }
+          }
+          DIRTY_PATHS.set(editor, dirtyPaths);
+          Editor.transform(editor, op);
+          editor.operations.push(op);
+          Editor.normalize(editor);
+          if (op.type === "set_selection") {
+            editor.marks = null;
+          }
+          if (!FLUSHING.get(editor)) {
+            FLUSHING.set(editor, true);
+            Promise.resolve().then(function() {
+              FLUSHING.set(editor, false);
+              editor.onChange();
+              editor.operations = [];
+            });
+          }
+        },
+        addMark: function addMark(key, value) {
+          var selection = editor.selection;
+          if (selection) {
+            if (Range.isExpanded(selection)) {
+              Transforms.setNodes(editor, defineProperty({}, key, value), {
+                match: Text.isText,
+                split: true
+              });
+            } else {
+              var marks = _objectSpread$9({}, Editor.marks(editor) || {}, defineProperty({}, key, value));
+              editor.marks = marks;
+              editor.onChange();
+            }
+          }
+        },
+        deleteBackward: function deleteBackward(unit) {
+          var selection = editor.selection;
+          if (selection && Range.isCollapsed(selection)) {
+            Transforms["delete"](editor, {
+              unit,
+              reverse: true
+            });
+          }
+        },
+        deleteForward: function deleteForward(unit) {
+          var selection = editor.selection;
+          if (selection && Range.isCollapsed(selection)) {
+            Transforms["delete"](editor, {
+              unit
+            });
+          }
+        },
+        deleteFragment: function deleteFragment() {
+          var selection = editor.selection;
+          if (selection && Range.isExpanded(selection)) {
+            Transforms["delete"](editor);
+          }
+        },
+        getFragment: function getFragment() {
+          var selection = editor.selection;
+          if (selection) {
+            return Node.fragment(editor, selection);
+          }
+          return [];
+        },
+        insertBreak: function insertBreak() {
+          Transforms.splitNodes(editor, {
+            always: true
+          });
+        },
+        insertFragment: function insertFragment(fragment) {
+          Transforms.insertFragment(editor, fragment);
+        },
+        insertNode: function insertNode(node) {
+          Transforms.insertNodes(editor, node);
+        },
+        insertText: function insertText(text) {
+          var selection = editor.selection, marks = editor.marks;
+          if (selection) {
+            if (Range.isCollapsed(selection)) {
+              var inline = Editor.above(editor, {
+                match: function match(n) {
+                  return Editor.isInline(editor, n);
+                },
+                mode: "highest"
+              });
+              if (inline) {
+                var _inline = slicedToArray(inline, 2), inlinePath = _inline[1];
+                if (Editor.isEnd(editor, selection.anchor, inlinePath)) {
+                  var point = Editor.after(editor, inlinePath);
+                  Transforms.setSelection(editor, {
+                    anchor: point,
+                    focus: point
+                  });
+                }
+              }
+            }
+            if (marks) {
+              var node = _objectSpread$9({
+                text
+              }, marks);
+              Transforms.insertNodes(editor, node);
+            } else {
+              Transforms.insertText(editor, text);
+            }
+            editor.marks = null;
+          }
+        },
+        normalizeNode: function normalizeNode(entry) {
+          var _entry = slicedToArray(entry, 2), node = _entry[0], path = _entry[1];
+          if (Text.isText(node)) {
+            return;
+          }
+          if (Element.isElement(node) && node.children.length === 0) {
+            var child = {
+              text: ""
+            };
+            Transforms.insertNodes(editor, child, {
+              at: path.concat(0),
+              voids: true
+            });
+            return;
+          }
+          var shouldHaveInlines = Editor.isEditor(node) ? false : Element.isElement(node) && (editor.isInline(node) || node.children.length === 0 || Text.isText(node.children[0]) || editor.isInline(node.children[0]));
+          var n = 0;
+          for (var i = 0; i < node.children.length; i++, n++) {
+            var _child = node.children[i];
+            var prev = node.children[i - 1];
+            var isLast = i === node.children.length - 1;
+            var isInlineOrText = Text.isText(_child) || Element.isElement(_child) && editor.isInline(_child);
+            if (isInlineOrText !== shouldHaveInlines) {
+              Transforms.removeNodes(editor, {
+                at: path.concat(n),
+                voids: true
+              });
+              n--;
+            } else if (Element.isElement(_child)) {
+              if (editor.isInline(_child)) {
+                if (prev == null || !Text.isText(prev)) {
+                  var newChild = {
+                    text: ""
+                  };
+                  Transforms.insertNodes(editor, newChild, {
+                    at: path.concat(n),
+                    voids: true
+                  });
+                  n++;
+                } else if (isLast) {
+                  var _newChild = {
+                    text: ""
+                  };
+                  Transforms.insertNodes(editor, _newChild, {
+                    at: path.concat(n + 1),
+                    voids: true
+                  });
+                  n++;
+                }
+              }
+            } else {
+              if (prev != null && Text.isText(prev)) {
+                if (Text.equals(_child, prev, {
+                  loose: true
+                })) {
+                  Transforms.mergeNodes(editor, {
+                    at: path.concat(n),
+                    voids: true
+                  });
+                  n--;
+                } else if (prev.text === "") {
+                  Transforms.removeNodes(editor, {
+                    at: path.concat(n - 1),
+                    voids: true
+                  });
+                  n--;
+                } else if (isLast && _child.text === "") {
+                  Transforms.removeNodes(editor, {
+                    at: path.concat(n),
+                    voids: true
+                  });
+                  n--;
+                }
+              }
+            }
+          }
+        },
+        removeMark: function removeMark(key) {
+          var selection = editor.selection;
+          if (selection) {
+            if (Range.isExpanded(selection)) {
+              Transforms.unsetNodes(editor, key, {
+                match: Text.isText,
+                split: true
+              });
+            } else {
+              var marks = _objectSpread$9({}, Editor.marks(editor) || {});
+              delete marks[key];
+              editor.marks = marks;
+              editor.onChange();
+            }
+          }
+        }
+      };
+      return editor;
+    };
+    var getDirtyPaths = function getDirtyPaths2(op) {
+      switch (op.type) {
+        case "insert_text":
+        case "remove_text":
+        case "set_node": {
+          var path = op.path;
+          return Path.levels(path);
+        }
+        case "insert_node": {
+          var node = op.node, _path2 = op.path;
+          var levels = Path.levels(_path2);
+          var descendants = Text.isText(node) ? [] : Array.from(Node.nodes(node), function(_ref3) {
+            var _ref4 = slicedToArray(_ref3, 2), p2 = _ref4[1];
+            return _path2.concat(p2);
+          });
+          return [].concat(toConsumableArray(levels), toConsumableArray(descendants));
+        }
+        case "merge_node": {
+          var _path3 = op.path;
+          var ancestors = Path.ancestors(_path3);
+          var previousPath = Path.previous(_path3);
+          return [].concat(toConsumableArray(ancestors), [previousPath]);
+        }
+        case "move_node": {
+          var _path4 = op.path, newPath = op.newPath;
+          if (Path.equals(_path4, newPath)) {
+            return [];
+          }
+          var oldAncestors = [];
+          var newAncestors = [];
+          var _iteratorNormalCompletion6 = true;
+          var _didIteratorError6 = false;
+          var _iteratorError6 = void 0;
+          try {
+            for (var _iterator6 = Path.ancestors(_path4)[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+              var ancestor = _step6.value;
+              var p = Path.transform(ancestor, op);
+              oldAncestors.push(p);
+            }
+          } catch (err) {
+            _didIteratorError6 = true;
+            _iteratorError6 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+                _iterator6["return"]();
+              }
+            } finally {
+              if (_didIteratorError6) {
+                throw _iteratorError6;
+              }
+            }
+          }
+          var _iteratorNormalCompletion7 = true;
+          var _didIteratorError7 = false;
+          var _iteratorError7 = void 0;
+          try {
+            for (var _iterator7 = Path.ancestors(newPath)[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+              var _ancestor = _step7.value;
+              var _p = Path.transform(_ancestor, op);
+              newAncestors.push(_p);
+            }
+          } catch (err) {
+            _didIteratorError7 = true;
+            _iteratorError7 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion7 && _iterator7["return"] != null) {
+                _iterator7["return"]();
+              }
+            } finally {
+              if (_didIteratorError7) {
+                throw _iteratorError7;
+              }
+            }
+          }
+          return [].concat(oldAncestors, newAncestors);
+        }
+        case "remove_node": {
+          var _path5 = op.path;
+          var _ancestors = Path.ancestors(_path5);
+          return toConsumableArray(_ancestors);
+        }
+        case "split_node": {
+          var _path6 = op.path;
+          var _levels = Path.levels(_path6);
+          var nextPath = Path.next(_path6);
+          return [].concat(toConsumableArray(_levels), [nextPath]);
+        }
+        default: {
+          return [];
+        }
+      }
+    };
+    exports.Editor = Editor;
+    exports.Element = Element;
+    exports.Location = Location;
+    exports.Node = Node;
+    exports.Operation = Operation;
+    exports.Path = Path;
+    exports.PathRef = PathRef;
+    exports.Point = Point;
+    exports.PointRef = PointRef;
+    exports.Range = Range;
+    exports.RangeRef = RangeRef;
+    exports.Span = Span;
+    exports.Text = Text;
+    exports.Transforms = Transforms;
+    exports.createEditor = createEditor;
+  },
+
+  46(require, exports, module) {
+    // node_modules/lodash/isObject.js
+    function isObject(value) {
+      var type = typeof value;
+      return value != null && (type == "object" || type == "function");
+    }
+    module.exports = isObject;
+  },
+
+  41(require, exports, module) {
+    // node_modules/lodash/_freeGlobal.js
+    var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
+    module.exports = freeGlobal;
+  },
+
+  44(require, exports, module) {
+    // node_modules/lodash/_root.js
+    var freeGlobal = require(41 /* ./_freeGlobal */);
+    var freeSelf = typeof self == "object" && self && self.Object === Object && self;
+    var root = freeGlobal || freeSelf || Function("return this")();
+    module.exports = root;
+  },
+
+  50(require, exports, module) {
+    // node_modules/lodash/now.js
+    var root = require(44 /* ./_root */);
+    var now = function() {
+      return root.Date.now();
+    };
+    module.exports = now;
+  },
+
+  39(require, exports, module) {
+    // node_modules/lodash/_Symbol.js
+    var root = require(44 /* ./_root */);
+    var Symbol = root.Symbol;
+    module.exports = Symbol;
+  },
+
+  42(require, exports, module) {
+    // node_modules/lodash/_getRawTag.js
+    var Symbol = require(39 /* ./_Symbol */);
+    var objectProto = Object.prototype;
+    var hasOwnProperty = objectProto.hasOwnProperty;
+    var nativeObjectToString = objectProto.toString;
+    var symToStringTag = Symbol ? Symbol.toStringTag : void 0;
+    function getRawTag(value) {
+      var isOwn = hasOwnProperty.call(value, symToStringTag), tag = value[symToStringTag];
+      try {
+        value[symToStringTag] = void 0;
+        var unmasked = true;
+      } catch (e) {
+      }
+      var result = nativeObjectToString.call(value);
+      if (unmasked) {
+        if (isOwn) {
+          value[symToStringTag] = tag;
+        } else {
+          delete value[symToStringTag];
+        }
+      }
+      return result;
+    }
+    module.exports = getRawTag;
+  },
+
+  43(require, exports, module) {
+    // node_modules/lodash/_objectToString.js
+    var objectProto = Object.prototype;
+    var nativeObjectToString = objectProto.toString;
+    function objectToString(value) {
+      return nativeObjectToString.call(value);
+    }
+    module.exports = objectToString;
+  },
+
+  40(require, exports, module) {
+    // node_modules/lodash/_baseGetTag.js
+    var Symbol = require(39 /* ./_Symbol */), getRawTag = require(42 /* ./_getRawTag */), objectToString = require(43 /* ./_objectToString */);
+    var nullTag = "[object Null]", undefinedTag = "[object Undefined]";
+    var symToStringTag = Symbol ? Symbol.toStringTag : void 0;
+    function baseGetTag(value) {
+      if (value == null) {
+        return value === void 0 ? undefinedTag : nullTag;
+      }
+      return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
+    }
+    module.exports = baseGetTag;
+  },
+
+  47(require, exports, module) {
+    // node_modules/lodash/isObjectLike.js
+    function isObjectLike(value) {
+      return value != null && typeof value == "object";
+    }
+    module.exports = isObjectLike;
+  },
+
+  48(require, exports, module) {
+    // node_modules/lodash/isSymbol.js
+    var baseGetTag = require(40 /* ./_baseGetTag */), isObjectLike = require(47 /* ./isObjectLike */);
+    var symbolTag = "[object Symbol]";
+    function isSymbol(value) {
+      return typeof value == "symbol" || isObjectLike(value) && baseGetTag(value) == symbolTag;
+    }
+    module.exports = isSymbol;
+  },
+
+  52(require, exports, module) {
+    // node_modules/lodash/toNumber.js
+    var isObject = require(46 /* ./isObject */), isSymbol = require(48 /* ./isSymbol */);
+    var NAN = 0 / 0;
+    var reTrim = /^\s+|\s+$/g;
+    var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+    var reIsBinary = /^0b[01]+$/i;
+    var reIsOctal = /^0o[0-7]+$/i;
+    var freeParseInt = parseInt;
+    function toNumber(value) {
+      if (typeof value == "number") {
+        return value;
+      }
+      if (isSymbol(value)) {
+        return NAN;
+      }
+      if (isObject(value)) {
+        var other = typeof value.valueOf == "function" ? value.valueOf() : value;
+        value = isObject(other) ? other + "" : other;
+      }
+      if (typeof value != "string") {
+        return value === 0 ? value : +value;
+      }
+      value = value.replace(reTrim, "");
+      var isBinary = reIsBinary.test(value);
+      return isBinary || reIsOctal.test(value) ? freeParseInt(value.slice(2), isBinary ? 2 : 8) : reIsBadHex.test(value) ? NAN : +value;
+    }
+    module.exports = toNumber;
+  },
+
+  45(require, exports, module) {
+    // node_modules/lodash/debounce.js
+    var isObject = require(46 /* ./isObject */), now = require(50 /* ./now */), toNumber = require(52 /* ./toNumber */);
+    var FUNC_ERROR_TEXT = "Expected a function";
+    var nativeMax = Math.max, nativeMin = Math.min;
+    function debounce(func, wait, options) {
+      var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
+      if (typeof func != "function") {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      wait = toNumber(wait) || 0;
+      if (isObject(options)) {
+        leading = !!options.leading;
+        maxing = "maxWait" in options;
+        maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+        trailing = "trailing" in options ? !!options.trailing : trailing;
+      }
+      function invokeFunc(time) {
+        var args = lastArgs, thisArg = lastThis;
+        lastArgs = lastThis = void 0;
+        lastInvokeTime = time;
+        result = func.apply(thisArg, args);
+        return result;
+      }
+      function leadingEdge(time) {
+        lastInvokeTime = time;
+        timerId = setTimeout(timerExpired, wait);
+        return leading ? invokeFunc(time) : result;
+      }
+      function remainingWait(time) {
+        var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, timeWaiting = wait - timeSinceLastCall;
+        return maxing ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
+      }
+      function shouldInvoke(time) {
+        var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
+        return lastCallTime === void 0 || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
+      }
+      function timerExpired() {
+        var time = now();
+        if (shouldInvoke(time)) {
+          return trailingEdge(time);
+        }
+        timerId = setTimeout(timerExpired, remainingWait(time));
+      }
+      function trailingEdge(time) {
+        timerId = void 0;
+        if (trailing && lastArgs) {
+          return invokeFunc(time);
+        }
+        lastArgs = lastThis = void 0;
+        return result;
+      }
+      function cancel() {
+        if (timerId !== void 0) {
+          clearTimeout(timerId);
+        }
+        lastInvokeTime = 0;
+        lastArgs = lastCallTime = lastThis = timerId = void 0;
+      }
+      function flush() {
+        return timerId === void 0 ? result : trailingEdge(now());
+      }
+      function debounced() {
+        var time = now(), isInvoking = shouldInvoke(time);
+        lastArgs = arguments;
+        lastThis = this;
+        lastCallTime = time;
+        if (isInvoking) {
+          if (timerId === void 0) {
+            return leadingEdge(lastCallTime);
+          }
+          if (maxing) {
+            clearTimeout(timerId);
+            timerId = setTimeout(timerExpired, wait);
+            return invokeFunc(lastCallTime);
+          }
+        }
+        if (timerId === void 0) {
+          timerId = setTimeout(timerExpired, wait);
+        }
+        return result;
+      }
+      debounced.cancel = cancel;
+      debounced.flush = flush;
+      return debounced;
+    }
+    module.exports = debounce;
+  },
+
+  51(require, exports, module) {
+    // node_modules/lodash/throttle.js
+    var debounce = require(45 /* ./debounce */), isObject = require(46 /* ./isObject */);
+    var FUNC_ERROR_TEXT = "Expected a function";
+    function throttle(func, wait, options) {
+      var leading = true, trailing = true;
+      if (typeof func != "function") {
+        throw new TypeError(FUNC_ERROR_TEXT);
+      }
+      if (isObject(options)) {
+        leading = "leading" in options ? !!options.leading : leading;
+        trailing = "trailing" in options ? !!options.trailing : trailing;
+      }
+      return debounce(func, wait, {
+        leading,
+        maxWait: wait,
+        trailing
+      });
+    }
+    module.exports = throttle;
+  },
+
+  30(require, exports, module) {
+    // node_modules/compute-scroll-into-view/index.js
+    "use strict";
+    exports.__esModule = true;
+    exports["default"] = void 0;
+    function isElement(el) {
+      return el != null && typeof el === "object" && el.nodeType === 1;
+    }
+    function canOverflow(overflow, skipOverflowHiddenElements) {
+      if (skipOverflowHiddenElements && overflow === "hidden") {
+        return false;
+      }
+      return overflow !== "visible" && overflow !== "clip";
+    }
+    function getFrameElement(el) {
+      if (!el.ownerDocument || !el.ownerDocument.defaultView) {
+        return null;
+      }
+      try {
+        return el.ownerDocument.defaultView.frameElement;
+      } catch (e) {
+        return null;
+      }
+    }
+    function isHiddenByFrame(el) {
+      var frame = getFrameElement(el);
+      if (!frame) {
+        return false;
+      }
+      return frame.clientHeight < el.scrollHeight || frame.clientWidth < el.scrollWidth;
+    }
+    function isScrollable(el, skipOverflowHiddenElements) {
+      if (el.clientHeight < el.scrollHeight || el.clientWidth < el.scrollWidth) {
+        var style = getComputedStyle(el, null);
+        return canOverflow(style.overflowY, skipOverflowHiddenElements) || canOverflow(style.overflowX, skipOverflowHiddenElements) || isHiddenByFrame(el);
+      }
+      return false;
+    }
+    function alignNearest(scrollingEdgeStart, scrollingEdgeEnd, scrollingSize, scrollingBorderStart, scrollingBorderEnd, elementEdgeStart, elementEdgeEnd, elementSize) {
+      if (elementEdgeStart < scrollingEdgeStart && elementEdgeEnd > scrollingEdgeEnd || elementEdgeStart > scrollingEdgeStart && elementEdgeEnd < scrollingEdgeEnd) {
+        return 0;
+      }
+      if (elementEdgeStart <= scrollingEdgeStart && elementSize <= scrollingSize || elementEdgeEnd >= scrollingEdgeEnd && elementSize >= scrollingSize) {
+        return elementEdgeStart - scrollingEdgeStart - scrollingBorderStart;
+      }
+      if (elementEdgeEnd > scrollingEdgeEnd && elementSize < scrollingSize || elementEdgeStart < scrollingEdgeStart && elementSize > scrollingSize) {
+        return elementEdgeEnd - scrollingEdgeEnd + scrollingBorderEnd;
+      }
+      return 0;
+    }
+    var _default = function _default2(target, options) {
+      var scrollMode = options.scrollMode, block = options.block, inline = options.inline, boundary = options.boundary, skipOverflowHiddenElements = options.skipOverflowHiddenElements;
+      var checkBoundary = typeof boundary === "function" ? boundary : function(node) {
+        return node !== boundary;
+      };
+      if (!isElement(target)) {
+        throw new TypeError("Invalid target");
+      }
+      var scrollingElement = document.scrollingElement || document.documentElement;
+      var frames = [];
+      var cursor = target;
+      while (isElement(cursor) && checkBoundary(cursor)) {
+        cursor = cursor.parentNode;
+        if (cursor === scrollingElement) {
+          frames.push(cursor);
+          break;
+        }
+        if (cursor === document.body && isScrollable(cursor) && !isScrollable(document.documentElement)) {
+          continue;
+        }
+        if (isScrollable(cursor, skipOverflowHiddenElements)) {
+          frames.push(cursor);
+        }
+      }
+      var viewportWidth = window.visualViewport ? visualViewport.width : innerWidth;
+      var viewportHeight = window.visualViewport ? visualViewport.height : innerHeight;
+      var viewportX = window.scrollX || pageXOffset;
+      var viewportY = window.scrollY || pageYOffset;
+      var _target$getBoundingCl = target.getBoundingClientRect(), targetHeight = _target$getBoundingCl.height, targetWidth = _target$getBoundingCl.width, targetTop = _target$getBoundingCl.top, targetRight = _target$getBoundingCl.right, targetBottom = _target$getBoundingCl.bottom, targetLeft = _target$getBoundingCl.left;
+      var targetBlock = block === "start" || block === "nearest" ? targetTop : block === "end" ? targetBottom : targetTop + targetHeight / 2;
+      var targetInline = inline === "center" ? targetLeft + targetWidth / 2 : inline === "end" ? targetRight : targetLeft;
+      var computations = [];
+      for (var index = 0; index < frames.length; index++) {
+        var frame = frames[index];
+        var _frame$getBoundingCli = frame.getBoundingClientRect(), height = _frame$getBoundingCli.height, width = _frame$getBoundingCli.width, top = _frame$getBoundingCli.top, right = _frame$getBoundingCli.right, bottom = _frame$getBoundingCli.bottom, left = _frame$getBoundingCli.left;
+        if (scrollMode === "if-needed" && targetTop >= 0 && targetLeft >= 0 && targetBottom <= viewportHeight && targetRight <= viewportWidth && targetTop >= top && targetBottom <= bottom && targetLeft >= left && targetRight <= right) {
+          return computations;
+        }
+        var frameStyle = getComputedStyle(frame);
+        var borderLeft = parseInt(frameStyle.borderLeftWidth, 10);
+        var borderTop = parseInt(frameStyle.borderTopWidth, 10);
+        var borderRight = parseInt(frameStyle.borderRightWidth, 10);
+        var borderBottom = parseInt(frameStyle.borderBottomWidth, 10);
+        var blockScroll = 0;
+        var inlineScroll = 0;
+        var scrollbarWidth = "offsetWidth" in frame ? frame.offsetWidth - frame.clientWidth - borderLeft - borderRight : 0;
+        var scrollbarHeight = "offsetHeight" in frame ? frame.offsetHeight - frame.clientHeight - borderTop - borderBottom : 0;
+        if (scrollingElement === frame) {
+          if (block === "start") {
+            blockScroll = targetBlock;
+          } else if (block === "end") {
+            blockScroll = targetBlock - viewportHeight;
+          } else if (block === "nearest") {
+            blockScroll = alignNearest(viewportY, viewportY + viewportHeight, viewportHeight, borderTop, borderBottom, viewportY + targetBlock, viewportY + targetBlock + targetHeight, targetHeight);
+          } else {
+            blockScroll = targetBlock - viewportHeight / 2;
+          }
+          if (inline === "start") {
+            inlineScroll = targetInline;
+          } else if (inline === "center") {
+            inlineScroll = targetInline - viewportWidth / 2;
+          } else if (inline === "end") {
+            inlineScroll = targetInline - viewportWidth;
+          } else {
+            inlineScroll = alignNearest(viewportX, viewportX + viewportWidth, viewportWidth, borderLeft, borderRight, viewportX + targetInline, viewportX + targetInline + targetWidth, targetWidth);
+          }
+          blockScroll = Math.max(0, blockScroll + viewportY);
+          inlineScroll = Math.max(0, inlineScroll + viewportX);
+        } else {
+          if (block === "start") {
+            blockScroll = targetBlock - top - borderTop;
+          } else if (block === "end") {
+            blockScroll = targetBlock - bottom + borderBottom + scrollbarHeight;
+          } else if (block === "nearest") {
+            blockScroll = alignNearest(top, bottom, height, borderTop, borderBottom + scrollbarHeight, targetBlock, targetBlock + targetHeight, targetHeight);
+          } else {
+            blockScroll = targetBlock - (top + height / 2) + scrollbarHeight / 2;
+          }
+          if (inline === "start") {
+            inlineScroll = targetInline - left - borderLeft;
+          } else if (inline === "center") {
+            inlineScroll = targetInline - (left + width / 2) + scrollbarWidth / 2;
+          } else if (inline === "end") {
+            inlineScroll = targetInline - right + borderRight + scrollbarWidth;
+          } else {
+            inlineScroll = alignNearest(left, right, width, borderLeft, borderRight + scrollbarWidth, targetInline, targetInline + targetWidth, targetWidth);
+          }
+          var scrollLeft = frame.scrollLeft, scrollTop = frame.scrollTop;
+          blockScroll = Math.max(0, Math.min(scrollTop + blockScroll, frame.scrollHeight - height + scrollbarHeight));
+          inlineScroll = Math.max(0, Math.min(scrollLeft + inlineScroll, frame.scrollWidth - width + scrollbarWidth));
+          targetBlock += scrollTop - blockScroll;
+          targetInline += scrollLeft - inlineScroll;
+        }
+        computations.push({
+          el: frame,
+          top: blockScroll,
+          left: inlineScroll
+        });
+      }
+      return computations;
+    };
+    exports["default"] = _default;
+    module.exports = exports.default;
+  },
+
+  74(require, exports, module) {
+    // node_modules/scroll-into-view-if-needed/index.js
+    "use strict";
+    exports.__esModule = true;
+    exports["default"] = void 0;
+    var _computeScrollIntoView = _interopRequireDefault(require(30 /* compute-scroll-into-view */));
+    function _interopRequireDefault(obj) {
+      return obj && obj.__esModule ? obj : {
+        default: obj
+      };
+    }
+    function isOptionsObject(options) {
+      return options === Object(options) && Object.keys(options).length !== 0;
+    }
+    function defaultBehavior(actions, behavior) {
+      if (behavior === void 0) {
+        behavior = "auto";
+      }
+      var canSmoothScroll = "scrollBehavior" in document.body.style;
+      actions.forEach(function(_ref) {
+        var el = _ref.el, top = _ref.top, left = _ref.left;
+        if (el.scroll && canSmoothScroll) {
+          el.scroll({
+            top,
+            left,
+            behavior
+          });
+        } else {
+          el.scrollTop = top;
+          el.scrollLeft = left;
+        }
+      });
+    }
+    function getOptions(options) {
+      if (options === false) {
+        return {
+          block: "end",
+          inline: "nearest"
+        };
+      }
+      if (isOptionsObject(options)) {
+        return options;
+      }
+      return {
+        block: "start",
+        inline: "nearest"
+      };
+    }
+    function scrollIntoView(target, options) {
+      var targetIsDetached = !target.ownerDocument.documentElement.contains(target);
+      if (isOptionsObject(options) && typeof options.behavior === "function") {
+        return options.behavior(targetIsDetached ? [] : (0, _computeScrollIntoView["default"])(target, options));
+      }
+      if (targetIsDetached) {
+        return;
+      }
+      var computeOptions = getOptions(options);
+      return defaultBehavior((0, _computeScrollIntoView["default"])(target, computeOptions), computeOptions.behavior);
+    }
+    var _default = scrollIntoView;
+    exports["default"] = _default;
+    module.exports = exports.default;
+  },
+
+  31(require, exports, module) {
+    // node_modules/direction/index.js
+    "use strict";
+    module.exports = direction;
+    var RTL = "֑-߿יִ-﷽ﹰ-ﻼ";
+    var LTR = "A-Za-zÀ-ÖØ-öø-ʸ̀-֐ࠀ-῿‎Ⰰ-﬜︀-﹯﻽-￿";
+    var rtl = new RegExp("^[^" + LTR + "]*[" + RTL + "]");
+    var ltr = new RegExp("^[^" + RTL + "]*[" + LTR + "]");
+    function direction(value) {
+      value = String(value || "");
+      if (rtl.test(value)) {
+        return "rtl";
+      }
+      if (ltr.test(value)) {
+        return "ltr";
+      }
+      return "neutral";
+    }
+  },
+
+  37(require, exports) {
+    // node_modules/is-hotkey/lib/index.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    var IS_MAC = typeof window != "undefined" && /Mac|iPod|iPhone|iPad/.test(window.navigator.platform);
+    var MODIFIERS = {
+      alt: "altKey",
+      control: "ctrlKey",
+      meta: "metaKey",
+      shift: "shiftKey"
+    };
+    var ALIASES = {
+      add: "+",
+      break: "pause",
+      cmd: "meta",
+      command: "meta",
+      ctl: "control",
+      ctrl: "control",
+      del: "delete",
+      down: "arrowdown",
+      esc: "escape",
+      ins: "insert",
+      left: "arrowleft",
+      mod: IS_MAC ? "meta" : "control",
+      opt: "alt",
+      option: "alt",
+      return: "enter",
+      right: "arrowright",
+      space: " ",
+      spacebar: " ",
+      up: "arrowup",
+      win: "meta",
+      windows: "meta"
+    };
+    var CODES = {
+      backspace: 8,
+      tab: 9,
+      enter: 13,
+      shift: 16,
+      control: 17,
+      alt: 18,
+      pause: 19,
+      capslock: 20,
+      escape: 27,
+      " ": 32,
+      pageup: 33,
+      pagedown: 34,
+      end: 35,
+      home: 36,
+      arrowleft: 37,
+      arrowup: 38,
+      arrowright: 39,
+      arrowdown: 40,
+      insert: 45,
+      delete: 46,
+      meta: 91,
+      numlock: 144,
+      scrolllock: 145,
+      ";": 186,
+      "=": 187,
+      ",": 188,
+      "-": 189,
+      ".": 190,
+      "/": 191,
+      "`": 192,
+      "[": 219,
+      "\\": 220,
+      "]": 221,
+      "'": 222
+    };
+    for (var f = 1; f < 20; f++) {
+      CODES["f" + f] = 111 + f;
+    }
+    function isHotkey(hotkey, options, event) {
+      if (options && !("byKey" in options)) {
+        event = options;
+        options = null;
+      }
+      if (!Array.isArray(hotkey)) {
+        hotkey = [hotkey];
+      }
+      var array = hotkey.map(function(string) {
+        return parseHotkey(string, options);
+      });
+      var check = function check2(e) {
+        return array.some(function(object) {
+          return compareHotkey(object, e);
+        });
+      };
+      var ret = event == null ? check : check(event);
+      return ret;
+    }
+    function isCodeHotkey(hotkey, event) {
+      return isHotkey(hotkey, event);
+    }
+    function isKeyHotkey(hotkey, event) {
+      return isHotkey(hotkey, {
+        byKey: true
+      }, event);
+    }
+    function parseHotkey(hotkey, options) {
+      var byKey = options && options.byKey;
+      var ret = {};
+      hotkey = hotkey.replace("++", "+add");
+      var values = hotkey.split("+");
+      var length = values.length;
+      for (var k in MODIFIERS) {
+        ret[MODIFIERS[k]] = false;
+      }
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = void 0;
+      try {
+        for (var _iterator = values[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var value = _step.value;
+          var optional = value.endsWith("?") && value.length > 1;
+          if (optional) {
+            value = value.slice(0, -1);
+          }
+          var name = toKeyName(value);
+          var modifier = MODIFIERS[name];
+          if (length === 1 || !modifier) {
+            if (byKey) {
+              ret.key = name;
+            } else {
+              ret.which = toKeyCode(value);
+            }
+          }
+          if (modifier) {
+            ret[modifier] = optional ? null : true;
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+      return ret;
+    }
+    function compareHotkey(object, event) {
+      for (var key in object) {
+        var expected = object[key];
+        var actual = void 0;
+        if (expected == null) {
+          continue;
+        }
+        if (key === "key" && event.key != null) {
+          actual = event.key.toLowerCase();
+        } else if (key === "which") {
+          actual = expected === 91 && event.which === 93 ? 91 : event.which;
+        } else {
+          actual = event[key];
+        }
+        if (actual == null && expected === false) {
+          continue;
+        }
+        if (actual !== expected) {
+          return false;
+        }
+      }
+      return true;
+    }
+    function toKeyCode(name) {
+      name = toKeyName(name);
+      var code = CODES[name] || name.toUpperCase().charCodeAt(0);
+      return code;
+    }
+    function toKeyName(name) {
+      name = name.toLowerCase();
+      name = ALIASES[name] || name;
+      return name;
+    }
+    exports.default = isHotkey;
+    exports.isHotkey = isHotkey;
+    exports.isCodeHotkey = isCodeHotkey;
+    exports.isKeyHotkey = isKeyHotkey;
+    exports.parseHotkey = parseHotkey;
+    exports.compareHotkey = compareHotkey;
+    exports.toKeyCode = toKeyCode;
+    exports.toKeyName = toKeyName;
+  },
+
+  76(require, exports) {
+    // node_modules/slate-react/dist/index.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function _interopDefault(ex) {
+      return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+    }
+    var React = require(68 /* react */);
+    var React__default = _interopDefault(React);
+    var slate = require(77 /* slate */);
+    var throttle = _interopDefault(require(51 /* lodash/throttle */));
+    var scrollIntoView = _interopDefault(require(74 /* scroll-into-view-if-needed */));
+    var getDirection = _interopDefault(require(31 /* direction */));
+    var ReactDOM = _interopDefault(require(60 /* react-dom */));
+    var isHotkey = require(37 /* is-hotkey */);
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, {
+          value,
+          enumerable: true,
+          configurable: true,
+          writable: true
+        });
+      } else {
+        obj[key] = value;
+      }
+      return obj;
+    }
+    var defineProperty = _defineProperty;
+    function _arrayWithHoles(arr) {
+      if (Array.isArray(arr))
+        return arr;
+    }
+    var arrayWithHoles = _arrayWithHoles;
+    function _iterableToArrayLimit(arr, i) {
+      if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+        return;
+      }
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = void 0;
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+          if (i && _arr.length === i)
+            break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"] != null)
+            _i["return"]();
+        } finally {
+          if (_d)
+            throw _e;
+        }
+      }
+      return _arr;
+    }
+    var iterableToArrayLimit = _iterableToArrayLimit;
+    function _nonIterableRest() {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+    var nonIterableRest = _nonIterableRest;
+    function _slicedToArray(arr, i) {
+      return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
+    }
+    var slicedToArray = _slicedToArray;
+    function _objectWithoutPropertiesLoose(source, excluded) {
+      if (source == null)
+        return {};
+      var target = {};
+      var sourceKeys = Object.keys(source);
+      var key, i;
+      for (i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0)
+          continue;
+        target[key] = source[key];
+      }
+      return target;
+    }
+    var objectWithoutPropertiesLoose = _objectWithoutPropertiesLoose;
+    function _objectWithoutProperties(source, excluded) {
+      if (source == null)
+        return {};
+      var target = objectWithoutPropertiesLoose(source, excluded);
+      var key, i;
+      if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for (i = 0; i < sourceSymbolKeys.length; i++) {
+          key = sourceSymbolKeys[i];
+          if (excluded.indexOf(key) >= 0)
+            continue;
+          if (!Object.prototype.propertyIsEnumerable.call(source, key))
+            continue;
+          target[key] = source[key];
+        }
+      }
+      return target;
+    }
+    var objectWithoutProperties = _objectWithoutProperties;
+    function _arrayWithoutHoles(arr) {
+      if (Array.isArray(arr)) {
+        for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+          arr2[i] = arr[i];
+        }
+        return arr2;
+      }
+    }
+    var arrayWithoutHoles = _arrayWithoutHoles;
+    function _iterableToArray(iter) {
+      if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]")
+        return Array.from(iter);
+    }
+    var iterableToArray = _iterableToArray;
+    function _nonIterableSpread() {
+      throw new TypeError("Invalid attempt to spread non-iterable instance");
+    }
+    var nonIterableSpread = _nonIterableSpread;
+    function _toConsumableArray(arr) {
+      return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+    }
+    var toConsumableArray = _toConsumableArray;
+    function _classCallCheck(instance, Constructor) {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+      }
+    }
+    var classCallCheck = _classCallCheck;
+    var n = 0;
+    var Key = function Key2() {
+      classCallCheck(this, Key2);
+      this.id = "".concat(n++);
+    };
+    var NODE_TO_INDEX = new WeakMap();
+    var NODE_TO_PARENT = new WeakMap();
+    var EDITOR_TO_ELEMENT = new WeakMap();
+    var ELEMENT_TO_NODE = new WeakMap();
+    var KEY_TO_ELEMENT = new WeakMap();
+    var NODE_TO_ELEMENT = new WeakMap();
+    var NODE_TO_KEY = new WeakMap();
+    var IS_READ_ONLY = new WeakMap();
+    var IS_FOCUSED = new WeakMap();
+    var EDITOR_TO_ON_CHANGE = new WeakMap();
+    var PLACEHOLDER_SYMBOL = Symbol("placeholder");
+    var isDOMComment = function isDOMComment2(value) {
+      return isDOMNode(value) && value.nodeType === 8;
+    };
+    var isDOMElement = function isDOMElement2(value) {
+      return isDOMNode(value) && value.nodeType === 1;
+    };
+    var isDOMNode = function isDOMNode2(value) {
+      return value instanceof Node;
+    };
+    var isDOMText = function isDOMText2(value) {
+      return isDOMNode(value) && value.nodeType === 3;
+    };
+    var isPlainTextOnlyPaste = function isPlainTextOnlyPaste2(event) {
+      return event.clipboardData && event.clipboardData.getData("text/plain") !== "" && event.clipboardData.types.length === 1;
+    };
+    var normalizeDOMPoint = function normalizeDOMPoint2(domPoint) {
+      var _domPoint = slicedToArray(domPoint, 2), node = _domPoint[0], offset = _domPoint[1];
+      if (isDOMElement(node) && node.childNodes.length) {
+        var isLast = offset === node.childNodes.length;
+        var direction = isLast ? "backward" : "forward";
+        var index = isLast ? offset - 1 : offset;
+        node = getEditableChild(node, index, direction);
+        while (isDOMElement(node) && node.childNodes.length) {
+          var i = isLast ? node.childNodes.length - 1 : 0;
+          node = getEditableChild(node, i, direction);
+        }
+        offset = isLast && node.textContent != null ? node.textContent.length : 0;
+      }
+      return [node, offset];
+    };
+    var getEditableChild = function getEditableChild2(parent, index, direction) {
+      var childNodes = parent.childNodes;
+      var child = childNodes[index];
+      var i = index;
+      var triedForward = false;
+      var triedBackward = false;
+      while (isDOMComment(child) || isDOMElement(child) && child.childNodes.length === 0 || isDOMElement(child) && child.getAttribute("contenteditable") === "false") {
+        if (triedForward && triedBackward) {
+          break;
+        }
+        if (i >= childNodes.length) {
+          triedForward = true;
+          i = index - 1;
+          direction = "backward";
+          continue;
+        }
+        if (i < 0) {
+          triedBackward = true;
+          i = index + 1;
+          direction = "forward";
+          continue;
+        }
+        child = childNodes[i];
+        i += direction === "forward" ? 1 : -1;
+      }
+      return child;
+    };
+    var getPlainText = function getPlainText2(domNode) {
+      var text = "";
+      if (isDOMText(domNode) && domNode.nodeValue) {
+        return domNode.nodeValue;
+      }
+      if (isDOMElement(domNode)) {
+        for (var _i = 0, _Array$from = Array.from(domNode.childNodes); _i < _Array$from.length; _i++) {
+          var childNode = _Array$from[_i];
+          text += getPlainText2(childNode);
+        }
+        var display = getComputedStyle(domNode).getPropertyValue("display");
+        if (display === "block" || display === "list" || domNode.tagName === "BR") {
+          text += "\n";
+        }
+      }
+      return text;
+    };
+    var ReactEditor = {
+      findKey: function findKey(editor, node) {
+        var key = NODE_TO_KEY.get(node);
+        if (!key) {
+          key = new Key();
+          NODE_TO_KEY.set(node, key);
+        }
+        return key;
+      },
+      findPath: function findPath(editor, node) {
+        var path = [];
+        var child = node;
+        while (true) {
+          var parent = NODE_TO_PARENT.get(child);
+          if (parent == null) {
+            if (slate.Editor.isEditor(child)) {
+              return path;
+            } else {
+              break;
+            }
+          }
+          var i = NODE_TO_INDEX.get(child);
+          if (i == null) {
+            break;
+          }
+          path.unshift(i);
+          child = parent;
+        }
+        throw new Error("Unable to find the path for Slate node: ".concat(JSON.stringify(node)));
+      },
+      isFocused: function isFocused(editor) {
+        return !!IS_FOCUSED.get(editor);
+      },
+      isReadOnly: function isReadOnly(editor) {
+        return !!IS_READ_ONLY.get(editor);
+      },
+      blur: function blur(editor) {
+        var el = ReactEditor.toDOMNode(editor, editor);
+        IS_FOCUSED.set(editor, false);
+        if (window.document.activeElement === el) {
+          el.blur();
+        }
+      },
+      focus: function focus(editor) {
+        var el = ReactEditor.toDOMNode(editor, editor);
+        IS_FOCUSED.set(editor, true);
+        if (window.document.activeElement !== el) {
+          el.focus({
+            preventScroll: true
+          });
+        }
+      },
+      deselect: function deselect(editor) {
+        var selection = editor.selection;
+        var domSelection = window.getSelection();
+        if (domSelection && domSelection.rangeCount > 0) {
+          domSelection.removeAllRanges();
+        }
+        if (selection) {
+          slate.Transforms.deselect(editor);
+        }
+      },
+      hasDOMNode: function hasDOMNode(editor, target) {
+        var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        var _options$editable = options.editable, editable = _options$editable === void 0 ? false : _options$editable;
+        var editorEl = ReactEditor.toDOMNode(editor, editor);
+        var targetEl;
+        try {
+          targetEl = isDOMElement(target) ? target : target.parentElement;
+        } catch (err) {
+          if (!err.message.includes('Permission denied to access property "nodeType"')) {
+            throw err;
+          }
+        }
+        if (!targetEl) {
+          return false;
+        }
+        return targetEl.closest("[data-slate-editor]") === editorEl && (!editable || targetEl.isContentEditable || !!targetEl.getAttribute("data-slate-zero-width"));
+      },
+      insertData: function insertData(editor, data) {
+        editor.insertData(data);
+      },
+      setFragmentData: function setFragmentData(editor, data) {
+        editor.setFragmentData(data);
+      },
+      toDOMNode: function toDOMNode(editor, node) {
+        var domNode = slate.Editor.isEditor(node) ? EDITOR_TO_ELEMENT.get(editor) : KEY_TO_ELEMENT.get(ReactEditor.findKey(editor, node));
+        if (!domNode) {
+          throw new Error("Cannot resolve a DOM node from Slate node: ".concat(JSON.stringify(node)));
+        }
+        return domNode;
+      },
+      toDOMPoint: function toDOMPoint(editor, point) {
+        var _Editor$node = slate.Editor.node(editor, point.path), _Editor$node2 = slicedToArray(_Editor$node, 1), node = _Editor$node2[0];
+        var el = ReactEditor.toDOMNode(editor, node);
+        var domPoint;
+        if (slate.Editor["void"](editor, {
+          at: point
+        })) {
+          point = {
+            path: point.path,
+            offset: 0
+          };
+        }
+        var selector = "[data-slate-string], [data-slate-zero-width]";
+        var texts = Array.from(el.querySelectorAll(selector));
+        var start = 0;
+        for (var _i = 0, _texts = texts; _i < _texts.length; _i++) {
+          var text = _texts[_i];
+          var domNode = text.childNodes[0];
+          if (domNode == null || domNode.textContent == null) {
+            continue;
+          }
+          var length = domNode.textContent.length;
+          var attr = text.getAttribute("data-slate-length");
+          var trueLength = attr == null ? length : parseInt(attr, 10);
+          var end = start + trueLength;
+          if (point.offset <= end) {
+            var offset = Math.min(length, Math.max(0, point.offset - start));
+            domPoint = [domNode, offset];
+            break;
+          }
+          start = end;
+        }
+        if (!domPoint) {
+          throw new Error("Cannot resolve a DOM point from Slate point: ".concat(JSON.stringify(point)));
+        }
+        return domPoint;
+      },
+      toDOMRange: function toDOMRange(editor, range) {
+        var anchor = range.anchor, focus = range.focus;
+        var isBackward = slate.Range.isBackward(range);
+        var domAnchor = ReactEditor.toDOMPoint(editor, anchor);
+        var domFocus = slate.Range.isCollapsed(range) ? domAnchor : ReactEditor.toDOMPoint(editor, focus);
+        var domRange = window.document.createRange();
+        var _ref = isBackward ? domFocus : domAnchor, _ref2 = slicedToArray(_ref, 2), startNode = _ref2[0], startOffset = _ref2[1];
+        var _ref3 = isBackward ? domAnchor : domFocus, _ref4 = slicedToArray(_ref3, 2), endNode = _ref4[0], endOffset = _ref4[1];
+        var startEl = isDOMElement(startNode) ? startNode : startNode.parentElement;
+        var isStartAtZeroWidth = !!startEl.getAttribute("data-slate-zero-width");
+        var endEl = isDOMElement(endNode) ? endNode : endNode.parentElement;
+        var isEndAtZeroWidth = !!endEl.getAttribute("data-slate-zero-width");
+        domRange.setStart(startNode, isStartAtZeroWidth ? 1 : startOffset);
+        domRange.setEnd(endNode, isEndAtZeroWidth ? 1 : endOffset);
+        return domRange;
+      },
+      toSlateNode: function toSlateNode(editor, domNode) {
+        var domEl = isDOMElement(domNode) ? domNode : domNode.parentElement;
+        if (domEl && !domEl.hasAttribute("data-slate-node")) {
+          domEl = domEl.closest("[data-slate-node]");
+        }
+        var node = domEl ? ELEMENT_TO_NODE.get(domEl) : null;
+        if (!node) {
+          throw new Error("Cannot resolve a Slate node from DOM node: ".concat(domEl));
+        }
+        return node;
+      },
+      findEventRange: function findEventRange(editor, event) {
+        if ("nativeEvent" in event) {
+          event = event.nativeEvent;
+        }
+        var _event = event, x = _event.clientX, y = _event.clientY, target = _event.target;
+        if (x == null || y == null) {
+          throw new Error("Cannot resolve a Slate range from a DOM event: ".concat(event));
+        }
+        var node = ReactEditor.toSlateNode(editor, event.target);
+        var path = ReactEditor.findPath(editor, node);
+        if (slate.Editor.isVoid(editor, node)) {
+          var rect = target.getBoundingClientRect();
+          var isPrev = editor.isInline(node) ? x - rect.left < rect.left + rect.width - x : y - rect.top < rect.top + rect.height - y;
+          var edge = slate.Editor.point(editor, path, {
+            edge: isPrev ? "start" : "end"
+          });
+          var point = isPrev ? slate.Editor.before(editor, edge) : slate.Editor.after(editor, edge);
+          if (point) {
+            var _range = slate.Editor.range(editor, point);
+            return _range;
+          }
+        }
+        var domRange;
+        var _window = window, document2 = _window.document;
+        if (document2.caretRangeFromPoint) {
+          domRange = document2.caretRangeFromPoint(x, y);
+        } else {
+          var position = document2.caretPositionFromPoint(x, y);
+          if (position) {
+            domRange = document2.createRange();
+            domRange.setStart(position.offsetNode, position.offset);
+            domRange.setEnd(position.offsetNode, position.offset);
+          }
+        }
+        if (!domRange) {
+          throw new Error("Cannot resolve a Slate range from a DOM event: ".concat(event));
+        }
+        var range = ReactEditor.toSlateRange(editor, domRange);
+        return range;
+      },
+      toSlatePoint: function toSlatePoint(editor, domPoint) {
+        var _normalizeDOMPoint = normalizeDOMPoint(domPoint), _normalizeDOMPoint2 = slicedToArray(_normalizeDOMPoint, 2), nearestNode = _normalizeDOMPoint2[0], nearestOffset = _normalizeDOMPoint2[1];
+        var parentNode = nearestNode.parentNode;
+        var textNode = null;
+        var offset = 0;
+        if (parentNode) {
+          var voidNode = parentNode.closest('[data-slate-void="true"]');
+          var leafNode = parentNode.closest("[data-slate-leaf]");
+          var domNode = null;
+          if (leafNode) {
+            textNode = leafNode.closest('[data-slate-node="text"]');
+            var range = window.document.createRange();
+            range.setStart(textNode, 0);
+            range.setEnd(nearestNode, nearestOffset);
+            var contents = range.cloneContents();
+            var removals = [].concat(toConsumableArray(contents.querySelectorAll("[data-slate-zero-width]")), toConsumableArray(contents.querySelectorAll("[contenteditable=false]")));
+            removals.forEach(function(el) {
+              el.parentNode.removeChild(el);
+            });
+            offset = contents.textContent.length;
+            domNode = textNode;
+          } else if (voidNode) {
+            leafNode = voidNode.querySelector("[data-slate-leaf]");
+            textNode = leafNode.closest('[data-slate-node="text"]');
+            domNode = leafNode;
+            offset = domNode.textContent.length;
+          }
+          if (domNode && offset === domNode.textContent.length && parentNode.hasAttribute("data-slate-zero-width")) {
+            offset--;
+          }
+        }
+        if (!textNode) {
+          throw new Error("Cannot resolve a Slate point from DOM point: ".concat(domPoint));
+        }
+        var slateNode = ReactEditor.toSlateNode(editor, textNode);
+        var path = ReactEditor.findPath(editor, slateNode);
+        return {
+          path,
+          offset
+        };
+      },
+      toSlateRange: function toSlateRange(editor, domRange) {
+        var el = domRange instanceof Selection ? domRange.anchorNode : domRange.startContainer;
+        var anchorNode;
+        var anchorOffset;
+        var focusNode;
+        var focusOffset;
+        var isCollapsed;
+        if (el) {
+          if (domRange instanceof Selection) {
+            anchorNode = domRange.anchorNode;
+            anchorOffset = domRange.anchorOffset;
+            focusNode = domRange.focusNode;
+            focusOffset = domRange.focusOffset;
+            isCollapsed = domRange.isCollapsed;
+          } else {
+            anchorNode = domRange.startContainer;
+            anchorOffset = domRange.startOffset;
+            focusNode = domRange.endContainer;
+            focusOffset = domRange.endOffset;
+            isCollapsed = domRange.collapsed;
+          }
+        }
+        if (anchorNode == null || focusNode == null || anchorOffset == null || focusOffset == null) {
+          throw new Error("Cannot resolve a Slate range from DOM range: ".concat(domRange));
+        }
+        var anchor = ReactEditor.toSlatePoint(editor, [anchorNode, anchorOffset]);
+        var focus = isCollapsed ? anchor : ReactEditor.toSlatePoint(editor, [focusNode, focusOffset]);
+        return {
+          anchor,
+          focus
+        };
+      }
+    };
+    var FocusedContext = React.createContext(false);
+    var useFocused = function useFocused2() {
+      return React.useContext(FocusedContext);
+    };
+    var EditorContext = React.createContext(null);
+    var useEditor = function useEditor2() {
+      var editor = React.useContext(EditorContext);
+      if (!editor) {
+        throw new Error("The `useEditor` hook must be used inside the <Slate> component's context.");
+      }
+      return editor;
+    };
+    var SlateContext = React.createContext(null);
+    var useSlate = function useSlate2() {
+      var context = React.useContext(SlateContext);
+      if (!context) {
+        throw new Error("The `useSlate` hook must be used inside the <SlateProvider> component's context.");
+      }
+      var _context = slicedToArray(context, 1), editor = _context[0];
+      return editor;
+    };
+    var Slate = function Slate2(props) {
+      var editor = props.editor, children = props.children, onChange = props.onChange, value = props.value, rest = objectWithoutProperties(props, ["editor", "children", "onChange", "value"]);
+      var _useState = React.useState(0), _useState2 = slicedToArray(_useState, 2), key = _useState2[0], setKey = _useState2[1];
+      var context = React.useMemo(function() {
+        editor.children = value;
+        Object.assign(editor, rest);
+        return [editor];
+      }, [key, value].concat(toConsumableArray(Object.values(rest))));
+      var onContextChange = React.useCallback(function() {
+        onChange(editor.children);
+        setKey(key + 1);
+      }, [key, onChange]);
+      EDITOR_TO_ON_CHANGE.set(editor, onContextChange);
+      React.useEffect(function() {
+        return function() {
+          EDITOR_TO_ON_CHANGE.set(editor, function() {
+          });
+        };
+      }, []);
+      return React__default.createElement(SlateContext.Provider, {
+        value: context
+      }, React__default.createElement(EditorContext.Provider, {
+        value: editor
+      }, React__default.createElement(FocusedContext.Provider, {
+        value: ReactEditor.isFocused(editor)
+      }, children)));
+    };
+    var ReadOnlyContext = React.createContext(false);
+    var useReadOnly = function useReadOnly2() {
+      return React.useContext(ReadOnlyContext);
+    };
+    var SelectedContext = React.createContext(false);
+    var useSelected = function useSelected2() {
+      return React.useContext(SelectedContext);
+    };
+    var withReact = function withReact2(editor) {
+      var e = editor;
+      var apply = e.apply, onChange = e.onChange;
+      e.apply = function(op) {
+        var matches = [];
+        switch (op.type) {
+          case "insert_text":
+          case "remove_text":
+          case "set_node": {
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = void 0;
+            try {
+              for (var _iterator = slate.Editor.levels(e, {
+                at: op.path
+              })[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var _step$value = slicedToArray(_step.value, 2), node = _step$value[0], path = _step$value[1];
+                var key = ReactEditor.findKey(e, node);
+                matches.push([path, key]);
+              }
+            } catch (err) {
+              _didIteratorError = true;
+              _iteratorError = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                  _iterator["return"]();
+                }
+              } finally {
+                if (_didIteratorError) {
+                  throw _iteratorError;
+                }
+              }
+            }
+            break;
+          }
+          case "insert_node":
+          case "remove_node":
+          case "merge_node":
+          case "split_node": {
+            var _iteratorNormalCompletion2 = true;
+            var _didIteratorError2 = false;
+            var _iteratorError2 = void 0;
+            try {
+              for (var _iterator2 = slate.Editor.levels(e, {
+                at: slate.Path.parent(op.path)
+              })[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var _step2$value = slicedToArray(_step2.value, 2), _node = _step2$value[0], _path = _step2$value[1];
+                var _key = ReactEditor.findKey(e, _node);
+                matches.push([_path, _key]);
+              }
+            } catch (err) {
+              _didIteratorError2 = true;
+              _iteratorError2 = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                  _iterator2["return"]();
+                }
+              } finally {
+                if (_didIteratorError2) {
+                  throw _iteratorError2;
+                }
+              }
+            }
+            break;
+          }
+        }
+        apply(op);
+        for (var _i = 0, _matches = matches; _i < _matches.length; _i++) {
+          var _matches$_i = slicedToArray(_matches[_i], 2), _path2 = _matches$_i[0], _key2 = _matches$_i[1];
+          var _Editor$node = slate.Editor.node(e, _path2), _Editor$node2 = slicedToArray(_Editor$node, 1), _node2 = _Editor$node2[0];
+          NODE_TO_KEY.set(_node2, _key2);
+        }
+      };
+      e.setFragmentData = function(data) {
+        var selection = e.selection;
+        if (!selection) {
+          return;
+        }
+        var _Range$edges = slate.Range.edges(selection), _Range$edges2 = slicedToArray(_Range$edges, 2), start = _Range$edges2[0], end = _Range$edges2[1];
+        var startVoid = slate.Editor["void"](e, {
+          at: start.path
+        });
+        var endVoid = slate.Editor["void"](e, {
+          at: end.path
+        });
+        if (slate.Range.isCollapsed(selection) && !startVoid) {
+          return;
+        }
+        var domRange = ReactEditor.toDOMRange(e, selection);
+        var contents = domRange.cloneContents();
+        var attach = contents.childNodes[0];
+        contents.childNodes.forEach(function(node) {
+          if (node.textContent && node.textContent.trim() !== "") {
+            attach = node;
+          }
+        });
+        if (endVoid) {
+          var _endVoid = slicedToArray(endVoid, 1), voidNode = _endVoid[0];
+          var r = domRange.cloneRange();
+          var domNode = ReactEditor.toDOMNode(e, voidNode);
+          r.setEndAfter(domNode);
+          contents = r.cloneContents();
+        }
+        if (startVoid) {
+          attach = contents.querySelector("[data-slate-spacer]");
+        }
+        Array.from(contents.querySelectorAll("[data-slate-zero-width]")).forEach(function(zw) {
+          var isNewline = zw.getAttribute("data-slate-zero-width") === "n";
+          zw.textContent = isNewline ? "\n" : "";
+        });
+        if (isDOMText(attach)) {
+          var span = document.createElement("span");
+          span.style.whiteSpace = "pre";
+          span.appendChild(attach);
+          contents.appendChild(span);
+          attach = span;
+        }
+        var fragment = e.getFragment();
+        var string = JSON.stringify(fragment);
+        var encoded = window.btoa(encodeURIComponent(string));
+        attach.setAttribute("data-slate-fragment", encoded);
+        data.setData("application/x-slate-fragment", encoded);
+        var div = document.createElement("div");
+        div.appendChild(contents);
+        div.setAttribute("hidden", "true");
+        document.body.appendChild(div);
+        data.setData("text/html", div.innerHTML);
+        data.setData("text/plain", getPlainText(div));
+        document.body.removeChild(div);
+      };
+      e.insertData = function(data) {
+        var fragment = data.getData("application/x-slate-fragment");
+        if (fragment) {
+          var decoded = decodeURIComponent(window.atob(fragment));
+          var parsed = JSON.parse(decoded);
+          slate.Transforms.insertFragment(e, parsed);
+          return;
+        }
+        var text = data.getData("text/plain");
+        if (text) {
+          var lines = text.split(/\r\n|\r|\n/);
+          var split = false;
+          var _iteratorNormalCompletion3 = true;
+          var _didIteratorError3 = false;
+          var _iteratorError3 = void 0;
+          try {
+            for (var _iterator3 = lines[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+              var line = _step3.value;
+              if (split) {
+                slate.Transforms.splitNodes(e, {
+                  always: true
+                });
+              }
+              slate.Transforms.insertText(e, line);
+              split = true;
+            }
+          } catch (err) {
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+                _iterator3["return"]();
+              }
+            } finally {
+              if (_didIteratorError3) {
+                throw _iteratorError3;
+              }
+            }
+          }
+        }
+      };
+      e.onChange = function() {
+        ReactDOM.unstable_batchedUpdates(function() {
+          var onContextChange = EDITOR_TO_ON_CHANGE.get(e);
+          if (onContextChange) {
+            onContextChange();
+          }
+          onChange();
+        });
+      };
+      return e;
+    };
+    var String = function String2(props) {
+      var isLast = props.isLast, leaf = props.leaf, parent = props.parent, text = props.text;
+      var editor = useEditor();
+      var path = ReactEditor.findPath(editor, text);
+      var parentPath = slate.Path.parent(path);
+      if (editor.isVoid(parent)) {
+        return React__default.createElement(ZeroWidthString, {
+          length: slate.Node.string(parent).length
+        });
+      }
+      if (leaf.text === "" && parent.children[parent.children.length - 1] === text && !editor.isInline(parent) && slate.Editor.string(editor, parentPath) === "") {
+        return React__default.createElement(ZeroWidthString, {
+          isLineBreak: true
+        });
+      }
+      if (leaf.text === "") {
+        return React__default.createElement(ZeroWidthString, null);
+      }
+      if (isLast && leaf.text.slice(-1) === "\n") {
+        return React__default.createElement(TextString, {
+          isTrailing: true,
+          text: leaf.text
+        });
+      }
+      return React__default.createElement(TextString, {
+        text: leaf.text
+      });
+    };
+    var TextString = function TextString2(props) {
+      var text = props.text, _props$isTrailing = props.isTrailing, isTrailing = _props$isTrailing === void 0 ? false : _props$isTrailing;
+      return React__default.createElement("span", {
+        "data-slate-string": true
+      }, text, isTrailing ? "\n" : null);
+    };
+    var ZeroWidthString = function ZeroWidthString2(props) {
+      var _props$length = props.length, length = _props$length === void 0 ? 0 : _props$length, _props$isLineBreak = props.isLineBreak, isLineBreak = _props$isLineBreak === void 0 ? false : _props$isLineBreak;
+      return React__default.createElement("span", {
+        "data-slate-zero-width": isLineBreak ? "n" : "z",
+        "data-slate-length": length
+      }, "﻿", isLineBreak ? React__default.createElement("br", null) : null);
+    };
+    var Leaf = function Leaf2(props) {
+      var leaf = props.leaf, isLast = props.isLast, text = props.text, parent = props.parent, _props$renderLeaf = props.renderLeaf, renderLeaf = _props$renderLeaf === void 0 ? function(props2) {
+        return React__default.createElement(DefaultLeaf, Object.assign({}, props2));
+      } : _props$renderLeaf;
+      var children = React__default.createElement(String, {
+        isLast,
+        leaf,
+        parent,
+        text
+      });
+      if (leaf[PLACEHOLDER_SYMBOL]) {
+        children = React__default.createElement(React__default.Fragment, null, React__default.createElement("span", {
+          contentEditable: false,
+          style: {
+            pointerEvents: "none",
+            display: "inline-block",
+            verticalAlign: "text-top",
+            width: "0",
+            maxWidth: "100%",
+            whiteSpace: "nowrap",
+            opacity: "0.333",
+            userSelect: "none",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            textDecoration: "none"
+          }
+        }, leaf.placeholder), children);
+      }
+      var attributes = {
+        "data-slate-leaf": true
+      };
+      return renderLeaf({
+        attributes,
+        children,
+        leaf,
+        text
+      });
+    };
+    var MemoizedLeaf = React__default.memo(Leaf, function(prev, next) {
+      return next.parent === prev.parent && next.isLast === prev.isLast && next.renderLeaf === prev.renderLeaf && next.text === prev.text && slate.Text.matches(next.leaf, prev.leaf);
+    });
+    var DefaultLeaf = function DefaultLeaf2(props) {
+      var attributes = props.attributes, children = props.children;
+      return React__default.createElement("span", Object.assign({}, attributes), children);
+    };
+    var useIsomorphicLayoutEffect = typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
+    var Text = function Text2(props) {
+      var decorations = props.decorations, isLast = props.isLast, parent = props.parent, renderLeaf = props.renderLeaf, text = props.text;
+      var editor = useEditor();
+      var ref = React.useRef(null);
+      var leaves = slate.Text.decorations(text, decorations);
+      var key = ReactEditor.findKey(editor, text);
+      var children = [];
+      for (var i = 0; i < leaves.length; i++) {
+        var leaf = leaves[i];
+        children.push(React__default.createElement(MemoizedLeaf, {
+          isLast: isLast && i === leaves.length - 1,
+          key: "".concat(key.id, "-").concat(i),
+          leaf,
+          text,
+          parent,
+          renderLeaf
+        }));
+      }
+      useIsomorphicLayoutEffect(function() {
+        if (ref.current) {
+          KEY_TO_ELEMENT.set(key, ref.current);
+          NODE_TO_ELEMENT.set(text, ref.current);
+          ELEMENT_TO_NODE.set(ref.current, text);
+        } else {
+          KEY_TO_ELEMENT["delete"](key);
+          NODE_TO_ELEMENT["delete"](text);
+        }
+      });
+      return React__default.createElement("span", {
+        "data-slate-node": "text",
+        ref
+      }, children);
+    };
+    var MemoizedText = React__default.memo(Text, function(prev, next) {
+      return next.parent === prev.parent && next.isLast === prev.isLast && next.renderLeaf === prev.renderLeaf && next.text === prev.text;
+    });
+    var Element = function Element2(props) {
+      var decorate = props.decorate, decorations = props.decorations, element = props.element, _props$renderElement = props.renderElement, renderElement = _props$renderElement === void 0 ? function(p) {
+        return React__default.createElement(DefaultElement, Object.assign({}, p));
+      } : _props$renderElement, renderLeaf = props.renderLeaf, selection = props.selection;
+      var ref = React.useRef(null);
+      var editor = useEditor();
+      var readOnly = useReadOnly();
+      var isInline = editor.isInline(element);
+      var key = ReactEditor.findKey(editor, element);
+      var children = React__default.createElement(Children, {
+        decorate,
+        decorations,
+        node: element,
+        renderElement,
+        renderLeaf,
+        selection
+      });
+      var attributes = {
+        "data-slate-node": "element",
+        ref
+      };
+      if (isInline) {
+        attributes["data-slate-inline"] = true;
+      }
+      if (!isInline && slate.Editor.hasInlines(editor, element)) {
+        var text = slate.Node.string(element);
+        var dir = getDirection(text);
+        if (dir === "rtl") {
+          attributes.dir = dir;
+        }
+      }
+      if (slate.Editor.isVoid(editor, element)) {
+        attributes["data-slate-void"] = true;
+        if (!readOnly && isInline) {
+          attributes.contentEditable = false;
+        }
+        var Tag = isInline ? "span" : "div";
+        var _Node$texts = slate.Node.texts(element), _Node$texts2 = slicedToArray(_Node$texts, 1), _Node$texts2$ = slicedToArray(_Node$texts2[0], 1), _text = _Node$texts2$[0];
+        children = readOnly ? null : React__default.createElement(Tag, {
+          "data-slate-spacer": true,
+          style: {
+            height: "0",
+            color: "transparent",
+            outline: "none",
+            position: "absolute"
+          }
+        }, React__default.createElement(MemoizedText, {
+          decorations: [],
+          isLast: false,
+          parent: element,
+          text: _text
+        }));
+        NODE_TO_INDEX.set(_text, 0);
+        NODE_TO_PARENT.set(_text, element);
+      }
+      useIsomorphicLayoutEffect(function() {
+        if (ref.current) {
+          KEY_TO_ELEMENT.set(key, ref.current);
+          NODE_TO_ELEMENT.set(element, ref.current);
+          ELEMENT_TO_NODE.set(ref.current, element);
+        } else {
+          KEY_TO_ELEMENT["delete"](key);
+          NODE_TO_ELEMENT["delete"](element);
+        }
+      });
+      return React__default.createElement(SelectedContext.Provider, {
+        value: !!selection
+      }, renderElement({
+        attributes,
+        children,
+        element
+      }));
+    };
+    var MemoizedElement = React__default.memo(Element, function(prev, next) {
+      return prev.decorate === next.decorate && prev.element === next.element && prev.renderElement === next.renderElement && prev.renderLeaf === next.renderLeaf && isRangeListEqual(prev.decorations, next.decorations) && (prev.selection === next.selection || !!prev.selection && !!next.selection && slate.Range.equals(prev.selection, next.selection));
+    });
+    var DefaultElement = function DefaultElement2(props) {
+      var attributes = props.attributes, children = props.children, element = props.element;
+      var editor = useEditor();
+      var Tag = editor.isInline(element) ? "span" : "div";
+      return React__default.createElement(Tag, Object.assign({}, attributes, {
+        style: {
+          position: "relative"
+        }
+      }), children);
+    };
+    var isRangeListEqual = function isRangeListEqual2(list, another) {
+      if (list.length !== another.length) {
+        return false;
+      }
+      for (var i = 0; i < list.length; i++) {
+        var range = list[i];
+        var other = another[i];
+        if (!slate.Range.equals(range, other)) {
+          return false;
+        }
+      }
+      return true;
+    };
+    var Children = function Children2(props) {
+      var decorate = props.decorate, decorations = props.decorations, node = props.node, renderElement = props.renderElement, renderLeaf = props.renderLeaf, selection = props.selection;
+      var editor = useEditor();
+      var path = ReactEditor.findPath(editor, node);
+      var children = [];
+      var isLeafBlock = slate.Element.isElement(node) && !editor.isInline(node) && slate.Editor.hasInlines(editor, node);
+      for (var i = 0; i < node.children.length; i++) {
+        var p = path.concat(i);
+        var n2 = node.children[i];
+        var key = ReactEditor.findKey(editor, n2);
+        var range = slate.Editor.range(editor, p);
+        var sel = selection && slate.Range.intersection(range, selection);
+        var ds = decorate([n2, p]);
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = void 0;
+        try {
+          for (var _iterator = decorations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var dec = _step.value;
+            var d = slate.Range.intersection(dec, range);
+            if (d) {
+              ds.push(d);
+            }
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+        if (slate.Element.isElement(n2)) {
+          children.push(React__default.createElement(MemoizedElement, {
+            decorate,
+            decorations: ds,
+            element: n2,
+            key: key.id,
+            renderElement,
+            renderLeaf,
+            selection: sel
+          }));
+        } else {
+          children.push(React__default.createElement(MemoizedText, {
+            decorations: ds,
+            key: key.id,
+            isLast: isLeafBlock && i === node.children.length - 1,
+            parent: node,
+            renderLeaf,
+            text: n2
+          }));
+        }
+        NODE_TO_INDEX.set(n2, i);
+        NODE_TO_PARENT.set(n2, node);
+      }
+      return React__default.createElement(React__default.Fragment, null, children);
+    };
+    var IS_IOS = typeof navigator !== "undefined" && typeof window !== "undefined" && /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    var IS_APPLE = typeof navigator !== "undefined" && /Mac OS X/.test(navigator.userAgent);
+    var IS_FIREFOX = typeof navigator !== "undefined" && /^(?!.*Seamonkey)(?=.*Firefox).*/i.test(navigator.userAgent);
+    var IS_SAFARI = typeof navigator !== "undefined" && /Version\/[\d\.]+.*Safari/.test(navigator.userAgent);
+    var IS_EDGE_LEGACY = typeof navigator !== "undefined" && /Edge?\/(?:[0-6][0-9]|[0-7][0-8])/i.test(navigator.userAgent);
+    var HOTKEYS = {
+      bold: "mod+b",
+      compose: ["down", "left", "right", "up", "backspace", "enter"],
+      moveBackward: "left",
+      moveForward: "right",
+      moveWordBackward: "ctrl+left",
+      moveWordForward: "ctrl+right",
+      deleteBackward: "shift?+backspace",
+      deleteForward: "shift?+delete",
+      extendBackward: "shift+left",
+      extendForward: "shift+right",
+      italic: "mod+i",
+      splitBlock: "shift?+enter",
+      undo: "mod+z"
+    };
+    var APPLE_HOTKEYS = {
+      moveLineBackward: "opt+up",
+      moveLineForward: "opt+down",
+      moveWordBackward: "opt+left",
+      moveWordForward: "opt+right",
+      deleteBackward: ["ctrl+backspace", "ctrl+h"],
+      deleteForward: ["ctrl+delete", "ctrl+d"],
+      deleteLineBackward: "cmd+shift?+backspace",
+      deleteLineForward: ["cmd+shift?+delete", "ctrl+k"],
+      deleteWordBackward: "opt+shift?+backspace",
+      deleteWordForward: "opt+shift?+delete",
+      extendLineBackward: "opt+shift+up",
+      extendLineForward: "opt+shift+down",
+      redo: "cmd+shift+z",
+      transposeCharacter: "ctrl+t"
+    };
+    var WINDOWS_HOTKEYS = {
+      deleteWordBackward: "ctrl+shift?+backspace",
+      deleteWordForward: "ctrl+shift?+delete",
+      redo: ["ctrl+y", "ctrl+shift+z"]
+    };
+    var create = function create2(key) {
+      var generic = HOTKEYS[key];
+      var apple = APPLE_HOTKEYS[key];
+      var windows = WINDOWS_HOTKEYS[key];
+      var isGeneric = generic && isHotkey.isKeyHotkey(generic);
+      var isApple = apple && isHotkey.isKeyHotkey(apple);
+      var isWindows = windows && isHotkey.isKeyHotkey(windows);
+      return function(event) {
+        if (isGeneric && isGeneric(event))
+          return true;
+        if (IS_APPLE && isApple && isApple(event))
+          return true;
+        if (!IS_APPLE && isWindows && isWindows(event))
+          return true;
+        return false;
+      };
+    };
+    var Hotkeys = {
+      isBold: create("bold"),
+      isCompose: create("compose"),
+      isMoveBackward: create("moveBackward"),
+      isMoveForward: create("moveForward"),
+      isDeleteBackward: create("deleteBackward"),
+      isDeleteForward: create("deleteForward"),
+      isDeleteLineBackward: create("deleteLineBackward"),
+      isDeleteLineForward: create("deleteLineForward"),
+      isDeleteWordBackward: create("deleteWordBackward"),
+      isDeleteWordForward: create("deleteWordForward"),
+      isExtendBackward: create("extendBackward"),
+      isExtendForward: create("extendForward"),
+      isExtendLineBackward: create("extendLineBackward"),
+      isExtendLineForward: create("extendLineForward"),
+      isItalic: create("italic"),
+      isMoveLineBackward: create("moveLineBackward"),
+      isMoveLineForward: create("moveLineForward"),
+      isMoveWordBackward: create("moveWordBackward"),
+      isMoveWordForward: create("moveWordForward"),
+      isRedo: create("redo"),
+      isSplitBlock: create("splitBlock"),
+      isTransposeCharacter: create("transposeCharacter"),
+      isUndo: create("undo")
+    };
+    function ownKeys(object, enumerableOnly) {
+      var keys = Object.keys(object);
+      if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly)
+          symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+          });
+        keys.push.apply(keys, symbols);
+      }
+      return keys;
+    }
+    function _objectSpread(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) {
+          ownKeys(Object(source), true).forEach(function(key) {
+            defineProperty(target, key, source[key]);
+          });
+        } else if (Object.getOwnPropertyDescriptors) {
+          Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        } else {
+          ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
+        }
+      }
+      return target;
+    }
+    var HAS_BEFORE_INPUT_SUPPORT = !(IS_FIREFOX || IS_EDGE_LEGACY);
+    var Editable = function Editable2(props) {
+      var autoFocus = props.autoFocus, _props$decorate = props.decorate, decorate = _props$decorate === void 0 ? defaultDecorate : _props$decorate, propsOnDOMBeforeInput = props.onDOMBeforeInput, placeholder = props.placeholder, _props$readOnly = props.readOnly, readOnly = _props$readOnly === void 0 ? false : _props$readOnly, renderElement = props.renderElement, renderLeaf = props.renderLeaf, _props$style = props.style, style = _props$style === void 0 ? {} : _props$style, _props$as = props.as, Component = _props$as === void 0 ? "div" : _props$as, attributes = objectWithoutProperties(props, ["autoFocus", "decorate", "onDOMBeforeInput", "placeholder", "readOnly", "renderElement", "renderLeaf", "style", "as"]);
+      var editor = useSlate();
+      var ref = React.useRef(null);
+      IS_READ_ONLY.set(editor, readOnly);
+      var state = React.useMemo(function() {
+        return {
+          isComposing: false,
+          isUpdatingSelection: false,
+          latestElement: null
+        };
+      }, []);
+      useIsomorphicLayoutEffect(function() {
+        if (ref.current) {
+          EDITOR_TO_ELEMENT.set(editor, ref.current);
+          NODE_TO_ELEMENT.set(editor, ref.current);
+          ELEMENT_TO_NODE.set(ref.current, editor);
+        } else {
+          NODE_TO_ELEMENT["delete"](editor);
+        }
+      });
+      useIsomorphicLayoutEffect(function() {
+        var selection = editor.selection;
+        var domSelection = window.getSelection();
+        if (state.isComposing || !domSelection || !ReactEditor.isFocused(editor)) {
+          return;
+        }
+        var hasDomSelection = domSelection.type !== "None";
+        if (!selection && !hasDomSelection) {
+          return;
+        }
+        var editorElement = EDITOR_TO_ELEMENT.get(editor);
+        var hasDomSelectionInEditor = false;
+        if (editorElement.contains(domSelection.anchorNode) && editorElement.contains(domSelection.focusNode)) {
+          hasDomSelectionInEditor = true;
+        }
+        if (hasDomSelection && hasDomSelectionInEditor && selection && slate.Range.equals(ReactEditor.toSlateRange(editor, domSelection), selection)) {
+          return;
+        }
+        var el = ReactEditor.toDOMNode(editor, editor);
+        state.isUpdatingSelection = true;
+        domSelection.removeAllRanges();
+        var newDomRange = selection && ReactEditor.toDOMRange(editor, selection);
+        if (newDomRange) {
+          domSelection.addRange(newDomRange);
+          var leafEl = newDomRange.startContainer.parentElement;
+          scrollIntoView(leafEl, {
+            scrollMode: "if-needed",
+            boundary: el
+          });
+        }
+        setTimeout(function() {
+          if (newDomRange && IS_FIREFOX) {
+            el.focus();
+          }
+          state.isUpdatingSelection = false;
+        });
+      });
+      React.useEffect(function() {
+        if (ref.current && autoFocus) {
+          ref.current.focus();
+        }
+      }, [autoFocus]);
+      var onDOMBeforeInput = React.useCallback(function(event) {
+        if (!readOnly && hasEditableTarget(editor, event.target) && !isDOMEventHandled(event, propsOnDOMBeforeInput)) {
+          var selection = editor.selection;
+          var type = event.inputType;
+          var data = event.dataTransfer || event.data || void 0;
+          if (type === "insertCompositionText" || type === "deleteCompositionText") {
+            return;
+          }
+          event.preventDefault();
+          if (!type.startsWith("delete") || type.startsWith("deleteBy")) {
+            var _event$getTargetRange = event.getTargetRanges(), _event$getTargetRange2 = slicedToArray(_event$getTargetRange, 1), targetRange = _event$getTargetRange2[0];
+            if (targetRange) {
+              var range = ReactEditor.toSlateRange(editor, targetRange);
+              if (!selection || !slate.Range.equals(selection, range)) {
+                slate.Transforms.select(editor, range);
+              }
+            }
+          }
+          if (selection && slate.Range.isExpanded(selection) && type.startsWith("delete")) {
+            slate.Editor.deleteFragment(editor);
+            return;
+          }
+          switch (type) {
+            case "deleteByComposition":
+            case "deleteByCut":
+            case "deleteByDrag": {
+              slate.Editor.deleteFragment(editor);
+              break;
+            }
+            case "deleteContent":
+            case "deleteContentForward": {
+              slate.Editor.deleteForward(editor);
+              break;
+            }
+            case "deleteContentBackward": {
+              slate.Editor.deleteBackward(editor);
+              break;
+            }
+            case "deleteEntireSoftLine": {
+              slate.Editor.deleteBackward(editor, {
+                unit: "line"
+              });
+              slate.Editor.deleteForward(editor, {
+                unit: "line"
+              });
+              break;
+            }
+            case "deleteHardLineBackward": {
+              slate.Editor.deleteBackward(editor, {
+                unit: "block"
+              });
+              break;
+            }
+            case "deleteSoftLineBackward": {
+              slate.Editor.deleteBackward(editor, {
+                unit: "line"
+              });
+              break;
+            }
+            case "deleteHardLineForward": {
+              slate.Editor.deleteForward(editor, {
+                unit: "block"
+              });
+              break;
+            }
+            case "deleteSoftLineForward": {
+              slate.Editor.deleteForward(editor, {
+                unit: "line"
+              });
+              break;
+            }
+            case "deleteWordBackward": {
+              slate.Editor.deleteBackward(editor, {
+                unit: "word"
+              });
+              break;
+            }
+            case "deleteWordForward": {
+              slate.Editor.deleteForward(editor, {
+                unit: "word"
+              });
+              break;
+            }
+            case "insertLineBreak":
+            case "insertParagraph": {
+              slate.Editor.insertBreak(editor);
+              break;
+            }
+            case "insertFromComposition":
+            case "insertFromDrop":
+            case "insertFromPaste":
+            case "insertFromYank":
+            case "insertReplacementText":
+            case "insertText": {
+              if (data instanceof DataTransfer) {
+                ReactEditor.insertData(editor, data);
+              } else if (typeof data === "string") {
+                slate.Editor.insertText(editor, data);
+              }
+              break;
+            }
+          }
+        }
+      }, [readOnly]);
+      useIsomorphicLayoutEffect(function() {
+        if (ref.current) {
+          ref.current.addEventListener("beforeinput", onDOMBeforeInput);
+        }
+        return function() {
+          if (ref.current) {
+            ref.current.removeEventListener("beforeinput", onDOMBeforeInput);
+          }
+        };
+      }, [onDOMBeforeInput]);
+      var onDOMSelectionChange = React.useCallback(throttle(function() {
+        if (!readOnly && !state.isComposing && !state.isUpdatingSelection) {
+          var activeElement = window.document.activeElement;
+          var el = ReactEditor.toDOMNode(editor, editor);
+          var domSelection = window.getSelection();
+          if (activeElement === el) {
+            state.latestElement = activeElement;
+            IS_FOCUSED.set(editor, true);
+          } else {
+            IS_FOCUSED["delete"](editor);
+          }
+          if (!domSelection) {
+            return slate.Transforms.deselect(editor);
+          }
+          var anchorNode = domSelection.anchorNode, focusNode = domSelection.focusNode;
+          var anchorNodeSelectable = hasEditableTarget(editor, anchorNode) || isTargetInsideVoid(editor, anchorNode);
+          var focusNodeSelectable = hasEditableTarget(editor, focusNode) || isTargetInsideVoid(editor, focusNode);
+          if (anchorNodeSelectable && focusNodeSelectable) {
+            var range = ReactEditor.toSlateRange(editor, domSelection);
+            slate.Transforms.select(editor, range);
+          } else {
+            slate.Transforms.deselect(editor);
+          }
+        }
+      }, 100), [readOnly]);
+      useIsomorphicLayoutEffect(function() {
+        window.document.addEventListener("selectionchange", onDOMSelectionChange);
+        return function() {
+          window.document.removeEventListener("selectionchange", onDOMSelectionChange);
+        };
+      }, [onDOMSelectionChange]);
+      var decorations = decorate([editor, []]);
+      if (placeholder && editor.children.length === 1 && Array.from(slate.Node.texts(editor)).length === 1 && slate.Node.string(editor) === "") {
+        var _decorations$push;
+        var start = slate.Editor.start(editor, []);
+        decorations.push((_decorations$push = {}, defineProperty(_decorations$push, PLACEHOLDER_SYMBOL, true), defineProperty(_decorations$push, "placeholder", placeholder), defineProperty(_decorations$push, "anchor", start), defineProperty(_decorations$push, "focus", start), _decorations$push));
+      }
+      return React__default.createElement(ReadOnlyContext.Provider, {
+        value: readOnly
+      }, React__default.createElement(Component, Object.assign({
+        "data-gramm": false,
+        role: readOnly ? void 0 : "textbox"
+      }, attributes, {
+        spellCheck: !HAS_BEFORE_INPUT_SUPPORT ? void 0 : attributes.spellCheck,
+        autoCorrect: !HAS_BEFORE_INPUT_SUPPORT ? void 0 : attributes.autoCorrect,
+        autoCapitalize: !HAS_BEFORE_INPUT_SUPPORT ? void 0 : attributes.autoCapitalize,
+        "data-slate-editor": true,
+        "data-slate-node": "value",
+        contentEditable: readOnly ? void 0 : true,
+        suppressContentEditableWarning: true,
+        ref,
+        style: _objectSpread({
+          outline: "none",
+          whiteSpace: "pre-wrap",
+          wordWrap: "break-word"
+        }, style),
+        onBeforeInput: React.useCallback(function(event) {
+          if (!HAS_BEFORE_INPUT_SUPPORT && !readOnly && !isEventHandled(event, attributes.onBeforeInput) && hasEditableTarget(editor, event.target)) {
+            event.preventDefault();
+            var text = event.data;
+            slate.Editor.insertText(editor, text);
+          }
+        }, [readOnly]),
+        onBlur: React.useCallback(function(event) {
+          if (readOnly || state.isUpdatingSelection || !hasEditableTarget(editor, event.target) || isEventHandled(event, attributes.onBlur)) {
+            return;
+          }
+          if (state.latestElement === window.document.activeElement) {
+            return;
+          }
+          var relatedTarget = event.relatedTarget;
+          var el = ReactEditor.toDOMNode(editor, editor);
+          if (relatedTarget === el) {
+            return;
+          }
+          if (isDOMElement(relatedTarget) && relatedTarget.hasAttribute("data-slate-spacer")) {
+            return;
+          }
+          if (relatedTarget != null && isDOMNode(relatedTarget) && ReactEditor.hasDOMNode(editor, relatedTarget)) {
+            var node = ReactEditor.toSlateNode(editor, relatedTarget);
+            if (slate.Element.isElement(node) && !editor.isVoid(node)) {
+              return;
+            }
+          }
+          IS_FOCUSED["delete"](editor);
+        }, [readOnly, attributes.onBlur]),
+        onClick: React.useCallback(function(event) {
+          if (!readOnly && hasTarget(editor, event.target) && !isEventHandled(event, attributes.onClick) && isDOMNode(event.target)) {
+            var node = ReactEditor.toSlateNode(editor, event.target);
+            var path = ReactEditor.findPath(editor, node);
+            var _start = slate.Editor.start(editor, path);
+            var end = slate.Editor.end(editor, path);
+            var startVoid = slate.Editor["void"](editor, {
+              at: _start
+            });
+            var endVoid = slate.Editor["void"](editor, {
+              at: end
+            });
+            if (startVoid && endVoid && slate.Path.equals(startVoid[1], endVoid[1])) {
+              var range = slate.Editor.range(editor, _start);
+              slate.Transforms.select(editor, range);
+            }
+          }
+        }, [readOnly, attributes.onClick]),
+        onCompositionEnd: React.useCallback(function(event) {
+          if (hasEditableTarget(editor, event.target) && !isEventHandled(event, attributes.onCompositionEnd)) {
+            state.isComposing = false;
+            if (!IS_SAFARI && !IS_FIREFOX && event.data) {
+              slate.Editor.insertText(editor, event.data);
+            }
+          }
+        }, [attributes.onCompositionEnd]),
+        onCompositionStart: React.useCallback(function(event) {
+          if (hasEditableTarget(editor, event.target) && !isEventHandled(event, attributes.onCompositionStart)) {
+            state.isComposing = true;
+          }
+        }, [attributes.onCompositionStart]),
+        onCopy: React.useCallback(function(event) {
+          if (hasEditableTarget(editor, event.target) && !isEventHandled(event, attributes.onCopy)) {
+            event.preventDefault();
+            ReactEditor.setFragmentData(editor, event.clipboardData);
+          }
+        }, [attributes.onCopy]),
+        onCut: React.useCallback(function(event) {
+          if (!readOnly && hasEditableTarget(editor, event.target) && !isEventHandled(event, attributes.onCut)) {
+            event.preventDefault();
+            ReactEditor.setFragmentData(editor, event.clipboardData);
+            var selection = editor.selection;
+            if (selection && slate.Range.isExpanded(selection)) {
+              slate.Editor.deleteFragment(editor);
+            }
+          }
+        }, [readOnly, attributes.onCut]),
+        onDragOver: React.useCallback(function(event) {
+          if (hasTarget(editor, event.target) && !isEventHandled(event, attributes.onDragOver)) {
+            var node = ReactEditor.toSlateNode(editor, event.target);
+            if (slate.Editor.isVoid(editor, node)) {
+              event.preventDefault();
+            }
+          }
+        }, [attributes.onDragOver]),
+        onDragStart: React.useCallback(function(event) {
+          if (hasTarget(editor, event.target) && !isEventHandled(event, attributes.onDragStart)) {
+            var node = ReactEditor.toSlateNode(editor, event.target);
+            var path = ReactEditor.findPath(editor, node);
+            var voidMatch = slate.Editor["void"](editor, {
+              at: path
+            });
+            if (voidMatch) {
+              var range = slate.Editor.range(editor, path);
+              slate.Transforms.select(editor, range);
+            }
+            ReactEditor.setFragmentData(editor, event.dataTransfer);
+          }
+        }, [attributes.onDragStart]),
+        onDrop: React.useCallback(function(event) {
+          if (hasTarget(editor, event.target) && !readOnly && !isEventHandled(event, attributes.onDrop)) {
+            if (!HAS_BEFORE_INPUT_SUPPORT || !IS_SAFARI && event.dataTransfer.files.length > 0) {
+              event.preventDefault();
+              var range = ReactEditor.findEventRange(editor, event);
+              var data = event.dataTransfer;
+              slate.Transforms.select(editor, range);
+              ReactEditor.insertData(editor, data);
+            }
+          }
+        }, [readOnly, attributes.onDrop]),
+        onFocus: React.useCallback(function(event) {
+          if (!readOnly && !state.isUpdatingSelection && hasEditableTarget(editor, event.target) && !isEventHandled(event, attributes.onFocus)) {
+            var el = ReactEditor.toDOMNode(editor, editor);
+            state.latestElement = window.document.activeElement;
+            if (IS_FIREFOX && event.target !== el) {
+              el.focus();
+              return;
+            }
+            IS_FOCUSED.set(editor, true);
+          }
+        }, [readOnly, attributes.onFocus]),
+        onKeyDown: React.useCallback(function(event) {
+          if (!readOnly && hasEditableTarget(editor, event.target) && !isEventHandled(event, attributes.onKeyDown)) {
+            var nativeEvent = event.nativeEvent;
+            var selection = editor.selection;
+            if (Hotkeys.isRedo(nativeEvent)) {
+              event.preventDefault();
+              if (typeof editor.redo === "function") {
+                editor.redo();
+              }
+              return;
+            }
+            if (Hotkeys.isUndo(nativeEvent)) {
+              event.preventDefault();
+              if (typeof editor.undo === "function") {
+                editor.undo();
+              }
+              return;
+            }
+            if (Hotkeys.isMoveLineBackward(nativeEvent)) {
+              event.preventDefault();
+              slate.Transforms.move(editor, {
+                unit: "line",
+                reverse: true
+              });
+              return;
+            }
+            if (Hotkeys.isMoveLineForward(nativeEvent)) {
+              event.preventDefault();
+              slate.Transforms.move(editor, {
+                unit: "line"
+              });
+              return;
+            }
+            if (Hotkeys.isExtendLineBackward(nativeEvent)) {
+              event.preventDefault();
+              slate.Transforms.move(editor, {
+                unit: "line",
+                edge: "focus",
+                reverse: true
+              });
+              return;
+            }
+            if (Hotkeys.isExtendLineForward(nativeEvent)) {
+              event.preventDefault();
+              slate.Transforms.move(editor, {
+                unit: "line",
+                edge: "focus"
+              });
+              return;
+            }
+            if (Hotkeys.isMoveBackward(nativeEvent)) {
+              event.preventDefault();
+              if (selection && slate.Range.isCollapsed(selection)) {
+                slate.Transforms.move(editor, {
+                  reverse: true
+                });
+              } else {
+                slate.Transforms.collapse(editor, {
+                  edge: "start"
+                });
+              }
+              return;
+            }
+            if (Hotkeys.isMoveForward(nativeEvent)) {
+              event.preventDefault();
+              if (selection && slate.Range.isCollapsed(selection)) {
+                slate.Transforms.move(editor);
+              } else {
+                slate.Transforms.collapse(editor, {
+                  edge: "end"
+                });
+              }
+              return;
+            }
+            if (Hotkeys.isMoveWordBackward(nativeEvent)) {
+              event.preventDefault();
+              slate.Transforms.move(editor, {
+                unit: "word",
+                reverse: true
+              });
+              return;
+            }
+            if (Hotkeys.isMoveWordForward(nativeEvent)) {
+              event.preventDefault();
+              slate.Transforms.move(editor, {
+                unit: "word"
+              });
+              return;
+            }
+            if (!HAS_BEFORE_INPUT_SUPPORT) {
+              if (Hotkeys.isBold(nativeEvent) || Hotkeys.isItalic(nativeEvent) || Hotkeys.isTransposeCharacter(nativeEvent)) {
+                event.preventDefault();
+                return;
+              }
+              if (Hotkeys.isSplitBlock(nativeEvent)) {
+                event.preventDefault();
+                slate.Editor.insertBreak(editor);
+                return;
+              }
+              if (Hotkeys.isDeleteBackward(nativeEvent)) {
+                event.preventDefault();
+                if (selection && slate.Range.isExpanded(selection)) {
+                  slate.Editor.deleteFragment(editor);
+                } else {
+                  slate.Editor.deleteBackward(editor);
+                }
+                return;
+              }
+              if (Hotkeys.isDeleteForward(nativeEvent)) {
+                event.preventDefault();
+                if (selection && slate.Range.isExpanded(selection)) {
+                  slate.Editor.deleteFragment(editor);
+                } else {
+                  slate.Editor.deleteForward(editor);
+                }
+                return;
+              }
+              if (Hotkeys.isDeleteLineBackward(nativeEvent)) {
+                event.preventDefault();
+                if (selection && slate.Range.isExpanded(selection)) {
+                  slate.Editor.deleteFragment(editor);
+                } else {
+                  slate.Editor.deleteBackward(editor, {
+                    unit: "line"
+                  });
+                }
+                return;
+              }
+              if (Hotkeys.isDeleteLineForward(nativeEvent)) {
+                event.preventDefault();
+                if (selection && slate.Range.isExpanded(selection)) {
+                  slate.Editor.deleteFragment(editor);
+                } else {
+                  slate.Editor.deleteForward(editor, {
+                    unit: "line"
+                  });
+                }
+                return;
+              }
+              if (Hotkeys.isDeleteWordBackward(nativeEvent)) {
+                event.preventDefault();
+                if (selection && slate.Range.isExpanded(selection)) {
+                  slate.Editor.deleteFragment(editor);
+                } else {
+                  slate.Editor.deleteBackward(editor, {
+                    unit: "word"
+                  });
+                }
+                return;
+              }
+              if (Hotkeys.isDeleteWordForward(nativeEvent)) {
+                event.preventDefault();
+                if (selection && slate.Range.isExpanded(selection)) {
+                  slate.Editor.deleteFragment(editor);
+                } else {
+                  slate.Editor.deleteForward(editor, {
+                    unit: "word"
+                  });
+                }
+                return;
+              }
+            }
+          }
+        }, [readOnly, attributes.onKeyDown]),
+        onPaste: React.useCallback(function(event) {
+          if (!isEventHandled(event, attributes.onPaste) && (!HAS_BEFORE_INPUT_SUPPORT || isPlainTextOnlyPaste(event.nativeEvent)) && !readOnly && hasEditableTarget(editor, event.target)) {
+            event.preventDefault();
+            ReactEditor.insertData(editor, event.clipboardData);
+          }
+        }, [readOnly, attributes.onPaste])
+      }), React__default.createElement(Children, {
+        decorate,
+        decorations,
+        node: editor,
+        renderElement,
+        renderLeaf,
+        selection: editor.selection
+      })));
+    };
+    var defaultDecorate = function defaultDecorate2() {
+      return [];
+    };
+    var hasTarget = function hasTarget2(editor, target) {
+      return isDOMNode(target) && ReactEditor.hasDOMNode(editor, target);
+    };
+    var hasEditableTarget = function hasEditableTarget2(editor, target) {
+      return isDOMNode(target) && ReactEditor.hasDOMNode(editor, target, {
+        editable: true
+      });
+    };
+    var isTargetInsideVoid = function isTargetInsideVoid2(editor, target) {
+      var slateNode = hasTarget(editor, target) && ReactEditor.toSlateNode(editor, target);
+      return slate.Editor.isVoid(editor, slateNode);
+    };
+    var isEventHandled = function isEventHandled2(event, handler) {
+      if (!handler) {
+        return false;
+      }
+      handler(event);
+      return event.isDefaultPrevented() || event.isPropagationStopped();
+    };
+    var isDOMEventHandled = function isDOMEventHandled2(event, handler) {
+      if (!handler) {
+        return false;
+      }
+      handler(event);
+      return event.defaultPrevented;
+    };
+    exports.DefaultElement = DefaultElement;
+    exports.DefaultLeaf = DefaultLeaf;
+    exports.Editable = Editable;
+    exports.ReactEditor = ReactEditor;
+    exports.Slate = Slate;
+    exports.useEditor = useEditor;
+    exports.useFocused = useFocused;
+    exports.useReadOnly = useReadOnly;
+    exports.useSelected = useSelected;
+    exports.useSlate = useSlate;
+    exports.withReact = withReact;
+  },
+
+  49(require, exports, module) {
     // node_modules/lodash/lodash.js
     ;
     (function() {
@@ -31055,6 +40532,1995 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         root._ = _;
       }
     }).call(this);
+  },
+
+  20(require, exports, module) {
+    // node_modules/axios/lib/helpers/bind.js
+    "use strict";
+    module.exports = function bind(fn, thisArg) {
+      return function wrap() {
+        var args = new Array(arguments.length);
+        for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i];
+        }
+        return fn.apply(thisArg, args);
+      };
+    };
+  },
+
+  29(require, exports, module) {
+    // node_modules/axios/lib/utils.js
+    "use strict";
+    var bind = require(20 /* ./helpers/bind */);
+    var toString = Object.prototype.toString;
+    function isArray(val) {
+      return toString.call(val) === "[object Array]";
+    }
+    function isUndefined(val) {
+      return typeof val === "undefined";
+    }
+    function isBuffer(val) {
+      return val !== null && !isUndefined(val) && val.constructor !== null && !isUndefined(val.constructor) && typeof val.constructor.isBuffer === "function" && val.constructor.isBuffer(val);
+    }
+    function isArrayBuffer(val) {
+      return toString.call(val) === "[object ArrayBuffer]";
+    }
+    function isFormData(val) {
+      return typeof FormData !== "undefined" && val instanceof FormData;
+    }
+    function isArrayBufferView(val) {
+      var result;
+      if (typeof ArrayBuffer !== "undefined" && ArrayBuffer.isView) {
+        result = ArrayBuffer.isView(val);
+      } else {
+        result = val && val.buffer && val.buffer instanceof ArrayBuffer;
+      }
+      return result;
+    }
+    function isString(val) {
+      return typeof val === "string";
+    }
+    function isNumber(val) {
+      return typeof val === "number";
+    }
+    function isObject(val) {
+      return val !== null && typeof val === "object";
+    }
+    function isDate(val) {
+      return toString.call(val) === "[object Date]";
+    }
+    function isFile(val) {
+      return toString.call(val) === "[object File]";
+    }
+    function isBlob(val) {
+      return toString.call(val) === "[object Blob]";
+    }
+    function isFunction(val) {
+      return toString.call(val) === "[object Function]";
+    }
+    function isStream(val) {
+      return isObject(val) && isFunction(val.pipe);
+    }
+    function isURLSearchParams(val) {
+      return typeof URLSearchParams !== "undefined" && val instanceof URLSearchParams;
+    }
+    function trim(str) {
+      return str.replace(/^\s*/, "").replace(/\s*$/, "");
+    }
+    function isStandardBrowserEnv() {
+      if (typeof navigator !== "undefined" && (navigator.product === "ReactNative" || navigator.product === "NativeScript" || navigator.product === "NS")) {
+        return false;
+      }
+      return typeof window !== "undefined" && typeof document !== "undefined";
+    }
+    function forEach(obj, fn) {
+      if (obj === null || typeof obj === "undefined") {
+        return;
+      }
+      if (typeof obj !== "object") {
+        obj = [obj];
+      }
+      if (isArray(obj)) {
+        for (var i = 0, l = obj.length; i < l; i++) {
+          fn.call(null, obj[i], i, obj);
+        }
+      } else {
+        for (var key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            fn.call(null, obj[key], key, obj);
+          }
+        }
+      }
+    }
+    function merge() {
+      var result = {};
+      function assignValue(val, key) {
+        if (typeof result[key] === "object" && typeof val === "object") {
+          result[key] = merge(result[key], val);
+        } else {
+          result[key] = val;
+        }
+      }
+      for (var i = 0, l = arguments.length; i < l; i++) {
+        forEach(arguments[i], assignValue);
+      }
+      return result;
+    }
+    function deepMerge() {
+      var result = {};
+      function assignValue(val, key) {
+        if (typeof result[key] === "object" && typeof val === "object") {
+          result[key] = deepMerge(result[key], val);
+        } else if (typeof val === "object") {
+          result[key] = deepMerge({}, val);
+        } else {
+          result[key] = val;
+        }
+      }
+      for (var i = 0, l = arguments.length; i < l; i++) {
+        forEach(arguments[i], assignValue);
+      }
+      return result;
+    }
+    function extend(a, b, thisArg) {
+      forEach(b, function assignValue(val, key) {
+        if (thisArg && typeof val === "function") {
+          a[key] = bind(val, thisArg);
+        } else {
+          a[key] = val;
+        }
+      });
+      return a;
+    }
+    module.exports = {
+      isArray,
+      isArrayBuffer,
+      isBuffer,
+      isFormData,
+      isArrayBufferView,
+      isString,
+      isNumber,
+      isObject,
+      isUndefined,
+      isDate,
+      isFile,
+      isBlob,
+      isFunction,
+      isStream,
+      isURLSearchParams,
+      isStandardBrowserEnv,
+      forEach,
+      merge,
+      deepMerge,
+      extend,
+      trim
+    };
+  },
+
+  21(require, exports, module) {
+    // node_modules/axios/lib/helpers/buildURL.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    function encode(val) {
+      return encodeURIComponent(val).replace(/%40/gi, "@").replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]");
+    }
+    module.exports = function buildURL(url, params, paramsSerializer) {
+      if (!params) {
+        return url;
+      }
+      var serializedParams;
+      if (paramsSerializer) {
+        serializedParams = paramsSerializer(params);
+      } else if (utils.isURLSearchParams(params)) {
+        serializedParams = params.toString();
+      } else {
+        var parts = [];
+        utils.forEach(params, function serialize(val, key) {
+          if (val === null || typeof val === "undefined") {
+            return;
+          }
+          if (utils.isArray(val)) {
+            key = key + "[]";
+          } else {
+            val = [val];
+          }
+          utils.forEach(val, function parseValue(v) {
+            if (utils.isDate(v)) {
+              v = v.toISOString();
+            } else if (utils.isObject(v)) {
+              v = JSON.stringify(v);
+            }
+            parts.push(encode(key) + "=" + encode(v));
+          });
+        });
+        serializedParams = parts.join("&");
+      }
+      if (serializedParams) {
+        var hashmarkIndex = url.indexOf("#");
+        if (hashmarkIndex !== -1) {
+          url = url.slice(0, hashmarkIndex);
+        }
+        url += (url.indexOf("?") === -1 ? "?" : "&") + serializedParams;
+      }
+      return url;
+    };
+  },
+
+  11(require, exports, module) {
+    // node_modules/axios/lib/core/InterceptorManager.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    function InterceptorManager() {
+      this.handlers = [];
+    }
+    InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+      this.handlers.push({
+        fulfilled,
+        rejected
+      });
+      return this.handlers.length - 1;
+    };
+    InterceptorManager.prototype.eject = function eject(id) {
+      if (this.handlers[id]) {
+        this.handlers[id] = null;
+      }
+    };
+    InterceptorManager.prototype.forEach = function forEach(fn) {
+      utils.forEach(this.handlers, function forEachHandler(h) {
+        if (h !== null) {
+          fn(h);
+        }
+      });
+    };
+    module.exports = InterceptorManager;
+  },
+
+  18(require, exports, module) {
+    // node_modules/axios/lib/core/transformData.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    module.exports = function transformData(data, headers, fns) {
+      utils.forEach(fns, function transform(fn) {
+        data = fn(data, headers);
+      });
+      return data;
+    };
+  },
+
+  9(require, exports, module) {
+    // node_modules/axios/lib/cancel/isCancel.js
+    "use strict";
+    module.exports = function isCancel(value) {
+      return !!(value && value.__CANCEL__);
+    };
+  },
+
+  26(require, exports, module) {
+    // node_modules/axios/lib/helpers/normalizeHeaderName.js
+    "use strict";
+    var utils = require(29 /* ../utils */);
+    module.exports = function normalizeHeaderName(headers, normalizedName) {
+      utils.forEach(headers, function processHeader(value, name) {
+        if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+          headers[normalizedName] = value;
+          delete headers[name];
+        }
+      });
+    };
+  },
+
+  15(require, exports, module) {
+    // node_modules/axios/lib/core/enhanceError.js
+    "use strict";
+    module.exports = function enhanceError(error, config, code, request, response) {
+      error.config = config;
+      if (code) {
+        error.code = code;
+      }
+      error.request = request;
+      error.response = response;
+      error.isAxiosError = true;
+      error.toJSON = function() {
+        return {
+          message: this.message,
+          name: this.name,
+          description: this.description,
+          number: this.number,
+          fileName: this.fileName,
+          lineNumber: this.lineNumber,
+          columnNumber: this.columnNumber,
+          stack: this.stack,
+          config: this.config,
+          code: this.code
+        };
+      };
+      return error;
+    };
+  },
+
+  13(require, exports, module) {
+    // node_modules/axios/lib/core/createError.js
+    "use strict";
+    var enhanceError = require(15 /* ./enhanceError */);
+    module.exports = function createError(message, config, code, request, response) {
+      var error = new Error(message);
+      return enhanceError(error, config, code, request, response);
+    };
+  },
+
+  17(require, exports, module) {
+    // node_modules/axios/lib/core/settle.js
+    "use strict";
+    var createError = require(13 /* ./createError */);
+    module.exports = function settle(resolve, reject, response) {
+      var validateStatus = response.config.validateStatus;
+      if (!validateStatus || validateStatus(response.status)) {
+        resolve(response);
+      } else {
+        reject(createError("Request failed with status code " + response.status, response.config, null, response.request, response));
+      }
+    };
+  },
+
+  24(require, exports, module) {
+    // node_modules/axios/lib/helpers/isAbsoluteURL.js
+    "use strict";
+    module.exports = function isAbsoluteURL(url) {
+      return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+    };
+  },
+
+  22(require, exports, module) {
+    // node_modules/axios/lib/helpers/combineURLs.js
+    "use strict";
+    module.exports = function combineURLs(baseURL, relativeURL) {
+      return relativeURL ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "") : baseURL;
+    };
+  },
+
+  12(require, exports, module) {
+    // node_modules/axios/lib/core/buildFullPath.js
+    "use strict";
+    var isAbsoluteURL = require(24 /* ../helpers/isAbsoluteURL */);
+    var combineURLs = require(22 /* ../helpers/combineURLs */);
+    module.exports = function buildFullPath(baseURL, requestedURL) {
+      if (baseURL && !isAbsoluteURL(requestedURL)) {
+        return combineURLs(baseURL, requestedURL);
+      }
+      return requestedURL;
+    };
+  },
+
+  27(require, exports, module) {
+    // node_modules/axios/lib/helpers/parseHeaders.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    var ignoreDuplicateOf = ["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"];
+    module.exports = function parseHeaders(headers) {
+      var parsed = {};
+      var key;
+      var val;
+      var i;
+      if (!headers) {
+        return parsed;
+      }
+      utils.forEach(headers.split("\n"), function parser(line) {
+        i = line.indexOf(":");
+        key = utils.trim(line.substr(0, i)).toLowerCase();
+        val = utils.trim(line.substr(i + 1));
+        if (key) {
+          if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+            return;
+          }
+          if (key === "set-cookie") {
+            parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+          } else {
+            parsed[key] = parsed[key] ? parsed[key] + ", " + val : val;
+          }
+        }
+      });
+      return parsed;
+    };
+  },
+
+  25(require, exports, module) {
+    // node_modules/axios/lib/helpers/isURLSameOrigin.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
+      var msie = /(msie|trident)/i.test(navigator.userAgent);
+      var urlParsingNode = document.createElement("a");
+      var originURL;
+      function resolveURL(url) {
+        var href = url;
+        if (msie) {
+          urlParsingNode.setAttribute("href", href);
+          href = urlParsingNode.href;
+        }
+        urlParsingNode.setAttribute("href", href);
+        return {
+          href: urlParsingNode.href,
+          protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, "") : "",
+          host: urlParsingNode.host,
+          search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, "") : "",
+          hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, "") : "",
+          hostname: urlParsingNode.hostname,
+          port: urlParsingNode.port,
+          pathname: urlParsingNode.pathname.charAt(0) === "/" ? urlParsingNode.pathname : "/" + urlParsingNode.pathname
+        };
+      }
+      originURL = resolveURL(window.location.href);
+      return function isURLSameOrigin(requestURL) {
+        var parsed = utils.isString(requestURL) ? resolveURL(requestURL) : requestURL;
+        return parsed.protocol === originURL.protocol && parsed.host === originURL.host;
+      };
+    }() : function nonStandardBrowserEnv() {
+      return function isURLSameOrigin() {
+        return true;
+      };
+    }();
+  },
+
+  23(require, exports, module) {
+    // node_modules/axios/lib/helpers/cookies.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
+      return {
+        write: function write(name, value, expires, path, domain, secure) {
+          var cookie = [];
+          cookie.push(name + "=" + encodeURIComponent(value));
+          if (utils.isNumber(expires)) {
+            cookie.push("expires=" + new Date(expires).toGMTString());
+          }
+          if (utils.isString(path)) {
+            cookie.push("path=" + path);
+          }
+          if (utils.isString(domain)) {
+            cookie.push("domain=" + domain);
+          }
+          if (secure === true) {
+            cookie.push("secure");
+          }
+          document.cookie = cookie.join("; ");
+        },
+        read: function read(name) {
+          var match = document.cookie.match(new RegExp("(^|;\\s*)(" + name + ")=([^;]*)"));
+          return match ? decodeURIComponent(match[3]) : null;
+        },
+        remove: function remove(name) {
+          this.write(name, "", Date.now() - 86400000);
+        }
+      };
+    }() : function nonStandardBrowserEnv() {
+      return {
+        write: function write() {
+        },
+        read: function read() {
+          return null;
+        },
+        remove: function remove() {
+        }
+      };
+    }();
+  },
+
+  5(require, exports, module) {
+    // node_modules/axios/lib/adapters/xhr.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    var settle = require(17 /* ./../core/settle */);
+    var buildURL = require(21 /* ./../helpers/buildURL */);
+    var buildFullPath = require(12 /* ../core/buildFullPath */);
+    var parseHeaders = require(27 /* ./../helpers/parseHeaders */);
+    var isURLSameOrigin = require(25 /* ./../helpers/isURLSameOrigin */);
+    var createError = require(13 /* ../core/createError */);
+    module.exports = function xhrAdapter(config) {
+      return new Promise(function dispatchXhrRequest(resolve, reject) {
+        var requestData = config.data;
+        var requestHeaders = config.headers;
+        if (utils.isFormData(requestData)) {
+          delete requestHeaders["Content-Type"];
+        }
+        var request = new XMLHttpRequest();
+        if (config.auth) {
+          var username = config.auth.username || "";
+          var password = config.auth.password || "";
+          requestHeaders.Authorization = "Basic " + btoa(username + ":" + password);
+        }
+        var fullPath = buildFullPath(config.baseURL, config.url);
+        request.open(config.method.toUpperCase(), buildURL(fullPath, config.params, config.paramsSerializer), true);
+        request.timeout = config.timeout;
+        request.onreadystatechange = function handleLoad() {
+          if (!request || request.readyState !== 4) {
+            return;
+          }
+          if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf("file:") === 0)) {
+            return;
+          }
+          var responseHeaders = "getAllResponseHeaders" in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+          var responseData = !config.responseType || config.responseType === "text" ? request.responseText : request.response;
+          var response = {
+            data: responseData,
+            status: request.status,
+            statusText: request.statusText,
+            headers: responseHeaders,
+            config,
+            request
+          };
+          settle(resolve, reject, response);
+          request = null;
+        };
+        request.onabort = function handleAbort() {
+          if (!request) {
+            return;
+          }
+          reject(createError("Request aborted", config, "ECONNABORTED", request));
+          request = null;
+        };
+        request.onerror = function handleError() {
+          reject(createError("Network Error", config, null, request));
+          request = null;
+        };
+        request.ontimeout = function handleTimeout() {
+          var timeoutErrorMessage = "timeout of " + config.timeout + "ms exceeded";
+          if (config.timeoutErrorMessage) {
+            timeoutErrorMessage = config.timeoutErrorMessage;
+          }
+          reject(createError(timeoutErrorMessage, config, "ECONNABORTED", request));
+          request = null;
+        };
+        if (utils.isStandardBrowserEnv()) {
+          var cookies = require(23 /* ./../helpers/cookies */);
+          var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ? cookies.read(config.xsrfCookieName) : void 0;
+          if (xsrfValue) {
+            requestHeaders[config.xsrfHeaderName] = xsrfValue;
+          }
+        }
+        if ("setRequestHeader" in request) {
+          utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+            if (typeof requestData === "undefined" && key.toLowerCase() === "content-type") {
+              delete requestHeaders[key];
+            } else {
+              request.setRequestHeader(key, val);
+            }
+          });
+        }
+        if (!utils.isUndefined(config.withCredentials)) {
+          request.withCredentials = !!config.withCredentials;
+        }
+        if (config.responseType) {
+          try {
+            request.responseType = config.responseType;
+          } catch (e) {
+            if (config.responseType !== "json") {
+              throw e;
+            }
+          }
+        }
+        if (typeof config.onDownloadProgress === "function") {
+          request.addEventListener("progress", config.onDownloadProgress);
+        }
+        if (typeof config.onUploadProgress === "function" && request.upload) {
+          request.upload.addEventListener("progress", config.onUploadProgress);
+        }
+        if (config.cancelToken) {
+          config.cancelToken.promise.then(function onCanceled(cancel) {
+            if (!request) {
+              return;
+            }
+            request.abort();
+            reject(cancel);
+            request = null;
+          });
+        }
+        if (requestData === void 0) {
+          requestData = null;
+        }
+        request.send(requestData);
+      });
+    };
+  },
+
+  19(require, exports, module) {
+    // node_modules/axios/lib/defaults.js
+    "use strict";
+    var utils = require(29 /* ./utils */);
+    var normalizeHeaderName = require(26 /* ./helpers/normalizeHeaderName */);
+    var DEFAULT_CONTENT_TYPE = {
+      "Content-Type": "application/x-www-form-urlencoded"
+    };
+    function setContentTypeIfUnset(headers, value) {
+      if (!utils.isUndefined(headers) && utils.isUndefined(headers["Content-Type"])) {
+        headers["Content-Type"] = value;
+      }
+    }
+    function getDefaultAdapter() {
+      var adapter;
+      if (typeof XMLHttpRequest !== "undefined") {
+        adapter = require(5 /* ./adapters/xhr */);
+      } else if (typeof process !== "undefined" && Object.prototype.toString.call(process) === "[object process]") {
+        adapter = require(5 /* ./adapters/http */);
+      }
+      return adapter;
+    }
+    var defaults = {
+      adapter: getDefaultAdapter(),
+      transformRequest: [function transformRequest(data, headers) {
+        normalizeHeaderName(headers, "Accept");
+        normalizeHeaderName(headers, "Content-Type");
+        if (utils.isFormData(data) || utils.isArrayBuffer(data) || utils.isBuffer(data) || utils.isStream(data) || utils.isFile(data) || utils.isBlob(data)) {
+          return data;
+        }
+        if (utils.isArrayBufferView(data)) {
+          return data.buffer;
+        }
+        if (utils.isURLSearchParams(data)) {
+          setContentTypeIfUnset(headers, "application/x-www-form-urlencoded;charset=utf-8");
+          return data.toString();
+        }
+        if (utils.isObject(data)) {
+          setContentTypeIfUnset(headers, "application/json;charset=utf-8");
+          return JSON.stringify(data);
+        }
+        return data;
+      }],
+      transformResponse: [function transformResponse(data) {
+        if (typeof data === "string") {
+          try {
+            data = JSON.parse(data);
+          } catch (e) {
+          }
+        }
+        return data;
+      }],
+      timeout: 0,
+      xsrfCookieName: "XSRF-TOKEN",
+      xsrfHeaderName: "X-XSRF-TOKEN",
+      maxContentLength: -1,
+      validateStatus: function validateStatus(status) {
+        return status >= 200 && status < 300;
+      }
+    };
+    defaults.headers = {
+      common: {
+        Accept: "application/json, text/plain, */*"
+      }
+    };
+    utils.forEach(["delete", "get", "head"], function forEachMethodNoData(method) {
+      defaults.headers[method] = {};
+    });
+    utils.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
+      defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+    });
+    module.exports = defaults;
+  },
+
+  14(require, exports, module) {
+    // node_modules/axios/lib/core/dispatchRequest.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    var transformData = require(18 /* ./transformData */);
+    var isCancel = require(9 /* ../cancel/isCancel */);
+    var defaults = require(19 /* ../defaults */);
+    function throwIfCancellationRequested(config) {
+      if (config.cancelToken) {
+        config.cancelToken.throwIfRequested();
+      }
+    }
+    module.exports = function dispatchRequest(config) {
+      throwIfCancellationRequested(config);
+      config.headers = config.headers || {};
+      config.data = transformData(config.data, config.headers, config.transformRequest);
+      config.headers = utils.merge(config.headers.common || {}, config.headers[config.method] || {}, config.headers);
+      utils.forEach(["delete", "get", "head", "post", "put", "patch", "common"], function cleanHeaderConfig(method) {
+        delete config.headers[method];
+      });
+      var adapter = config.adapter || defaults.adapter;
+      return adapter(config).then(function onAdapterResolution(response) {
+        throwIfCancellationRequested(config);
+        response.data = transformData(response.data, response.headers, config.transformResponse);
+        return response;
+      }, function onAdapterRejection(reason) {
+        if (!isCancel(reason)) {
+          throwIfCancellationRequested(config);
+          if (reason && reason.response) {
+            reason.response.data = transformData(reason.response.data, reason.response.headers, config.transformResponse);
+          }
+        }
+        return Promise.reject(reason);
+      });
+    };
+  },
+
+  16(require, exports, module) {
+    // node_modules/axios/lib/core/mergeConfig.js
+    "use strict";
+    var utils = require(29 /* ../utils */);
+    module.exports = function mergeConfig(config1, config2) {
+      config2 = config2 || {};
+      var config = {};
+      var valueFromConfig2Keys = ["url", "method", "params", "data"];
+      var mergeDeepPropertiesKeys = ["headers", "auth", "proxy"];
+      var defaultToConfig2Keys = ["baseURL", "url", "transformRequest", "transformResponse", "paramsSerializer", "timeout", "withCredentials", "adapter", "responseType", "xsrfCookieName", "xsrfHeaderName", "onUploadProgress", "onDownloadProgress", "maxContentLength", "validateStatus", "maxRedirects", "httpAgent", "httpsAgent", "cancelToken", "socketPath"];
+      utils.forEach(valueFromConfig2Keys, function valueFromConfig2(prop) {
+        if (typeof config2[prop] !== "undefined") {
+          config[prop] = config2[prop];
+        }
+      });
+      utils.forEach(mergeDeepPropertiesKeys, function mergeDeepProperties(prop) {
+        if (utils.isObject(config2[prop])) {
+          config[prop] = utils.deepMerge(config1[prop], config2[prop]);
+        } else if (typeof config2[prop] !== "undefined") {
+          config[prop] = config2[prop];
+        } else if (utils.isObject(config1[prop])) {
+          config[prop] = utils.deepMerge(config1[prop]);
+        } else if (typeof config1[prop] !== "undefined") {
+          config[prop] = config1[prop];
+        }
+      });
+      utils.forEach(defaultToConfig2Keys, function defaultToConfig2(prop) {
+        if (typeof config2[prop] !== "undefined") {
+          config[prop] = config2[prop];
+        } else if (typeof config1[prop] !== "undefined") {
+          config[prop] = config1[prop];
+        }
+      });
+      var axiosKeys = valueFromConfig2Keys.concat(mergeDeepPropertiesKeys).concat(defaultToConfig2Keys);
+      var otherKeys = Object.keys(config2).filter(function filterAxiosKeys(key) {
+        return axiosKeys.indexOf(key) === -1;
+      });
+      utils.forEach(otherKeys, function otherKeysDefaultToConfig2(prop) {
+        if (typeof config2[prop] !== "undefined") {
+          config[prop] = config2[prop];
+        } else if (typeof config1[prop] !== "undefined") {
+          config[prop] = config1[prop];
+        }
+      });
+      return config;
+    };
+  },
+
+  10(require, exports, module) {
+    // node_modules/axios/lib/core/Axios.js
+    "use strict";
+    var utils = require(29 /* ./../utils */);
+    var buildURL = require(21 /* ../helpers/buildURL */);
+    var InterceptorManager = require(11 /* ./InterceptorManager */);
+    var dispatchRequest = require(14 /* ./dispatchRequest */);
+    var mergeConfig = require(16 /* ./mergeConfig */);
+    function Axios(instanceConfig) {
+      this.defaults = instanceConfig;
+      this.interceptors = {
+        request: new InterceptorManager(),
+        response: new InterceptorManager()
+      };
+    }
+    Axios.prototype.request = function request(config) {
+      if (typeof config === "string") {
+        config = arguments[1] || {};
+        config.url = arguments[0];
+      } else {
+        config = config || {};
+      }
+      config = mergeConfig(this.defaults, config);
+      if (config.method) {
+        config.method = config.method.toLowerCase();
+      } else if (this.defaults.method) {
+        config.method = this.defaults.method.toLowerCase();
+      } else {
+        config.method = "get";
+      }
+      var chain = [dispatchRequest, void 0];
+      var promise = Promise.resolve(config);
+      this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+        chain.unshift(interceptor.fulfilled, interceptor.rejected);
+      });
+      this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+        chain.push(interceptor.fulfilled, interceptor.rejected);
+      });
+      while (chain.length) {
+        promise = promise.then(chain.shift(), chain.shift());
+      }
+      return promise;
+    };
+    Axios.prototype.getUri = function getUri(config) {
+      config = mergeConfig(this.defaults, config);
+      return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, "");
+    };
+    utils.forEach(["delete", "get", "head", "options"], function forEachMethodNoData(method) {
+      Axios.prototype[method] = function(url, config) {
+        return this.request(utils.merge(config || {}, {
+          method,
+          url
+        }));
+      };
+    });
+    utils.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
+      Axios.prototype[method] = function(url, data, config) {
+        return this.request(utils.merge(config || {}, {
+          method,
+          url,
+          data
+        }));
+      };
+    });
+    module.exports = Axios;
+  },
+
+  7(require, exports, module) {
+    // node_modules/axios/lib/cancel/Cancel.js
+    "use strict";
+    function Cancel(message) {
+      this.message = message;
+    }
+    Cancel.prototype.toString = function toString() {
+      return "Cancel" + (this.message ? ": " + this.message : "");
+    };
+    Cancel.prototype.__CANCEL__ = true;
+    module.exports = Cancel;
+  },
+
+  8(require, exports, module) {
+    // node_modules/axios/lib/cancel/CancelToken.js
+    "use strict";
+    var Cancel = require(7 /* ./Cancel */);
+    function CancelToken(executor) {
+      if (typeof executor !== "function") {
+        throw new TypeError("executor must be a function.");
+      }
+      var resolvePromise;
+      this.promise = new Promise(function promiseExecutor(resolve) {
+        resolvePromise = resolve;
+      });
+      var token = this;
+      executor(function cancel(message) {
+        if (token.reason) {
+          return;
+        }
+        token.reason = new Cancel(message);
+        resolvePromise(token.reason);
+      });
+    }
+    CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+      if (this.reason) {
+        throw this.reason;
+      }
+    };
+    CancelToken.source = function source() {
+      var cancel;
+      var token = new CancelToken(function executor(c) {
+        cancel = c;
+      });
+      return {
+        token,
+        cancel
+      };
+    };
+    module.exports = CancelToken;
+  },
+
+  28(require, exports, module) {
+    // node_modules/axios/lib/helpers/spread.js
+    "use strict";
+    module.exports = function spread(callback) {
+      return function wrap(arr) {
+        return callback.apply(null, arr);
+      };
+    };
+  },
+
+  6(require, exports, module) {
+    // node_modules/axios/lib/axios.js
+    "use strict";
+    var utils = require(29 /* ./utils */);
+    var bind = require(20 /* ./helpers/bind */);
+    var Axios = require(10 /* ./core/Axios */);
+    var mergeConfig = require(16 /* ./core/mergeConfig */);
+    var defaults = require(19 /* ./defaults */);
+    function createInstance(defaultConfig) {
+      var context = new Axios(defaultConfig);
+      var instance = bind(Axios.prototype.request, context);
+      utils.extend(instance, Axios.prototype, context);
+      utils.extend(instance, context);
+      return instance;
+    }
+    var axios = createInstance(defaults);
+    axios.Axios = Axios;
+    axios.create = function create(instanceConfig) {
+      return createInstance(mergeConfig(axios.defaults, instanceConfig));
+    };
+    axios.Cancel = require(7 /* ./cancel/Cancel */);
+    axios.CancelToken = require(8 /* ./cancel/CancelToken */);
+    axios.isCancel = require(9 /* ./cancel/isCancel */);
+    axios.all = function all(promises) {
+      return Promise.all(promises);
+    };
+    axios.spread = require(28 /* ./helpers/spread */);
+    module.exports = axios;
+    module.exports.default = axios;
+  },
+
+  4(require, exports, module) {
+    // node_modules/axios/index.js
+    module.exports = require(6 /* ./lib/axios */);
+  },
+
+  34(require, exports, module) {
+    // node_modules/flexsearch/dist/flexsearch.min.js
+    "use strict";
+    (function(K, R, w) {
+      let L;
+      (L = w.define) && L.amd ? L([], function() {
+        return R;
+      }) : (L = w.modules) ? L[K.toLowerCase()] = R : "object" === typeof exports ? module.exports = R : w[K] = R;
+    })("FlexSearch", function ma(K) {
+      function w(a, c) {
+        const b = c ? c.id : a && a.id;
+        this.id = b || 0 === b ? b : na++;
+        this.init(a, c);
+        fa(this, "index", function() {
+          return this.a ? Object.keys(this.a.index[this.a.keys[0]].c) : Object.keys(this.c);
+        });
+        fa(this, "length", function() {
+          return this.index.length;
+        });
+      }
+      function L(a, c, b, d) {
+        this.u !== this.g && (this.o = this.o.concat(b), this.u++, d && this.o.length >= d && (this.u = this.g), this.u === this.g && (this.cache && this.j.set(c, this.o), this.F && this.F(this.o)));
+        return this;
+      }
+      function S(a) {
+        const c = B();
+        for (const b in a)
+          if (a.hasOwnProperty(b)) {
+            const d = a[b];
+            F(d) ? c[b] = d.slice(0) : G(d) ? c[b] = S(d) : c[b] = d;
+          }
+        return c;
+      }
+      function W(a, c) {
+        const b = a.length, d = O(c), e = [];
+        for (let f = 0, h = 0; f < b; f++) {
+          const g = a[f];
+          if (d && c(g) || !d && !c[g])
+            e[h++] = g;
+        }
+        return e;
+      }
+      function P(a, c, b, d, e, f, h, g, k, l) {
+        b = ha(b, h ? 0 : e, g, f, c, k, l);
+        let p;
+        g && (g = b.page, p = b.next, b = b.result);
+        if (h)
+          c = this.where(h, null, e, b);
+        else {
+          c = b;
+          b = this.l;
+          e = c.length;
+          f = Array(e);
+          for (h = 0; h < e; h++)
+            f[h] = b[c[h]];
+          c = f;
+        }
+        b = c;
+        d && (O(d) || (M = d.split(":"), 1 < M.length ? d = oa : (M = M[0], d = pa)), b.sort(d));
+        b = T(g, p, b);
+        this.cache && this.j.set(a, b);
+        return b;
+      }
+      function fa(a, c, b) {
+        Object.defineProperty(a, c, {
+          get: b
+        });
+      }
+      function r(a) {
+        return new RegExp(a, "g");
+      }
+      function Q(a, c) {
+        for (let b = 0; b < c.length; b += 2)
+          a = a.replace(c[b], c[b + 1]);
+        return a;
+      }
+      function V(a, c, b, d, e, f, h, g) {
+        if (c[b])
+          return c[b];
+        e = e ? (g - (h || g / 1.5)) * f + (h || g / 1.5) * e : f;
+        c[b] = e;
+        e >= h && (a = a[g - (e + 0.5 >> 0)], a = a[b] || (a[b] = []), a[a.length] = d);
+        return e;
+      }
+      function ba(a, c) {
+        if (a) {
+          const b = Object.keys(a);
+          for (let d = 0, e = b.length; d < e; d++) {
+            const f = b[d], h = a[f];
+            if (h)
+              for (let g = 0, k = h.length; g < k; g++)
+                if (h[g] === c) {
+                  1 === k ? delete a[f] : h.splice(g, 1);
+                  break;
+                } else
+                  G(h[g]) && ba(h[g], c);
+          }
+        }
+      }
+      function ca(a) {
+        let c = "", b = "";
+        var d = "";
+        for (let e = 0; e < a.length; e++) {
+          const f = a[e];
+          if (f !== b)
+            if (e && "h" === f) {
+              if (d = "a" === d || "e" === d || "i" === d || "o" === d || "u" === d || "y" === d, ("a" === b || "e" === b || "i" === b || "o" === b || "u" === b || "y" === b) && d || " " === b)
+                c += f;
+            } else
+              c += f;
+          d = e === a.length - 1 ? "" : a[e + 1];
+          b = f;
+        }
+        return c;
+      }
+      function qa(a, c) {
+        a = a.length - c.length;
+        return 0 > a ? 1 : a ? -1 : 0;
+      }
+      function pa(a, c) {
+        a = a[M];
+        c = c[M];
+        return a < c ? -1 : a > c ? 1 : 0;
+      }
+      function oa(a, c) {
+        const b = M.length;
+        for (let d = 0; d < b; d++)
+          a = a[M[d]], c = c[M[d]];
+        return a < c ? -1 : a > c ? 1 : 0;
+      }
+      function T(a, c, b) {
+        return a ? {
+          page: a,
+          next: c ? "" + c : null,
+          result: b
+        } : b;
+      }
+      function ha(a, c, b, d, e, f, h) {
+        let g, k = [];
+        if (true === b) {
+          b = "0";
+          var l = "";
+        } else
+          l = b && b.split(":");
+        const p = a.length;
+        if (1 < p) {
+          const y = B(), t = [];
+          let v, x;
+          var n = 0, m;
+          let I;
+          var u = true;
+          let D, E = 0, N, da, X, ea;
+          l && (2 === l.length ? (X = l, l = false) : l = ea = parseInt(l[0], 10));
+          if (h) {
+            for (v = B(); n < p; n++)
+              if ("not" === e[n])
+                for (x = a[n], I = x.length, m = 0; m < I; m++)
+                  v["@" + x[m]] = 1;
+              else
+                da = n + 1;
+            if (C(da))
+              return T(b, g, k);
+            n = 0;
+          } else
+            N = J(e) && e;
+          let Y;
+          for (; n < p; n++) {
+            const ra = n === (da || p) - 1;
+            if (!N || !n)
+              if ((m = N || e && e[n]) && "and" !== m)
+                if ("or" === m)
+                  Y = false;
+                else
+                  continue;
+              else
+                Y = f = true;
+            x = a[n];
+            if (I = x.length) {
+              if (u)
+                if (D) {
+                  var q = D.length;
+                  for (m = 0; m < q; m++) {
+                    u = D[m];
+                    var A = "@" + u;
+                    h && v[A] || (y[A] = 1, f || (k[E++] = u));
+                  }
+                  D = null;
+                  u = false;
+                } else {
+                  D = x;
+                  continue;
+                }
+              A = false;
+              for (m = 0; m < I; m++) {
+                q = x[m];
+                var z = "@" + q;
+                const Z = f ? y[z] || 0 : n;
+                if (!(!Z && !d || h && v[z] || !f && y[z]))
+                  if (Z === n) {
+                    if (ra) {
+                      if (!ea || --ea < E) {
+                        if (k[E++] = q, c && E === c)
+                          return T(b, E + (l || 0), k);
+                      }
+                    } else
+                      y[z] = n + 1;
+                    A = true;
+                  } else
+                    d && (z = t[Z] || (t[Z] = []), z[z.length] = q);
+              }
+              if (Y && !A && !d)
+                break;
+            } else if (Y && !d)
+              return T(b, g, x);
+          }
+          if (D)
+            if (n = D.length, h)
+              for (m = l ? parseInt(l, 10) : 0; m < n; m++)
+                a = D[m], v["@" + a] || (k[E++] = a);
+            else
+              k = D;
+          if (d) {
+            for (E = k.length, X ? (n = parseInt(X[0], 10) + 1, m = parseInt(X[1], 10) + 1) : (n = t.length, m = 0); n--; )
+              if (q = t[n]) {
+                for (I = q.length; m < I; m++)
+                  if (d = q[m], !h || !v["@" + d]) {
+                    if (k[E++] = d, c && E === c)
+                      return T(b, n + ":" + m, k);
+                  }
+                m = 0;
+              }
+          }
+        } else
+          !p || e && "not" === e[0] || (k = a[0], l && (l = parseInt(l[0], 10)));
+        c && (h = k.length, l && l > h && (l = 0), l = l || 0, g = l + c, g < h ? k = k.slice(l, g) : (g = 0, l && (k = k.slice(l))));
+        return T(b, g, k);
+      }
+      function J(a) {
+        return "string" === typeof a;
+      }
+      function F(a) {
+        return a.constructor === Array;
+      }
+      function O(a) {
+        return "function" === typeof a;
+      }
+      function G(a) {
+        return "object" === typeof a;
+      }
+      function C(a) {
+        return "undefined" === typeof a;
+      }
+      function ia(a) {
+        const c = Array(a);
+        for (let b = 0; b < a; b++)
+          c[b] = B();
+        return c;
+      }
+      function B() {
+        return Object.create(null);
+      }
+      function sa() {
+        let a, c;
+        self.onmessage = function(b) {
+          if (b = b.data)
+            if (b.search) {
+              const d = c.search(b.content, b.threshold ? {
+                limit: b.limit,
+                threshold: b.threshold,
+                where: b.where
+              } : b.limit);
+              self.postMessage({
+                id: a,
+                content: b.content,
+                limit: b.limit,
+                result: d
+              });
+            } else
+              b.add ? c.add(b.id, b.content) : b.update ? c.update(b.id, b.content) : b.remove ? c.remove(b.id) : b.clear ? c.clear() : b.info ? (b = c.info(), b.worker = a, console.log(b)) : b.register && (a = b.id, b.options.cache = false, b.options.async = false, b.options.worker = false, c = new Function(b.register.substring(b.register.indexOf("{") + 1, b.register.lastIndexOf("}")))(), c = new c(b.options));
+        };
+      }
+      function ta(a, c, b, d) {
+        a = K("flexsearch", "id" + a, sa, function(f) {
+          (f = f.data) && f.result && d(f.id, f.content, f.result, f.limit, f.where, f.cursor, f.suggest);
+        }, c);
+        const e = ma.toString();
+        b.id = c;
+        a.postMessage({
+          register: e,
+          options: b,
+          id: c
+        });
+        return a;
+      }
+      const H = {
+        encode: "icase",
+        f: "forward",
+        split: /\W+/,
+        cache: false,
+        async: false,
+        g: false,
+        D: false,
+        a: false,
+        b: 9,
+        threshold: 0,
+        depth: 0
+      }, ja = {
+        memory: {
+          encode: "extra",
+          f: "strict",
+          threshold: 0,
+          b: 1
+        },
+        speed: {
+          encode: "icase",
+          f: "strict",
+          threshold: 1,
+          b: 3,
+          depth: 2
+        },
+        match: {
+          encode: "extra",
+          f: "full",
+          threshold: 1,
+          b: 3
+        },
+        score: {
+          encode: "extra",
+          f: "strict",
+          threshold: 1,
+          b: 9,
+          depth: 4
+        },
+        balance: {
+          encode: "balance",
+          f: "strict",
+          threshold: 0,
+          b: 3,
+          depth: 3
+        },
+        fast: {
+          encode: "icase",
+          f: "strict",
+          threshold: 8,
+          b: 9,
+          depth: 1
+        }
+      }, aa = [];
+      let na = 0;
+      const ka = {}, la = {};
+      w.create = function(a, c) {
+        return new w(a, c);
+      };
+      w.registerMatcher = function(a) {
+        for (const c in a)
+          a.hasOwnProperty(c) && aa.push(r(c), a[c]);
+        return this;
+      };
+      w.registerEncoder = function(a, c) {
+        U[a] = c.bind(U);
+        return this;
+      };
+      w.registerLanguage = function(a, c) {
+        ka[a] = c.filter;
+        la[a] = c.stemmer;
+        return this;
+      };
+      w.encode = function(a, c) {
+        return U[a](c);
+      };
+      w.prototype.init = function(a, c) {
+        this.v = [];
+        if (c) {
+          var b = c.preset;
+          a = c;
+        } else
+          a || (a = H), b = a.preset;
+        c = {};
+        J(a) ? (c = ja[a], a = {}) : b && (c = ja[b]);
+        if (b = a.worker)
+          if ("undefined" === typeof Worker)
+            a.worker = false, this.m = null;
+          else {
+            var d = parseInt(b, 10) || 4;
+            this.C = -1;
+            this.u = 0;
+            this.o = [];
+            this.F = null;
+            this.m = Array(d);
+            for (var e = 0; e < d; e++)
+              this.m[e] = ta(this.id, e, a, L.bind(this));
+          }
+        this.f = a.tokenize || c.f || this.f || H.f;
+        this.split = C(b = a.split) ? this.split || H.split : J(b) ? r(b) : b;
+        this.D = a.rtl || this.D || H.D;
+        this.async = "undefined" === typeof Promise || C(b = a.async) ? this.async || H.async : b;
+        this.g = C(b = a.worker) ? this.g || H.g : b;
+        this.threshold = C(b = a.threshold) ? c.threshold || this.threshold || H.threshold : b;
+        this.b = C(b = a.resolution) ? b = c.b || this.b || H.b : b;
+        b <= this.threshold && (this.b = this.threshold + 1);
+        this.depth = "strict" !== this.f || C(b = a.depth) ? c.depth || this.depth || H.depth : b;
+        this.w = (b = C(b = a.encode) ? c.encode || H.encode : b) && U[b] && U[b].bind(U) || (O(b) ? b : this.w || false);
+        (b = a.matcher) && this.addMatcher(b);
+        if (b = (c = a.lang) || a.filter) {
+          J(b) && (b = ka[b]);
+          if (F(b)) {
+            d = this.w;
+            e = B();
+            for (var f = 0; f < b.length; f++) {
+              var h = d ? d(b[f]) : b[f];
+              e[h] = 1;
+            }
+            b = e;
+          }
+          this.filter = b;
+        }
+        if (b = c || a.stemmer) {
+          var g;
+          c = J(b) ? la[b] : b;
+          d = this.w;
+          e = [];
+          for (g in c)
+            c.hasOwnProperty(g) && (f = d ? d(g) : g, e.push(r(f + "($|\\W)"), d ? d(c[g]) : c[g]));
+          this.stemmer = g = e;
+        }
+        this.a = e = (b = a.doc) ? S(b) : this.a || H.a;
+        this.i = ia(this.b - (this.threshold || 0));
+        this.h = B();
+        this.c = B();
+        if (e) {
+          this.l = B();
+          a.doc = null;
+          g = e.index = {};
+          c = e.keys = [];
+          d = e.field;
+          f = e.tag;
+          h = e.store;
+          F(e.id) || (e.id = e.id.split(":"));
+          if (h) {
+            var k = B();
+            if (J(h))
+              k[h] = 1;
+            else if (F(h))
+              for (let l = 0; l < h.length; l++)
+                k[h[l]] = 1;
+            else
+              G(h) && (k = h);
+            e.store = k;
+          }
+          if (f) {
+            this.G = B();
+            h = B();
+            if (d)
+              if (J(d))
+                h[d] = a;
+              else if (F(d))
+                for (k = 0; k < d.length; k++)
+                  h[d[k]] = a;
+              else
+                G(d) && (h = d);
+            F(f) || (e.tag = f = [f]);
+            for (d = 0; d < f.length; d++)
+              this.G[f[d]] = B();
+            this.I = f;
+            d = h;
+          }
+          if (d) {
+            let l;
+            F(d) || (G(d) ? (l = d, e.field = d = Object.keys(d)) : e.field = d = [d]);
+            for (e = 0; e < d.length; e++)
+              f = d[e], F(f) || (l && (a = l[f]), c[e] = f, d[e] = f.split(":")), g[f] = new w(a);
+          }
+          a.doc = b;
+        }
+        this.B = true;
+        this.j = (this.cache = b = C(b = a.cache) ? this.cache || H.cache : b) ? new ua(b) : false;
+        return this;
+      };
+      w.prototype.encode = function(a) {
+        a && (aa.length && (a = Q(a, aa)), this.v.length && (a = Q(a, this.v)), this.w && (a = this.w(a)), this.stemmer && (a = Q(a, this.stemmer)));
+        return a;
+      };
+      w.prototype.addMatcher = function(a) {
+        const c = this.v;
+        for (const b in a)
+          a.hasOwnProperty(b) && c.push(r(b), a[b]);
+        return this;
+      };
+      w.prototype.add = function(a, c, b, d, e) {
+        if (this.a && G(a))
+          return this.A("add", a, c);
+        if (c && J(c) && (a || 0 === a)) {
+          var f = "@" + a;
+          if (this.c[f] && !d)
+            return this.update(a, c);
+          if (this.g)
+            return ++this.C >= this.m.length && (this.C = 0), this.m[this.C].postMessage({
+              add: true,
+              id: a,
+              content: c
+            }), this.c[f] = "" + this.C, b && b(), this;
+          if (!e) {
+            if (this.async && "function" !== typeof importScripts) {
+              let t = this;
+              f = new Promise(function(v) {
+                setTimeout(function() {
+                  t.add(a, c, null, d, true);
+                  t = null;
+                  v();
+                });
+              });
+              if (b)
+                f.then(b);
+              else
+                return f;
+              return this;
+            }
+            if (b)
+              return this.add(a, c, null, d, true), b(), this;
+          }
+          c = this.encode(c);
+          if (!c.length)
+            return this;
+          b = this.f;
+          e = O(b) ? b(c) : c.split(this.split);
+          this.filter && (e = W(e, this.filter));
+          const n = B();
+          n._ctx = B();
+          const m = e.length, u = this.threshold, q = this.depth, A = this.b, z = this.i, y = this.D;
+          for (let t = 0; t < m; t++) {
+            var h = e[t];
+            if (h) {
+              var g = h.length, k = (y ? t + 1 : m - t) / m, l = "";
+              switch (b) {
+                case "reverse":
+                case "both":
+                  for (var p = g; --p; )
+                    l = h[p] + l, V(z, n, l, a, y ? 1 : (g - p) / g, k, u, A - 1);
+                  l = "";
+                case "forward":
+                  for (p = 0; p < g; p++)
+                    l += h[p], V(z, n, l, a, y ? (p + 1) / g : 1, k, u, A - 1);
+                  break;
+                case "full":
+                  for (p = 0; p < g; p++) {
+                    const v = (y ? p + 1 : g - p) / g;
+                    for (let x = g; x > p; x--)
+                      l = h.substring(p, x), V(z, n, l, a, v, k, u, A - 1);
+                  }
+                  break;
+                default:
+                  if (g = V(z, n, h, a, 1, k, u, A - 1), q && 1 < m && g >= u)
+                    for (g = n._ctx[h] || (n._ctx[h] = B()), h = this.h[h] || (this.h[h] = ia(A - (u || 0))), k = t - q, l = t + q + 1, 0 > k && (k = 0), l > m && (l = m); k < l; k++)
+                      k !== t && V(h, g, e[k], a, 0, A - (k < t ? t - k : k - t), u, A - 1);
+              }
+            }
+          }
+          this.c[f] = 1;
+          this.B = false;
+        }
+        return this;
+      };
+      w.prototype.A = function(a, c, b) {
+        if (F(c)) {
+          var d = c.length;
+          if (d--) {
+            for (var e = 0; e < d; e++)
+              this.A(a, c[e]);
+            return this.A(a, c[d], b);
+          }
+        } else {
+          var f = this.a.index, h = this.a.keys, g = this.a.tag;
+          e = this.a.store;
+          var k;
+          var l = this.a.id;
+          d = c;
+          for (var p = 0; p < l.length; p++)
+            d = d[l[p]];
+          if ("remove" === a && (delete this.l[d], l = h.length, l--)) {
+            for (c = 0; c < l; c++)
+              f[h[c]].remove(d);
+            return f[h[l]].remove(d, b);
+          }
+          if (g) {
+            for (k = 0; k < g.length; k++) {
+              var n = g[k];
+              var m = c;
+              l = n.split(":");
+              for (p = 0; p < l.length; p++)
+                m = m[l[p]];
+              m = "@" + m;
+            }
+            k = this.G[n];
+            k = k[m] || (k[m] = []);
+          }
+          l = this.a.field;
+          for (let u = 0, q = l.length; u < q; u++) {
+            n = l[u];
+            g = c;
+            for (m = 0; m < n.length; m++)
+              g = g[n[m]];
+            n = f[h[u]];
+            m = "add" === a ? n.add : n.update;
+            u === q - 1 ? m.call(n, d, g, b) : m.call(n, d, g);
+          }
+          if (e) {
+            b = Object.keys(e);
+            a = B();
+            for (f = 0; f < b.length; f++)
+              if (h = b[f], e[h]) {
+                h = h.split(":");
+                let u, q;
+                for (l = 0; l < h.length; l++)
+                  g = h[l], u = (u || c)[g], q = (q || a)[g] = u;
+              }
+            c = a;
+          }
+          k && (k[k.length] = c);
+          this.l[d] = c;
+        }
+        return this;
+      };
+      w.prototype.update = function(a, c, b) {
+        if (this.a && G(a))
+          return this.A("update", a, c);
+        this.c["@" + a] && J(c) && (this.remove(a), this.add(a, c, b, true));
+        return this;
+      };
+      w.prototype.remove = function(a, c, b) {
+        if (this.a && G(a))
+          return this.A("remove", a, c);
+        var d = "@" + a;
+        if (this.c[d]) {
+          if (this.g)
+            return this.m[this.c[d]].postMessage({
+              remove: true,
+              id: a
+            }), delete this.c[d], c && c(), this;
+          if (!b) {
+            if (this.async && "function" !== typeof importScripts) {
+              let e = this;
+              d = new Promise(function(f) {
+                setTimeout(function() {
+                  e.remove(a, null, true);
+                  e = null;
+                  f();
+                });
+              });
+              if (c)
+                d.then(c);
+              else
+                return d;
+              return this;
+            }
+            if (c)
+              return this.remove(a, null, true), c(), this;
+          }
+          for (c = 0; c < this.b - (this.threshold || 0); c++)
+            ba(this.i[c], a);
+          this.depth && ba(this.h, a);
+          delete this.c[d];
+          this.B = false;
+        }
+        return this;
+      };
+      let M;
+      w.prototype.search = function(a, c, b, d) {
+        if (G(c)) {
+          if (F(c))
+            for (var e = 0; e < c.length; e++)
+              c[e].query = a;
+          else
+            c.query = a;
+          a = c;
+          c = 1000;
+        } else
+          c && O(c) ? (b = c, c = 1000) : c || 0 === c || (c = 1000);
+        if (this.g) {
+          this.F = b;
+          this.u = 0;
+          this.o = [];
+          for (var f = 0; f < this.g; f++)
+            this.m[f].postMessage({
+              search: true,
+              limit: c,
+              content: a
+            });
+        } else {
+          var h = [], g = a;
+          if (G(a) && !F(a)) {
+            b || (b = a.callback) && (g.callback = null);
+            var k = a.sort;
+            var l = a.page;
+            c = a.limit;
+            f = a.threshold;
+            var p = a.suggest;
+            a = a.query;
+          }
+          if (this.a) {
+            f = this.a.index;
+            const y = g.where;
+            var n = g.bool || "or", m = g.field;
+            let t = n;
+            let v, x;
+            if (m)
+              F(m) || (m = [m]);
+            else if (F(g)) {
+              var u = g;
+              m = [];
+              t = [];
+              for (var q = 0; q < g.length; q++)
+                d = g[q], e = d.bool || n, m[q] = d.field, t[q] = e, "not" === e ? v = true : "and" === e && (x = true);
+            } else
+              m = this.a.keys;
+            n = m.length;
+            for (q = 0; q < n; q++)
+              u && (g = u[q]), l && !J(g) && (g.page = null, g.limit = 0), h[q] = f[m[q]].search(g, 0);
+            if (b)
+              return b(P.call(this, a, t, h, k, c, p, y, l, x, v));
+            if (this.async) {
+              const I = this;
+              return new Promise(function(D) {
+                Promise.all(h).then(function(E) {
+                  D(P.call(I, a, t, E, k, c, p, y, l, x, v));
+                });
+              });
+            }
+            return P.call(this, a, t, h, k, c, p, y, l, x, v);
+          }
+          f || (f = this.threshold || 0);
+          if (!d) {
+            if (this.async && "function" !== typeof importScripts) {
+              let y = this;
+              f = new Promise(function(t) {
+                setTimeout(function() {
+                  t(y.search(g, c, null, true));
+                  y = null;
+                });
+              });
+              if (b)
+                f.then(b);
+              else
+                return f;
+              return this;
+            }
+            if (b)
+              return b(this.search(g, c, null, true)), this;
+          }
+          if (!a || !J(a))
+            return h;
+          g = a;
+          if (this.cache)
+            if (this.B) {
+              if (b = this.j.get(a))
+                return b;
+            } else
+              this.j.clear(), this.B = true;
+          g = this.encode(g);
+          if (!g.length)
+            return h;
+          b = this.f;
+          b = O(b) ? b(g) : g.split(this.split);
+          this.filter && (b = W(b, this.filter));
+          u = b.length;
+          d = true;
+          e = [];
+          var A = B(), z = 0;
+          1 < u && (this.depth && "strict" === this.f ? n = true : b.sort(qa));
+          if (!n || (q = this.h)) {
+            const y = this.b;
+            for (; z < u; z++) {
+              let t = b[z];
+              if (t) {
+                if (n) {
+                  if (!m) {
+                    if (q[t])
+                      m = t, A[t] = 1;
+                    else if (!p)
+                      return h;
+                  }
+                  if (p && z === u - 1 && !e.length)
+                    n = false, t = m || t, A[t] = 0;
+                  else if (!m)
+                    continue;
+                }
+                if (!A[t]) {
+                  const v = [];
+                  let x = false, I = 0;
+                  const D = n ? q[m] : this.i;
+                  if (D) {
+                    let E;
+                    for (let N = 0; N < y - f; N++)
+                      if (E = D[N] && D[N][t])
+                        v[I++] = E, x = true;
+                  }
+                  if (x)
+                    m = t, e[e.length] = 1 < I ? v.concat.apply([], v) : v[0];
+                  else if (!p) {
+                    d = false;
+                    break;
+                  }
+                  A[t] = 1;
+                }
+              }
+            }
+          } else
+            d = false;
+          d && (h = ha(e, c, l, p));
+          this.cache && this.j.set(a, h);
+          return h;
+        }
+      };
+      w.prototype.find = function(a, c) {
+        return this.where(a, c, 1)[0] || null;
+      };
+      w.prototype.where = function(a, c, b, d) {
+        const e = this.l, f = [];
+        let h = 0;
+        let g;
+        var k;
+        let l;
+        if (G(a)) {
+          b || (b = c);
+          var p = Object.keys(a);
+          var n = p.length;
+          g = false;
+          if (1 === n && "id" === p[0])
+            return [e[a.id]];
+          if ((k = this.I) && !d)
+            for (var m = 0; m < k.length; m++) {
+              var u = k[m], q = a[u];
+              if (!C(q)) {
+                l = this.G[u]["@" + q];
+                if (0 === --n)
+                  return l;
+                p.splice(p.indexOf(u), 1);
+                delete a[u];
+                break;
+              }
+            }
+          k = Array(n);
+          for (m = 0; m < n; m++)
+            k[m] = p[m].split(":");
+        } else {
+          if (O(a)) {
+            c = d || Object.keys(e);
+            b = c.length;
+            for (p = 0; p < b; p++)
+              n = e[c[p]], a(n) && (f[h++] = n);
+            return f;
+          }
+          if (C(c))
+            return [e[a]];
+          if ("id" === a)
+            return [e[c]];
+          p = [a];
+          n = 1;
+          k = [a.split(":")];
+          g = true;
+        }
+        d = l || d || Object.keys(e);
+        m = d.length;
+        for (u = 0; u < m; u++) {
+          q = l ? d[u] : e[d[u]];
+          let A = true;
+          for (let z = 0; z < n; z++) {
+            g || (c = a[p[z]]);
+            const y = k[z], t = y.length;
+            let v = q;
+            if (1 < t)
+              for (let x = 0; x < t; x++)
+                v = v[y[x]];
+            else
+              v = v[y[0]];
+            if (v !== c) {
+              A = false;
+              break;
+            }
+          }
+          if (A && (f[h++] = q, b && h === b))
+            break;
+        }
+        return f;
+      };
+      w.prototype.info = function() {
+        if (this.g)
+          for (let a = 0; a < this.g; a++)
+            this.m[a].postMessage({
+              info: true,
+              id: this.id
+            });
+        else
+          return {
+            id: this.id,
+            items: this.length,
+            cache: this.cache && this.cache.s ? this.cache.s.length : false,
+            matcher: aa.length + (this.v ? this.v.length : 0),
+            worker: this.g,
+            threshold: this.threshold,
+            depth: this.depth,
+            resolution: this.b,
+            contextual: this.depth && "strict" === this.f
+          };
+      };
+      w.prototype.clear = function() {
+        return this.destroy().init();
+      };
+      w.prototype.destroy = function() {
+        this.cache && (this.j.clear(), this.j = null);
+        this.i = this.h = this.c = null;
+        if (this.a) {
+          const a = this.a.keys;
+          for (let c = 0; c < a.length; c++)
+            this.a.index[a[c]].destroy();
+          this.a = this.l = null;
+        }
+        return this;
+      };
+      w.prototype.export = function(a) {
+        const c = !a || C(a.serialize) || a.serialize;
+        if (this.a) {
+          const d = !a || C(a.doc) || a.doc;
+          var b = !a || C(a.index) || a.index;
+          a = [];
+          let e = 0;
+          if (b)
+            for (b = this.a.keys; e < b.length; e++) {
+              const f = this.a.index[b[e]];
+              a[e] = [f.i, f.h, Object.keys(f.c)];
+            }
+          d && (a[e] = this.l);
+        } else
+          a = [this.i, this.h, Object.keys(this.c)];
+        c && (a = JSON.stringify(a));
+        return a;
+      };
+      w.prototype.import = function(a, c) {
+        if (!c || C(c.serialize) || c.serialize)
+          a = JSON.parse(a);
+        const b = B();
+        if (this.a) {
+          var d = !c || C(c.doc) || c.doc, e = 0;
+          if (!c || C(c.index) || c.index) {
+            c = this.a.keys;
+            const h = c.length;
+            for (var f = a[0][2]; e < f.length; e++)
+              b[f[e]] = 1;
+            for (e = 0; e < h; e++) {
+              f = this.a.index[c[e]];
+              const g = a[e];
+              g && (f.i = g[0], f.h = g[1], f.c = b);
+            }
+          }
+          d && (this.l = G(d) ? d : a[e]);
+        } else {
+          d = a[2];
+          for (e = 0; e < d.length; e++)
+            b[d[e]] = 1;
+          this.i = a[0];
+          this.h = a[1];
+          this.c = b;
+        }
+      };
+      const va = function() {
+        const a = r("\\s+"), c = r("[^a-z0-9 ]"), b = [r("[-/]"), " ", c, "", a, " "];
+        return function(d) {
+          return ca(Q(d.toLowerCase(), b));
+        };
+      }(), U = {
+        icase: function(a) {
+          return a.toLowerCase();
+        },
+        simple: function() {
+          const a = r("\\s+"), c = r("[^a-z0-9 ]"), b = r("[-/]"), d = r("[àáâãäå]"), e = r("[èéêë]"), f = r("[ìíîï]"), h = r("[òóôõöő]"), g = r("[ùúûüű]"), k = r("[ýŷÿ]"), l = r("ñ"), p = r("[çc]"), n = r("ß"), m = r(" & "), u = [d, "a", e, "e", f, "i", h, "o", g, "u", k, "y", l, "n", p, "k", n, "s", m, " and ", b, " ", c, "", a, " "];
+          return function(q) {
+            q = Q(q.toLowerCase(), u);
+            return " " === q ? "" : q;
+          };
+        }(),
+        advanced: function() {
+          const a = r("ae"), c = r("ai"), b = r("ay"), d = r("ey"), e = r("oe"), f = r("ue"), h = r("ie"), g = r("sz"), k = r("zs"), l = r("ck"), p = r("cc"), n = r("sh"), m = r("th"), u = r("dt"), q = r("ph"), A = r("pf"), z = r("ou"), y = r("uo"), t = [a, "a", c, "ei", b, "ei", d, "ei", e, "o", f, "u", h, "i", g, "s", k, "s", n, "s", l, "k", p, "k", m, "t", u, "t", q, "f", A, "f", z, "o", y, "u"];
+          return function(v, x) {
+            if (!v)
+              return v;
+            v = this.simple(v);
+            2 < v.length && (v = Q(v, t));
+            x || 1 < v.length && (v = ca(v));
+            return v;
+          };
+        }(),
+        extra: function() {
+          const a = r("p"), c = r("z"), b = r("[cgq]"), d = r("n"), e = r("d"), f = r("[vw]"), h = r("[aeiouy]"), g = [a, "b", c, "s", b, "k", d, "m", e, "t", f, "f", h, ""];
+          return function(k) {
+            if (!k)
+              return k;
+            k = this.advanced(k, true);
+            if (1 < k.length) {
+              k = k.split(" ");
+              for (let l = 0; l < k.length; l++) {
+                const p = k[l];
+                1 < p.length && (k[l] = p[0] + Q(p.substring(1), g));
+              }
+              k = k.join(" ");
+              k = ca(k);
+            }
+            return k;
+          };
+        }(),
+        balance: va
+      }, ua = function() {
+        function a(c) {
+          this.clear();
+          this.H = true !== c && c;
+        }
+        a.prototype.clear = function() {
+          this.cache = B();
+          this.count = B();
+          this.index = B();
+          this.s = [];
+        };
+        a.prototype.set = function(c, b) {
+          if (this.H && C(this.cache[c])) {
+            let d = this.s.length;
+            if (d === this.H) {
+              d--;
+              const e = this.s[d];
+              delete this.cache[e];
+              delete this.count[e];
+              delete this.index[e];
+            }
+            this.index[c] = d;
+            this.s[d] = c;
+            this.count[c] = -1;
+            this.cache[c] = b;
+            this.get(c);
+          } else
+            this.cache[c] = b;
+        };
+        a.prototype.get = function(c) {
+          const b = this.cache[c];
+          if (this.H && b) {
+            var d = ++this.count[c];
+            const f = this.index;
+            let h = f[c];
+            if (0 < h) {
+              const g = this.s;
+              for (var e = h; this.count[g[--h]] <= d && -1 !== h; )
+                ;
+              h++;
+              if (h !== e) {
+                for (d = e; d > h; d--)
+                  e = g[d - 1], g[d] = e, f[e] = d;
+                g[h] = c;
+                f[c] = h;
+              }
+            }
+          }
+          return b;
+        };
+        return a;
+      }();
+      return w;
+    }(function() {
+      const K = {}, R = "undefined" !== typeof Blob && "undefined" !== typeof URL && URL.createObjectURL;
+      return function(w, L, S, W, P) {
+        S = R ? URL.createObjectURL(new Blob(["(" + S.toString() + ")()"], {
+          type: "text/javascript"
+        })) : w + ".min.js";
+        w += "-" + L;
+        K[w] || (K[w] = []);
+        K[w][P] = new Worker(S);
+        K[w][P].onmessage = W;
+        return K[w][P];
+      };
+    }()), this);
   }
-}, 25);
+}, 79);
 //# sourceMappingURL=bundle.js.map
