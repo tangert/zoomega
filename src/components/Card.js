@@ -175,17 +175,6 @@ const Card = ({
               <ActionButton onClick={() => handleZoom(id)}>zoom</ActionButton>
             </div>
           </ActionRow>
-          <Content
-            value={content}
-            onFocus={(e) => {
-              setIsTyping(true);
-              e.stopPropagation();
-              e.preventDefault();
-            }}
-            onBlur={() => setIsTyping(false)}
-            onChange={e => onUpdate(id, 'content', e.target.value)}
-          />
-
           <Slate editor={editor} value={content} onChange={newValue => onUpdate(id, 'content', newValue)}>
             <Editable />
           </Slate>

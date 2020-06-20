@@ -25981,16 +25981,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onClick: () => onDelete(id)
       }, "x"), React3.createElement(ActionButton, {
         onClick: () => handleZoom(id)
-      }, "zoom"))), React3.createElement(Content, {
-        value: content,
-        onFocus: (e) => {
-          setIsTyping(true);
-          e.stopPropagation();
-          e.preventDefault();
-        },
-        onBlur: () => setIsTyping(false),
-        onChange: (e) => onUpdate(id, "content", e.target.value)
-      }), React3.createElement(slate_react.Slate, {
+      }, "zoom"))), React3.createElement(slate_react.Slate, {
         editor,
         value: content,
         onChange: (newValue) => onUpdate(id, "content", newValue)
