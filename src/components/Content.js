@@ -113,7 +113,10 @@ const DropdownSelect = (props) => {
 const Content = ({
   id,
   content,
-  onUpdate
+  onUpdate,
+  search,
+  setSearch,
+  searchResults
 }) => {
   const editor = React.useMemo(() => withMentions(withReact(createEditor())), [])
 
@@ -122,8 +125,9 @@ const Content = ({
   const [target, setTarget] = React.useState()
   // Index is the current selected index in the search results array.
   const [index, setIndex] = React.useState(0)
-  const [search, setSearch] = React.useState('')
+  // const [search, setSearch] = React.useState('')
   const ref = React.useRef()
+
 
   // this is the basic search...
   // now you can hook this up to a fuzzy searcher that goeos through the content and titles of all your data! then you can link to cards.
@@ -195,23 +199,25 @@ const Content = ({
         switch (event.key) {
           case 'ArrowDown':
             event.preventDefault()
-            const prevIndex = index >= chars.length - 1 ? 0 : index + 1
+            const prevIndex = index >= searchResults.length - 1 ? 0 : index + 1
             setIndex(prevIndex)
             break
           case 'ArrowUp':
             event.preventDefault()
-            const nextIndex = index <= 0 ? chars.length - 1 : index - 1
+            const nextIndex = index <= 0 ? searchResults.length - 1 : index - 1
             setIndex(nextIndex)
             break
           case 'Tab':
           case 'Enter':
             event.preventDefault()
             Transforms.select(editor, target)
-            insertMention(editor, chars[index])
+            insertMention(editor, searchResults[index])
+            setSearch('')
             setTarget(null)
             break
           case 'Escape':
             event.preventDefault()
+            setSearch('')
             setTarget(null)
             break
         }
@@ -221,14 +227,14 @@ const Content = ({
   )
 
   React.useEffect(() => {
-    if (target && chars.length > 0) {
+    if (target && searchResults.length > 0) {
       const el = ref.current
       const domRange = ReactEditor.toDOMRange(editor, target)
       const rect = domRange.getBoundingClientRect()
       el.style.top = `${rect.top + window.pageYOffset + 24}px`
       el.style.left = `${rect.left + window.pageXOffset}px`
     }
-  }, [chars.length, editor, index, search, target])
+  }, [searchResults.length, editor, index, search, target])
 
   return (
     <ContentWrapper>
@@ -270,7 +276,7 @@ const Content = ({
           renderLeaf={renderLeaf}
           onKeyDown={onKeyDown}
         />
-        {target && chars.length > 0 && (
+        {target && searchResults.length > 0 && (
           <Portal>
             <div
               ref={ref}
@@ -285,16 +291,17 @@ const Content = ({
                 boxShadow: '0 1px 5px rgba(0,0,0,.2)',
               }}
             >
-              {chars.map((char, i) => (
+              {searchResults.map(({item}, i) => (
                 <div
-                  key={char}
+                  key={item.id}
                   style={{
                     padding: '1px 3px',
                     borderRadius: '3px',
                     background: i === index ? '#B4D5FF' : 'transparent',
                   }}
                 >
-                  {char}
+                  <div>{item.title}</div>
+                  <div>{item.children[0]}</div>
                 </div>
               ))}
             </div>

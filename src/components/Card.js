@@ -87,6 +87,9 @@ const Card = ({
   onUpdate,
   onDelete,
   shiftDown,
+  search,
+  setSearch,
+  searchResults,
   children,
   ...props
 }) => {
@@ -133,11 +136,12 @@ const Card = ({
         onUpdate(id, 'size', { width: ref.offsetWidth, height: ref.offsetHeight })
       }}
       {...props}
+      onBlur={()=>setSearch('')}
     >
       <Flipped flipId={id}>
         <CardWrapper>
-        
-        { /* Main controls for the card. */ }
+
+          { /* Main controls for the card. */}
           <ActionRow>
             <Flipped flipId={`layer-id-${id}`}>
               <Input onFocus={(e) => {
@@ -156,10 +160,26 @@ const Card = ({
             </div>
           </ActionRow>
 
-          { /* This can be any arbitrary text editor, including code. */ }
-          <Content id={id} content={content} onUpdate={onUpdate}/>
-          
-          { /* Visualize which cards are in here! */ }
+          <Input onFocus={(e) => {
+            setIsTyping(true);
+            e.stopPropagation();
+            e.preventDefault();
+          }}
+            onBlur={() => setIsTyping(false)}
+            onChange={e => setSearch(e.target.value)}
+            value={search} />
+
+          { /* This can be any arbitrary text editor, including code. */}
+          <Content
+            id={id}
+            content={content}
+            onUpdate={onUpdate}
+            search={search}
+            setSearch={setSearch}
+            searchResults={searchResults}
+          />
+
+          { /* Visualize which cards are in here! */}
           <CardPreviewContainer>
             {children.map(c => {
               return (

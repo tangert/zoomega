@@ -6,8 +6,9 @@ import { Flipper, Flipped } from 'react-flip-toolkit'
 import { omit } from 'lodash'
 import axios from 'axios';
 import styled from 'styled-components';
-import * as FlexSearch from 'flexsearch';
 import { CARD_SIZE, DEFAULT_CARD_CONTENT, theme } from './constants'
+import Fuse from 'fuse.js'
+// import * as FlexSearch from 'flexsearch';
 
 /*
 you want to build a basic zui like a blog.
@@ -139,10 +140,10 @@ const BreadcrumbSeparator = styled.div`
   padding: ${theme.padding/2}px ${theme.padding/2}px;
 `
 const genID = () => '_' + Math.random().toString(36).substr(2, 9);
-const SERVER_URL = 'https://zoomega-server.tangert.repl.co'
 
-const App = () => {
+let fuse;
 
+const App = () => {  
   React.useEffect(() => {
     document.addEventListener('keydown', onKeyDown)
     document.addEventListener('keyup', onKeyUp)
@@ -265,7 +266,32 @@ const App = () => {
 
   const [savedState, setSavedState] = useLocalStorage(fallbackState, 'zoomega-state');
   const [state, dispatch] = React.useReducer(reducer, savedState);
+  const [search, setSearch] = React.useState('')
+  const [searchResults, setSearchResults] = React.useState([])
   const { cards, path } = state;
+
+  React.useEffect(()=> {
+     // Pass in search/setsearch into each component
+
+       // Fuse search engine.
+    // Basic architecture
+    // Initialize the search index on load.
+    // Update the search index on every time you @mention or  wikilink
+    if(!fuse) {
+      console.log('making new fuse search')
+      const searchOptions = {
+        includeScore: true,
+          // search title and all children's text
+          keys: ['title', 'content.children.text']
+        }
+        const cardList = Object.entries(cards).map(c => c[1])
+        // declare the new fuse search engine
+        fuse = new Fuse(cardList, searchOptions)
+    }
+    const result = fuse.search(search)
+    setSearchResults(result)
+    // listen for top level state
+  },[search])
 
   // Standard set of breadcrumbs that are just pushed / popped like a stack
   // Derived from state  
@@ -364,6 +390,9 @@ const App = () => {
                       content={content}
                       position={position}
                       size={size}
+                      search={search}
+                      setSearch={setSearch}
+                      searchResults={searchResults}
                       onDelete={(id) => {
                         const shouldDelete = confirm('u sure?')
                         if (shouldDelete) {
