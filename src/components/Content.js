@@ -9,9 +9,8 @@ import {
   useFocused
 } from 'slate-react'
 import { theme, DEFAULT_CARD_CONTENT } from './../constants'
-import { CHARACTERS } from './../data/characters';
-
 import { useSelect } from "downshift";
+import { DispatchContext } from './../App';
 
 const Portal = ({ children }) => {
   return ReactDOM.createPortal(children, document.body)
@@ -47,8 +46,6 @@ const DefaultElement = props => {
   return <p {...props.attributes}>{props.children}</p>
 }
 
-
-
 const Leaf = props => {
   const isLink = props.leaf.type === 'wikilink'
   return (
@@ -61,65 +58,17 @@ const Leaf = props => {
   )
 }
 
-const items = [
-  'apple',
-  'orange',
-  'banana'
-]
-
-const menuStyles = {
-  maxHeight: "200px",
-  overflowY: "auto",
-  width: "150px",
-  margin: 0,
-  borderTop: 0,
-  background: "white"
-};
-
-const DropdownSelect = (props) => {
-  const {
-    isOpen,
-    selectedItem,
-    getToggleButtonProps,
-    getLabelProps,
-    getMenuProps,
-    highlightedIndex,
-    getItemProps,
-  } = useSelect({ items });
-  return (
-    <div style={{ display: 'inline-block', zIndex: '9999' }}>
-      <label {...getLabelProps()}>Choose an element:</label>
-      <button {...getToggleButtonProps()}>{selectedItem || "Elements"}</button>
-      <ul {...getMenuProps()} style={menuStyles}>
-        {isOpen &&
-          items.map((item, index) => (
-            <li
-              style={
-                highlightedIndex === index ? { backgroundColor: "#bde4ff" } : {}
-              }
-              key={`${item}${index}`}
-              {...getItemProps({ item, index })}
-            >
-              {item}
-            </li>
-          ))}
-      </ul>
-      {/* if you Tab from menu, focus goes on button, and it shouldn't. only happens here. */}
-      <div tabIndex="0" />
-    </div>
-  );
-}
-
 const Content = ({
   id,
   content,
   onUpdate,
   search,
   setSearch,
-  searchResults
+  searchResults,
 }) => {
   const editor = React.useMemo(() => withMentions(withReact(createEditor())), [])
 
+  const { dispatch, fuse } = React.useContext(DispatchContext);
 
   // Target is the current position of the node that you're inserting into.
   const [target, setTarget] = React.useState()
@@ -128,19 +77,12 @@ const Content = ({
   // const [search, setSearch] = React.useState('')
   const ref = React.useRef()
 
-
-  // this is the basic search...
-  // now you can hook this up to a fuzzy searcher that goeos through the content and titles of all your data! then you can link to cards.
-  const chars = CHARACTERS.filter(c =>
-    c.toLowerCase().startsWith(search.toLowerCase())
-  ).slice(0, 10)
-
   const renderElement = React.useCallback(props => {
     switch (props.element.type) {
       case 'code':
         return <CodeElement {...props} />
       case 'mention':
-        return <MentionElement {...props} />
+        return <MentionElement goToLevel={(id)=>dispatch({type: 'SET_LEVEL', data: { id }})}{...props} />
       default:
         return <DefaultElement {...props} />
     }
@@ -195,6 +137,10 @@ const Content = ({
           }
         }
       }
+      if(event.key === '@') {
+        // set search every time you want to reference something
+        dispatch({ type: 'SET_SEARCH_INDEX'});
+      }
       if (target) {
         switch (event.key) {
           case 'ArrowDown':
@@ -211,7 +157,7 @@ const Content = ({
           case 'Enter':
             event.preventDefault()
             Transforms.select(editor, target)
-            insertMention(editor, searchResults[index])
+            insertMention(editor, search, searchResults[index])
             setSearch('')
             setTarget(null)
             break
@@ -220,6 +166,22 @@ const Content = ({
             setSearch('')
             setTarget(null)
             break
+          case ' ':
+          event.preventDefault();
+
+            if(search) {
+              event.preventDefault();
+              // Replace the text in  the current node with that text and a space.
+              const { selection } = editor
+              // console.log(selection)
+              Transforms.insertText(editor, ' ', { at: selection.focus })
+              // setSearch(`${search} `)
+
+              break;
+            } else {
+              setSearch('')
+              setTarget(null)
+            }
         }
       }
     },
@@ -241,9 +203,12 @@ const Content = ({
       <Slate editor={editor} value={content} onChange={newValue => {
         onUpdate(id, 'content', newValue)
         const { selection } = editor
+
         if (selection && Range.isCollapsed(selection)) {
           const [start] = Range.edges(selection)
+          let newStart;
           const wordBefore = Editor.before(editor, start, { unit: 'word' })
+
           const before = wordBefore && Editor.before(editor, wordBefore)
           const beforeRange = before && Editor.range(editor, before, start)
           const beforeText = beforeRange && Editor.string(editor, beforeRange)
@@ -255,14 +220,11 @@ const Content = ({
 
           if (beforeMatch && afterMatch) {
             // if you've recognized an @ character basically.
-            console.log("before match: ")
-            console.log(beforeMatch)
-            console.log("after match: ")
-            console.log(beforeMatch)
             setTarget(beforeRange)
             setSearch(beforeMatch[1])
             // start the search at index 0
             setIndex(0)
+         
             return
           }
         }
@@ -301,7 +263,6 @@ const Content = ({
                   }}
                 >
                   <div>{item.title}</div>
-                  <div>{item.children[0]}</div>
                 </div>
               ))}
             </div>
@@ -327,29 +288,26 @@ const withMentions = editor => {
   return editor
 }
 
-const insertMention = (editor, character) => {
-  const mention = { type: 'mention', character, children: [{ text: '' }] }
-  Transforms.insertNodes(editor, mention)
-  Transforms.move(editor)
-}
-
-const Element = props => {
-  const { attributes, children, element } = props
-  switch (element.type) {
-    case 'mention':
-      return <MentionElement {...props} />
-    default:
-      return <p {...attributes}>{children}</p>
+// some mentions dont have items. fix that.
+const insertMention = (editor, search, {item}) => {
+  if(item)  {
+    const mention = { type: 'mention', search, item, children: [{ text: '' }] }
+    Transforms.insertNodes(editor, mention)
+    Transforms.move(editor)
   }
 }
 
-const MentionElement = ({ attributes, children, element }) => {
+const MentionElement = ({ attributes, children, search, goToLevel, element }) => {
+  // now, onclick you link to that card!
+  // you grab the id from cards
   const selected = useSelected()
   const focused = useFocused()
+  const { item } = element;
   return (
     <span
       {...attributes}
       contentEditable={false}
+      onClick={()=>goToLevel(item.id)}
       style={{
         padding: '3px 3px 2px',
         margin: '0 1px',
@@ -361,7 +319,7 @@ const MentionElement = ({ attributes, children, element }) => {
         boxShadow: selected && focused ? '0 0 0 2px #B4D5FF' : 'none',
       }}
     >
-      @{element.character}
+      {item.title}
       {children}
     </span>
   )

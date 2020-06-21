@@ -25805,7 +25805,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.withTheme = withTheme;
   },
 
-  84(require) {
+  84(require, App) {
     // src/constants.js
     const CARD_SIZE = 200;
     const theme = {
@@ -25824,9 +25824,6 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         text: ""
       }]
     }];
-
-    // src/data/characters.js
-    const CHARACTERS = ["Aayla Secura", "Adi Gallia", "Admiral Dodd Rancit", "Admiral Firmus Piett", "Admiral Gial Ackbar", "Admiral Ozzel", "Admiral Raddus", "Admiral Terrinald Screed", "Admiral Trench", "Admiral U.O. Statura", "Agen Kolar", "Agent Kallus", "Aiolin and Morit Astarte", "Aks Moe", "Almec", "Alton Kastle", "Amee", "AP-5", "Armitage Hux", "Artoo", "Arvel Crynyd", "Asajj Ventress", "Aurra Sing", "AZI-3", "Bala-Tik", "Barada", "Bargwill Tomder", "Baron Papanoida", "Barriss Offee", "Baze Malbus", "Bazine Netal", "BB-8", "BB-9E", "Ben Quadinaros", "Berch Teller", "Beru Lars", "Bib Fortuna", "Biggs Darklighter", "Black Krrsantan", "Bo-Katan Kryze", "Boba Fett", "Bobbajo", "Bodhi Rook", "Borvo the Hutt", "Boss Nass", "Bossk", "Breha Antilles-Organa", "Bren Derlin", "Brendol Hux", "BT-1", "C-3PO", "C1-10P", "Cad Bane", "Caluan Ematt", "Captain Gregor", "Captain Phasma", "Captain Quarsh Panaka", "Captain Rex", "Carlist Rieekan", "Casca Panzoro", "Cassian Andor", "Cassio Tagge", "Cham Syndulla", "Che Amanwe Papanoida", "Chewbacca", "Chi Eekway Papanoida", "Chief Chirpa", "Chirrut Îmwe", "Ciena Ree", "Cin Drallig", "Clegg Holdfast", "Cliegg Lars", "Coleman Kcaj", "Coleman Trebor", "Colonel Kaplan", "Commander Bly", "Commander Cody (CC-2224)", "Commander Fil (CC-3714)", "Commander Fox", "Commander Gree", "Commander Jet", "Commander Wolffe", "Conan Antonio Motti", "Conder Kyl", "Constable Zuvio", "Cordé", "Cpatain Typho", "Crix Madine", "Cut Lawquane", "Dak Ralter", "Dapp", "Darth Bane", "Darth Maul", "Darth Tyranus", "Daultay Dofine", "Del Meeko", "Delian Mors", "Dengar", "Depa Billaba", "Derek Klivian", "Dexter Jettster", "Dineé Ellberger", "DJ", "Doctor Aphra", "Doctor Evazan", "Dogma", "Dormé", "Dr. Cylo", "Droidbait", "Droopy McCool", "Dryden Vos", "Dud Bolt", "Ebe E. Endocott", "Echuu Shen-Jon", "Eeth Koth", "Eighth Brother", "Eirtaé", "Eli Vanto", "Ellé", "Ello Asty", "Embo", "Eneb Ray", "Enfys Nest", "EV-9D9", "Evaan Verlaine", "Even Piell", "Ezra Bridger", "Faro Argyus", "Feral", "Fifth Brother", "Finis Valorum", "Finn", "Fives", "FN-1824", "FN-2003", "Fodesinbeed Annodue", "Fulcrum", "FX-7", "GA-97", "Galen Erso", "Gallius Rax", 'Garazeb "Zeb" Orrelios', "Gardulla the Hutt", "Garrick Versio", "Garven Dreis", "Gavyn Sykes", "Gideon Hask", "Gizor Dellso", "Gonk droid", "Grand Inquisitor", "Greeata Jendowanian", "Greedo", "Greer Sonnel", "Grievous", "Grummgar", "Gungi", "Hammerhead", "Han Solo", "Harter Kalonia", "Has Obbit", "Hera Syndulla", "Hevy", "Hondo Ohnaka", "Huyang", "Iden Versio", "IG-88", "Ima-Gun Di", "Inquisitors", "Inspector Thanoth", "Jabba", "Jacen Syndulla", "Jan Dodonna", "Jango Fett", "Janus Greejatus", "Jar Jar Binks", "Jas Emari", "Jaxxon", "Jek Tono Porkins", "Jeremoch Colton", "Jira", "Jobal Naberrie", "Jocasta Nu", "Joclad Danva", "Joh Yowza", "Jom Barell", "Joph Seastriker", "Jova Tarkin", "Jubnuk", "Jyn Erso", "K-2SO", "Kanan Jarrus", "Karbin", "Karina the Great", "Kes Dameron", "Ketsu Onyo", "Ki-Adi-Mundi", "King Katuunko", "Kit Fisto", "Kitster Banai", "Klaatu", "Klik-Klak", "Korr Sella", "Kylo Ren", "L3-37", "Lama Su", "Lando Calrissian", "Lanever Villecham", "Leia Organa", "Letta Turmond", "Lieutenant Kaydel Ko Connix", "Lieutenant Thire", "Lobot", "Logray", "Lok Durd", "Longo Two-Guns", "Lor San Tekka", "Lorth Needa", "Lott Dod", "Luke Skywalker", "Lumat", "Luminara Unduli", "Lux Bonteri", "Lyn Me", "Lyra Erso", "Mace Windu", "Malakili", "Mama the Hutt", "Mars Guo", "Mas Amedda", "Mawhonic", "Max Rebo", "Maximilian Veers", "Maz Kanata", "ME-8D9", "Meena Tills", "Mercurial Swift", "Mina Bonteri", "Miraj Scintel", "Mister Bones", "Mod Terrik", "Moden Canady", "Mon Mothma", "Moradmin Bast", "Moralo Eval", "Morley", "Mother Talzin", "Nahdar Vebb", "Nahdonnis Praji", "Nien Nunb", "Niima the Hutt", "Nines", "Norra Wexley", "Nute Gunray", "Nuvo Vindi", "Obi-Wan Kenobi", "Odd Ball", "Ody Mandrell", "Omi", "Onaconda Farr", "Oola", "OOM-9", "Oppo Rancisis", "Orn Free Taa", "Oro Dassyne", "Orrimarko", "Osi Sobeck", "Owen Lars", "Pablo-Jill", "Padmé Amidala", "Pagetti Rook", "Paige Tico", "Paploo", "Petty Officer Thanisson", "Pharl McQuarrie", "Plo Koon", "Po Nudo", "Poe Dameron", "Poggle the Lesser", "Pong Krell", "Pooja Naberrie", "PZ-4CO", "Quarrie", "Quay Tolsite", "Queen Apailana", "Queen Jamillia", "Queen Neeyutnee", "Qui-Gon Jinn", "Quiggold", "Quinlan Vos", "R2-D2", "R2-KT", "R3-S6", "R4-P17", "R5-D4", "RA-7", "Rabé", "Rako Hardeen", "Ransolm Casterfo", "Rappertunie", "Ratts Tyerell", "Raymus Antilles", "Ree-Yees", "Reeve Panzoro", "Rey", "Ric Olié", "Riff Tamson", "Riley", "Rinnriyin Di", "Rio Durant", "Rogue Squadron", "Romba", "Roos Tarpals", "Rose Tico", "Rotta the Hutt", "Rukh", "Rune Haako", "Rush Clovis", "Ruwee Naberrie", "Ryoo Naberrie", "Sabé", "Sabine Wren", "Saché", "Saelt-Marae", "Saesee Tiin", "Salacious B. Crumb", "San Hill", "Sana Starros", "Sarco Plank", "Sarkli", "Satine Kryze", "Savage Opress", "Sebulba", "Senator Organa", "Sergeant Kreel", "Seventh Sister", "Shaak Ti", "Shara Bey", "Shmi Skywalker", "Shu Mai", "Sidon Ithano", "Sifo-Dyas", "Sim Aloo", "Siniir Rath Velus", "Sio Bibble", "Sixth Brother", "Slowen Lo", "Sly Moore", "Snaggletooth", "Snap Wexley", "Snoke", "Sola Naberrie", "Sora Bulq", "Strono Tuggs", "Sy Snootles", "Tallissan Lintra", "Tarfful", "Tasu Leech", "Taun We", "TC-14", "Tee Watt Kaa", "Teebo", "Teedo", "Teemto Pagalies", "Temiri Blagg", "Tessek", "Tey How", "Thane Kyrell", "The Bendu", "The Smuggler", "Thrawn", "Tiaan Jerjerrod", "Tion Medon", "Tobias Beckett", "Tulon Voidgazer", "Tup", "U9-C4", "Unkar Plutt", "Val Beckett", "Vanden Willard", "Vice Admiral Amilyn Holdo", "Vober Dand", "WAC-47", "Wag Too", "Wald", "Walrus Man", "Warok", "Wat Tambor", "Watto", "Wedge Antilles", "Wes Janson", "Wicket W. Warrick", "Wilhuff Tarkin", "Wollivan", "Wuher", "Wullf Yularen", "Xamuel Lennox", "Yaddle", "Yarael Poof", "Yoda", "Zam Wesell", "Zev Senesca", "Ziro the Hutt", "Zuckuss"];
 
     // src/components/Content.js
     const React4 = require(73 /* react */, true /* ES6 import */), ReactDOM2 = require(65 /* react-dom */, true /* ES6 import */), styled_components4 = require(83 /* styled-components */, true /* ES6 import */), slate = require(82 /* slate */, true /* ES6 import */), slate_react = require(81 /* slate-react */, true /* ES6 import */), downshift = require(36 /* downshift */, true /* ES6 import */);
@@ -25866,50 +25863,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
       }, props.children);
     };
-    const items = ["apple", "orange", "banana"];
-    const menuStyles = {
-      maxHeight: "200px",
-      overflowY: "auto",
-      width: "150px",
-      margin: 0,
-      borderTop: 0,
-      background: "white"
-    };
-    const DropdownSelect = (props) => {
-      const {isOpen, selectedItem, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps} = downshift.useSelect({
-        items
-      });
-      return React4.createElement("div", {
-        style: {
-          display: "inline-block",
-          zIndex: "9999"
-        }
-      }, React4.createElement("label", {
-        ...getLabelProps()
-      }, "Choose an element:"), React4.createElement("button", {
-        ...getToggleButtonProps()
-      }, selectedItem || "Elements"), React4.createElement("ul", {
-        ...getMenuProps(),
-        style: menuStyles
-      }, isOpen && items.map((item, index) => React4.createElement("li", {
-        style: highlightedIndex === index ? {
-          backgroundColor: "#bde4ff"
-        } : {},
-        key: `${item}${index}`,
-        ...getItemProps({
-          item,
-          index
-        })
-      }, item))), React4.createElement("div", {
-        tabIndex: "0"
-      }));
-    };
     const Content3 = ({id, content, onUpdate, search, setSearch, searchResults}) => {
       const editor = React4.useMemo(() => withMentions(slate_react.withReact(slate.createEditor())), []);
+      const {dispatch, fuse: fuse3} = React4.useContext(DispatchContext);
       const [target, setTarget] = React4.useState();
       const [index, setIndex] = React4.useState(0);
       const ref = React4.useRef();
-      const chars = CHARACTERS.filter((c) => c.toLowerCase().startsWith(search.toLowerCase())).slice(0, 10);
       const renderElement = React4.useCallback((props) => {
         switch (props.element.type) {
           case "code":
@@ -25918,6 +25877,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             });
           case "mention":
             return React4.createElement(MentionElement, {
+              goToLevel: (id2) => dispatch({
+                type: "SET_LEVEL",
+                data: {
+                  id: id2
+                }
+              }),
               ...props
             });
           default:
@@ -25974,6 +25939,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             }
           }
         }
+        if (event.key === "@") {
+          dispatch({
+            type: "SET_SEARCH_INDEX"
+          });
+        }
         if (target) {
           switch (event.key) {
             case "ArrowDown":
@@ -25990,7 +25960,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             case "Enter":
               event.preventDefault();
               slate.Transforms.select(editor, target);
-              insertMention(editor, searchResults[index]);
+              insertMention(editor, search, searchResults[index]);
               setSearch("");
               setTarget(null);
               break;
@@ -25999,6 +25969,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               setSearch("");
               setTarget(null);
               break;
+            case " ":
+              event.preventDefault();
+              if (search) {
+                event.preventDefault();
+                const {selection} = editor;
+                slate.Transforms.insertText(editor, " ", {
+                  at: selection.focus
+                });
+                break;
+              } else {
+                setSearch("");
+                setTarget(null);
+              }
           }
         }
       }, [index, search, target]);
@@ -26019,6 +26002,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           const {selection} = editor;
           if (selection && slate.Range.isCollapsed(selection)) {
             const [start] = slate.Range.edges(selection);
+            let newStart;
             const wordBefore = slate.Editor.before(editor, start, {
               unit: "word"
             });
@@ -26031,10 +26015,6 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             const afterText = slate.Editor.string(editor, afterRange);
             const afterMatch = afterText.match(/^(\s|$)/);
             if (beforeMatch && afterMatch) {
-              console.log("before match: ");
-              console.log(beforeMatch);
-              console.log("after match: ");
-              console.log(beforeMatch);
               setTarget(beforeRange);
               setSearch(beforeMatch[1]);
               setIndex(0);
@@ -26067,7 +26047,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           borderRadius: "3px",
           background: i === index ? "#B4D5FF" : "transparent"
         }
-      }, React4.createElement("div", null, item.title), React4.createElement("div", null, item.children[0])))))));
+      }, React4.createElement("div", null, item.title)))))));
     };
     const withMentions = (editor) => {
       const {isInline, isVoid} = editor;
@@ -26079,36 +26059,28 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       };
       return editor;
     };
-    const insertMention = (editor, character) => {
-      const mention = {
-        type: "mention",
-        character,
-        children: [{
-          text: ""
-        }]
-      };
-      slate.Transforms.insertNodes(editor, mention);
-      slate.Transforms.move(editor);
-    };
-    const Element = (props) => {
-      const {attributes, children, element} = props;
-      switch (element.type) {
-        case "mention":
-          return React4.createElement(MentionElement, {
-            ...props
-          });
-        default:
-          return React4.createElement("p", {
-            ...attributes
-          }, children);
+    const insertMention = (editor, search, {item}) => {
+      if (item) {
+        const mention = {
+          type: "mention",
+          search,
+          item,
+          children: [{
+            text: ""
+          }]
+        };
+        slate.Transforms.insertNodes(editor, mention);
+        slate.Transforms.move(editor);
       }
     };
-    const MentionElement = ({attributes, children, element}) => {
+    const MentionElement = ({attributes, children, search, goToLevel, element}) => {
       const selected = slate_react.useSelected();
       const focused = slate_react.useFocused();
+      const {item} = element;
       return React4.createElement("span", {
         ...attributes,
         contentEditable: false,
+        onClick: () => goToLevel(item.id),
         style: {
           padding: "3px 3px 2px",
           margin: "0 1px",
@@ -26119,7 +26091,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           fontSize: "0.9em",
           boxShadow: selected && focused ? "0 0 0 2px #B4D5FF" : "none"
         }
-      }, "@", element.character, children);
+      }, item.title, children);
     };
     const default4 = Content3;
 
@@ -26192,13 +26164,43 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     opacity: 1;
   }
 `;
-    const Card3 = ({id, title, content, position, size, handleZoom, onUpdate, onDelete, shiftDown, search, setSearch, searchResults, children, ...props}) => {
+    const ResizeHandle = styled_components3.default.div`
+  width: 25px;
+  height: 25px;
+  &:hover {
+    background: rgba(0,0,0,0.1);
+  }
+`;
+    const Card3 = ({id, title, content, position, size, handleZoom, shiftDown, search, setSearch, searchResults, currLevel, children, ...props}) => {
       const [{x, y}, setPos] = React3.useState({
         x: position.x,
         y: position.y
       });
       const [isTyping, setIsTyping] = React3.useState(false);
       const [isFocused, setIsFocused] = React3.useState(false);
+      const {dispatch} = React3.useContext(DispatchContext);
+      const onUpdate = (id2, property, value) => {
+        dispatch({
+          type: "UPDATE_CARD",
+          data: {
+            cardId: id2,
+            property,
+            value
+          }
+        });
+      };
+      const onDelete = (id2) => {
+        const shouldDelete = confirm("u sure?");
+        if (shouldDelete) {
+          dispatch({
+            type: "REMOVE_CARD",
+            data: {
+              cardId: id2,
+              currLevel
+            }
+          });
+        }
+      };
       const focusedStyles = {
         zIndex: 1000,
         left: 0,
@@ -26250,6 +26252,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             height: ref.offsetHeight
           });
         },
+        resizeHandleComponent: React3.createElement(ResizeHandle, null),
         ...props,
         onBlur: () => setSearch("")
       }, React3.createElement(react_flip_toolkit3.Flipped, {
@@ -26269,22 +26272,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         onClick: () => onDelete(id)
       }, "x"), React3.createElement(ActionButton, {
         onClick: () => handleZoom(id)
-      }, "zoom"))), React3.createElement(Input, {
-        onFocus: (e) => {
-          setIsTyping(true);
-          e.stopPropagation();
-          e.preventDefault();
-        },
-        onBlur: () => setIsTyping(false),
-        onChange: (e) => setSearch(e.target.value),
-        value: search
-      }), React3.createElement(default4, {
+      }, "zoom"))), React3.createElement(default4, {
         id,
         content,
         onUpdate,
         search,
         setSearch,
-        searchResults
+        searchResults,
+        dispatch
       }), React3.createElement(CardPreviewContainer, null, children.map((c) => {
         return React3.createElement(react_flip_toolkit3.Flipped, {
           key: `child-preview-${c.id}`,
@@ -26317,6 +26312,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const default3 = Breadcrumb3;
 
     // src/App.js
+    require(App, {
+      DispatchContext: () => DispatchContext
+    });
     const React = require(73 /* react */, true /* ES6 import */), ReactDOM = require(65 /* react-dom */, true /* ES6 import */), react_flip_toolkit = require(66 /* react-flip-toolkit */, true /* ES6 import */), lodash = require(54 /* lodash */, true /* ES6 import */), axios = require(8 /* axios */, true /* ES6 import */), styled_components = require(83 /* styled-components */, true /* ES6 import */), fuse = require(39 /* fuse.js */, true /* ES6 import */);
     function useLocalStorage(defaultValue, key) {
       const [value, setValue] = React.useState(() => {
@@ -26344,11 +26342,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   padding: ${theme.padding / 2}px ${theme.padding / 2}px;
 `;
     const genID = () => "_" + Math.random().toString(36).substr(2, 9);
+    const DispatchContext = React.createContext();
     let fuse2;
+    const searchOptions = {
+      includeScore: true,
+      keys: ["title", "content.children.text"]
+    };
     const App2 = () => {
       React.useEffect(() => {
         document.addEventListener("keydown", onKeyDown);
         document.addEventListener("keyup", onKeyUp);
+        window.addEventListener("popstate", onPopState);
       }, []);
       const [shiftDown, setShiftDown] = React.useState();
       const onKeyDown = (event) => {
@@ -26454,6 +26458,35 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               path: newPath
             };
           }
+          case "SET_LEVEL": {
+            const {id} = action.data;
+            const {cards: cards2, path: path2} = state2;
+            let curr = cards2[id];
+            let buildPath = [id];
+            while (curr.parent) {
+              curr = cards2[curr.parent];
+              buildPath = [curr.id, ...buildPath];
+            }
+            return {
+              ...state2,
+              path: buildPath
+            };
+          }
+          case "SET_PATH": {
+            const {path: path2} = action.data;
+            return {
+              ...state2,
+              path: path2
+            };
+          }
+          case "SET_SEARCH_INDEX": {
+            const {cards: cards2} = state2;
+            const cardList = Object.entries(cards2).map((c) => c[1]);
+            console.log("setting index");
+            console.log(fuse2);
+            fuse2 = new fuse.default(cardList, searchOptions);
+            return state2;
+          }
           case "LOAD_STATE": {
             const {data} = action.data;
             return data;
@@ -26469,11 +26502,6 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const {cards, path} = state;
       React.useEffect(() => {
         if (!fuse2) {
-          console.log("making new fuse search");
-          const searchOptions = {
-            includeScore: true,
-            keys: ["title", "content.children.text"]
-          };
           const cardList = Object.entries(cards).map((c) => c[1]);
           fuse2 = new fuse.default(cardList, searchOptions);
         }
@@ -26489,6 +26517,17 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
         setSavedState(state);
       }, [path]);
+      onPopState = () => {
+        const path2 = document.location.hash.substring(1).split("/");
+        if (path2) {
+          dispatch({
+            type: "SET_PATH",
+            data: {
+              path: path2
+            }
+          });
+        }
+      };
       const [isZooming, setIsZooming] = React.useState(false);
       const handleCanvasDoubleClick = ({clientX, clientY}) => {
         if (shiftDown)
@@ -26505,6 +26544,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       };
       return React.createElement(react_flip_toolkit.Flipper, {
         flipKey: isZooming
+      }, React.createElement(DispatchContext.Provider, {
+        value: {
+          fuse: fuse2,
+          dispatch
+        }
       }, React.createElement("div", {
         style: {
           width: "100%",
@@ -26592,29 +26636,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           content,
           position,
           size,
+          currLevel,
           search,
           setSearch,
-          searchResults,
-          onDelete: (id2) => {
-            const shouldDelete = confirm("u sure?");
-            if (shouldDelete) {
-              dispatch({
-                type: "REMOVE_CARD",
-                data: {
-                  cardId: id2,
-                  currLevel
-                }
-              });
-            }
-          },
-          onUpdate: (id2, property, value) => dispatch({
-            type: "UPDATE_CARD",
-            data: {
-              cardId: id2,
-              property,
-              value
-            }
-          })
+          searchResults
         });
       }))), React.createElement(react_flip_toolkit.Flipped, {
         flipId: currLevel
@@ -26628,7 +26653,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           height: "100vh",
           zIndex: -100
         }
-      })));
+      }))));
     };
     ReactDOM.render(React.createElement(App2, null), document.getElementById("root"));
   },

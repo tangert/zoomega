@@ -137,16 +137,24 @@ const fallbackState = {
 
 const BreadcrumbSeparator = styled.div`
   border: none;
-  padding: ${theme.padding/2}px ${theme.padding/2}px;
+  padding: ${theme.padding / 2}px ${theme.padding / 2}px;
 `
 const genID = () => '_' + Math.random().toString(36).substr(2, 9);
 
+export const DispatchContext = React.createContext();
+// initalize fuse search.
 let fuse;
+const searchOptions = {
+  includeScore: true,
+  // search title and all children's text
+  keys: ['title', 'content.children.text']
+}
 
-const App = () => {  
+const App = () => {
   React.useEffect(() => {
     document.addEventListener('keydown', onKeyDown)
     document.addEventListener('keyup', onKeyUp)
+    window.addEventListener('popstate', onPopState);
   }, [])
 
   const [shiftDown, setShiftDown] = React.useState()
@@ -254,6 +262,42 @@ const App = () => {
           path: newPath
         }
       }
+      // Set an arbitrary level.
+      case 'SET_LEVEL': {
+        const { id } = action.data
+        const { cards, path } = state;
+        // start at the selected tag
+        let curr = cards[id];
+        // start the path there
+        let buildPath = [id]
+        // build up the path all the way to the root.
+        while(curr.parent) {
+          curr = cards[curr.parent]
+          buildPath = [curr.id, ...buildPath]
+        }
+        return {
+          ...state,
+          path: buildPath
+        }
+      }
+      case 'SET_PATH': {
+        const { path } = action.data
+        return {
+          ...state,
+          path: path
+        }
+      }
+      case 'SET_SEARCH_INDEX': {
+        // keep state same, but just reset search index. is this allowed?
+        const { cards } = state;
+        const cardList = Object.entries(cards).map(c => c[1])
+        console.log('setting index')
+        // console.log(cardList)
+        console.log(fuse)
+        // fuse.setCollection(cards)
+        fuse = new Fuse(cardList, searchOptions)
+        return state;
+      }
       // Loads json from the server and uses it as state.
       case 'LOAD_STATE': {
         const { data } = action.data
@@ -270,28 +314,22 @@ const App = () => {
   const [searchResults, setSearchResults] = React.useState([])
   const { cards, path } = state;
 
-  React.useEffect(()=> {
-     // Pass in search/setsearch into each component
+  React.useEffect(() => {
+    // Pass in search/setsearch into each component
 
-       // Fuse search engine.
+    // Fuse search engine.
     // Basic architecture
     // Initialize the search index on load.
     // Update the search index on every time you @mention or  wikilink
-    if(!fuse) {
-      console.log('making new fuse search')
-      const searchOptions = {
-        includeScore: true,
-          // search title and all children's text
-          keys: ['title', 'content.children.text']
-        }
-        const cardList = Object.entries(cards).map(c => c[1])
-        // declare the new fuse search engine
-        fuse = new Fuse(cardList, searchOptions)
+    if (!fuse) {
+      const cardList = Object.entries(cards).map(c => c[1])
+      // declare the new fuse search engine
+      fuse = new Fuse(cardList, searchOptions)
     }
     const result = fuse.search(search)
     setSearchResults(result)
     // listen for top level state
-  },[search])
+  }, [search])
 
   // Standard set of breadcrumbs that are just pushed / popped like a stack
   // Derived from state  
@@ -306,6 +344,14 @@ const App = () => {
     }
     setSavedState(state)
   }, [path]);
+
+
+  onPopState = () => {
+    const path = document.location.hash.substring(1).split('/')
+    if(path) {
+      dispatch({ type:'SET_PATH', data: { path } })
+    }
+  }
 
   // Triggers ZUI animations
   const [isZooming, setIsZooming] = React.useState(false)
@@ -327,101 +373,97 @@ const App = () => {
 
   return (
     <Flipper flipKey={isZooming}>
-      <div style={{
-        width: '100%', height: '100vh',
-        fontFamily: 'sans-serif'
-      }}>
-        <div style={{ display: 'flex' }}>{path.map((loc, idx) => {
-          // if you're at the bottom of the path, render a div. Not a button
-          const card = cards[loc]
-          if (idx === path.length - 1) {
-            return (
-              <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
-                <Breadcrumb>
-                  {card.title}
-                </Breadcrumb>
-              </Flipped>
-            )
-          } else {
-            // Navigate to higher levels
-            return (
-              <div key={idx} style={{ display: 'inline-flex', alignItems:'center', justifyContent:'flex-start'}}>
+      <DispatchContext.Provider value={{ fuse, dispatch }}>
+
+        <div style={{
+          width: '100%', height: '100vh',
+          fontFamily: 'sans-serif'
+        }}>
+          <div style={{ display: 'flex' }}>{path.map((loc, idx) => {
+            // if you're at the bottom of the path, render a div. Not a button
+            const card = cards[loc]
+            if (idx === path.length - 1) {
+              return (
                 <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
-                  <Breadcrumb
-                    onClick={() => {
-                      dispatch({ type: 'ZOOM_OUT_TO_LEVEL', data: { level: idx + 1 } });
-                      setIsZooming(!isZooming);
-                    }}>
-                      {card.title}
+                  <Breadcrumb>
+                    {card.title}
                   </Breadcrumb>
                 </Flipped>
-                <BreadcrumbSeparator>/</BreadcrumbSeparator>
-              </div>
-                )
-              }
-            })}
-              </div>
-              <button onClick={() => dispatch({ type: 'ADD_CARD', data: { currLevel: currLevel } })}>
-                new layer
-        </button>
-              <button onClick={() => {
-                const shouldDelete = confirm('this will delete all ur stuff from this layer. u sure?')
-                if (shouldDelete) {
-                  dispatch({ type: 'REMOVE_ALL_CARDS', data: { currLevel: currLevel } })
-                }
-              }}>
-                delete all! danger!
-        </button>
-              <button onClick={() => setSavedState(state)}>save</button>
-              <div onDoubleClick={(e) => handleCanvasDoubleClick(e)} style={{ width: '100%', height: '100vh' }}>
-                {currCards.map((l, idx) => {
-                  const { id, title, content, position, size, children } = cards[l]
-                  return (
-                    <Card
-                      key={id}
-                      handleZoom={(id) => {
-                        dispatch({ type: 'ZOOM_TO_LEVEL', data: { level: id } });
+              )
+            } else {
+              // Navigate to higher levels
+              return (
+                <div key={idx} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+                  <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
+                    <Breadcrumb
+                      onClick={() => {
+                        dispatch({ type: 'ZOOM_OUT_TO_LEVEL', data: { level: idx + 1 } });
                         setIsZooming(!isZooming);
-                      }}
-                      title={title}
-                      id={id}
-                      shiftDown={shiftDown}
-                      children={children.map(c => cards[c])}
-                      content={content}
-                      position={position}
-                      size={size}
-                      search={search}
-                      setSearch={setSearch}
-                      searchResults={searchResults}
-                      onDelete={(id) => {
-                        const shouldDelete = confirm('u sure?')
-                        if (shouldDelete) {
-                          dispatch({ type: 'REMOVE_CARD', data: { cardId: id, currLevel: currLevel } })
-                        }
-                      }
-                      }
-                      onUpdate={(id, property, value) => dispatch({ type: 'UPDATE_CARD', data: { cardId: id, property: property, value: value } })}
-                    />
-                  )
-                })}
-              </div>
-      </div>
-      <Flipped flipId={currLevel}>
-            <div style={{
-              backgroundColor: 'white',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100vh',
-              zIndex: -100
-            }} />
-          </Flipped>
+                      }}>
+                      {card.title}
+                    </Breadcrumb>
+                  </Flipped>
+                  <BreadcrumbSeparator>/</BreadcrumbSeparator>
+                </div>
+              )
+            }
+          })}
+          </div>
+          <button onClick={() => dispatch({ type: 'ADD_CARD', data: { currLevel: currLevel } })}>
+            new layer
+        </button>
+          <button onClick={() => {
+            const shouldDelete = confirm('this will delete all ur stuff from this layer. u sure?')
+            if (shouldDelete) {
+              dispatch({ type: 'REMOVE_ALL_CARDS', data: { currLevel: currLevel } })
+            }
+          }}>
+            delete all! danger!
+        </button>
+          <button onClick={() => setSavedState(state)}>save</button>
+          <div onDoubleClick={(e) => handleCanvasDoubleClick(e)} style={{ width: '100%', height: '100vh' }}>
+            {currCards.map((l, idx) => {
+              const { id, title, content, position, size, children } = cards[l]
+              return (
+                <Card
+                  key={id}
+                  handleZoom={(id) => {
+                    dispatch({ type: 'ZOOM_TO_LEVEL', data: { level: id } });
+                    setIsZooming(!isZooming);
+                  }}
+                  title={title}
+                  id={id}
+                  shiftDown={shiftDown}
+                  children={children.map(c => cards[c])}
+                  content={content}
+                  position={position}
+                  size={size}
+                  currLevel={currLevel}
+                  search={search}
+                  setSearch={setSearch}
+                  searchResults={searchResults}
+                />
+              )
+            })}
+          </div>
+        </div>
+        <Flipped flipId={currLevel}>
+          <div style={{
+            backgroundColor: 'white',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100vh',
+            zIndex: -100
+          }} />
+        </Flipped>
+      </DispatchContext.Provider>
     </Flipper>
-        )
-      }
+  )
+}
 
-      ReactDOM.render(
+ReactDOM.render(
   <App />,
-              document.getElementById('root')
+  document.getElementById('root')
 );

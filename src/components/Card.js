@@ -5,6 +5,7 @@ import { Rnd } from 'react-rnd';
 import styled from 'styled-components';
 import { CARD_SIZE, theme } from './../constants'
 import Content from './Content'
+import { DispatchContext } from './../App';
 
 const CardWrapper = styled.div`
   display: flex;
@@ -77,6 +78,14 @@ const ActionButton = styled.button`
   }
 `
 
+const ResizeHandle = styled.div`
+  width: 25px;
+  height: 25px;
+  &:hover {
+    background: rgba(0,0,0,0.1);
+  }
+`
+
 const Card = ({
   id,
   title,
@@ -84,12 +93,11 @@ const Card = ({
   position,
   size,
   handleZoom,
-  onUpdate,
-  onDelete,
   shiftDown,
   search,
   setSearch,
   searchResults,
+  currLevel,
   children,
   ...props
 }) => {
@@ -99,6 +107,18 @@ const Card = ({
   });
   const [isTyping, setIsTyping] = React.useState(false)
   const [isFocused, setIsFocused] = React.useState(false)
+  const { dispatch } = React.useContext(DispatchContext);
+
+  const onUpdate = (id, property, value) => {
+    dispatch({ type: 'UPDATE_CARD', data: { cardId: id, property: property, value: value } })
+  }
+
+  const onDelete = (id) => {
+    const shouldDelete = confirm('u sure?')
+    if (shouldDelete) {
+      dispatch({ type: 'REMOVE_CARD', data: { cardId: id, currLevel: currLevel } })
+    }
+  }
 
   const focusedStyles = {
     zIndex: 1000,
@@ -135,8 +155,9 @@ const Card = ({
       onResizeStop={(e, direction, ref, delta, position) => {
         onUpdate(id, 'size', { width: ref.offsetWidth, height: ref.offsetHeight })
       }}
+      resizeHandleComponent={<ResizeHandle />}
       {...props}
-      onBlur={()=>setSearch('')}
+      onBlur={() => setSearch('')}
     >
       <Flipped flipId={id}>
         <CardWrapper>
@@ -159,16 +180,6 @@ const Card = ({
               <ActionButton onClick={() => handleZoom(id)}>zoom</ActionButton>
             </div>
           </ActionRow>
-
-          <Input onFocus={(e) => {
-            setIsTyping(true);
-            e.stopPropagation();
-            e.preventDefault();
-          }}
-            onBlur={() => setIsTyping(false)}
-            onChange={e => setSearch(e.target.value)}
-            value={search} />
-
           { /* This can be any arbitrary text editor, including code. */}
           <Content
             id={id}
@@ -177,6 +188,7 @@ const Card = ({
             search={search}
             setSearch={setSearch}
             searchResults={searchResults}
+            dispatch={dispatch}
           />
 
           { /* Visualize which cards are in here! */}
