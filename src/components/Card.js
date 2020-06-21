@@ -120,7 +120,7 @@ const Card = ({
       minWidth={CARD_SIZE * 1.5}
       minHeight={CARD_SIZE * 1.5}
       dragGrid={shiftDown ? [25, 25] : [1, 1]}
-      size={{ width: size || 'auto', height: size || 'auto' }}
+      size={{ width: size, height: size }}
       disableDragging={isTyping}
       onDrag={(e, d) => {
         setPos({ x: d.x, y: d.y });

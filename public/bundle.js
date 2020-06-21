@@ -42,7 +42,7 @@
   };
   return esbuildRequire(entryPoint);
 })({
-  53(require, exports, module) {
+  58(require, exports, module) {
     // node_modules/object-assign/index.js
     "use strict";
     var getOwnPropertySymbols = Object.getOwnPropertySymbols;
@@ -110,20 +110,20 @@
     };
   },
 
-  57(require, exports, module) {
+  62(require, exports, module) {
     // node_modules/prop-types/lib/ReactPropTypesSecret.js
     "use strict";
     var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
     module.exports = ReactPropTypesSecret;
   },
 
-  54(require, exports, module) {
+  59(require, exports, module) {
     // node_modules/prop-types/checkPropTypes.js
     "use strict";
     var printWarning = function() {
     };
     if (true) {
-      var ReactPropTypesSecret = require(57 /* ./lib/ReactPropTypesSecret */);
+      var ReactPropTypesSecret = require(62 /* ./lib/ReactPropTypesSecret */);
       var loggedTypeFailures = {};
       var has = Function.call.bind(Object.prototype.hasOwnProperty);
       printWarning = function(text) {
@@ -172,14 +172,14 @@
     module.exports = checkPropTypes;
   },
 
-  67(require, exports) {
+  72(require, exports) {
     // node_modules/react/cjs/react.development.js
     "use strict";
     if (true) {
       (function() {
         "use strict";
-        var _assign = require(53 /* object-assign */);
-        var checkPropTypes = require(54 /* prop-types/checkPropTypes */);
+        var _assign = require(58 /* object-assign */);
+        var checkPropTypes = require(59 /* prop-types/checkPropTypes */);
         var ReactVersion = "16.13.1";
         var hasSymbol = typeof Symbol === "function" && Symbol.for;
         var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 60103;
@@ -1382,17 +1382,17 @@
     }
   },
 
-  68(require, exports, module) {
+  73(require, exports, module) {
     // node_modules/react/index.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(67 /* ./cjs/react.development.js */);
+      module.exports = require(72 /* ./cjs/react.development.js */);
     }
   },
 
-  71(require, exports) {
+  76(require, exports) {
     // node_modules/scheduler/cjs/scheduler.development.js
     "use strict";
     if (true) {
@@ -2043,17 +2043,17 @@
     }
   },
 
-  72(require, exports, module) {
+  77(require, exports, module) {
     // node_modules/scheduler/index.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(71 /* ./cjs/scheduler.development.js */);
+      module.exports = require(76 /* ./cjs/scheduler.development.js */);
     }
   },
 
-  70(require, exports) {
+  75(require, exports) {
     // node_modules/scheduler/cjs/scheduler-tracing.development.js
     "use strict";
     if (true) {
@@ -2333,27 +2333,27 @@
     }
   },
 
-  73(require, exports, module) {
+  78(require, exports, module) {
     // node_modules/scheduler/tracing.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(70 /* ./cjs/scheduler-tracing.development.js */);
+      module.exports = require(75 /* ./cjs/scheduler-tracing.development.js */);
     }
   },
 
-  59(require, exports) {
+  64(require, exports) {
     // node_modules/react-dom/cjs/react-dom.development.js
     "use strict";
     if (true) {
       (function() {
         "use strict";
-        var React = require(68 /* react */);
-        var _assign = require(53 /* object-assign */);
-        var Scheduler = require(72 /* scheduler */);
-        var checkPropTypes = require(54 /* prop-types/checkPropTypes */);
-        var tracing = require(73 /* scheduler/tracing */);
+        var React = require(73 /* react */);
+        var _assign = require(58 /* object-assign */);
+        var Scheduler = require(77 /* scheduler */);
+        var checkPropTypes = require(59 /* prop-types/checkPropTypes */);
+        var tracing = require(78 /* scheduler/tracing */);
         var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         if (!ReactSharedInternals.hasOwnProperty("ReactCurrentDispatcher")) {
           ReactSharedInternals.ReactCurrentDispatcher = {
@@ -19189,7 +19189,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
   },
 
-  60(require, exports, module) {
+  65(require, exports, module) {
     // node_modules/react-dom/index.js
     "use strict";
     function checkDCE() {
@@ -19209,11 +19209,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       checkDCE();
       module.exports = null;
     } else {
-      module.exports = require(59 /* ./cjs/react-dom.development.js */);
+      module.exports = require(64 /* ./cjs/react-dom.development.js */);
     }
   },
 
-  69(require, exports, module) {
+  74(require, exports, module) {
     // node_modules/rematrix/dist/rematrix.js
     (function(global, factory) {
       typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : factory(global.Rematrix = {});
@@ -19409,7 +19409,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     });
   },
 
-  62(require, exports) {
+  67(require, exports) {
     // node_modules/react-is/cjs/react-is.development.js
     "use strict";
     if (true) {
@@ -19561,23 +19561,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
   },
 
-  63(require, exports, module) {
+  68(require, exports, module) {
     // node_modules/react-is/index.js
     "use strict";
     if (false) {
       module.exports = null;
     } else {
-      module.exports = require(62 /* ./cjs/react-is.development.js */);
+      module.exports = require(67 /* ./cjs/react-is.development.js */);
     }
   },
 
-  55(require, exports, module) {
+  60(require, exports, module) {
     // node_modules/prop-types/factoryWithTypeCheckers.js
     "use strict";
-    var ReactIs = require(63 /* react-is */);
-    var assign = require(53 /* object-assign */);
-    var ReactPropTypesSecret = require(57 /* ./lib/ReactPropTypesSecret */);
-    var checkPropTypes = require(54 /* ./checkPropTypes */);
+    var ReactIs = require(68 /* react-is */);
+    var assign = require(58 /* object-assign */);
+    var ReactPropTypesSecret = require(62 /* ./lib/ReactPropTypesSecret */);
+    var checkPropTypes = require(59 /* ./checkPropTypes */);
     var has = Function.call.bind(Object.prototype.hasOwnProperty);
     var printWarning = function() {
     };
@@ -19982,23 +19982,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  56(require, exports, module) {
+  61(require, exports, module) {
     // node_modules/prop-types/index.js
     if (true) {
-      var ReactIs = require(63 /* react-is */);
+      var ReactIs = require(68 /* react-is */);
       var throwOnDirectAccess = true;
-      module.exports = require(55 /* ./factoryWithTypeCheckers */)(ReactIs.isElement, throwOnDirectAccess);
+      module.exports = require(60 /* ./factoryWithTypeCheckers */)(ReactIs.isElement, throwOnDirectAccess);
     } else {
       module.exports = null();
     }
   },
 
-  61(require, exports) {
+  66(require, exports) {
     // node_modules/react-flip-toolkit/lib/index.js
     function t(t2) {
       return t2 && "object" == typeof t2 && "default" in t2 ? t2.default : t2;
     }
-    var e = require(69 /* rematrix */), n = (t(require(56 /* prop-types */)), require(68 /* react */)), i = t(n), r = function(t2) {
+    var e = require(74 /* rematrix */), n = (t(require(61 /* prop-types */)), require(73 /* react */)), i = t(n), r = function(t2) {
       return "number" == typeof t2;
     }, o = function(t2) {
       return "[object Object]" === Object.prototype.toString.call(t2);
@@ -20716,7 +20716,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  33(require, exports, module) {
+  38(require, exports, module) {
     // node_modules/fast-memoize/src/index.js
     function memoize(fn, options) {
       var cache = options && options.cache ? options.cache : cacheDefault;
@@ -20791,7 +20791,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  58(require, exports) {
+  63(require, exports) {
     // node_modules/re-resizable/lib/index.es5.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -20800,8 +20800,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(68 /* react */);
-    var memoize = _interopDefault(require(33 /* fast-memoize */));
+    var React = require(73 /* react */);
+    var memoize = _interopDefault(require(38 /* fast-memoize */));
     var extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || {
         __proto__: []
@@ -21621,10 +21621,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.Resizable = Resizable;
   },
 
-  66(require, exports, module) {
+  71(require, exports, module) {
     // node_modules/react-rnd/node_modules/react-draggable/build/web/react-draggable.min.js
     !function(t, e) {
-      "object" == typeof exports && "object" == typeof module ? module.exports = e(require(68 /* react */), require(60 /* react-dom */)) : "function" == typeof define && define.amd ? define(["react", "react-dom"], e) : "object" == typeof exports ? exports.ReactDraggable = e(require(68 /* react */), require(60 /* react-dom */)) : t.ReactDraggable = e(t.React, t.ReactDOM);
+      "object" == typeof exports && "object" == typeof module ? module.exports = e(require(73 /* react */), require(65 /* react-dom */)) : "function" == typeof define && define.amd ? define(["react", "react-dom"], e) : "object" == typeof exports ? exports.ReactDraggable = e(require(73 /* react */), require(65 /* react-dom */)) : t.ReactDraggable = e(t.React, t.ReactDOM);
     }(window, function(t, e) {
       return function(t2) {
         var e2 = {};
@@ -22482,7 +22482,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     });
   },
 
-  65(require, exports) {
+  70(require, exports) {
     // node_modules/react-rnd/node_modules/re-resizable/lib/index.es5.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -22491,8 +22491,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(68 /* react */);
-    var memoize = _interopDefault(require(33 /* fast-memoize */));
+    var React = require(73 /* react */);
+    var memoize = _interopDefault(require(38 /* fast-memoize */));
     var extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || {
         __proto__: []
@@ -23310,7 +23310,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.Resizable = Resizable;
   },
 
-  64(require, exports) {
+  69(require, exports) {
     // node_modules/react-rnd/lib/index.es5.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -23319,9 +23319,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(68 /* react */);
-    var DraggableRoot = _interopDefault(require(66 /* react-draggable */));
-    var reResizable = require(65 /* re-resizable */);
+    var React = require(73 /* react */);
+    var DraggableRoot = _interopDefault(require(71 /* react-draggable */));
+    var reResizable = require(70 /* re-resizable */);
     var extendStatics = function(d, b) {
       extendStatics = Object.setPrototypeOf || {
         __proto__: []
@@ -23815,7 +23815,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.Rnd = Rnd;
   },
 
-  75(require, exports, module) {
+  80(require, exports, module) {
     // node_modules/shallowequal/index.js
     module.exports = function shallowEqual(objA, objB, compare, compareContext) {
       var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
@@ -23850,7 +23850,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  2(require, exports) {
+  6(require, exports) {
     // node_modules/@emotion/stylis/dist/stylis.browser.cjs.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24345,7 +24345,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.default = stylis_min;
   },
 
-  3(require, exports) {
+  7(require, exports) {
     // node_modules/@emotion/unitless/dist/unitless.browser.cjs.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24401,7 +24401,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.default = unitlessKeys;
   },
 
-  1(require, exports) {
+  5(require, exports) {
     // node_modules/@emotion/memoize/dist/memoize.browser.cjs.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24418,7 +24418,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.default = memoize;
   },
 
-  0(require, exports) {
+  4(require, exports) {
     // node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.cjs.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24427,7 +24427,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var memoize = _interopDefault(require(1 /* @emotion/memoize */));
+    var memoize = _interopDefault(require(5 /* @emotion/memoize */));
     var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|inert|itemProp|itemScope|itemType|itemID|itemRef|on|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/;
     var index = memoize(function(prop) {
       return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
@@ -24435,10 +24435,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.default = index;
   },
 
-  35(require, exports, module) {
+  40(require, exports, module) {
     // node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js
     "use strict";
-    var reactIs = require(63 /* react-is */);
+    var reactIs = require(68 /* react-is */);
     var REACT_STATICS = {
       childContextTypes: true,
       contextType: true,
@@ -24521,7 +24521,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = hoistNonReactStatics;
   },
 
-  78(require, exports) {
+  83(require, exports) {
     // node_modules/styled-components/dist/styled-components.browser.cjs.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -24530,14 +24530,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var reactIs = require(63 /* react-is */);
-    var React = require(68 /* react */);
+    var reactIs = require(68 /* react-is */);
+    var React = require(73 /* react */);
     var React__default = _interopDefault(React);
-    var shallowequal = _interopDefault(require(75 /* shallowequal */));
-    var Stylis = _interopDefault(require(2 /* @emotion/stylis */));
-    var unitless = _interopDefault(require(3 /* @emotion/unitless */));
-    var validAttr = _interopDefault(require(0 /* @emotion/is-prop-valid */));
-    var hoist = _interopDefault(require(35 /* hoist-non-react-statics */));
+    var shallowequal = _interopDefault(require(80 /* shallowequal */));
+    var Stylis = _interopDefault(require(6 /* @emotion/stylis */));
+    var unitless = _interopDefault(require(7 /* @emotion/unitless */));
+    var validAttr = _interopDefault(require(4 /* @emotion/is-prop-valid */));
+    var hoist = _interopDefault(require(40 /* hoist-non-react-statics */));
     function _extends() {
       _extends = Object.assign || function(target) {
         for (var i = 1; i < arguments.length; i++) {
@@ -25805,7 +25805,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.withTheme = withTheme;
   },
 
-  79(require) {
+  84(require) {
     // src/constants.js
     const CARD_SIZE = 200;
     const theme = {
@@ -25825,13 +25825,20 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       }]
     }];
 
+    // src/data/characters.js
+    const CHARACTERS = ["Aayla Secura", "Adi Gallia", "Admiral Dodd Rancit", "Admiral Firmus Piett", "Admiral Gial Ackbar", "Admiral Ozzel", "Admiral Raddus", "Admiral Terrinald Screed", "Admiral Trench", "Admiral U.O. Statura", "Agen Kolar", "Agent Kallus", "Aiolin and Morit Astarte", "Aks Moe", "Almec", "Alton Kastle", "Amee", "AP-5", "Armitage Hux", "Artoo", "Arvel Crynyd", "Asajj Ventress", "Aurra Sing", "AZI-3", "Bala-Tik", "Barada", "Bargwill Tomder", "Baron Papanoida", "Barriss Offee", "Baze Malbus", "Bazine Netal", "BB-8", "BB-9E", "Ben Quadinaros", "Berch Teller", "Beru Lars", "Bib Fortuna", "Biggs Darklighter", "Black Krrsantan", "Bo-Katan Kryze", "Boba Fett", "Bobbajo", "Bodhi Rook", "Borvo the Hutt", "Boss Nass", "Bossk", "Breha Antilles-Organa", "Bren Derlin", "Brendol Hux", "BT-1", "C-3PO", "C1-10P", "Cad Bane", "Caluan Ematt", "Captain Gregor", "Captain Phasma", "Captain Quarsh Panaka", "Captain Rex", "Carlist Rieekan", "Casca Panzoro", "Cassian Andor", "Cassio Tagge", "Cham Syndulla", "Che Amanwe Papanoida", "Chewbacca", "Chi Eekway Papanoida", "Chief Chirpa", "Chirrut Îmwe", "Ciena Ree", "Cin Drallig", "Clegg Holdfast", "Cliegg Lars", "Coleman Kcaj", "Coleman Trebor", "Colonel Kaplan", "Commander Bly", "Commander Cody (CC-2224)", "Commander Fil (CC-3714)", "Commander Fox", "Commander Gree", "Commander Jet", "Commander Wolffe", "Conan Antonio Motti", "Conder Kyl", "Constable Zuvio", "Cordé", "Cpatain Typho", "Crix Madine", "Cut Lawquane", "Dak Ralter", "Dapp", "Darth Bane", "Darth Maul", "Darth Tyranus", "Daultay Dofine", "Del Meeko", "Delian Mors", "Dengar", "Depa Billaba", "Derek Klivian", "Dexter Jettster", "Dineé Ellberger", "DJ", "Doctor Aphra", "Doctor Evazan", "Dogma", "Dormé", "Dr. Cylo", "Droidbait", "Droopy McCool", "Dryden Vos", "Dud Bolt", "Ebe E. Endocott", "Echuu Shen-Jon", "Eeth Koth", "Eighth Brother", "Eirtaé", "Eli Vanto", "Ellé", "Ello Asty", "Embo", "Eneb Ray", "Enfys Nest", "EV-9D9", "Evaan Verlaine", "Even Piell", "Ezra Bridger", "Faro Argyus", "Feral", "Fifth Brother", "Finis Valorum", "Finn", "Fives", "FN-1824", "FN-2003", "Fodesinbeed Annodue", "Fulcrum", "FX-7", "GA-97", "Galen Erso", "Gallius Rax", 'Garazeb "Zeb" Orrelios', "Gardulla the Hutt", "Garrick Versio", "Garven Dreis", "Gavyn Sykes", "Gideon Hask", "Gizor Dellso", "Gonk droid", "Grand Inquisitor", "Greeata Jendowanian", "Greedo", "Greer Sonnel", "Grievous", "Grummgar", "Gungi", "Hammerhead", "Han Solo", "Harter Kalonia", "Has Obbit", "Hera Syndulla", "Hevy", "Hondo Ohnaka", "Huyang", "Iden Versio", "IG-88", "Ima-Gun Di", "Inquisitors", "Inspector Thanoth", "Jabba", "Jacen Syndulla", "Jan Dodonna", "Jango Fett", "Janus Greejatus", "Jar Jar Binks", "Jas Emari", "Jaxxon", "Jek Tono Porkins", "Jeremoch Colton", "Jira", "Jobal Naberrie", "Jocasta Nu", "Joclad Danva", "Joh Yowza", "Jom Barell", "Joph Seastriker", "Jova Tarkin", "Jubnuk", "Jyn Erso", "K-2SO", "Kanan Jarrus", "Karbin", "Karina the Great", "Kes Dameron", "Ketsu Onyo", "Ki-Adi-Mundi", "King Katuunko", "Kit Fisto", "Kitster Banai", "Klaatu", "Klik-Klak", "Korr Sella", "Kylo Ren", "L3-37", "Lama Su", "Lando Calrissian", "Lanever Villecham", "Leia Organa", "Letta Turmond", "Lieutenant Kaydel Ko Connix", "Lieutenant Thire", "Lobot", "Logray", "Lok Durd", "Longo Two-Guns", "Lor San Tekka", "Lorth Needa", "Lott Dod", "Luke Skywalker", "Lumat", "Luminara Unduli", "Lux Bonteri", "Lyn Me", "Lyra Erso", "Mace Windu", "Malakili", "Mama the Hutt", "Mars Guo", "Mas Amedda", "Mawhonic", "Max Rebo", "Maximilian Veers", "Maz Kanata", "ME-8D9", "Meena Tills", "Mercurial Swift", "Mina Bonteri", "Miraj Scintel", "Mister Bones", "Mod Terrik", "Moden Canady", "Mon Mothma", "Moradmin Bast", "Moralo Eval", "Morley", "Mother Talzin", "Nahdar Vebb", "Nahdonnis Praji", "Nien Nunb", "Niima the Hutt", "Nines", "Norra Wexley", "Nute Gunray", "Nuvo Vindi", "Obi-Wan Kenobi", "Odd Ball", "Ody Mandrell", "Omi", "Onaconda Farr", "Oola", "OOM-9", "Oppo Rancisis", "Orn Free Taa", "Oro Dassyne", "Orrimarko", "Osi Sobeck", "Owen Lars", "Pablo-Jill", "Padmé Amidala", "Pagetti Rook", "Paige Tico", "Paploo", "Petty Officer Thanisson", "Pharl McQuarrie", "Plo Koon", "Po Nudo", "Poe Dameron", "Poggle the Lesser", "Pong Krell", "Pooja Naberrie", "PZ-4CO", "Quarrie", "Quay Tolsite", "Queen Apailana", "Queen Jamillia", "Queen Neeyutnee", "Qui-Gon Jinn", "Quiggold", "Quinlan Vos", "R2-D2", "R2-KT", "R3-S6", "R4-P17", "R5-D4", "RA-7", "Rabé", "Rako Hardeen", "Ransolm Casterfo", "Rappertunie", "Ratts Tyerell", "Raymus Antilles", "Ree-Yees", "Reeve Panzoro", "Rey", "Ric Olié", "Riff Tamson", "Riley", "Rinnriyin Di", "Rio Durant", "Rogue Squadron", "Romba", "Roos Tarpals", "Rose Tico", "Rotta the Hutt", "Rukh", "Rune Haako", "Rush Clovis", "Ruwee Naberrie", "Ryoo Naberrie", "Sabé", "Sabine Wren", "Saché", "Saelt-Marae", "Saesee Tiin", "Salacious B. Crumb", "San Hill", "Sana Starros", "Sarco Plank", "Sarkli", "Satine Kryze", "Savage Opress", "Sebulba", "Senator Organa", "Sergeant Kreel", "Seventh Sister", "Shaak Ti", "Shara Bey", "Shmi Skywalker", "Shu Mai", "Sidon Ithano", "Sifo-Dyas", "Sim Aloo", "Siniir Rath Velus", "Sio Bibble", "Sixth Brother", "Slowen Lo", "Sly Moore", "Snaggletooth", "Snap Wexley", "Snoke", "Sola Naberrie", "Sora Bulq", "Strono Tuggs", "Sy Snootles", "Tallissan Lintra", "Tarfful", "Tasu Leech", "Taun We", "TC-14", "Tee Watt Kaa", "Teebo", "Teedo", "Teemto Pagalies", "Temiri Blagg", "Tessek", "Tey How", "Thane Kyrell", "The Bendu", "The Smuggler", "Thrawn", "Tiaan Jerjerrod", "Tion Medon", "Tobias Beckett", "Tulon Voidgazer", "Tup", "U9-C4", "Unkar Plutt", "Val Beckett", "Vanden Willard", "Vice Admiral Amilyn Holdo", "Vober Dand", "WAC-47", "Wag Too", "Wald", "Walrus Man", "Warok", "Wat Tambor", "Watto", "Wedge Antilles", "Wes Janson", "Wicket W. Warrick", "Wilhuff Tarkin", "Wollivan", "Wuher", "Wullf Yularen", "Xamuel Lennox", "Yaddle", "Yarael Poof", "Yoda", "Zam Wesell", "Zev Senesca", "Ziro the Hutt", "Zuckuss"];
+
     // src/components/Content.js
-    const React4 = require(68 /* react */, true /* ES6 import */), styled_components4 = require(78 /* styled-components */, true /* ES6 import */), slate = require(77 /* slate */, true /* ES6 import */), slate_react = require(76 /* slate-react */, true /* ES6 import */);
+    const React4 = require(73 /* react */, true /* ES6 import */), ReactDOM2 = require(65 /* react-dom */, true /* ES6 import */), styled_components4 = require(83 /* styled-components */, true /* ES6 import */), slate = require(82 /* slate */, true /* ES6 import */), slate_react = require(81 /* slate-react */, true /* ES6 import */), downshift = require(36 /* downshift */, true /* ES6 import */);
+    const Portal = ({children}) => {
+      return ReactDOM2.createPortal(children, document.body);
+    };
     const ContentWrapper = styled_components4.default.div`
   width: 100%;
+  height: 100%;
   resize: none;
   border: none;
-  overflow: visible;
+  overflow: scroll;
   font-family: sans-serif;
   font-size: ${theme.body}rem;
   min-height: 150px;
@@ -25849,12 +25856,69 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         ...props.attributes
       }, props.children);
     };
+    const Leaf = (props) => {
+      const isLink = props.leaf.type === "wikilink";
+      return React4.createElement("span", {
+        ...props.attributes,
+        style: {
+          fontWeight: props.leaf.bold ? "bold" : "normal",
+          backgroundColor: isLink ? "red" : "transparent"
+        }
+      }, props.children);
+    };
+    const items = ["apple", "orange", "banana"];
+    const menuStyles = {
+      maxHeight: "200px",
+      overflowY: "auto",
+      width: "150px",
+      margin: 0,
+      borderTop: 0,
+      background: "white"
+    };
+    const DropdownSelect = (props) => {
+      const {isOpen, selectedItem, getToggleButtonProps, getLabelProps, getMenuProps, highlightedIndex, getItemProps} = downshift.useSelect({
+        items
+      });
+      return React4.createElement("div", {
+        style: {
+          display: "inline-block",
+          zIndex: "9999"
+        }
+      }, React4.createElement("label", {
+        ...getLabelProps()
+      }, "Choose an element:"), React4.createElement("button", {
+        ...getToggleButtonProps()
+      }, selectedItem || "Elements"), React4.createElement("ul", {
+        ...getMenuProps(),
+        style: menuStyles
+      }, isOpen && items.map((item, index) => React4.createElement("li", {
+        style: highlightedIndex === index ? {
+          backgroundColor: "#bde4ff"
+        } : {},
+        key: `${item}${index}`,
+        ...getItemProps({
+          item,
+          index
+        })
+      }, item))), React4.createElement("div", {
+        tabIndex: "0"
+      }));
+    };
     const Content3 = ({id, content, onUpdate}) => {
-      const editor = React4.useMemo(() => slate_react.withReact(slate.createEditor()), []);
+      const editor = React4.useMemo(() => withMentions(slate_react.withReact(slate.createEditor())), []);
+      const [target, setTarget] = React4.useState();
+      const [index, setIndex] = React4.useState(0);
+      const [search, setSearch] = React4.useState("");
+      const ref = React4.useRef();
+      const chars = CHARACTERS.filter((c) => c.toLowerCase().startsWith(search.toLowerCase())).slice(0, 10);
       const renderElement = React4.useCallback((props) => {
         switch (props.element.type) {
           case "code":
             return React4.createElement(CodeElement, {
+              ...props
+            });
+          case "mention":
+            return React4.createElement(MentionElement, {
               ...props
             });
           default:
@@ -25863,34 +25927,203 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             });
         }
       }, []);
+      const renderLeaf = React4.useCallback((props) => {
+        return React4.createElement(Leaf, {
+          ...props
+        });
+      }, []);
+      const onKeyDown = React4.useCallback((event) => {
+        if (event.ctrlKey) {
+          switch (event.key) {
+            case "`": {
+              event.preventDefault();
+              const [match] = slate.Editor.nodes(editor, {
+                match: (n) => n.type === "code"
+              });
+              slate.Transforms.setNodes(editor, {
+                type: match ? null : "code"
+              }, {
+                match: (n) => slate.Editor.isBlock(editor, n)
+              });
+              break;
+            }
+            case "l": {
+              event.preventDefault();
+              const [match] = slate.Editor.nodes(editor, {
+                match: (n) => n.type === "wikilink"
+              });
+              slate.Transforms.setNodes(editor, {
+                type: match ? null : "wikilink"
+              }, {
+                match: (n) => slate.Text.isText(n),
+                split: true
+              });
+              break;
+            }
+            case "b": {
+              event.preventDefault();
+              const [match] = slate.Editor.nodes(editor, {
+                match: (n) => n.bold
+              });
+              slate.Transforms.setNodes(editor, {
+                bold: match ? false : true
+              }, {
+                match: (n) => slate.Text.isText(n),
+                split: true
+              });
+              break;
+            }
+          }
+        }
+        if (target) {
+          switch (event.key) {
+            case "ArrowDown":
+              event.preventDefault();
+              const prevIndex = index >= chars.length - 1 ? 0 : index + 1;
+              setIndex(prevIndex);
+              break;
+            case "ArrowUp":
+              event.preventDefault();
+              const nextIndex = index <= 0 ? chars.length - 1 : index - 1;
+              setIndex(nextIndex);
+              break;
+            case "Tab":
+            case "Enter":
+              event.preventDefault();
+              slate.Transforms.select(editor, target);
+              insertMention(editor, chars[index]);
+              setTarget(null);
+              break;
+            case "Escape":
+              event.preventDefault();
+              setTarget(null);
+              break;
+          }
+        }
+      }, [index, search, target]);
+      React4.useEffect(() => {
+        if (target && chars.length > 0) {
+          const el = ref.current;
+          const domRange = slate_react.ReactEditor.toDOMRange(editor, target);
+          const rect = domRange.getBoundingClientRect();
+          el.style.top = `${rect.top + window.pageYOffset + 24}px`;
+          el.style.left = `${rect.left + window.pageXOffset}px`;
+        }
+      }, [chars.length, editor, index, search, target]);
       return React4.createElement(ContentWrapper, null, React4.createElement(slate_react.Slate, {
         editor,
         value: content,
         onChange: (newValue) => {
           onUpdate(id, "content", newValue);
+          const {selection} = editor;
+          if (selection && slate.Range.isCollapsed(selection)) {
+            const [start] = slate.Range.edges(selection);
+            const wordBefore = slate.Editor.before(editor, start, {
+              unit: "word"
+            });
+            const before = wordBefore && slate.Editor.before(editor, wordBefore);
+            const beforeRange = before && slate.Editor.range(editor, before, start);
+            const beforeText = beforeRange && slate.Editor.string(editor, beforeRange);
+            const beforeMatch = beforeText && beforeText.match(/^@(\w+)$/);
+            const after = slate.Editor.after(editor, start);
+            const afterRange = slate.Editor.range(editor, start, after);
+            const afterText = slate.Editor.string(editor, afterRange);
+            const afterMatch = afterText.match(/^(\s|$)/);
+            if (beforeMatch && afterMatch) {
+              console.log("before match: ");
+              console.log(beforeMatch);
+              console.log("after match: ");
+              console.log(beforeMatch);
+              setTarget(beforeRange);
+              setSearch(beforeMatch[1]);
+              setIndex(0);
+              return;
+            }
+          }
+          setTarget(null);
         }
       }, React4.createElement(slate_react.Editable, {
         placeholder: "Start writing here",
         renderElement,
-        onKeyDown: (event) => {
-          if (event.key === "`" && event.ctrlKey) {
-            event.preventDefault();
-            const [match] = slate.Editor.nodes(editor, {
-              match: (n) => n.type === "code"
-            });
-            slate.Transforms.setNodes(editor, {
-              type: match ? "paragraph" : "code"
-            }, {
-              match: (n) => slate.Editor.isBlock(editor, n)
-            });
-          }
+        renderLeaf,
+        onKeyDown
+      }), target && chars.length > 0 && React4.createElement(Portal, null, React4.createElement("div", {
+        ref,
+        style: {
+          top: "-9999px",
+          left: "-9999px",
+          position: "absolute",
+          zIndex: 1,
+          padding: "3px",
+          background: "white",
+          borderRadius: "4px",
+          boxShadow: "0 1px 5px rgba(0,0,0,.2)"
         }
-      })));
+      }, chars.map((char, i) => React4.createElement("div", {
+        key: char,
+        style: {
+          padding: "1px 3px",
+          borderRadius: "3px",
+          background: i === index ? "#B4D5FF" : "transparent"
+        }
+      }, char))))));
+    };
+    const withMentions = (editor) => {
+      const {isInline, isVoid} = editor;
+      editor.isInline = (element) => {
+        return element.type === "mention" ? true : isInline(element);
+      };
+      editor.isVoid = (element) => {
+        return element.type === "mention" ? true : isVoid(element);
+      };
+      return editor;
+    };
+    const insertMention = (editor, character) => {
+      const mention = {
+        type: "mention",
+        character,
+        children: [{
+          text: ""
+        }]
+      };
+      slate.Transforms.insertNodes(editor, mention);
+      slate.Transforms.move(editor);
+    };
+    const Element = (props) => {
+      const {attributes, children, element} = props;
+      switch (element.type) {
+        case "mention":
+          return React4.createElement(MentionElement, {
+            ...props
+          });
+        default:
+          return React4.createElement("p", {
+            ...attributes
+          }, children);
+      }
+    };
+    const MentionElement = ({attributes, children, element}) => {
+      const selected = slate_react.useSelected();
+      const focused = slate_react.useFocused();
+      return React4.createElement("span", {
+        ...attributes,
+        contentEditable: false,
+        style: {
+          padding: "3px 3px 2px",
+          margin: "0 1px",
+          verticalAlign: "baseline",
+          display: "inline-block",
+          borderRadius: "4px",
+          backgroundColor: "#eee",
+          fontSize: "0.9em",
+          boxShadow: selected && focused ? "0 0 0 2px #B4D5FF" : "none"
+        }
+      }, "@", element.character, children);
     };
     const default4 = Content3;
 
     // src/components/Card.js
-    const React3 = require(68 /* react */, true /* ES6 import */), react_flip_toolkit3 = require(61 /* react-flip-toolkit */, true /* ES6 import */), re_resizable = require(58 /* re-resizable */, true /* ES6 import */), react_rnd = require(64 /* react-rnd */, true /* ES6 import */), styled_components3 = require(78 /* styled-components */, true /* ES6 import */);
+    const React3 = require(73 /* react */, true /* ES6 import */), react_flip_toolkit3 = require(66 /* react-flip-toolkit */, true /* ES6 import */), re_resizable = require(63 /* re-resizable */, true /* ES6 import */), react_rnd = require(69 /* react-rnd */, true /* ES6 import */), styled_components3 = require(83 /* styled-components */, true /* ES6 import */);
     const CardWrapper = styled_components3.default.div`
   display: flex;
   flex-direction: column;
@@ -25990,8 +26223,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         minHeight: CARD_SIZE * 1.5,
         dragGrid: shiftDown ? [25, 25] : [1, 1],
         size: {
-          width: size || "auto",
-          height: size || "auto"
+          width: size,
+          height: size
         },
         disableDragging: isTyping,
         onDrag: (e, d) => {
@@ -26048,7 +26281,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const default2 = Card3;
 
     // src/components/Breadcrumb.js
-    const React2 = require(68 /* react */, true /* ES6 import */), react_flip_toolkit2 = require(61 /* react-flip-toolkit */, true /* ES6 import */), styled_components2 = require(78 /* styled-components */, true /* ES6 import */);
+    const React2 = require(73 /* react */, true /* ES6 import */), react_flip_toolkit2 = require(66 /* react-flip-toolkit */, true /* ES6 import */), styled_components2 = require(83 /* styled-components */, true /* ES6 import */);
     const BreadcrumbWrapper = styled_components2.default.button`
     padding: ${theme.padding / 2}px ${theme.padding}px;
     background-color: transparent;
@@ -26070,7 +26303,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     const default3 = Breadcrumb3;
 
     // src/App.js
-    const React = require(68 /* react */, true /* ES6 import */), ReactDOM = require(60 /* react-dom */, true /* ES6 import */), react_flip_toolkit = require(61 /* react-flip-toolkit */, true /* ES6 import */), lodash = require(49 /* lodash */, true /* ES6 import */), axios = require(4 /* axios */, true /* ES6 import */), styled_components = require(78 /* styled-components */, true /* ES6 import */), FlexSearch = require(34 /* flexsearch */, true /* ES6 import */);
+    const React = require(73 /* react */, true /* ES6 import */), ReactDOM = require(65 /* react-dom */, true /* ES6 import */), react_flip_toolkit = require(66 /* react-flip-toolkit */, true /* ES6 import */), lodash = require(54 /* lodash */, true /* ES6 import */), axios = require(8 /* axios */, true /* ES6 import */), styled_components = require(83 /* styled-components */, true /* ES6 import */), FlexSearch = require(39 /* flexsearch */, true /* ES6 import */);
     function useLocalStorage(defaultValue, key) {
       const [value, setValue] = React.useState(() => {
         const stickyValue = window.localStorage.getItem(key);
@@ -26191,18 +26424,20 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               }
             };
           }
-          case "SET_LEVEL": {
+          case "ZOOM_OUT_TO_LEVEL": {
             const {level} = action.data;
+            const newPath = state2.path.slice(0, level);
             return {
               ...state2,
-              path: state2.path.slice(0, level)
+              path: newPath
             };
           }
           case "ZOOM_TO_LEVEL": {
             const {level} = action.data;
+            const newPath = [...state2.path, level];
             return {
               ...state2,
-              path: [...state2.path, level]
+              path: newPath
             };
           }
           case "LOAD_STATE": {
@@ -26218,6 +26453,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const {cards, path} = state;
       const currLevel = path[path.length - 1];
       const currCards = cards[currLevel].children;
+      React.useEffect(() => {
+        if (path) {
+          console.log("goot a path!");
+          window.location.hash = path.join("/");
+        }
+        setSavedState(state);
+      }, [path]);
       const [isZooming, setIsZooming] = React.useState(false);
       const handleCanvasDoubleClick = ({clientX, clientY}) => {
         if (shiftDown)
@@ -26265,7 +26507,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           }, React.createElement(default3, {
             onClick: () => {
               dispatch({
-                type: "SET_LEVEL",
+                type: "ZOOM_OUT_TO_LEVEL",
                 data: {
                   level: idx + 1
                 }
@@ -26359,7 +26601,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     ReactDOM.render(React.createElement(App2, null), document.getElementById("root"));
   },
 
-  38(require, exports, module) {
+  43(require, exports, module) {
     // node_modules/is-plain-object/index.cjs.js
     "use strict";
     function isObject(val) {
@@ -26386,7 +26628,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = isPlainObject;
   },
 
-  36(require, exports) {
+  41(require, exports) {
     // node_modules/immer/dist/immer.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -27800,7 +28042,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.setUseProxies = setUseProxies;
   },
 
-  32(require, exports, module) {
+  37(require, exports, module) {
     // node_modules/esrever/esrever.js
     ;
     (function(root) {
@@ -27845,7 +28087,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     })(this);
   },
 
-  77(require, exports) {
+  82(require, exports) {
     // node_modules/slate/dist/index.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -27854,9 +28096,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var isPlainObject = _interopDefault(require(38 /* is-plain-object */));
-    var immer = require(36 /* immer */);
-    var esrever = require(32 /* esrever */);
+    var isPlainObject = _interopDefault(require(43 /* is-plain-object */));
+    var immer = require(41 /* immer */);
+    var esrever = require(37 /* esrever */);
     function _arrayWithoutHoles(arr) {
       if (Array.isArray(arr)) {
         for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
@@ -32855,7 +33097,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.createEditor = createEditor;
   },
 
-  46(require, exports, module) {
+  51(require, exports, module) {
     // node_modules/lodash/isObject.js
     function isObject(value) {
       var type = typeof value;
@@ -32864,39 +33106,39 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = isObject;
   },
 
-  41(require, exports, module) {
+  46(require, exports, module) {
     // node_modules/lodash/_freeGlobal.js
     var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
     module.exports = freeGlobal;
   },
 
-  44(require, exports, module) {
+  49(require, exports, module) {
     // node_modules/lodash/_root.js
-    var freeGlobal = require(41 /* ./_freeGlobal */);
+    var freeGlobal = require(46 /* ./_freeGlobal */);
     var freeSelf = typeof self == "object" && self && self.Object === Object && self;
     var root = freeGlobal || freeSelf || Function("return this")();
     module.exports = root;
   },
 
-  50(require, exports, module) {
+  55(require, exports, module) {
     // node_modules/lodash/now.js
-    var root = require(44 /* ./_root */);
+    var root = require(49 /* ./_root */);
     var now = function() {
       return root.Date.now();
     };
     module.exports = now;
   },
 
-  39(require, exports, module) {
+  44(require, exports, module) {
     // node_modules/lodash/_Symbol.js
-    var root = require(44 /* ./_root */);
+    var root = require(49 /* ./_root */);
     var Symbol = root.Symbol;
     module.exports = Symbol;
   },
 
-  42(require, exports, module) {
+  47(require, exports, module) {
     // node_modules/lodash/_getRawTag.js
-    var Symbol = require(39 /* ./_Symbol */);
+    var Symbol = require(44 /* ./_Symbol */);
     var objectProto = Object.prototype;
     var hasOwnProperty = objectProto.hasOwnProperty;
     var nativeObjectToString = objectProto.toString;
@@ -32921,7 +33163,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = getRawTag;
   },
 
-  43(require, exports, module) {
+  48(require, exports, module) {
     // node_modules/lodash/_objectToString.js
     var objectProto = Object.prototype;
     var nativeObjectToString = objectProto.toString;
@@ -32931,9 +33173,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = objectToString;
   },
 
-  40(require, exports, module) {
+  45(require, exports, module) {
     // node_modules/lodash/_baseGetTag.js
-    var Symbol = require(39 /* ./_Symbol */), getRawTag = require(42 /* ./_getRawTag */), objectToString = require(43 /* ./_objectToString */);
+    var Symbol = require(44 /* ./_Symbol */), getRawTag = require(47 /* ./_getRawTag */), objectToString = require(48 /* ./_objectToString */);
     var nullTag = "[object Null]", undefinedTag = "[object Undefined]";
     var symToStringTag = Symbol ? Symbol.toStringTag : void 0;
     function baseGetTag(value) {
@@ -32945,7 +33187,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = baseGetTag;
   },
 
-  47(require, exports, module) {
+  52(require, exports, module) {
     // node_modules/lodash/isObjectLike.js
     function isObjectLike(value) {
       return value != null && typeof value == "object";
@@ -32953,9 +33195,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = isObjectLike;
   },
 
-  48(require, exports, module) {
+  53(require, exports, module) {
     // node_modules/lodash/isSymbol.js
-    var baseGetTag = require(40 /* ./_baseGetTag */), isObjectLike = require(47 /* ./isObjectLike */);
+    var baseGetTag = require(45 /* ./_baseGetTag */), isObjectLike = require(52 /* ./isObjectLike */);
     var symbolTag = "[object Symbol]";
     function isSymbol(value) {
       return typeof value == "symbol" || isObjectLike(value) && baseGetTag(value) == symbolTag;
@@ -32963,9 +33205,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = isSymbol;
   },
 
-  52(require, exports, module) {
+  57(require, exports, module) {
     // node_modules/lodash/toNumber.js
-    var isObject = require(46 /* ./isObject */), isSymbol = require(48 /* ./isSymbol */);
+    var isObject = require(51 /* ./isObject */), isSymbol = require(53 /* ./isSymbol */);
     var NAN = 0 / 0;
     var reTrim = /^\s+|\s+$/g;
     var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
@@ -32993,9 +33235,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = toNumber;
   },
 
-  45(require, exports, module) {
+  50(require, exports, module) {
     // node_modules/lodash/debounce.js
-    var isObject = require(46 /* ./isObject */), now = require(50 /* ./now */), toNumber = require(52 /* ./toNumber */);
+    var isObject = require(51 /* ./isObject */), now = require(55 /* ./now */), toNumber = require(57 /* ./toNumber */);
     var FUNC_ERROR_TEXT = "Expected a function";
     var nativeMax = Math.max, nativeMin = Math.min;
     function debounce(func, wait, options) {
@@ -33082,9 +33324,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = debounce;
   },
 
-  51(require, exports, module) {
+  56(require, exports, module) {
     // node_modules/lodash/throttle.js
-    var debounce = require(45 /* ./debounce */), isObject = require(46 /* ./isObject */);
+    var debounce = require(50 /* ./debounce */), isObject = require(51 /* ./isObject */);
     var FUNC_ERROR_TEXT = "Expected a function";
     function throttle(func, wait, options) {
       var leading = true, trailing = true;
@@ -33104,7 +33346,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = throttle;
   },
 
-  30(require, exports, module) {
+  34(require, exports, module) {
     // node_modules/compute-scroll-into-view/index.js
     "use strict";
     exports.__esModule = true;
@@ -33259,12 +33501,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = exports.default;
   },
 
-  74(require, exports, module) {
+  79(require, exports, module) {
     // node_modules/scroll-into-view-if-needed/index.js
     "use strict";
     exports.__esModule = true;
     exports["default"] = void 0;
-    var _computeScrollIntoView = _interopRequireDefault(require(30 /* compute-scroll-into-view */));
+    var _computeScrollIntoView = _interopRequireDefault(require(34 /* compute-scroll-into-view */));
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : {
         default: obj
@@ -33323,7 +33565,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = exports.default;
   },
 
-  31(require, exports, module) {
+  35(require, exports, module) {
     // node_modules/direction/index.js
     "use strict";
     module.exports = direction;
@@ -33343,7 +33585,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
   },
 
-  37(require, exports) {
+  42(require, exports) {
     // node_modules/is-hotkey/lib/index.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -33536,7 +33778,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.toKeyName = toKeyName;
   },
 
-  76(require, exports) {
+  81(require, exports) {
     // node_modules/slate-react/dist/index.js
     "use strict";
     Object.defineProperty(exports, "__esModule", {
@@ -33545,14 +33787,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function _interopDefault(ex) {
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
-    var React = require(68 /* react */);
+    var React = require(73 /* react */);
     var React__default = _interopDefault(React);
-    var slate = require(77 /* slate */);
-    var throttle = _interopDefault(require(51 /* lodash/throttle */));
-    var scrollIntoView = _interopDefault(require(74 /* scroll-into-view-if-needed */));
-    var getDirection = _interopDefault(require(31 /* direction */));
-    var ReactDOM = _interopDefault(require(60 /* react-dom */));
-    var isHotkey = require(37 /* is-hotkey */);
+    var slate = require(82 /* slate */);
+    var throttle = _interopDefault(require(56 /* lodash/throttle */));
+    var scrollIntoView = _interopDefault(require(79 /* scroll-into-view-if-needed */));
+    var getDirection = _interopDefault(require(35 /* direction */));
+    var ReactDOM = _interopDefault(require(65 /* react-dom */));
+    var isHotkey = require(42 /* is-hotkey */);
     function _defineProperty(obj, key, value) {
       if (key in obj) {
         Object.defineProperty(obj, key, {
@@ -35245,7 +35487,3009 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     exports.withReact = withReact;
   },
 
-  49(require, exports, module) {
+  3(require, exports, module) {
+    // node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js
+    function _objectWithoutPropertiesLoose(source, excluded) {
+      if (source == null)
+        return {};
+      var target = {};
+      var sourceKeys = Object.keys(source);
+      var key, i;
+      for (i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0)
+          continue;
+        target[key] = source[key];
+      }
+      return target;
+    }
+    module.exports = _objectWithoutPropertiesLoose;
+  },
+
+  1(require, exports, module) {
+    // node_modules/@babel/runtime/helpers/extends.js
+    function _extends() {
+      module.exports = _extends = Object.assign || function(target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      };
+      return _extends.apply(this, arguments);
+    }
+    module.exports = _extends;
+  },
+
+  0(require, exports, module) {
+    // node_modules/@babel/runtime/helpers/assertThisInitialized.js
+    function _assertThisInitialized(self) {
+      if (self === void 0) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      }
+      return self;
+    }
+    module.exports = _assertThisInitialized;
+  },
+
+  2(require, exports, module) {
+    // node_modules/@babel/runtime/helpers/inheritsLoose.js
+    function _inheritsLoose(subClass, superClass) {
+      subClass.prototype = Object.create(superClass.prototype);
+      subClass.prototype.constructor = subClass;
+      subClass.__proto__ = superClass;
+    }
+    module.exports = _inheritsLoose;
+  },
+
+  36(require, exports) {
+    // node_modules/downshift/dist/downshift.cjs.js
+    "use strict";
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    });
+    function _interopDefault(ex) {
+      return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+    }
+    var _objectWithoutPropertiesLoose = _interopDefault(require(3 /* @babel/runtime/helpers/objectWithoutPropertiesLoose */));
+    var _extends = _interopDefault(require(1 /* @babel/runtime/helpers/extends */));
+    var _assertThisInitialized = _interopDefault(require(0 /* @babel/runtime/helpers/assertThisInitialized */));
+    var _inheritsLoose = _interopDefault(require(2 /* @babel/runtime/helpers/inheritsLoose */));
+    var PropTypes = _interopDefault(require(61 /* prop-types */));
+    var react = require(73 /* react */);
+    var reactIs = require(68 /* react-is */);
+    var computeScrollIntoView = _interopDefault(require(34 /* compute-scroll-into-view */));
+    var idCounter = 0;
+    function cbToCb(cb) {
+      return typeof cb === "function" ? cb : noop;
+    }
+    function noop() {
+    }
+    function scrollIntoView(node, menuNode) {
+      if (!node) {
+        return;
+      }
+      var actions = computeScrollIntoView(node, {
+        boundary: menuNode,
+        block: "nearest",
+        scrollMode: "if-needed"
+      });
+      actions.forEach(function(_ref) {
+        var el = _ref.el, top = _ref.top, left = _ref.left;
+        el.scrollTop = top;
+        el.scrollLeft = left;
+      });
+    }
+    function isOrContainsNode(parent, child) {
+      return parent === child || parent.contains && parent.contains(child);
+    }
+    function debounce(fn, time) {
+      var timeoutId;
+      function cancel() {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+      }
+      function wrapper() {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+        cancel();
+        timeoutId = setTimeout(function() {
+          timeoutId = null;
+          fn.apply(void 0, args);
+        }, time);
+      }
+      wrapper.cancel = cancel;
+      return wrapper;
+    }
+    function callAllEventHandlers() {
+      for (var _len2 = arguments.length, fns = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        fns[_key2] = arguments[_key2];
+      }
+      return function(event) {
+        for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+          args[_key3 - 1] = arguments[_key3];
+        }
+        return fns.some(function(fn) {
+          if (fn) {
+            fn.apply(void 0, [event].concat(args));
+          }
+          return event.preventDownshiftDefault || event.hasOwnProperty("nativeEvent") && event.nativeEvent.preventDownshiftDefault;
+        });
+      };
+    }
+    function handleRefs() {
+      for (var _len4 = arguments.length, refs = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        refs[_key4] = arguments[_key4];
+      }
+      return function(node) {
+        refs.forEach(function(ref) {
+          if (typeof ref === "function") {
+            ref(node);
+          } else if (ref) {
+            ref.current = node;
+          }
+        });
+      };
+    }
+    function generateId() {
+      return String(idCounter++);
+    }
+    function resetIdCounter() {
+      idCounter = 0;
+    }
+    function getA11yStatusMessage(_ref2) {
+      var isOpen = _ref2.isOpen, resultCount = _ref2.resultCount, previousResultCount = _ref2.previousResultCount;
+      if (!isOpen) {
+        return "";
+      }
+      if (!resultCount) {
+        return "No results are available.";
+      }
+      if (resultCount !== previousResultCount) {
+        return resultCount + " result" + (resultCount === 1 ? " is" : "s are") + " available, use up and down arrow keys to navigate. Press Enter key to select.";
+      }
+      return "";
+    }
+    function unwrapArray(arg, defaultValue) {
+      arg = Array.isArray(arg) ? arg[0] : arg;
+      if (!arg && defaultValue) {
+        return defaultValue;
+      } else {
+        return arg;
+      }
+    }
+    function isDOMElement(element) {
+      return typeof element.type === "string";
+    }
+    function getElementProps(element) {
+      return element.props;
+    }
+    function requiredProp(fnName, propName) {
+      console.error('The property "' + propName + '" is required in "' + fnName + '"');
+    }
+    var stateKeys = ["highlightedIndex", "inputValue", "isOpen", "selectedItem", "type"];
+    function pickState(state) {
+      if (state === void 0) {
+        state = {};
+      }
+      var result = {};
+      stateKeys.forEach(function(k) {
+        if (state.hasOwnProperty(k)) {
+          result[k] = state[k];
+        }
+      });
+      return result;
+    }
+    function getState(state, props) {
+      return Object.keys(state).reduce(function(prevState, key) {
+        prevState[key] = isControlledProp(props, key) ? props[key] : state[key];
+        return prevState;
+      }, {});
+    }
+    function isControlledProp(props, key) {
+      return props[key] !== void 0;
+    }
+    function normalizeArrowKey(event) {
+      var key = event.key, keyCode = event.keyCode;
+      if (keyCode >= 37 && keyCode <= 40 && key.indexOf("Arrow") !== 0) {
+        return "Arrow" + key;
+      }
+      return key;
+    }
+    function isPlainObject(obj) {
+      return Object.prototype.toString.call(obj) === "[object Object]";
+    }
+    function getNextWrappingIndex(moveAmount, baseIndex, itemCount, getItemNodeFromIndex, circular) {
+      if (circular === void 0) {
+        circular = true;
+      }
+      if (itemCount === 0) {
+        return -1;
+      }
+      var itemsLastIndex = itemCount - 1;
+      if (typeof baseIndex !== "number" || baseIndex < 0 || baseIndex >= itemCount) {
+        baseIndex = moveAmount > 0 ? -1 : itemsLastIndex + 1;
+      }
+      var newIndex = baseIndex + moveAmount;
+      if (newIndex < 0) {
+        newIndex = circular ? itemsLastIndex : 0;
+      } else if (newIndex > itemsLastIndex) {
+        newIndex = circular ? 0 : itemsLastIndex;
+      }
+      var nonDisabledNewIndex = getNextNonDisabledIndex(moveAmount, newIndex, itemCount, getItemNodeFromIndex, circular);
+      if (nonDisabledNewIndex === -1) {
+        return baseIndex >= itemCount ? -1 : baseIndex;
+      }
+      return nonDisabledNewIndex;
+    }
+    function getNextNonDisabledIndex(moveAmount, baseIndex, itemCount, getItemNodeFromIndex, circular) {
+      var currentElementNode = getItemNodeFromIndex(baseIndex);
+      if (!currentElementNode || !currentElementNode.hasAttribute("disabled")) {
+        return baseIndex;
+      }
+      if (moveAmount > 0) {
+        for (var index = baseIndex + 1; index < itemCount; index++) {
+          if (!getItemNodeFromIndex(index).hasAttribute("disabled")) {
+            return index;
+          }
+        }
+      } else {
+        for (var _index = baseIndex - 1; _index >= 0; _index--) {
+          if (!getItemNodeFromIndex(_index).hasAttribute("disabled")) {
+            return _index;
+          }
+        }
+      }
+      if (circular) {
+        return moveAmount > 0 ? getNextNonDisabledIndex(1, 0, itemCount, getItemNodeFromIndex, false) : getNextNonDisabledIndex(-1, itemCount - 1, itemCount, getItemNodeFromIndex, false);
+      }
+      return -1;
+    }
+    function targetWithinDownshift(target, downshiftElements, document2, checkActiveElement) {
+      if (checkActiveElement === void 0) {
+        checkActiveElement = true;
+      }
+      return downshiftElements.some(function(contextNode) {
+        return contextNode && (isOrContainsNode(contextNode, target) || checkActiveElement && isOrContainsNode(contextNode, document2.activeElement));
+      });
+    }
+    function validateControlledUnchanged(state, prevProps, nextProps) {
+      if (false) {
+        return;
+      }
+      var warningDescription = "This prop should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled Downshift element for the lifetime of the component. More info: https://github.com/downshift-js/downshift#control-props";
+      Object.keys(state).forEach(function(propKey) {
+        if (prevProps[propKey] !== void 0 && nextProps[propKey] === void 0) {
+          console.error('downshift: A component has changed the controlled prop "' + propKey + '" to be uncontrolled. ' + warningDescription);
+        } else if (prevProps[propKey] === void 0 && nextProps[propKey] !== void 0) {
+          console.error('downshift: A component has changed the uncontrolled prop "' + propKey + '" to be controlled. ' + warningDescription);
+        }
+      });
+    }
+    var cleanupStatus = debounce(function() {
+      getStatusDiv().textContent = "";
+    }, 500);
+    function setStatus(status, documentProp) {
+      var div = getStatusDiv(documentProp);
+      if (!status) {
+        return;
+      }
+      div.textContent = status;
+      cleanupStatus();
+    }
+    function getStatusDiv(documentProp) {
+      if (documentProp === void 0) {
+        documentProp = document;
+      }
+      var statusDiv = documentProp.getElementById("a11y-status-message");
+      if (statusDiv) {
+        return statusDiv;
+      }
+      statusDiv = documentProp.createElement("div");
+      statusDiv.setAttribute("id", "a11y-status-message");
+      statusDiv.setAttribute("role", "status");
+      statusDiv.setAttribute("aria-live", "polite");
+      statusDiv.setAttribute("aria-relevant", "additions text");
+      Object.assign(statusDiv.style, {
+        border: "0",
+        clip: "rect(0 0 0 0)",
+        height: "1px",
+        margin: "-1px",
+        overflow: "hidden",
+        padding: "0",
+        position: "absolute",
+        width: "1px"
+      });
+      documentProp.body.appendChild(statusDiv);
+      return statusDiv;
+    }
+    var unknown = "__autocomplete_unknown__";
+    var mouseUp = "__autocomplete_mouseup__";
+    var itemMouseEnter = "__autocomplete_item_mouseenter__";
+    var keyDownArrowUp = "__autocomplete_keydown_arrow_up__";
+    var keyDownArrowDown = "__autocomplete_keydown_arrow_down__";
+    var keyDownEscape = "__autocomplete_keydown_escape__";
+    var keyDownEnter = "__autocomplete_keydown_enter__";
+    var keyDownHome = "__autocomplete_keydown_home__";
+    var keyDownEnd = "__autocomplete_keydown_end__";
+    var clickItem = "__autocomplete_click_item__";
+    var blurInput = "__autocomplete_blur_input__";
+    var changeInput = "__autocomplete_change_input__";
+    var keyDownSpaceButton = "__autocomplete_keydown_space_button__";
+    var clickButton = "__autocomplete_click_button__";
+    var blurButton = "__autocomplete_blur_button__";
+    var controlledPropUpdatedSelectedItem = "__autocomplete_controlled_prop_updated_selected_item__";
+    var touchEnd = "__autocomplete_touchend__";
+    var stateChangeTypes = Object.freeze({
+      __proto__: null,
+      unknown,
+      mouseUp,
+      itemMouseEnter,
+      keyDownArrowUp,
+      keyDownArrowDown,
+      keyDownEscape,
+      keyDownEnter,
+      keyDownHome,
+      keyDownEnd,
+      clickItem,
+      blurInput,
+      changeInput,
+      keyDownSpaceButton,
+      clickButton,
+      blurButton,
+      controlledPropUpdatedSelectedItem,
+      touchEnd
+    });
+    var Downshift = function() {
+      var Downshift2 = function(_Component) {
+        _inheritsLoose(Downshift3, _Component);
+        function Downshift3(_props) {
+          var _this = _Component.call(this, _props) || this;
+          _this.id = _this.props.id || "downshift-" + generateId();
+          _this.menuId = _this.props.menuId || _this.id + "-menu";
+          _this.labelId = _this.props.labelId || _this.id + "-label";
+          _this.inputId = _this.props.inputId || _this.id + "-input";
+          _this.getItemId = _this.props.getItemId || function(index) {
+            return _this.id + "-item-" + index;
+          };
+          _this.input = null;
+          _this.items = [];
+          _this.itemCount = null;
+          _this.previousResultCount = 0;
+          _this.timeoutIds = [];
+          _this.internalSetTimeout = function(fn, time) {
+            var id = setTimeout(function() {
+              _this.timeoutIds = _this.timeoutIds.filter(function(i) {
+                return i !== id;
+              });
+              fn();
+            }, time);
+            _this.timeoutIds.push(id);
+          };
+          _this.setItemCount = function(count) {
+            _this.itemCount = count;
+          };
+          _this.unsetItemCount = function() {
+            _this.itemCount = null;
+          };
+          _this.setHighlightedIndex = function(highlightedIndex, otherStateToSet) {
+            if (highlightedIndex === void 0) {
+              highlightedIndex = _this.props.defaultHighlightedIndex;
+            }
+            if (otherStateToSet === void 0) {
+              otherStateToSet = {};
+            }
+            otherStateToSet = pickState(otherStateToSet);
+            _this.internalSetState(_extends({
+              highlightedIndex
+            }, otherStateToSet));
+          };
+          _this.clearSelection = function(cb) {
+            _this.internalSetState({
+              selectedItem: null,
+              inputValue: "",
+              highlightedIndex: _this.props.defaultHighlightedIndex,
+              isOpen: _this.props.defaultIsOpen
+            }, cb);
+          };
+          _this.selectItem = function(item, otherStateToSet, cb) {
+            otherStateToSet = pickState(otherStateToSet);
+            _this.internalSetState(_extends({
+              isOpen: _this.props.defaultIsOpen,
+              highlightedIndex: _this.props.defaultHighlightedIndex,
+              selectedItem: item,
+              inputValue: _this.props.itemToString(item)
+            }, otherStateToSet), cb);
+          };
+          _this.selectItemAtIndex = function(itemIndex, otherStateToSet, cb) {
+            var item = _this.items[itemIndex];
+            if (item == null) {
+              return;
+            }
+            _this.selectItem(item, otherStateToSet, cb);
+          };
+          _this.selectHighlightedItem = function(otherStateToSet, cb) {
+            return _this.selectItemAtIndex(_this.getState().highlightedIndex, otherStateToSet, cb);
+          };
+          _this.internalSetState = function(stateToSet, cb) {
+            var isItemSelected, onChangeArg;
+            var onStateChangeArg = {};
+            var isStateToSetFunction = typeof stateToSet === "function";
+            if (!isStateToSetFunction && stateToSet.hasOwnProperty("inputValue")) {
+              _this.props.onInputValueChange(stateToSet.inputValue, _extends(_extends({}, _this.getStateAndHelpers()), stateToSet));
+            }
+            return _this.setState(function(state) {
+              state = _this.getState(state);
+              var newStateToSet = isStateToSetFunction ? stateToSet(state) : stateToSet;
+              newStateToSet = _this.props.stateReducer(state, newStateToSet);
+              isItemSelected = newStateToSet.hasOwnProperty("selectedItem");
+              var nextState = {};
+              var nextFullState = {};
+              if (isItemSelected && newStateToSet.selectedItem !== state.selectedItem) {
+                onChangeArg = newStateToSet.selectedItem;
+              }
+              newStateToSet.type = newStateToSet.type || unknown;
+              Object.keys(newStateToSet).forEach(function(key) {
+                if (state[key] !== newStateToSet[key]) {
+                  onStateChangeArg[key] = newStateToSet[key];
+                }
+                if (key === "type") {
+                  return;
+                }
+                nextFullState[key] = newStateToSet[key];
+                if (!isControlledProp(_this.props, key)) {
+                  nextState[key] = newStateToSet[key];
+                }
+              });
+              if (isStateToSetFunction && newStateToSet.hasOwnProperty("inputValue")) {
+                _this.props.onInputValueChange(newStateToSet.inputValue, _extends(_extends({}, _this.getStateAndHelpers()), newStateToSet));
+              }
+              return nextState;
+            }, function() {
+              cbToCb(cb)();
+              var hasMoreStateThanType = Object.keys(onStateChangeArg).length > 1;
+              if (hasMoreStateThanType) {
+                _this.props.onStateChange(onStateChangeArg, _this.getStateAndHelpers());
+              }
+              if (isItemSelected) {
+                _this.props.onSelect(stateToSet.selectedItem, _this.getStateAndHelpers());
+              }
+              if (onChangeArg !== void 0) {
+                _this.props.onChange(onChangeArg, _this.getStateAndHelpers());
+              }
+              _this.props.onUserAction(onStateChangeArg, _this.getStateAndHelpers());
+            });
+          };
+          _this.rootRef = function(node) {
+            return _this._rootNode = node;
+          };
+          _this.getRootProps = function(_temp, _temp2) {
+            var _extends2;
+            var _ref = _temp === void 0 ? {} : _temp, _ref$refKey = _ref.refKey, refKey = _ref$refKey === void 0 ? "ref" : _ref$refKey, ref = _ref.ref, rest = _objectWithoutPropertiesLoose(_ref, ["refKey", "ref"]);
+            var _ref2 = _temp2 === void 0 ? {} : _temp2, _ref2$suppressRefErro = _ref2.suppressRefError, suppressRefError = _ref2$suppressRefErro === void 0 ? false : _ref2$suppressRefErro;
+            _this.getRootProps.called = true;
+            _this.getRootProps.refKey = refKey;
+            _this.getRootProps.suppressRefError = suppressRefError;
+            var _this$getState = _this.getState(), isOpen = _this$getState.isOpen;
+            return _extends((_extends2 = {}, _extends2[refKey] = handleRefs(ref, _this.rootRef), _extends2.role = "combobox", _extends2["aria-expanded"] = isOpen, _extends2["aria-haspopup"] = "listbox", _extends2["aria-owns"] = isOpen ? _this.menuId : null, _extends2["aria-labelledby"] = _this.labelId, _extends2), rest);
+          };
+          _this.keyDownHandlers = {
+            ArrowDown: function ArrowDown(event) {
+              var _this2 = this;
+              event.preventDefault();
+              if (this.getState().isOpen) {
+                var amount = event.shiftKey ? 5 : 1;
+                this.moveHighlightedIndex(amount, {
+                  type: keyDownArrowDown
+                });
+              } else {
+                this.internalSetState({
+                  isOpen: true,
+                  type: keyDownArrowDown
+                }, function() {
+                  var itemCount = _this2.getItemCount();
+                  if (itemCount > 0) {
+                    var _this2$getState = _this2.getState(), highlightedIndex = _this2$getState.highlightedIndex;
+                    var nextHighlightedIndex = getNextWrappingIndex(1, highlightedIndex, itemCount, function(index) {
+                      return _this2.getItemNodeFromIndex(index);
+                    });
+                    _this2.setHighlightedIndex(nextHighlightedIndex, {
+                      type: keyDownArrowDown
+                    });
+                  }
+                });
+              }
+            },
+            ArrowUp: function ArrowUp(event) {
+              var _this3 = this;
+              event.preventDefault();
+              if (this.getState().isOpen) {
+                var amount = event.shiftKey ? -5 : -1;
+                this.moveHighlightedIndex(amount, {
+                  type: keyDownArrowUp
+                });
+              } else {
+                this.internalSetState({
+                  isOpen: true,
+                  type: keyDownArrowUp
+                }, function() {
+                  var itemCount = _this3.getItemCount();
+                  if (itemCount > 0) {
+                    var _this3$getState = _this3.getState(), highlightedIndex = _this3$getState.highlightedIndex;
+                    var nextHighlightedIndex = getNextWrappingIndex(-1, highlightedIndex, itemCount, function(index) {
+                      return _this3.getItemNodeFromIndex(index);
+                    });
+                    _this3.setHighlightedIndex(nextHighlightedIndex, {
+                      type: keyDownArrowUp
+                    });
+                  }
+                });
+              }
+            },
+            Enter: function Enter(event) {
+              if (event.which === 229) {
+                return;
+              }
+              var _this$getState2 = this.getState(), isOpen = _this$getState2.isOpen, highlightedIndex = _this$getState2.highlightedIndex;
+              if (isOpen && highlightedIndex != null) {
+                event.preventDefault();
+                var item = this.items[highlightedIndex];
+                var itemNode = this.getItemNodeFromIndex(highlightedIndex);
+                if (item == null || itemNode && itemNode.hasAttribute("disabled")) {
+                  return;
+                }
+                this.selectHighlightedItem({
+                  type: keyDownEnter
+                });
+              }
+            },
+            Escape: function Escape(event) {
+              event.preventDefault();
+              this.reset({
+                type: keyDownEscape,
+                selectedItem: null,
+                inputValue: ""
+              });
+            }
+          };
+          _this.buttonKeyDownHandlers = _extends(_extends({}, _this.keyDownHandlers), {}, {
+            " ": function _(event) {
+              event.preventDefault();
+              this.toggleMenu({
+                type: keyDownSpaceButton
+              });
+            }
+          });
+          _this.inputKeyDownHandlers = _extends(_extends({}, _this.keyDownHandlers), {}, {
+            Home: function Home(event) {
+              var _this4 = this;
+              event.preventDefault();
+              var itemCount = this.getItemCount();
+              var _this$getState3 = this.getState(), isOpen = _this$getState3.isOpen;
+              if (itemCount <= 0 || !isOpen) {
+                return;
+              }
+              var newHighlightedIndex = getNextNonDisabledIndex(1, 0, itemCount, function(index) {
+                return _this4.getItemNodeFromIndex(index);
+              }, false);
+              this.setHighlightedIndex(newHighlightedIndex, {
+                type: keyDownHome
+              });
+            },
+            End: function End(event) {
+              var _this5 = this;
+              event.preventDefault();
+              var itemCount = this.getItemCount();
+              var _this$getState4 = this.getState(), isOpen = _this$getState4.isOpen;
+              if (itemCount <= 0 || !isOpen) {
+                return;
+              }
+              var newHighlightedIndex = getNextNonDisabledIndex(-1, itemCount - 1, itemCount, function(index) {
+                return _this5.getItemNodeFromIndex(index);
+              }, false);
+              this.setHighlightedIndex(newHighlightedIndex, {
+                type: keyDownEnd
+              });
+            }
+          });
+          _this.getToggleButtonProps = function(_temp3) {
+            var _ref3 = _temp3 === void 0 ? {} : _temp3, onClick = _ref3.onClick, onPress = _ref3.onPress, onKeyDown = _ref3.onKeyDown, onKeyUp = _ref3.onKeyUp, onBlur = _ref3.onBlur, rest = _objectWithoutPropertiesLoose(_ref3, ["onClick", "onPress", "onKeyDown", "onKeyUp", "onBlur"]);
+            var _this$getState5 = _this.getState(), isOpen = _this$getState5.isOpen;
+            var enabledEventHandlers = {
+              onClick: callAllEventHandlers(onClick, _this.buttonHandleClick),
+              onKeyDown: callAllEventHandlers(onKeyDown, _this.buttonHandleKeyDown),
+              onKeyUp: callAllEventHandlers(onKeyUp, _this.buttonHandleKeyUp),
+              onBlur: callAllEventHandlers(onBlur, _this.buttonHandleBlur)
+            };
+            var eventHandlers = rest.disabled ? {} : enabledEventHandlers;
+            return _extends(_extends({
+              type: "button",
+              role: "button",
+              "aria-label": isOpen ? "close menu" : "open menu",
+              "aria-haspopup": true,
+              "data-toggle": true
+            }, eventHandlers), rest);
+          };
+          _this.buttonHandleKeyUp = function(event) {
+            event.preventDefault();
+          };
+          _this.buttonHandleKeyDown = function(event) {
+            var key = normalizeArrowKey(event);
+            if (_this.buttonKeyDownHandlers[key]) {
+              _this.buttonKeyDownHandlers[key].call(_assertThisInitialized(_this), event);
+            }
+          };
+          _this.buttonHandleClick = function(event) {
+            event.preventDefault();
+            if (_this.props.environment.document.activeElement === _this.props.environment.document.body) {
+              event.target.focus();
+            }
+            if (false) {
+              _this.toggleMenu({
+                type: clickButton
+              });
+            } else {
+              _this.internalSetTimeout(function() {
+                return _this.toggleMenu({
+                  type: clickButton
+                });
+              });
+            }
+          };
+          _this.buttonHandleBlur = function(event) {
+            var blurTarget = event.target;
+            _this.internalSetTimeout(function() {
+              if (!_this.isMouseDown && (_this.props.environment.document.activeElement == null || _this.props.environment.document.activeElement.id !== _this.inputId) && _this.props.environment.document.activeElement !== blurTarget) {
+                _this.reset({
+                  type: blurButton
+                });
+              }
+            });
+          };
+          _this.getLabelProps = function(props) {
+            return _extends({
+              htmlFor: _this.inputId,
+              id: _this.labelId
+            }, props);
+          };
+          _this.getInputProps = function(_temp4) {
+            var _ref4 = _temp4 === void 0 ? {} : _temp4, onKeyDown = _ref4.onKeyDown, onBlur = _ref4.onBlur, onChange = _ref4.onChange, onInput = _ref4.onInput, onChangeText = _ref4.onChangeText, rest = _objectWithoutPropertiesLoose(_ref4, ["onKeyDown", "onBlur", "onChange", "onInput", "onChangeText"]);
+            var onChangeKey;
+            var eventHandlers = {};
+            onChangeKey = "onChange";
+            var _this$getState6 = _this.getState(), inputValue = _this$getState6.inputValue, isOpen = _this$getState6.isOpen, highlightedIndex = _this$getState6.highlightedIndex;
+            if (!rest.disabled) {
+              var _eventHandlers;
+              eventHandlers = (_eventHandlers = {}, _eventHandlers[onChangeKey] = callAllEventHandlers(onChange, onInput, _this.inputHandleChange), _eventHandlers.onKeyDown = callAllEventHandlers(onKeyDown, _this.inputHandleKeyDown), _eventHandlers.onBlur = callAllEventHandlers(onBlur, _this.inputHandleBlur), _eventHandlers);
+            }
+            return _extends(_extends({
+              "aria-autocomplete": "list",
+              "aria-activedescendant": isOpen && typeof highlightedIndex === "number" && highlightedIndex >= 0 ? _this.getItemId(highlightedIndex) : null,
+              "aria-controls": isOpen ? _this.menuId : null,
+              "aria-labelledby": _this.labelId,
+              autoComplete: "off",
+              value: inputValue,
+              id: _this.inputId
+            }, eventHandlers), rest);
+          };
+          _this.inputHandleKeyDown = function(event) {
+            var key = normalizeArrowKey(event);
+            if (key && _this.inputKeyDownHandlers[key]) {
+              _this.inputKeyDownHandlers[key].call(_assertThisInitialized(_this), event);
+            }
+          };
+          _this.inputHandleChange = function(event) {
+            _this.internalSetState({
+              type: changeInput,
+              isOpen: true,
+              inputValue: event.target.value,
+              highlightedIndex: _this.props.defaultHighlightedIndex
+            });
+          };
+          _this.inputHandleBlur = function() {
+            _this.internalSetTimeout(function() {
+              var downshiftButtonIsActive = _this.props.environment.document && !!_this.props.environment.document.activeElement && !!_this.props.environment.document.activeElement.dataset && _this.props.environment.document.activeElement.dataset.toggle && _this._rootNode && _this._rootNode.contains(_this.props.environment.document.activeElement);
+              if (!_this.isMouseDown && !downshiftButtonIsActive) {
+                _this.reset({
+                  type: blurInput
+                });
+              }
+            });
+          };
+          _this.menuRef = function(node) {
+            _this._menuNode = node;
+          };
+          _this.getMenuProps = function(_temp5, _temp6) {
+            var _extends3;
+            var _ref5 = _temp5 === void 0 ? {} : _temp5, _ref5$refKey = _ref5.refKey, refKey = _ref5$refKey === void 0 ? "ref" : _ref5$refKey, ref = _ref5.ref, props = _objectWithoutPropertiesLoose(_ref5, ["refKey", "ref"]);
+            var _ref6 = _temp6 === void 0 ? {} : _temp6, _ref6$suppressRefErro = _ref6.suppressRefError, suppressRefError = _ref6$suppressRefErro === void 0 ? false : _ref6$suppressRefErro;
+            _this.getMenuProps.called = true;
+            _this.getMenuProps.refKey = refKey;
+            _this.getMenuProps.suppressRefError = suppressRefError;
+            return _extends((_extends3 = {}, _extends3[refKey] = handleRefs(ref, _this.menuRef), _extends3.role = "listbox", _extends3["aria-labelledby"] = props && props["aria-label"] ? null : _this.labelId, _extends3.id = _this.menuId, _extends3), props);
+          };
+          _this.getItemProps = function(_temp7) {
+            var _enabledEventHandlers;
+            var _ref7 = _temp7 === void 0 ? {} : _temp7, onMouseMove = _ref7.onMouseMove, onMouseDown = _ref7.onMouseDown, onClick = _ref7.onClick, onPress = _ref7.onPress, index = _ref7.index, _ref7$item = _ref7.item, item = _ref7$item === void 0 ? requiredProp("getItemProps", "item") : _ref7$item, rest = _objectWithoutPropertiesLoose(_ref7, ["onMouseMove", "onMouseDown", "onClick", "onPress", "index", "item"]);
+            if (index === void 0) {
+              _this.items.push(item);
+              index = _this.items.indexOf(item);
+            } else {
+              _this.items[index] = item;
+            }
+            var onSelectKey = "onClick";
+            var customClickHandler = onClick;
+            var enabledEventHandlers = (_enabledEventHandlers = {
+              onMouseMove: callAllEventHandlers(onMouseMove, function() {
+                if (index === _this.getState().highlightedIndex) {
+                  return;
+                }
+                _this.setHighlightedIndex(index, {
+                  type: itemMouseEnter
+                });
+                _this.avoidScrolling = true;
+                _this.internalSetTimeout(function() {
+                  return _this.avoidScrolling = false;
+                }, 250);
+              }),
+              onMouseDown: callAllEventHandlers(onMouseDown, function(event) {
+                event.preventDefault();
+              })
+            }, _enabledEventHandlers[onSelectKey] = callAllEventHandlers(customClickHandler, function() {
+              _this.selectItemAtIndex(index, {
+                type: clickItem
+              });
+            }), _enabledEventHandlers);
+            var eventHandlers = rest.disabled ? {
+              onMouseDown: enabledEventHandlers.onMouseDown
+            } : enabledEventHandlers;
+            return _extends(_extends({
+              id: _this.getItemId(index),
+              role: "option",
+              "aria-selected": _this.getState().highlightedIndex === index
+            }, eventHandlers), rest);
+          };
+          _this.clearItems = function() {
+            _this.items = [];
+          };
+          _this.reset = function(otherStateToSet, cb) {
+            if (otherStateToSet === void 0) {
+              otherStateToSet = {};
+            }
+            otherStateToSet = pickState(otherStateToSet);
+            _this.internalSetState(function(_ref8) {
+              var selectedItem = _ref8.selectedItem;
+              return _extends({
+                isOpen: _this.props.defaultIsOpen,
+                highlightedIndex: _this.props.defaultHighlightedIndex,
+                inputValue: _this.props.itemToString(selectedItem)
+              }, otherStateToSet);
+            }, cb);
+          };
+          _this.toggleMenu = function(otherStateToSet, cb) {
+            if (otherStateToSet === void 0) {
+              otherStateToSet = {};
+            }
+            otherStateToSet = pickState(otherStateToSet);
+            _this.internalSetState(function(_ref9) {
+              var isOpen = _ref9.isOpen;
+              return _extends(_extends({
+                isOpen: !isOpen
+              }, isOpen && {
+                highlightedIndex: _this.props.defaultHighlightedIndex
+              }), otherStateToSet);
+            }, function() {
+              var _this$getState7 = _this.getState(), isOpen = _this$getState7.isOpen, highlightedIndex = _this$getState7.highlightedIndex;
+              if (isOpen) {
+                if (_this.getItemCount() > 0 && typeof highlightedIndex === "number") {
+                  _this.setHighlightedIndex(highlightedIndex, otherStateToSet);
+                }
+              }
+              cbToCb(cb)();
+            });
+          };
+          _this.openMenu = function(cb) {
+            _this.internalSetState({
+              isOpen: true
+            }, cb);
+          };
+          _this.closeMenu = function(cb) {
+            _this.internalSetState({
+              isOpen: false
+            }, cb);
+          };
+          _this.updateStatus = debounce(function() {
+            var state = _this.getState();
+            var item = _this.items[state.highlightedIndex];
+            var resultCount = _this.getItemCount();
+            var status = _this.props.getA11yStatusMessage(_extends({
+              itemToString: _this.props.itemToString,
+              previousResultCount: _this.previousResultCount,
+              resultCount,
+              highlightedItem: item
+            }, state));
+            _this.previousResultCount = resultCount;
+            setStatus(status, _this.props.environment.document);
+          }, 200);
+          var _this$props = _this.props, defaultHighlightedIndex = _this$props.defaultHighlightedIndex, _this$props$initialHi = _this$props.initialHighlightedIndex, _highlightedIndex = _this$props$initialHi === void 0 ? defaultHighlightedIndex : _this$props$initialHi, defaultIsOpen = _this$props.defaultIsOpen, _this$props$initialIs = _this$props.initialIsOpen, _isOpen = _this$props$initialIs === void 0 ? defaultIsOpen : _this$props$initialIs, _this$props$initialIn = _this$props.initialInputValue, _inputValue = _this$props$initialIn === void 0 ? "" : _this$props$initialIn, _this$props$initialSe = _this$props.initialSelectedItem, _selectedItem = _this$props$initialSe === void 0 ? null : _this$props$initialSe;
+          var _state = _this.getState({
+            highlightedIndex: _highlightedIndex,
+            isOpen: _isOpen,
+            inputValue: _inputValue,
+            selectedItem: _selectedItem
+          });
+          if (_state.selectedItem != null && _this.props.initialInputValue === void 0) {
+            _state.inputValue = _this.props.itemToString(_state.selectedItem);
+          }
+          _this.state = _state;
+          return _this;
+        }
+        var _proto = Downshift3.prototype;
+        _proto.internalClearTimeouts = function internalClearTimeouts() {
+          this.timeoutIds.forEach(function(id) {
+            clearTimeout(id);
+          });
+          this.timeoutIds = [];
+        };
+        _proto.getState = function getState$1(stateToMerge) {
+          if (stateToMerge === void 0) {
+            stateToMerge = this.state;
+          }
+          return getState(stateToMerge, this.props);
+        };
+        _proto.getItemCount = function getItemCount() {
+          var itemCount = this.items.length;
+          if (this.itemCount != null) {
+            itemCount = this.itemCount;
+          } else if (this.props.itemCount !== void 0) {
+            itemCount = this.props.itemCount;
+          }
+          return itemCount;
+        };
+        _proto.getItemNodeFromIndex = function getItemNodeFromIndex(index) {
+          return this.props.environment.document.getElementById(this.getItemId(index));
+        };
+        _proto.scrollHighlightedItemIntoView = function scrollHighlightedItemIntoView() {
+          {
+            var node = this.getItemNodeFromIndex(this.getState().highlightedIndex);
+            this.props.scrollIntoView(node, this._menuNode);
+          }
+        };
+        _proto.moveHighlightedIndex = function moveHighlightedIndex(amount, otherStateToSet) {
+          var _this6 = this;
+          var itemCount = this.getItemCount();
+          var _this$getState8 = this.getState(), highlightedIndex = _this$getState8.highlightedIndex;
+          if (itemCount > 0) {
+            var nextHighlightedIndex = getNextWrappingIndex(amount, highlightedIndex, itemCount, function(index) {
+              return _this6.getItemNodeFromIndex(index);
+            });
+            this.setHighlightedIndex(nextHighlightedIndex, otherStateToSet);
+          }
+        };
+        _proto.getStateAndHelpers = function getStateAndHelpers() {
+          var _this$getState9 = this.getState(), highlightedIndex = _this$getState9.highlightedIndex, inputValue = _this$getState9.inputValue, selectedItem = _this$getState9.selectedItem, isOpen = _this$getState9.isOpen;
+          var itemToString2 = this.props.itemToString;
+          var id = this.id;
+          var getRootProps = this.getRootProps, getToggleButtonProps = this.getToggleButtonProps, getLabelProps = this.getLabelProps, getMenuProps = this.getMenuProps, getInputProps = this.getInputProps, getItemProps = this.getItemProps, openMenu = this.openMenu, closeMenu = this.closeMenu, toggleMenu = this.toggleMenu, selectItem = this.selectItem, selectItemAtIndex = this.selectItemAtIndex, selectHighlightedItem = this.selectHighlightedItem, setHighlightedIndex = this.setHighlightedIndex, clearSelection = this.clearSelection, clearItems = this.clearItems, reset = this.reset, setItemCount = this.setItemCount, unsetItemCount = this.unsetItemCount, setState = this.internalSetState;
+          return {
+            getRootProps,
+            getToggleButtonProps,
+            getLabelProps,
+            getMenuProps,
+            getInputProps,
+            getItemProps,
+            reset,
+            openMenu,
+            closeMenu,
+            toggleMenu,
+            selectItem,
+            selectItemAtIndex,
+            selectHighlightedItem,
+            setHighlightedIndex,
+            clearSelection,
+            clearItems,
+            setItemCount,
+            unsetItemCount,
+            setState,
+            itemToString: itemToString2,
+            id,
+            highlightedIndex,
+            inputValue,
+            isOpen,
+            selectedItem
+          };
+        };
+        _proto.componentDidMount = function componentDidMount() {
+          var _this7 = this;
+          if (this.getMenuProps.called && !this.getMenuProps.suppressRefError) {
+            validateGetMenuPropsCalledCorrectly(this._menuNode, this.getMenuProps);
+          }
+          {
+            var onMouseDown = function() {
+              _this7.isMouseDown = true;
+            };
+            var onMouseUp = function(event) {
+              _this7.isMouseDown = false;
+              var contextWithinDownshift = targetWithinDownshift(event.target, [_this7._rootNode, _this7._menuNode], _this7.props.environment.document);
+              if (!contextWithinDownshift && _this7.getState().isOpen) {
+                _this7.reset({
+                  type: mouseUp
+                }, function() {
+                  return _this7.props.onOuterClick(_this7.getStateAndHelpers());
+                });
+              }
+            };
+            var onTouchStart = function() {
+              _this7.isTouchMove = false;
+            };
+            var onTouchMove = function() {
+              _this7.isTouchMove = true;
+            };
+            var onTouchEnd = function(event) {
+              var contextWithinDownshift = targetWithinDownshift(event.target, [_this7._rootNode, _this7._menuNode], _this7.props.environment.document, false);
+              if (!_this7.isTouchMove && !contextWithinDownshift && _this7.getState().isOpen) {
+                _this7.reset({
+                  type: touchEnd
+                }, function() {
+                  return _this7.props.onOuterClick(_this7.getStateAndHelpers());
+                });
+              }
+            };
+            var environment = this.props.environment;
+            environment.addEventListener("mousedown", onMouseDown);
+            environment.addEventListener("mouseup", onMouseUp);
+            environment.addEventListener("touchstart", onTouchStart);
+            environment.addEventListener("touchmove", onTouchMove);
+            environment.addEventListener("touchend", onTouchEnd);
+            this.cleanup = function() {
+              _this7.internalClearTimeouts();
+              _this7.updateStatus.cancel();
+              environment.removeEventListener("mousedown", onMouseDown);
+              environment.removeEventListener("mouseup", onMouseUp);
+              environment.removeEventListener("touchstart", onTouchStart);
+              environment.removeEventListener("touchmove", onTouchMove);
+              environment.removeEventListener("touchend", onTouchEnd);
+            };
+          }
+        };
+        _proto.shouldScroll = function shouldScroll(prevState, prevProps) {
+          var _ref10 = this.props.highlightedIndex === void 0 ? this.getState() : this.props, currentHighlightedIndex = _ref10.highlightedIndex;
+          var _ref11 = prevProps.highlightedIndex === void 0 ? prevState : prevProps, prevHighlightedIndex = _ref11.highlightedIndex;
+          var scrollWhenOpen = currentHighlightedIndex && this.getState().isOpen && !prevState.isOpen;
+          return scrollWhenOpen || currentHighlightedIndex !== prevHighlightedIndex;
+        };
+        _proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+          if (true) {
+            validateControlledUnchanged(this.state, prevProps, this.props);
+            if (this.getMenuProps.called && !this.getMenuProps.suppressRefError) {
+              validateGetMenuPropsCalledCorrectly(this._menuNode, this.getMenuProps);
+            }
+          }
+          if (isControlledProp(this.props, "selectedItem") && this.props.selectedItemChanged(prevProps.selectedItem, this.props.selectedItem)) {
+            this.internalSetState({
+              type: controlledPropUpdatedSelectedItem,
+              inputValue: this.props.itemToString(this.props.selectedItem)
+            });
+          }
+          if (!this.avoidScrolling && this.shouldScroll(prevState, prevProps)) {
+            this.scrollHighlightedItemIntoView();
+          }
+          this.updateStatus();
+        };
+        _proto.componentWillUnmount = function componentWillUnmount() {
+          this.cleanup();
+        };
+        _proto.render = function render() {
+          var children = unwrapArray(this.props.children, noop);
+          this.clearItems();
+          this.getRootProps.called = false;
+          this.getRootProps.refKey = void 0;
+          this.getRootProps.suppressRefError = void 0;
+          this.getMenuProps.called = false;
+          this.getMenuProps.refKey = void 0;
+          this.getMenuProps.suppressRefError = void 0;
+          this.getLabelProps.called = false;
+          this.getInputProps.called = false;
+          var element = unwrapArray(children(this.getStateAndHelpers()));
+          if (!element) {
+            return null;
+          }
+          if (this.getRootProps.called || this.props.suppressRefError) {
+            if (!this.getRootProps.suppressRefError && !this.props.suppressRefError) {
+              validateGetRootPropsCalledCorrectly(element, this.getRootProps);
+            }
+            return element;
+          } else if (isDOMElement(element)) {
+            return react.cloneElement(element, this.getRootProps(getElementProps(element)));
+          }
+          if (true) {
+            throw new Error("downshift: If you return a non-DOM element, you must apply the getRootProps function");
+          }
+          return void 0;
+        };
+        return Downshift3;
+      }(react.Component);
+      Downshift2.defaultProps = {
+        defaultHighlightedIndex: null,
+        defaultIsOpen: false,
+        getA11yStatusMessage,
+        itemToString: function itemToString2(i) {
+          if (i == null) {
+            return "";
+          }
+          if (isPlainObject(i) && !i.hasOwnProperty("toString")) {
+            console.warn("downshift: An object was passed to the default implementation of `itemToString`. You should probably provide your own `itemToString` implementation. Please refer to the `itemToString` API documentation.", "The object that was passed:", i);
+          }
+          return String(i);
+        },
+        onStateChange: noop,
+        onInputValueChange: noop,
+        onUserAction: noop,
+        onChange: noop,
+        onSelect: noop,
+        onOuterClick: noop,
+        selectedItemChanged: function selectedItemChanged(prevItem, item) {
+          return prevItem !== item;
+        },
+        environment: typeof window === "undefined" ? {} : window,
+        stateReducer: function stateReducer2(state, stateToSet) {
+          return stateToSet;
+        },
+        suppressRefError: false,
+        scrollIntoView
+      };
+      Downshift2.stateChangeTypes = stateChangeTypes;
+      return Downshift2;
+    }();
+    Downshift.propTypes = {
+      children: PropTypes.func,
+      defaultHighlightedIndex: PropTypes.number,
+      defaultIsOpen: PropTypes.bool,
+      initialHighlightedIndex: PropTypes.number,
+      initialSelectedItem: PropTypes.any,
+      initialInputValue: PropTypes.string,
+      initialIsOpen: PropTypes.bool,
+      getA11yStatusMessage: PropTypes.func,
+      itemToString: PropTypes.func,
+      onChange: PropTypes.func,
+      onSelect: PropTypes.func,
+      onStateChange: PropTypes.func,
+      onInputValueChange: PropTypes.func,
+      onUserAction: PropTypes.func,
+      onOuterClick: PropTypes.func,
+      selectedItemChanged: PropTypes.func,
+      stateReducer: PropTypes.func,
+      itemCount: PropTypes.number,
+      id: PropTypes.string,
+      environment: PropTypes.shape({
+        addEventListener: PropTypes.func,
+        removeEventListener: PropTypes.func,
+        document: PropTypes.shape({
+          getElementById: PropTypes.func,
+          activeElement: PropTypes.any,
+          body: PropTypes.any
+        })
+      }),
+      suppressRefError: PropTypes.bool,
+      scrollIntoView: PropTypes.func,
+      selectedItem: PropTypes.any,
+      isOpen: PropTypes.bool,
+      inputValue: PropTypes.string,
+      highlightedIndex: PropTypes.number,
+      labelId: PropTypes.string,
+      inputId: PropTypes.string,
+      menuId: PropTypes.string,
+      getItemId: PropTypes.func
+    };
+    function validateGetMenuPropsCalledCorrectly(node, _ref12) {
+      var refKey = _ref12.refKey;
+      if (!node) {
+        console.error('downshift: The ref prop "' + refKey + '" from getMenuProps was not applied correctly on your menu element.');
+      }
+    }
+    function validateGetRootPropsCalledCorrectly(element, _ref13) {
+      var refKey = _ref13.refKey;
+      var refKeySpecified = refKey !== "ref";
+      var isComposite = !isDOMElement(element);
+      if (isComposite && !refKeySpecified && !reactIs.isForwardRef(element)) {
+        console.error("downshift: You returned a non-DOM element. You must specify a refKey in getRootProps");
+      } else if (!isComposite && refKeySpecified) {
+        console.error('downshift: You returned a DOM element. You should not specify a refKey in getRootProps. You specified "' + refKey + '"');
+      }
+      if (!reactIs.isForwardRef(element) && !getElementProps(element)[refKey]) {
+        console.error('downshift: You must apply the ref prop "' + refKey + '" from getRootProps onto your root element.');
+      }
+    }
+    var dropdownDefaultStateValues = {
+      highlightedIndex: -1,
+      isOpen: false,
+      selectedItem: null,
+      inputValue: ""
+    };
+    function callOnChangeProps(action, state, newState) {
+      var props = action.props, type = action.type;
+      var changes = {};
+      Object.keys(state).forEach(function(key) {
+        invokeOnChangeHandler(key, props, state, newState);
+        if (newState[key] !== state[key]) {
+          changes[key] = newState[key];
+        }
+      });
+      if (props.onStateChange && Object.keys(changes).length) {
+        props.onStateChange(_extends({
+          type
+        }, changes));
+      }
+    }
+    function invokeOnChangeHandler(key, props, state, newState) {
+      var handler = "on" + capitalizeString(key) + "Change";
+      if (props[handler] && newState[key] !== void 0 && newState[key] !== state[key]) {
+        props[handler](newState);
+      }
+    }
+    function stateReducer(s, a) {
+      return a.changes;
+    }
+    function getA11ySelectionMessage(selectionParameters) {
+      var selectedItem = selectionParameters.selectedItem, itemToStringLocal = selectionParameters.itemToString;
+      return selectedItem ? itemToStringLocal(selectedItem) + " has been selected." : "";
+    }
+    var updateA11yStatus = debounce(function(getA11yMessage, document2) {
+      setStatus(getA11yMessage(), document2);
+    }, 200);
+    function getElementIds(_ref) {
+      var id = _ref.id, labelId = _ref.labelId, menuId = _ref.menuId, getItemId = _ref.getItemId, toggleButtonId = _ref.toggleButtonId;
+      var uniqueId = id === void 0 ? "downshift-" + generateId() : id;
+      return {
+        labelId: labelId || uniqueId + "-label",
+        menuId: menuId || uniqueId + "-menu",
+        getItemId: getItemId || function(index) {
+          return uniqueId + "-item-" + index;
+        },
+        toggleButtonId: toggleButtonId || uniqueId + "-toggle-button"
+      };
+    }
+    function getItemIndex(index, item, items) {
+      if (index !== void 0) {
+        return index;
+      }
+      if (items.length === 0) {
+        return -1;
+      }
+      return items.indexOf(item);
+    }
+    function itemToString(item) {
+      return item ? String(item) : "";
+    }
+    function getPropTypesValidator(caller, propTypes2) {
+      return function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        Object.keys(propTypes2).forEach(function(key) {
+          PropTypes.checkPropTypes(propTypes2, options, key, caller.name);
+        });
+      };
+    }
+    function isAcceptedCharacterKey(key) {
+      return /^\S{1}$/.test(key);
+    }
+    function capitalizeString(string) {
+      return "" + string.slice(0, 1).toUpperCase() + string.slice(1);
+    }
+    function useLatestRef(val) {
+      var ref = react.useRef(val);
+      ref.current = val;
+      return ref;
+    }
+    function useEnhancedReducer(reducer, initialState, props) {
+      var prevStateRef = react.useRef();
+      var actionRef = react.useRef();
+      var enhancedReducer = react.useCallback(function(state2, action2) {
+        actionRef.current = action2;
+        state2 = getState(state2, action2.props);
+        var changes = reducer(state2, action2);
+        var newState = action2.props.stateReducer(state2, _extends(_extends({}, action2), {}, {
+          changes
+        }));
+        return newState;
+      }, [reducer]);
+      var _useReducer = react.useReducer(enhancedReducer, initialState), state = _useReducer[0], dispatch = _useReducer[1];
+      var propsRef = useLatestRef(props);
+      var dispatchWithProps = react.useCallback(function(action2) {
+        return dispatch(_extends({
+          props: propsRef.current
+        }, action2));
+      }, [propsRef]);
+      var action = actionRef.current;
+      react.useEffect(function() {
+        if (action && prevStateRef.current && prevStateRef.current !== state) {
+          callOnChangeProps(action, getState(prevStateRef.current, action.props), state);
+        }
+        prevStateRef.current = state;
+      }, [state, props, action]);
+      return [state, dispatchWithProps];
+    }
+    function useControlledReducer(reducer, initialState, props) {
+      var _useEnhancedReducer = useEnhancedReducer(reducer, initialState, props), state = _useEnhancedReducer[0], dispatch = _useEnhancedReducer[1];
+      return [getState(state, props), dispatch];
+    }
+    var defaultProps = {
+      itemToString,
+      stateReducer,
+      getA11ySelectionMessage,
+      scrollIntoView,
+      circularNavigation: false,
+      environment: typeof window === "undefined" ? {} : window
+    };
+    function getDefaultValue(props, propKey, defaultStateValues2) {
+      if (defaultStateValues2 === void 0) {
+        defaultStateValues2 = dropdownDefaultStateValues;
+      }
+      var defaultPropKey = "default" + capitalizeString(propKey);
+      if (defaultPropKey in props) {
+        return props[defaultPropKey];
+      }
+      return defaultStateValues2[propKey];
+    }
+    function getInitialValue(props, propKey, defaultStateValues2) {
+      if (defaultStateValues2 === void 0) {
+        defaultStateValues2 = dropdownDefaultStateValues;
+      }
+      if (propKey in props) {
+        return props[propKey];
+      }
+      var initialPropKey = "initial" + capitalizeString(propKey);
+      if (initialPropKey in props) {
+        return props[initialPropKey];
+      }
+      return getDefaultValue(props, propKey, defaultStateValues2);
+    }
+    function getInitialState(props) {
+      var selectedItem = getInitialValue(props, "selectedItem");
+      var isOpen = getInitialValue(props, "isOpen");
+      var highlightedIndex = getInitialValue(props, "highlightedIndex");
+      var inputValue = getInitialValue(props, "inputValue");
+      return {
+        highlightedIndex: highlightedIndex < 0 && selectedItem ? props.items.indexOf(selectedItem) : highlightedIndex,
+        isOpen,
+        selectedItem,
+        inputValue
+      };
+    }
+    function getHighlightedIndexOnOpen(props, state, offset, getItemNodeFromIndex) {
+      var items = props.items, initialHighlightedIndex = props.initialHighlightedIndex, defaultHighlightedIndex = props.defaultHighlightedIndex;
+      var selectedItem = state.selectedItem, highlightedIndex = state.highlightedIndex;
+      if (items.length === 0) {
+        return -1;
+      }
+      if (initialHighlightedIndex !== void 0 && highlightedIndex === initialHighlightedIndex) {
+        return initialHighlightedIndex;
+      }
+      if (defaultHighlightedIndex !== void 0) {
+        return defaultHighlightedIndex;
+      }
+      if (selectedItem) {
+        if (offset === 0) {
+          return items.indexOf(selectedItem);
+        }
+        return getNextWrappingIndex(offset, items.indexOf(selectedItem), items.length, getItemNodeFromIndex, false);
+      }
+      if (offset === 0) {
+        return -1;
+      }
+      return offset < 0 ? items.length - 1 : 0;
+    }
+    function useMouseAndTouchTracker(isOpen, downshiftElementRefs, environment, handleBlur) {
+      var mouseAndTouchTrackersRef = react.useRef({
+        isMouseDown: false,
+        isTouchMove: false
+      });
+      react.useEffect(function() {
+        var onMouseDown = function() {
+          mouseAndTouchTrackersRef.current.isMouseDown = true;
+        };
+        var onMouseUp = function(event) {
+          mouseAndTouchTrackersRef.current.isMouseDown = false;
+          if (isOpen && !targetWithinDownshift(event.target, downshiftElementRefs.map(function(ref) {
+            return ref.current;
+          }), environment.document)) {
+            handleBlur();
+          }
+        };
+        var onTouchStart = function() {
+          mouseAndTouchTrackersRef.current.isTouchMove = false;
+        };
+        var onTouchMove = function() {
+          mouseAndTouchTrackersRef.current.isTouchMove = true;
+        };
+        var onTouchEnd = function(event) {
+          if (isOpen && !mouseAndTouchTrackersRef.current.isTouchMove && !targetWithinDownshift(event.target, downshiftElementRefs.map(function(ref) {
+            return ref.current;
+          }), environment.document, false)) {
+            handleBlur();
+          }
+        };
+        environment.addEventListener("mousedown", onMouseDown);
+        environment.addEventListener("mouseup", onMouseUp);
+        environment.addEventListener("touchstart", onTouchStart);
+        environment.addEventListener("touchmove", onTouchMove);
+        environment.addEventListener("touchend", onTouchEnd);
+        return function() {
+          environment.removeEventListener("mousedown", onMouseDown);
+          environment.removeEventListener("mouseup", onMouseUp);
+          environment.removeEventListener("touchstart", onTouchStart);
+          environment.removeEventListener("touchmove", onTouchMove);
+          environment.removeEventListener("touchend", onTouchEnd);
+        };
+      }, [isOpen, environment]);
+      return mouseAndTouchTrackersRef;
+    }
+    function useGetterPropsCalledChecker() {
+      for (var _len = arguments.length, propKeys = new Array(_len), _key = 0; _key < _len; _key++) {
+        propKeys[_key] = arguments[_key];
+      }
+      var getterPropsCalledRef = react.useRef(propKeys.reduce(function(acc, propKey) {
+        acc[propKey] = {};
+        return acc;
+      }, {}));
+      if (true) {
+        Object.keys(getterPropsCalledRef.current).forEach(function(propKey) {
+          getterPropsCalledRef.current[propKey] = null;
+        });
+      }
+      react.useEffect(function() {
+        if (true) {
+          Object.keys(getterPropsCalledRef.current).forEach(function(propKey) {
+            if (!getterPropsCalledRef.current[propKey]) {
+              console.error("downshift: You forgot to call the " + propKey + " getter function on your component / element.");
+              return;
+            }
+            var _getterPropsCalledRef = getterPropsCalledRef.current[propKey], suppressRefError = _getterPropsCalledRef.suppressRefError, refKey = _getterPropsCalledRef.refKey, elementRef = _getterPropsCalledRef.elementRef;
+            if ((!elementRef || !elementRef.current) && !suppressRefError) {
+              console.error('downshift: The ref prop "' + refKey + '" from ' + propKey + " was not applied correctly on your element.");
+            }
+          });
+        }
+      });
+      var setGetterPropCallInfo = react.useCallback(function(propKey, suppressRefError, refKey, elementRef) {
+        if (true) {
+          getterPropsCalledRef.current[propKey] = {
+            suppressRefError,
+            refKey,
+            elementRef
+          };
+        }
+      }, []);
+      return setGetterPropCallInfo;
+    }
+    function getItemIndexByCharacterKey(keysSoFar, highlightedIndex, items, itemToStringParam, getItemNodeFromIndex) {
+      var lowerCasedItemStrings = items.map(function(item) {
+        return itemToStringParam(item).toLowerCase();
+      });
+      var lowerCasedKeysSoFar = keysSoFar.toLowerCase();
+      var isValid = function(itemString2, index2) {
+        var element = getItemNodeFromIndex(index2);
+        return itemString2.startsWith(lowerCasedKeysSoFar) && !(element && element.hasAttribute("disabled"));
+      };
+      for (var index = highlightedIndex + 1; index < lowerCasedItemStrings.length; index++) {
+        var itemString = lowerCasedItemStrings[index];
+        if (isValid(itemString, index)) {
+          return index;
+        }
+      }
+      for (var _index = 0; _index < highlightedIndex; _index++) {
+        var _itemString = lowerCasedItemStrings[_index];
+        if (isValid(_itemString, _index)) {
+          return _index;
+        }
+      }
+      return highlightedIndex;
+    }
+    var propTypes = {
+      items: PropTypes.array.isRequired,
+      itemToString: PropTypes.func,
+      getA11yStatusMessage: PropTypes.func,
+      getA11ySelectionMessage: PropTypes.func,
+      circularNavigation: PropTypes.bool,
+      highlightedIndex: PropTypes.number,
+      defaultHighlightedIndex: PropTypes.number,
+      initialHighlightedIndex: PropTypes.number,
+      isOpen: PropTypes.bool,
+      defaultIsOpen: PropTypes.bool,
+      initialIsOpen: PropTypes.bool,
+      selectedItem: PropTypes.any,
+      initialSelectedItem: PropTypes.any,
+      defaultSelectedItem: PropTypes.any,
+      id: PropTypes.string,
+      labelId: PropTypes.string,
+      menuId: PropTypes.string,
+      getItemId: PropTypes.func,
+      toggleButtonId: PropTypes.string,
+      stateReducer: PropTypes.func,
+      onSelectedItemChange: PropTypes.func,
+      onHighlightedIndexChange: PropTypes.func,
+      onStateChange: PropTypes.func,
+      onIsOpenChange: PropTypes.func,
+      environment: PropTypes.shape({
+        addEventListener: PropTypes.func,
+        removeEventListener: PropTypes.func,
+        document: PropTypes.shape({
+          getElementById: PropTypes.func,
+          activeElement: PropTypes.any,
+          body: PropTypes.any
+        })
+      })
+    };
+    function getA11yStatusMessage$1(_ref) {
+      var isOpen = _ref.isOpen, resultCount = _ref.resultCount, previousResultCount = _ref.previousResultCount;
+      if (!isOpen) {
+        return "";
+      }
+      if (!resultCount) {
+        return "No results are available.";
+      }
+      if (resultCount !== previousResultCount) {
+        return resultCount + " result" + (resultCount === 1 ? " is" : "s are") + " available, use up and down arrow keys to navigate. Press Enter or Space Bar keys to select.";
+      }
+      return "";
+    }
+    var defaultProps$1 = _extends(_extends({}, defaultProps), {}, {
+      getA11yStatusMessage: getA11yStatusMessage$1
+    });
+    var MenuKeyDownArrowDown = "__menu_keydown_arrow_down__";
+    var MenuKeyDownArrowUp = "__menu_keydown_arrow_up__";
+    var MenuKeyDownEscape = "__menu_keydown_escape__";
+    var MenuKeyDownHome = "__menu_keydown_home__";
+    var MenuKeyDownEnd = "__menu_keydown_end__";
+    var MenuKeyDownEnter = "__menu_keydown_enter__";
+    var MenuKeyDownSpaceButton = "__menu_keydown_space_button__";
+    var MenuKeyDownCharacter = "__menu_keydown_character__";
+    var MenuBlur = "__menu_blur__";
+    var MenuMouseLeave = "__menu_mouse_leave__";
+    var ItemMouseMove = "__item_mouse_move__";
+    var ItemClick = "__item_click__";
+    var ToggleButtonClick = "__togglebutton_click__";
+    var ToggleButtonKeyDownArrowDown = "__togglebutton_keydown_arrow_down__";
+    var ToggleButtonKeyDownArrowUp = "__togglebutton_keydown_arrow_up__";
+    var ToggleButtonKeyDownCharacter = "__togglebutton_keydown_character__";
+    var FunctionToggleMenu = "__function_toggle_menu__";
+    var FunctionOpenMenu = "__function_open_menu__";
+    var FunctionCloseMenu = "__function_close_menu__";
+    var FunctionSetHighlightedIndex = "__function_set_highlighted_index__";
+    var FunctionSelectItem = "__function_select_item__";
+    var FunctionSetInputValue = "__function_set_input_value__";
+    var FunctionReset = "__function_reset__";
+    var stateChangeTypes$1 = Object.freeze({
+      __proto__: null,
+      MenuKeyDownArrowDown,
+      MenuKeyDownArrowUp,
+      MenuKeyDownEscape,
+      MenuKeyDownHome,
+      MenuKeyDownEnd,
+      MenuKeyDownEnter,
+      MenuKeyDownSpaceButton,
+      MenuKeyDownCharacter,
+      MenuBlur,
+      MenuMouseLeave,
+      ItemMouseMove,
+      ItemClick,
+      ToggleButtonClick,
+      ToggleButtonKeyDownArrowDown,
+      ToggleButtonKeyDownArrowUp,
+      ToggleButtonKeyDownCharacter,
+      FunctionToggleMenu,
+      FunctionOpenMenu,
+      FunctionCloseMenu,
+      FunctionSetHighlightedIndex,
+      FunctionSelectItem,
+      FunctionSetInputValue,
+      FunctionReset
+    });
+    function downshiftSelectReducer(state, action) {
+      var type = action.type, props = action.props, shiftKey = action.shiftKey;
+      var changes;
+      switch (type) {
+        case ItemMouseMove:
+          changes = {
+            highlightedIndex: action.index
+          };
+          break;
+        case ItemClick:
+          changes = {
+            isOpen: getDefaultValue(props, "isOpen"),
+            highlightedIndex: getDefaultValue(props, "highlightedIndex"),
+            selectedItem: props.items[action.index]
+          };
+          break;
+        case ToggleButtonKeyDownCharacter:
+          {
+            var lowercasedKey = action.key;
+            var inputValue = "" + state.inputValue + lowercasedKey;
+            var itemIndex = getItemIndexByCharacterKey(inputValue, state.selectedItem ? props.items.indexOf(state.selectedItem) : -1, props.items, props.itemToString, action.getItemNodeFromIndex);
+            changes = _extends({
+              inputValue
+            }, itemIndex >= 0 && {
+              selectedItem: props.items[itemIndex]
+            });
+          }
+          break;
+        case ToggleButtonKeyDownArrowDown:
+          changes = {
+            highlightedIndex: getHighlightedIndexOnOpen(props, state, 1, action.getItemNodeFromIndex),
+            isOpen: true
+          };
+          break;
+        case ToggleButtonKeyDownArrowUp:
+          changes = {
+            highlightedIndex: getHighlightedIndexOnOpen(props, state, -1, action.getItemNodeFromIndex),
+            isOpen: true
+          };
+          break;
+        case MenuKeyDownEnter:
+        case MenuKeyDownSpaceButton:
+          changes = _extends({
+            isOpen: getDefaultValue(props, "isOpen"),
+            highlightedIndex: getDefaultValue(props, "highlightedIndex")
+          }, state.highlightedIndex >= 0 && {
+            selectedItem: props.items[state.highlightedIndex]
+          });
+          break;
+        case MenuKeyDownHome:
+          changes = {
+            highlightedIndex: getNextNonDisabledIndex(1, 0, props.items.length, action.getItemNodeFromIndex, false)
+          };
+          break;
+        case MenuKeyDownEnd:
+          changes = {
+            highlightedIndex: getNextNonDisabledIndex(-1, props.items.length - 1, props.items.length, action.getItemNodeFromIndex, false)
+          };
+          break;
+        case MenuKeyDownEscape:
+          changes = {
+            isOpen: false,
+            highlightedIndex: -1
+          };
+          break;
+        case MenuBlur:
+          changes = {
+            isOpen: false,
+            highlightedIndex: -1
+          };
+          break;
+        case MenuKeyDownCharacter:
+          {
+            var _lowercasedKey = action.key;
+            var _inputValue = "" + state.inputValue + _lowercasedKey;
+            var highlightedIndex = getItemIndexByCharacterKey(_inputValue, state.highlightedIndex, props.items, props.itemToString, action.getItemNodeFromIndex);
+            changes = _extends({
+              inputValue: _inputValue
+            }, highlightedIndex >= 0 && {
+              highlightedIndex
+            });
+          }
+          break;
+        case MenuKeyDownArrowDown:
+          changes = {
+            highlightedIndex: getNextWrappingIndex(shiftKey ? 5 : 1, state.highlightedIndex, props.items.length, action.getItemNodeFromIndex, props.circularNavigation)
+          };
+          break;
+        case MenuKeyDownArrowUp:
+          changes = {
+            highlightedIndex: getNextWrappingIndex(shiftKey ? -5 : -1, state.highlightedIndex, props.items.length, action.getItemNodeFromIndex, props.circularNavigation)
+          };
+          break;
+        case MenuMouseLeave:
+          changes = {
+            highlightedIndex: -1
+          };
+          break;
+        case ToggleButtonClick:
+        case FunctionToggleMenu:
+          changes = {
+            isOpen: !state.isOpen,
+            highlightedIndex: state.isOpen ? -1 : getHighlightedIndexOnOpen(props, state, 0)
+          };
+          break;
+        case FunctionOpenMenu:
+          changes = {
+            isOpen: true,
+            highlightedIndex: getHighlightedIndexOnOpen(props, state, 0)
+          };
+          break;
+        case FunctionCloseMenu:
+          changes = {
+            isOpen: false
+          };
+          break;
+        case FunctionSetHighlightedIndex:
+          changes = {
+            highlightedIndex: action.highlightedIndex
+          };
+          break;
+        case FunctionSelectItem:
+          changes = {
+            selectedItem: action.selectedItem
+          };
+          break;
+        case FunctionSetInputValue:
+          changes = {
+            inputValue: action.inputValue
+          };
+          break;
+        case FunctionReset:
+          changes = {
+            highlightedIndex: getDefaultValue(props, "highlightedIndex"),
+            isOpen: getDefaultValue(props, "isOpen"),
+            selectedItem: getDefaultValue(props, "selectedItem"),
+            inputValue: getDefaultValue(props, "inputValue")
+          };
+          break;
+        default:
+          throw new Error("Reducer called without proper action type.");
+      }
+      return _extends(_extends({}, state), changes);
+    }
+    var validatePropTypes = getPropTypesValidator(useSelect, propTypes);
+    useSelect.stateChangeTypes = stateChangeTypes$1;
+    function useSelect(userProps) {
+      if (userProps === void 0) {
+        userProps = {};
+      }
+      if (true) {
+        validatePropTypes(userProps);
+      }
+      var props = _extends(_extends({}, defaultProps$1), userProps);
+      var items = props.items, scrollIntoView2 = props.scrollIntoView, environment = props.environment, initialIsOpen = props.initialIsOpen, defaultIsOpen = props.defaultIsOpen, itemToString2 = props.itemToString, getA11ySelectionMessage2 = props.getA11ySelectionMessage, getA11yStatusMessage2 = props.getA11yStatusMessage;
+      var initialState = getInitialState(props);
+      var _useControlledReducer = useControlledReducer(downshiftSelectReducer, initialState, props), state = _useControlledReducer[0], dispatch = _useControlledReducer[1];
+      var isOpen = state.isOpen, highlightedIndex = state.highlightedIndex, selectedItem = state.selectedItem, inputValue = state.inputValue;
+      var toggleButtonRef = react.useRef(null);
+      var menuRef = react.useRef(null);
+      var itemRefs = react.useRef();
+      itemRefs.current = {};
+      var shouldScrollRef = react.useRef(true);
+      var shouldBlurRef = react.useRef(true);
+      var clearTimeoutRef = react.useRef(null);
+      var elementIdsRef = react.useRef(getElementIds(props));
+      var previousResultCountRef = react.useRef();
+      var isInitialMountRef = react.useRef(true);
+      var prevPropsRef = react.useRef(props);
+      var latest = useLatestRef({
+        state,
+        props
+      });
+      var getItemNodeFromIndex = function(index) {
+        return itemRefs.current[elementIdsRef.current.getItemId(index)];
+      };
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        var previousResultCount = previousResultCountRef.current;
+        updateA11yStatus(function() {
+          return getA11yStatusMessage2({
+            isOpen,
+            highlightedIndex,
+            selectedItem,
+            inputValue,
+            highlightedItem: items[highlightedIndex],
+            resultCount: items.length,
+            itemToString: itemToString2,
+            previousResultCount
+          });
+        }, environment.document);
+      }, [isOpen, highlightedIndex, inputValue, items]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        var previousResultCount = previousResultCountRef.current;
+        updateA11yStatus(function() {
+          return getA11ySelectionMessage2({
+            isOpen,
+            highlightedIndex,
+            selectedItem,
+            inputValue,
+            highlightedItem: items[highlightedIndex],
+            resultCount: items.length,
+            itemToString: itemToString2,
+            previousResultCount
+          });
+        }, environment.document);
+      }, [selectedItem]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          clearTimeoutRef.current = debounce(function(outerDispatch) {
+            outerDispatch({
+              type: FunctionSetInputValue,
+              inputValue: ""
+            });
+          }, 500);
+        }
+        if (!inputValue) {
+          return;
+        }
+        clearTimeoutRef.current(dispatch);
+      }, [inputValue]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          if ((initialIsOpen || defaultIsOpen || isOpen) && menuRef.current) {
+            menuRef.current.focus();
+          }
+          return;
+        }
+        if (isOpen) {
+          if (menuRef.current) {
+            menuRef.current.focus();
+          }
+          return;
+        }
+        if (environment.document.activeElement === menuRef.current) {
+          if (toggleButtonRef.current) {
+            shouldBlurRef.current = false;
+            toggleButtonRef.current.focus();
+          }
+        }
+      }, [isOpen]);
+      react.useEffect(function() {
+        if (highlightedIndex < 0 || !isOpen || !Object.keys(itemRefs.current).length) {
+          return;
+        }
+        if (shouldScrollRef.current === false) {
+          shouldScrollRef.current = true;
+        } else {
+          scrollIntoView2(getItemNodeFromIndex(highlightedIndex), menuRef.current);
+        }
+      }, [highlightedIndex]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        previousResultCountRef.current = items.length;
+      });
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        validateControlledUnchanged(state, prevPropsRef.current, props);
+        prevPropsRef.current = props;
+      }, [state, props]);
+      var mouseAndTouchTrackersRef = useMouseAndTouchTracker(isOpen, [menuRef, toggleButtonRef], environment, function() {
+        dispatch({
+          type: MenuBlur
+        });
+      });
+      var setGetterPropCallInfo = useGetterPropsCalledChecker("getMenuProps", "getToggleButtonProps");
+      react.useEffect(function() {
+        isInitialMountRef.current = false;
+      }, []);
+      var toggleButtonKeyDownHandlers = react.useMemo(function() {
+        return {
+          ArrowDown: function ArrowDown(event) {
+            event.preventDefault();
+            dispatch({
+              type: ToggleButtonKeyDownArrowDown,
+              getItemNodeFromIndex,
+              shiftKey: event.shiftKey
+            });
+          },
+          ArrowUp: function ArrowUp(event) {
+            event.preventDefault();
+            dispatch({
+              type: ToggleButtonKeyDownArrowUp,
+              getItemNodeFromIndex,
+              shiftKey: event.shiftKey
+            });
+          }
+        };
+      }, [dispatch]);
+      var menuKeyDownHandlers = react.useMemo(function() {
+        return {
+          ArrowDown: function ArrowDown(event) {
+            event.preventDefault();
+            dispatch({
+              type: MenuKeyDownArrowDown,
+              getItemNodeFromIndex,
+              shiftKey: event.shiftKey
+            });
+          },
+          ArrowUp: function ArrowUp(event) {
+            event.preventDefault();
+            dispatch({
+              type: MenuKeyDownArrowUp,
+              getItemNodeFromIndex,
+              shiftKey: event.shiftKey
+            });
+          },
+          Home: function Home(event) {
+            event.preventDefault();
+            dispatch({
+              type: MenuKeyDownHome,
+              getItemNodeFromIndex
+            });
+          },
+          End: function End(event) {
+            event.preventDefault();
+            dispatch({
+              type: MenuKeyDownEnd,
+              getItemNodeFromIndex
+            });
+          },
+          Escape: function Escape() {
+            dispatch({
+              type: MenuKeyDownEscape
+            });
+          },
+          Enter: function Enter(event) {
+            event.preventDefault();
+            dispatch({
+              type: MenuKeyDownEnter
+            });
+          },
+          " ": function _(event) {
+            event.preventDefault();
+            dispatch({
+              type: MenuKeyDownSpaceButton
+            });
+          }
+        };
+      }, [dispatch]);
+      var toggleMenu = react.useCallback(function() {
+        dispatch({
+          type: FunctionToggleMenu
+        });
+      }, [dispatch]);
+      var closeMenu = react.useCallback(function() {
+        dispatch({
+          type: FunctionCloseMenu
+        });
+      }, [dispatch]);
+      var openMenu = react.useCallback(function() {
+        dispatch({
+          type: FunctionOpenMenu
+        });
+      }, [dispatch]);
+      var setHighlightedIndex = react.useCallback(function(newHighlightedIndex) {
+        dispatch({
+          type: FunctionSetHighlightedIndex,
+          highlightedIndex: newHighlightedIndex
+        });
+      }, [dispatch]);
+      var selectItem = react.useCallback(function(newSelectedItem) {
+        dispatch({
+          type: FunctionSelectItem,
+          selectedItem: newSelectedItem
+        });
+      }, [dispatch]);
+      var reset = react.useCallback(function() {
+        dispatch({
+          type: FunctionReset
+        });
+      }, [dispatch]);
+      var setInputValue = react.useCallback(function(newInputValue) {
+        dispatch({
+          type: FunctionSetInputValue,
+          inputValue: newInputValue
+        });
+      }, [dispatch]);
+      var getLabelProps = react.useCallback(function(labelProps) {
+        return _extends({
+          id: elementIdsRef.current.labelId,
+          htmlFor: elementIdsRef.current.toggleButtonId
+        }, labelProps);
+      }, []);
+      var getMenuProps = react.useCallback(function(_temp, _temp2) {
+        var _extends2;
+        var _ref = _temp === void 0 ? {} : _temp, onMouseLeave = _ref.onMouseLeave, _ref$refKey = _ref.refKey, refKey = _ref$refKey === void 0 ? "ref" : _ref$refKey, onKeyDown = _ref.onKeyDown, onBlur = _ref.onBlur, ref = _ref.ref, rest = _objectWithoutPropertiesLoose(_ref, ["onMouseLeave", "refKey", "onKeyDown", "onBlur", "ref"]);
+        var _ref2 = _temp2 === void 0 ? {} : _temp2, _ref2$suppressRefErro = _ref2.suppressRefError, suppressRefError = _ref2$suppressRefErro === void 0 ? false : _ref2$suppressRefErro;
+        var latestState = latest.current.state;
+        setGetterPropCallInfo("getMenuProps", suppressRefError, refKey, menuRef);
+        return _extends(_extends((_extends2 = {}, _extends2[refKey] = handleRefs(ref, function(menuNode) {
+          menuRef.current = menuNode;
+        }), _extends2.id = elementIdsRef.current.menuId, _extends2.role = "listbox", _extends2["aria-labelledby"] = elementIdsRef.current.labelId, _extends2.tabIndex = -1, _extends2), latestState.isOpen && latestState.highlightedIndex > -1 && {
+          "aria-activedescendant": elementIdsRef.current.getItemId(latestState.highlightedIndex)
+        }), {}, {
+          onMouseLeave: callAllEventHandlers(onMouseLeave, function menuHandleMouseLeave() {
+            dispatch({
+              type: MenuMouseLeave
+            });
+          }),
+          onKeyDown: callAllEventHandlers(onKeyDown, function menuHandleKeyDown(event) {
+            var key = normalizeArrowKey(event);
+            if (key && menuKeyDownHandlers[key]) {
+              menuKeyDownHandlers[key](event);
+            } else if (isAcceptedCharacterKey(key)) {
+              dispatch({
+                type: MenuKeyDownCharacter,
+                key,
+                getItemNodeFromIndex
+              });
+            }
+          }),
+          onBlur: callAllEventHandlers(onBlur, function menuHandleBlur() {
+            if (shouldBlurRef.current === false) {
+              shouldBlurRef.current = true;
+              return;
+            }
+            var shouldBlur = !mouseAndTouchTrackersRef.current.isMouseDown;
+            if (shouldBlur) {
+              dispatch({
+                type: MenuBlur
+              });
+            }
+          })
+        }, rest);
+      }, [dispatch, latest, menuKeyDownHandlers, mouseAndTouchTrackersRef, setGetterPropCallInfo]);
+      var getToggleButtonProps = react.useCallback(function(_temp3, _temp4) {
+        var _extends3;
+        var _ref3 = _temp3 === void 0 ? {} : _temp3, onClick = _ref3.onClick, onKeyDown = _ref3.onKeyDown, _ref3$refKey = _ref3.refKey, refKey = _ref3$refKey === void 0 ? "ref" : _ref3$refKey, ref = _ref3.ref, rest = _objectWithoutPropertiesLoose(_ref3, ["onClick", "onKeyDown", "refKey", "ref"]);
+        var _ref4 = _temp4 === void 0 ? {} : _temp4, _ref4$suppressRefErro = _ref4.suppressRefError, suppressRefError = _ref4$suppressRefErro === void 0 ? false : _ref4$suppressRefErro;
+        var toggleButtonHandleClick = function() {
+          dispatch({
+            type: ToggleButtonClick
+          });
+        };
+        var toggleButtonHandleKeyDown = function(event) {
+          var key = normalizeArrowKey(event);
+          if (key && toggleButtonKeyDownHandlers[key]) {
+            toggleButtonKeyDownHandlers[key](event);
+          } else if (isAcceptedCharacterKey(key)) {
+            dispatch({
+              type: ToggleButtonKeyDownCharacter,
+              key,
+              getItemNodeFromIndex
+            });
+          }
+        };
+        var toggleProps = _extends((_extends3 = {}, _extends3[refKey] = handleRefs(ref, function(toggleButtonNode) {
+          toggleButtonRef.current = toggleButtonNode;
+        }), _extends3.id = elementIdsRef.current.toggleButtonId, _extends3["aria-haspopup"] = "listbox", _extends3["aria-expanded"] = latest.current.state.isOpen, _extends3["aria-labelledby"] = elementIdsRef.current.labelId + " " + elementIdsRef.current.toggleButtonId, _extends3), rest);
+        if (!rest.disabled) {
+          toggleProps.onClick = callAllEventHandlers(onClick, toggleButtonHandleClick);
+          toggleProps.onKeyDown = callAllEventHandlers(onKeyDown, toggleButtonHandleKeyDown);
+        }
+        setGetterPropCallInfo("getToggleButtonProps", suppressRefError, refKey, toggleButtonRef);
+        return toggleProps;
+      }, [dispatch, latest, toggleButtonKeyDownHandlers, setGetterPropCallInfo]);
+      var getItemProps = react.useCallback(function(_temp5) {
+        var _extends4;
+        var _ref5 = _temp5 === void 0 ? {} : _temp5, item = _ref5.item, index = _ref5.index, onMouseMove = _ref5.onMouseMove, onClick = _ref5.onClick, _ref5$refKey = _ref5.refKey, refKey = _ref5$refKey === void 0 ? "ref" : _ref5$refKey, ref = _ref5.ref, rest = _objectWithoutPropertiesLoose(_ref5, ["item", "index", "onMouseMove", "onClick", "refKey", "ref"]);
+        var _latest$current = latest.current, latestState = _latest$current.state, latestProps = _latest$current.props;
+        var itemHandleMouseMove = function() {
+          if (index === latestState.highlightedIndex) {
+            return;
+          }
+          shouldScrollRef.current = false;
+          dispatch({
+            type: ItemMouseMove,
+            index
+          });
+        };
+        var itemHandleClick = function() {
+          dispatch({
+            type: ItemClick,
+            index
+          });
+        };
+        var itemIndex = getItemIndex(index, item, latestProps.items);
+        if (itemIndex < 0) {
+          throw new Error("Pass either item or item index in getItemProps!");
+        }
+        var itemProps = _extends((_extends4 = {
+          role: "option",
+          "aria-selected": "" + (itemIndex === latestState.highlightedIndex),
+          id: elementIdsRef.current.getItemId(itemIndex)
+        }, _extends4[refKey] = handleRefs(ref, function(itemNode) {
+          if (itemNode) {
+            itemRefs.current[elementIdsRef.current.getItemId(itemIndex)] = itemNode;
+          }
+        }), _extends4), rest);
+        if (!rest.disabled) {
+          itemProps.onMouseMove = callAllEventHandlers(onMouseMove, itemHandleMouseMove);
+          itemProps.onClick = callAllEventHandlers(onClick, itemHandleClick);
+        }
+        return itemProps;
+      }, [dispatch, latest]);
+      return {
+        getToggleButtonProps,
+        getLabelProps,
+        getMenuProps,
+        getItemProps,
+        toggleMenu,
+        openMenu,
+        closeMenu,
+        setHighlightedIndex,
+        selectItem,
+        reset,
+        setInputValue,
+        highlightedIndex,
+        isOpen,
+        selectedItem,
+        inputValue
+      };
+    }
+    var InputKeyDownArrowDown = "__input_keydown_arrow_down__";
+    var InputKeyDownArrowUp = "__input_keydown_arrow_up__";
+    var InputKeyDownEscape = "__input_keydown_escape__";
+    var InputKeyDownHome = "__input_keydown_home__";
+    var InputKeyDownEnd = "__input_keydown_end__";
+    var InputKeyDownEnter = "__input_keydown_enter__";
+    var InputChange = "__input_change__";
+    var InputBlur = "__input_blur__";
+    var MenuMouseLeave$1 = "__menu_mouse_leave__";
+    var ItemMouseMove$1 = "__item_mouse_move__";
+    var ItemClick$1 = "__item_click__";
+    var ToggleButtonClick$1 = "__togglebutton_click__";
+    var FunctionToggleMenu$1 = "__function_toggle_menu__";
+    var FunctionOpenMenu$1 = "__function_open_menu__";
+    var FunctionCloseMenu$1 = "__function_close_menu__";
+    var FunctionSetHighlightedIndex$1 = "__function_set_highlighted_index__";
+    var FunctionSelectItem$1 = "__function_select_item__";
+    var FunctionSetInputValue$1 = "__function_set_input_value__";
+    var FunctionReset$1 = "__function_reset__";
+    var ControlledPropUpdatedSelectedItem = "__controlled_prop_updated_selected_item__";
+    var stateChangeTypes$2 = Object.freeze({
+      __proto__: null,
+      InputKeyDownArrowDown,
+      InputKeyDownArrowUp,
+      InputKeyDownEscape,
+      InputKeyDownHome,
+      InputKeyDownEnd,
+      InputKeyDownEnter,
+      InputChange,
+      InputBlur,
+      MenuMouseLeave: MenuMouseLeave$1,
+      ItemMouseMove: ItemMouseMove$1,
+      ItemClick: ItemClick$1,
+      ToggleButtonClick: ToggleButtonClick$1,
+      FunctionToggleMenu: FunctionToggleMenu$1,
+      FunctionOpenMenu: FunctionOpenMenu$1,
+      FunctionCloseMenu: FunctionCloseMenu$1,
+      FunctionSetHighlightedIndex: FunctionSetHighlightedIndex$1,
+      FunctionSelectItem: FunctionSelectItem$1,
+      FunctionSetInputValue: FunctionSetInputValue$1,
+      FunctionReset: FunctionReset$1,
+      ControlledPropUpdatedSelectedItem
+    });
+    function getElementIds$1(_ref) {
+      var id = _ref.id, inputId = _ref.inputId, rest = _objectWithoutPropertiesLoose(_ref, ["id", "inputId"]);
+      var uniqueId = id === void 0 ? "downshift-" + generateId() : id;
+      return _extends({
+        inputId: inputId || uniqueId + "-input"
+      }, getElementIds(_extends({
+        id
+      }, rest)));
+    }
+    function getInitialState$1(props) {
+      var initialState = getInitialState(props);
+      var selectedItem = initialState.selectedItem;
+      var inputValue = initialState.inputValue;
+      if (inputValue === "" && selectedItem && props.defaultInputValue === void 0 && props.initialInputValue === void 0 && props.inputValue === void 0) {
+        inputValue = props.itemToString(selectedItem);
+      }
+      return _extends(_extends({}, initialState), {}, {
+        inputValue
+      });
+    }
+    var propTypes$1 = {
+      items: PropTypes.array.isRequired,
+      itemToString: PropTypes.func,
+      getA11yStatusMessage: PropTypes.func,
+      getA11ySelectionMessage: PropTypes.func,
+      circularNavigation: PropTypes.bool,
+      highlightedIndex: PropTypes.number,
+      defaultHighlightedIndex: PropTypes.number,
+      initialHighlightedIndex: PropTypes.number,
+      isOpen: PropTypes.bool,
+      defaultIsOpen: PropTypes.bool,
+      initialIsOpen: PropTypes.bool,
+      selectedItem: PropTypes.any,
+      initialSelectedItem: PropTypes.any,
+      defaultSelectedItem: PropTypes.any,
+      inputValue: PropTypes.string,
+      defaultInputValue: PropTypes.string,
+      initialInputValue: PropTypes.string,
+      id: PropTypes.string,
+      labelId: PropTypes.string,
+      menuId: PropTypes.string,
+      getItemId: PropTypes.func,
+      inputId: PropTypes.string,
+      toggleButtonId: PropTypes.string,
+      stateReducer: PropTypes.func,
+      onSelectedItemChange: PropTypes.func,
+      onHighlightedIndexChange: PropTypes.func,
+      onStateChange: PropTypes.func,
+      onIsOpenChange: PropTypes.func,
+      onInputValueChange: PropTypes.func,
+      environment: PropTypes.shape({
+        addEventListener: PropTypes.func,
+        removeEventListener: PropTypes.func,
+        document: PropTypes.shape({
+          getElementById: PropTypes.func,
+          activeElement: PropTypes.any,
+          body: PropTypes.any
+        })
+      })
+    };
+    function useControlledReducer$1(reducer, initialState, props) {
+      var previousSelectedItemRef = react.useRef();
+      var _useEnhancedReducer = useEnhancedReducer(reducer, initialState, props), state = _useEnhancedReducer[0], dispatch = _useEnhancedReducer[1];
+      if (isControlledProp(props, "selectedItem")) {
+        if (previousSelectedItemRef.current !== props.selectedItem) {
+          dispatch({
+            type: ControlledPropUpdatedSelectedItem,
+            inputValue: props.itemToString(props.selectedItem)
+          });
+        }
+        previousSelectedItemRef.current = state.selectedItem === previousSelectedItemRef.current ? props.selectedItem : state.selectedItem;
+      }
+      return [getState(state, props), dispatch];
+    }
+    var defaultProps$2 = _extends(_extends({}, defaultProps), {}, {
+      getA11yStatusMessage,
+      circularNavigation: true
+    });
+    function downshiftUseComboboxReducer(state, action) {
+      var type = action.type, props = action.props, shiftKey = action.shiftKey;
+      var changes;
+      switch (type) {
+        case ItemMouseMove$1:
+          changes = {
+            highlightedIndex: action.index
+          };
+          break;
+        case ItemClick$1:
+          changes = {
+            isOpen: getDefaultValue(props, "isOpen"),
+            highlightedIndex: getDefaultValue(props, "highlightedIndex"),
+            selectedItem: props.items[action.index],
+            inputValue: props.itemToString(props.items[action.index])
+          };
+          break;
+        case InputKeyDownArrowDown:
+          if (state.isOpen) {
+            changes = {
+              highlightedIndex: getNextWrappingIndex(shiftKey ? 5 : 1, state.highlightedIndex, props.items.length, action.getItemNodeFromIndex, props.circularNavigation)
+            };
+          } else {
+            changes = {
+              highlightedIndex: getHighlightedIndexOnOpen(props, state, 1, action.getItemNodeFromIndex),
+              isOpen: true
+            };
+          }
+          break;
+        case InputKeyDownArrowUp:
+          if (state.isOpen) {
+            changes = {
+              highlightedIndex: getNextWrappingIndex(shiftKey ? -5 : -1, state.highlightedIndex, props.items.length, action.getItemNodeFromIndex, props.circularNavigation)
+            };
+          } else {
+            changes = {
+              highlightedIndex: getHighlightedIndexOnOpen(props, state, -1, action.getItemNodeFromIndex),
+              isOpen: true
+            };
+          }
+          break;
+        case InputKeyDownEnter:
+          changes = _extends({}, state.highlightedIndex >= 0 && {
+            selectedItem: props.items[state.highlightedIndex],
+            isOpen: getDefaultValue(props, "isOpen"),
+            highlightedIndex: getDefaultValue(props, "highlightedIndex"),
+            inputValue: props.itemToString(props.items[state.highlightedIndex])
+          });
+          break;
+        case InputKeyDownEscape:
+          changes = {
+            isOpen: false,
+            selectedItem: null,
+            highlightedIndex: -1,
+            inputValue: ""
+          };
+          break;
+        case InputKeyDownHome:
+          changes = {
+            highlightedIndex: getNextNonDisabledIndex(1, 0, props.items.length, action.getItemNodeFromIndex, false)
+          };
+          break;
+        case InputKeyDownEnd:
+          changes = {
+            highlightedIndex: getNextNonDisabledIndex(-1, props.items.length - 1, props.items.length, action.getItemNodeFromIndex, false)
+          };
+          break;
+        case InputBlur:
+          changes = _extends({
+            isOpen: false
+          }, state.highlightedIndex >= 0 && {
+            selectedItem: props.items[state.highlightedIndex],
+            inputValue: props.itemToString(props.items[state.highlightedIndex]),
+            highlightedIndex: -1
+          });
+          break;
+        case InputChange:
+          changes = {
+            isOpen: true,
+            highlightedIndex: getDefaultValue(props, "highlightedIndex"),
+            inputValue: action.inputValue
+          };
+          break;
+        case MenuMouseLeave$1:
+          changes = {
+            highlightedIndex: -1
+          };
+          break;
+        case ToggleButtonClick$1:
+        case FunctionToggleMenu$1:
+          changes = {
+            isOpen: !state.isOpen,
+            highlightedIndex: state.isOpen ? -1 : getHighlightedIndexOnOpen(props, state, 0)
+          };
+          break;
+        case FunctionOpenMenu$1:
+          changes = {
+            isOpen: true,
+            highlightedIndex: getHighlightedIndexOnOpen(props, state, 0)
+          };
+          break;
+        case FunctionCloseMenu$1:
+          changes = {
+            isOpen: false
+          };
+          break;
+        case FunctionSetHighlightedIndex$1:
+          changes = {
+            highlightedIndex: action.highlightedIndex
+          };
+          break;
+        case FunctionSelectItem$1:
+          changes = {
+            selectedItem: action.selectedItem,
+            inputValue: props.itemToString(action.selectedItem)
+          };
+          break;
+        case ControlledPropUpdatedSelectedItem:
+        case FunctionSetInputValue$1:
+          changes = {
+            inputValue: action.inputValue
+          };
+          break;
+        case FunctionReset$1:
+          changes = {
+            highlightedIndex: getDefaultValue(props, "highlightedIndex"),
+            isOpen: getDefaultValue(props, "isOpen"),
+            selectedItem: getDefaultValue(props, "selectedItem"),
+            inputValue: getDefaultValue(props, "inputValue")
+          };
+          break;
+        default:
+          throw new Error("Reducer called without proper action type.");
+      }
+      return _extends(_extends({}, state), changes);
+    }
+    var validatePropTypes$1 = getPropTypesValidator(useCombobox, propTypes$1);
+    useCombobox.stateChangeTypes = stateChangeTypes$2;
+    function useCombobox(userProps) {
+      if (userProps === void 0) {
+        userProps = {};
+      }
+      if (true) {
+        validatePropTypes$1(userProps);
+      }
+      var props = _extends(_extends({}, defaultProps$2), userProps);
+      var initialIsOpen = props.initialIsOpen, defaultIsOpen = props.defaultIsOpen, items = props.items, scrollIntoView2 = props.scrollIntoView, environment = props.environment, getA11yStatusMessage2 = props.getA11yStatusMessage, getA11ySelectionMessage2 = props.getA11ySelectionMessage, itemToString2 = props.itemToString;
+      var initialState = getInitialState$1(props);
+      var _useControlledReducer = useControlledReducer$1(downshiftUseComboboxReducer, initialState, props), state = _useControlledReducer[0], dispatch = _useControlledReducer[1];
+      var isOpen = state.isOpen, highlightedIndex = state.highlightedIndex, selectedItem = state.selectedItem, inputValue = state.inputValue;
+      var menuRef = react.useRef(null);
+      var itemRefs = react.useRef();
+      var inputRef = react.useRef(null);
+      var toggleButtonRef = react.useRef(null);
+      var comboboxRef = react.useRef(null);
+      itemRefs.current = {};
+      var shouldScrollRef = react.useRef(true);
+      var isInitialMountRef = react.useRef(true);
+      var elementIdsRef = react.useRef(getElementIds$1(props));
+      var previousResultCountRef = react.useRef();
+      var prevPropsRef = react.useRef(props);
+      var latest = useLatestRef({
+        state,
+        props
+      });
+      var getItemNodeFromIndex = function(index) {
+        return itemRefs.current[elementIdsRef.current.getItemId(index)];
+      };
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        var previousResultCount = previousResultCountRef.current;
+        updateA11yStatus(function() {
+          return getA11yStatusMessage2({
+            isOpen,
+            highlightedIndex,
+            selectedItem,
+            inputValue,
+            highlightedItem: items[highlightedIndex],
+            resultCount: items.length,
+            itemToString: itemToString2,
+            previousResultCount
+          });
+        }, environment.document);
+      }, [isOpen, highlightedIndex, inputValue, items]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        var previousResultCount = previousResultCountRef.current;
+        updateA11yStatus(function() {
+          return getA11ySelectionMessage2({
+            isOpen,
+            highlightedIndex,
+            selectedItem,
+            inputValue,
+            highlightedItem: items[highlightedIndex],
+            resultCount: items.length,
+            itemToString: itemToString2,
+            previousResultCount
+          });
+        }, environment.document);
+      }, [selectedItem]);
+      react.useEffect(function() {
+        if (highlightedIndex < 0 || !isOpen || !Object.keys(itemRefs.current).length) {
+          return;
+        }
+        if (shouldScrollRef.current === false) {
+          shouldScrollRef.current = true;
+        } else {
+          scrollIntoView2(getItemNodeFromIndex(highlightedIndex), menuRef.current);
+        }
+      }, [highlightedIndex]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          if (initialIsOpen || defaultIsOpen || isOpen) {
+            if (inputRef.current) {
+              inputRef.current.focus();
+            }
+          }
+        }
+      }, [isOpen]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        previousResultCountRef.current = items.length;
+      });
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        validateControlledUnchanged(state, prevPropsRef.current, props);
+        prevPropsRef.current = props;
+      }, [state, props]);
+      var mouseAndTouchTrackersRef = useMouseAndTouchTracker(isOpen, [comboboxRef, menuRef, toggleButtonRef], environment, function() {
+        dispatch({
+          type: InputBlur
+        });
+      });
+      var setGetterPropCallInfo = useGetterPropsCalledChecker("getInputProps", "getComboboxProps", "getMenuProps");
+      react.useEffect(function() {
+        isInitialMountRef.current = false;
+      }, []);
+      var inputKeyDownHandlers = react.useMemo(function() {
+        return {
+          ArrowDown: function ArrowDown(event) {
+            event.preventDefault();
+            dispatch({
+              type: InputKeyDownArrowDown,
+              shiftKey: event.shiftKey,
+              getItemNodeFromIndex
+            });
+          },
+          ArrowUp: function ArrowUp(event) {
+            event.preventDefault();
+            dispatch({
+              type: InputKeyDownArrowUp,
+              shiftKey: event.shiftKey,
+              getItemNodeFromIndex
+            });
+          },
+          Home: function Home(event) {
+            event.preventDefault();
+            dispatch({
+              type: InputKeyDownHome,
+              getItemNodeFromIndex
+            });
+          },
+          End: function End(event) {
+            event.preventDefault();
+            dispatch({
+              type: InputKeyDownEnd,
+              getItemNodeFromIndex
+            });
+          },
+          Escape: function Escape() {
+            dispatch({
+              type: InputKeyDownEscape
+            });
+          },
+          Enter: function Enter(event) {
+            if (event.which === 229) {
+              return;
+            }
+            var latestState = latest.current.state;
+            if (latestState.isOpen && latestState.highlightedIndex > -1) {
+              event.preventDefault();
+              dispatch({
+                type: InputKeyDownEnter,
+                getItemNodeFromIndex
+              });
+            }
+          }
+        };
+      }, [dispatch, latest]);
+      var getLabelProps = react.useCallback(function(labelProps) {
+        return _extends({
+          id: elementIdsRef.current.labelId,
+          htmlFor: elementIdsRef.current.inputId
+        }, labelProps);
+      }, []);
+      var getMenuProps = react.useCallback(function(_temp, _temp2) {
+        var _extends2;
+        var _ref = _temp === void 0 ? {} : _temp, onMouseLeave = _ref.onMouseLeave, _ref$refKey = _ref.refKey, refKey = _ref$refKey === void 0 ? "ref" : _ref$refKey, ref = _ref.ref, rest = _objectWithoutPropertiesLoose(_ref, ["onMouseLeave", "refKey", "ref"]);
+        var _ref2 = _temp2 === void 0 ? {} : _temp2, _ref2$suppressRefErro = _ref2.suppressRefError, suppressRefError = _ref2$suppressRefErro === void 0 ? false : _ref2$suppressRefErro;
+        setGetterPropCallInfo("getMenuProps", suppressRefError, refKey, menuRef);
+        return _extends((_extends2 = {}, _extends2[refKey] = handleRefs(ref, function(menuNode) {
+          menuRef.current = menuNode;
+        }), _extends2.id = elementIdsRef.current.menuId, _extends2.role = "listbox", _extends2["aria-labelledby"] = elementIdsRef.current.labelId, _extends2.onMouseLeave = callAllEventHandlers(onMouseLeave, function() {
+          dispatch({
+            type: MenuMouseLeave$1
+          });
+        }), _extends2), rest);
+      }, [dispatch, setGetterPropCallInfo]);
+      var getItemProps = react.useCallback(function(_temp3) {
+        var _extends3, _ref4;
+        var _ref3 = _temp3 === void 0 ? {} : _temp3, item = _ref3.item, index = _ref3.index, _ref3$refKey = _ref3.refKey, refKey = _ref3$refKey === void 0 ? "ref" : _ref3$refKey, ref = _ref3.ref, onMouseMove = _ref3.onMouseMove, onClick = _ref3.onClick, onPress = _ref3.onPress, rest = _objectWithoutPropertiesLoose(_ref3, ["item", "index", "refKey", "ref", "onMouseMove", "onClick", "onPress"]);
+        var _latest$current = latest.current, latestProps = _latest$current.props, latestState = _latest$current.state;
+        var itemIndex = getItemIndex(index, item, latestProps.items);
+        if (itemIndex < 0) {
+          throw new Error("Pass either item or item index in getItemProps!");
+        }
+        var onSelectKey = "onClick";
+        var customClickHandler = onClick;
+        return _extends(_extends((_extends3 = {}, _extends3[refKey] = handleRefs(ref, function(itemNode) {
+          if (itemNode) {
+            itemRefs.current[elementIdsRef.current.getItemId(itemIndex)] = itemNode;
+          }
+        }), _extends3.role = "option", _extends3["aria-selected"] = "" + (itemIndex === latestState.highlightedIndex), _extends3.id = elementIdsRef.current.getItemId(itemIndex), _extends3), !rest.disabled && (_ref4 = {
+          onMouseMove: callAllEventHandlers(onMouseMove, function itemHandleMouseMove() {
+            if (index === latestState.highlightedIndex) {
+              return;
+            }
+            shouldScrollRef.current = false;
+            dispatch({
+              type: ItemMouseMove$1,
+              index
+            });
+          })
+        }, _ref4[onSelectKey] = callAllEventHandlers(customClickHandler, function itemHandleClick() {
+          dispatch({
+            type: ItemClick$1,
+            index
+          });
+          if (inputRef.current) {
+            inputRef.current.focus();
+          }
+        }), _ref4)), rest);
+      }, [dispatch, latest]);
+      var getToggleButtonProps = react.useCallback(function(_temp4) {
+        var _extends4;
+        var _ref5 = _temp4 === void 0 ? {} : _temp4, onClick = _ref5.onClick, onPress = _ref5.onPress, _ref5$refKey = _ref5.refKey, refKey = _ref5$refKey === void 0 ? "ref" : _ref5$refKey, ref = _ref5.ref, rest = _objectWithoutPropertiesLoose(_ref5, ["onClick", "onPress", "refKey", "ref"]);
+        var toggleButtonHandleClick = function() {
+          dispatch({
+            type: ToggleButtonClick$1
+          });
+          if (!latest.current.state.isOpen && inputRef.current) {
+            inputRef.current.focus();
+          }
+        };
+        return _extends(_extends((_extends4 = {}, _extends4[refKey] = handleRefs(ref, function(toggleButtonNode) {
+          toggleButtonRef.current = toggleButtonNode;
+        }), _extends4.id = elementIdsRef.current.toggleButtonId, _extends4.tabIndex = -1, _extends4), !rest.disabled && _extends({}, {
+          onClick: callAllEventHandlers(onClick, toggleButtonHandleClick)
+        })), rest);
+      }, [dispatch, latest]);
+      var getInputProps = react.useCallback(function(_temp5, _temp6) {
+        var _extends5;
+        var _ref6 = _temp5 === void 0 ? {} : _temp5, onKeyDown = _ref6.onKeyDown, onChange = _ref6.onChange, onInput = _ref6.onInput, onBlur = _ref6.onBlur, onChangeText = _ref6.onChangeText, _ref6$refKey = _ref6.refKey, refKey = _ref6$refKey === void 0 ? "ref" : _ref6$refKey, ref = _ref6.ref, rest = _objectWithoutPropertiesLoose(_ref6, ["onKeyDown", "onChange", "onInput", "onBlur", "onChangeText", "refKey", "ref"]);
+        var _ref7 = _temp6 === void 0 ? {} : _temp6, _ref7$suppressRefErro = _ref7.suppressRefError, suppressRefError = _ref7$suppressRefErro === void 0 ? false : _ref7$suppressRefErro;
+        setGetterPropCallInfo("getInputProps", suppressRefError, refKey, inputRef);
+        var latestState = latest.current.state;
+        var inputHandleKeyDown = function(event) {
+          var key = normalizeArrowKey(event);
+          if (key && inputKeyDownHandlers[key]) {
+            inputKeyDownHandlers[key](event);
+          }
+        };
+        var inputHandleChange = function(event) {
+          dispatch({
+            type: InputChange,
+            inputValue: event.target.value
+          });
+        };
+        var inputHandleBlur = function() {
+          if (!mouseAndTouchTrackersRef.current.isMouseDown) {
+            dispatch({
+              type: InputBlur
+            });
+          }
+        };
+        var onChangeKey = "onChange";
+        var eventHandlers = {};
+        if (!rest.disabled) {
+          var _eventHandlers;
+          eventHandlers = (_eventHandlers = {}, _eventHandlers[onChangeKey] = callAllEventHandlers(onChange, onInput, inputHandleChange), _eventHandlers.onKeyDown = callAllEventHandlers(onKeyDown, inputHandleKeyDown), _eventHandlers.onBlur = callAllEventHandlers(onBlur, inputHandleBlur), _eventHandlers);
+        }
+        return _extends(_extends(_extends((_extends5 = {}, _extends5[refKey] = handleRefs(ref, function(inputNode) {
+          inputRef.current = inputNode;
+        }), _extends5.id = elementIdsRef.current.inputId, _extends5["aria-autocomplete"] = "list", _extends5["aria-controls"] = elementIdsRef.current.menuId, _extends5), latestState.isOpen && latestState.highlightedIndex > -1 && {
+          "aria-activedescendant": elementIdsRef.current.getItemId(latestState.highlightedIndex)
+        }), {}, {
+          "aria-labelledby": elementIdsRef.current.labelId,
+          autoComplete: "off",
+          value: latestState.inputValue
+        }, eventHandlers), rest);
+      }, [dispatch, inputKeyDownHandlers, latest, mouseAndTouchTrackersRef, setGetterPropCallInfo]);
+      var getComboboxProps = react.useCallback(function(_temp7, _temp8) {
+        var _extends6;
+        var _ref8 = _temp7 === void 0 ? {} : _temp7, _ref8$refKey = _ref8.refKey, refKey = _ref8$refKey === void 0 ? "ref" : _ref8$refKey, ref = _ref8.ref, rest = _objectWithoutPropertiesLoose(_ref8, ["refKey", "ref"]);
+        var _ref9 = _temp8 === void 0 ? {} : _temp8, _ref9$suppressRefErro = _ref9.suppressRefError, suppressRefError = _ref9$suppressRefErro === void 0 ? false : _ref9$suppressRefErro;
+        setGetterPropCallInfo("getComboboxProps", suppressRefError, refKey, comboboxRef);
+        return _extends((_extends6 = {}, _extends6[refKey] = handleRefs(ref, function(comboboxNode) {
+          comboboxRef.current = comboboxNode;
+        }), _extends6.role = "combobox", _extends6["aria-haspopup"] = "listbox", _extends6["aria-owns"] = elementIdsRef.current.menuId, _extends6["aria-expanded"] = latest.current.state.isOpen, _extends6), rest);
+      }, [latest, setGetterPropCallInfo]);
+      var toggleMenu = react.useCallback(function() {
+        dispatch({
+          type: FunctionToggleMenu$1
+        });
+      }, [dispatch]);
+      var closeMenu = react.useCallback(function() {
+        dispatch({
+          type: FunctionCloseMenu$1
+        });
+      }, [dispatch]);
+      var openMenu = react.useCallback(function() {
+        dispatch({
+          type: FunctionOpenMenu$1
+        });
+      }, [dispatch]);
+      var setHighlightedIndex = react.useCallback(function(newHighlightedIndex) {
+        dispatch({
+          type: FunctionSetHighlightedIndex$1,
+          highlightedIndex: newHighlightedIndex
+        });
+      }, [dispatch]);
+      var selectItem = react.useCallback(function(newSelectedItem) {
+        dispatch({
+          type: FunctionSelectItem$1,
+          selectedItem: newSelectedItem
+        });
+      }, [dispatch]);
+      var setInputValue = react.useCallback(function(newInputValue) {
+        dispatch({
+          type: FunctionSetInputValue$1,
+          inputValue: newInputValue
+        });
+      }, [dispatch]);
+      var reset = react.useCallback(function() {
+        dispatch({
+          type: FunctionReset$1
+        });
+      }, [dispatch]);
+      return {
+        getItemProps,
+        getLabelProps,
+        getMenuProps,
+        getInputProps,
+        getComboboxProps,
+        getToggleButtonProps,
+        toggleMenu,
+        openMenu,
+        closeMenu,
+        setHighlightedIndex,
+        setInputValue,
+        selectItem,
+        reset,
+        highlightedIndex,
+        isOpen,
+        selectedItem,
+        inputValue
+      };
+    }
+    var defaultStateValues = {
+      activeIndex: -1,
+      selectedItems: []
+    };
+    function getInitialValue$1(props, propKey) {
+      return getInitialValue(props, propKey, defaultStateValues);
+    }
+    function getDefaultValue$1(props, propKey) {
+      return getDefaultValue(props, propKey, defaultStateValues);
+    }
+    function getInitialState$2(props) {
+      var activeIndex = getInitialValue$1(props, "activeIndex");
+      var selectedItems = getInitialValue$1(props, "selectedItems");
+      return {
+        activeIndex,
+        selectedItems
+      };
+    }
+    function isKeyDownOperationPermitted(event) {
+      if (event.shiftKey || event.metaKey || event.ctrlKey || event.altKey) {
+        return false;
+      }
+      var element = event.target;
+      if (element instanceof HTMLInputElement && element.value !== "" && (element.selectionStart !== 0 || element.selectionEnd !== 0)) {
+        return false;
+      }
+      return true;
+    }
+    function getA11yRemovalMessage(selectionParameters) {
+      var removedSelectedItem = selectionParameters.removedSelectedItem, itemToStringLocal = selectionParameters.itemToString;
+      return itemToStringLocal(removedSelectedItem) + " has been removed.";
+    }
+    var propTypes$2 = {
+      selectedItems: PropTypes.array,
+      initialSelectedItems: PropTypes.array,
+      defaultSelectedItems: PropTypes.array,
+      itemToString: PropTypes.func,
+      getA11yRemovalMessage: PropTypes.func,
+      stateReducer: PropTypes.func,
+      activeIndex: PropTypes.number,
+      initialActiveIndex: PropTypes.number,
+      defaultActiveIndex: PropTypes.number,
+      onActiveIndexChange: PropTypes.func,
+      onSelectedItemsChange: PropTypes.func,
+      keyNavigationNext: PropTypes.string,
+      keyNavigationPrevious: PropTypes.string,
+      environment: PropTypes.shape({
+        addEventListener: PropTypes.func,
+        removeEventListener: PropTypes.func,
+        document: PropTypes.shape({
+          getElementById: PropTypes.func,
+          activeElement: PropTypes.any,
+          body: PropTypes.any
+        })
+      })
+    };
+    var defaultProps$3 = {
+      itemToString: defaultProps.itemToString,
+      stateReducer: defaultProps.stateReducer,
+      environment: defaultProps.environment,
+      getA11yRemovalMessage,
+      keyNavigationNext: "ArrowRight",
+      keyNavigationPrevious: "ArrowLeft"
+    };
+    var SelectedItemClick = "__selected_item_click__";
+    var SelectedItemKeyDownDelete = "__selected_item_keydown_delete__";
+    var SelectedItemKeyDownBackspace = "__selected_item_keydown_backspace__";
+    var SelectedItemKeyDownNavigationNext = "__selected_item_keydown_navigation_next__";
+    var SelectedItemKeyDownNavigationPrevious = "__selected_item_keydown_navigation_previous__";
+    var DropdownKeyDownNavigationPrevious = "__dropdown_keydown_navigation_previous__";
+    var DropdownKeyDownBackspace = "__dropdown_keydown_backspace__";
+    var DropdownClick = "__dropdown_click__";
+    var FunctionAddSelectedItem = "__function_add_selected_item__";
+    var FunctionRemoveSelectedItem = "__function_remove_selected_item__";
+    var FunctionSetSelectedItems = "__function_set_selected_items__";
+    var FunctionSetActiveIndex = "__function_set_active_index__";
+    var FunctionReset$2 = "__function_reset__";
+    var stateChangeTypes$3 = Object.freeze({
+      __proto__: null,
+      SelectedItemClick,
+      SelectedItemKeyDownDelete,
+      SelectedItemKeyDownBackspace,
+      SelectedItemKeyDownNavigationNext,
+      SelectedItemKeyDownNavigationPrevious,
+      DropdownKeyDownNavigationPrevious,
+      DropdownKeyDownBackspace,
+      DropdownClick,
+      FunctionAddSelectedItem,
+      FunctionRemoveSelectedItem,
+      FunctionSetSelectedItems,
+      FunctionSetActiveIndex,
+      FunctionReset: FunctionReset$2
+    });
+    function downshiftMultipleSelectionReducer(state, action) {
+      var type = action.type, index = action.index, props = action.props, selectedItem = action.selectedItem;
+      var activeIndex = state.activeIndex, selectedItems = state.selectedItems;
+      var changes;
+      switch (type) {
+        case SelectedItemClick:
+          changes = {
+            activeIndex: index
+          };
+          break;
+        case SelectedItemKeyDownNavigationPrevious:
+          changes = {
+            activeIndex: activeIndex - 1 < 0 ? 0 : activeIndex - 1
+          };
+          break;
+        case SelectedItemKeyDownNavigationNext:
+          changes = {
+            activeIndex: activeIndex + 1 >= selectedItems.length ? -1 : activeIndex + 1
+          };
+          break;
+        case SelectedItemKeyDownBackspace:
+        case SelectedItemKeyDownDelete: {
+          var newActiveIndex = activeIndex;
+          if (selectedItems.length === 1) {
+            newActiveIndex = -1;
+          } else if (activeIndex === selectedItems.length - 1) {
+            newActiveIndex = selectedItems.length - 2;
+          }
+          changes = _extends({
+            selectedItems: [].concat(selectedItems.slice(0, activeIndex), selectedItems.slice(activeIndex + 1))
+          }, {
+            activeIndex: newActiveIndex
+          });
+          break;
+        }
+        case DropdownKeyDownNavigationPrevious:
+          changes = {
+            activeIndex: selectedItems.length - 1
+          };
+          break;
+        case DropdownKeyDownBackspace:
+          changes = {
+            selectedItems: selectedItems.slice(0, selectedItems.length - 1)
+          };
+          break;
+        case FunctionAddSelectedItem:
+          changes = {
+            selectedItems: [].concat(selectedItems, [selectedItem])
+          };
+          break;
+        case DropdownClick:
+          changes = {
+            activeIndex: -1
+          };
+          break;
+        case FunctionRemoveSelectedItem: {
+          var _newActiveIndex = activeIndex;
+          var selectedItemIndex = selectedItems.indexOf(selectedItem);
+          if (selectedItems.length === 1) {
+            _newActiveIndex = -1;
+          } else if (selectedItemIndex === selectedItems.length - 1) {
+            _newActiveIndex = selectedItems.length - 2;
+          }
+          changes = _extends({
+            selectedItems: [].concat(selectedItems.slice(0, selectedItemIndex), selectedItems.slice(selectedItemIndex + 1))
+          }, {
+            activeIndex: _newActiveIndex
+          });
+          break;
+        }
+        case FunctionSetSelectedItems: {
+          var newSelectedItems = action.selectedItems;
+          changes = {
+            selectedItems: newSelectedItems
+          };
+          break;
+        }
+        case FunctionSetActiveIndex: {
+          var _newActiveIndex2 = action.activeIndex;
+          changes = {
+            activeIndex: _newActiveIndex2
+          };
+          break;
+        }
+        case FunctionReset$2:
+          changes = {
+            activeIndex: getDefaultValue$1(props, "activeIndex"),
+            selectedItems: getDefaultValue$1(props, "selectedItems")
+          };
+          break;
+        default:
+          throw new Error("Reducer called without proper action type.");
+      }
+      return _extends(_extends({}, state), changes);
+    }
+    useMultipleSelection.stateChangeTypes = stateChangeTypes$3;
+    function useMultipleSelection(userProps) {
+      if (userProps === void 0) {
+        userProps = {};
+      }
+      var props = _extends(_extends({}, defaultProps$3), userProps);
+      var getA11yRemovalMessage2 = props.getA11yRemovalMessage, itemToString2 = props.itemToString, environment = props.environment, keyNavigationNext = props.keyNavigationNext, keyNavigationPrevious = props.keyNavigationPrevious;
+      var _useControlledReducer = useControlledReducer(downshiftMultipleSelectionReducer, getInitialState$2(props), props), state = _useControlledReducer[0], dispatch = _useControlledReducer[1];
+      var activeIndex = state.activeIndex, selectedItems = state.selectedItems;
+      var isInitialMountRef = react.useRef(true);
+      var dropdownRef = react.useRef(null);
+      var previousSelectedItemsRef = react.useRef(selectedItems);
+      var selectedItemRefs = react.useRef();
+      selectedItemRefs.current = [];
+      var prevPropsRef = react.useRef(props);
+      var latest = useLatestRef({
+        state,
+        props
+      });
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        if (selectedItems.length < previousSelectedItemsRef.current.length) {
+          var removedSelectedItem = previousSelectedItemsRef.current.find(function(item) {
+            return selectedItems.indexOf(item) < 0;
+          });
+          setStatus(getA11yRemovalMessage2({
+            itemToString: itemToString2,
+            resultCount: selectedItems.length,
+            removedSelectedItem,
+            activeIndex,
+            activeSelectedItem: selectedItems[activeIndex]
+          }), environment.document);
+        }
+        previousSelectedItemsRef.current = selectedItems;
+      }, [selectedItems.length]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        if (activeIndex === -1 && dropdownRef.current) {
+          dropdownRef.current.focus();
+        } else if (selectedItemRefs.current[activeIndex]) {
+          selectedItemRefs.current[activeIndex].focus();
+        }
+      }, [activeIndex]);
+      react.useEffect(function() {
+        if (isInitialMountRef.current) {
+          return;
+        }
+        validateControlledUnchanged(state, prevPropsRef.current, props);
+        prevPropsRef.current = props;
+      }, [state, props]);
+      var setGetterPropCallInfo = useGetterPropsCalledChecker("getDropdownProps");
+      react.useEffect(function() {
+        isInitialMountRef.current = false;
+      }, []);
+      var selectedItemKeyDownHandlers = react.useMemo(function() {
+        var _ref;
+        return _ref = {}, _ref[keyNavigationPrevious] = function() {
+          dispatch({
+            type: SelectedItemKeyDownNavigationPrevious
+          });
+        }, _ref[keyNavigationNext] = function() {
+          dispatch({
+            type: SelectedItemKeyDownNavigationNext
+          });
+        }, _ref.Delete = function Delete() {
+          dispatch({
+            type: SelectedItemKeyDownDelete
+          });
+        }, _ref.Backspace = function Backspace() {
+          dispatch({
+            type: SelectedItemKeyDownBackspace
+          });
+        }, _ref;
+      }, [dispatch, keyNavigationNext, keyNavigationPrevious]);
+      var dropdownKeyDownHandlers = react.useMemo(function() {
+        var _ref2;
+        return _ref2 = {}, _ref2[keyNavigationPrevious] = function(event) {
+          if (isKeyDownOperationPermitted(event)) {
+            dispatch({
+              type: DropdownKeyDownNavigationPrevious
+            });
+          }
+        }, _ref2.Backspace = function Backspace(event) {
+          if (isKeyDownOperationPermitted(event)) {
+            dispatch({
+              type: DropdownKeyDownBackspace
+            });
+          }
+        }, _ref2;
+      }, [dispatch, keyNavigationPrevious]);
+      var getSelectedItemProps = react.useCallback(function(_temp) {
+        var _extends2;
+        var _ref3 = _temp === void 0 ? {} : _temp, _ref3$refKey = _ref3.refKey, refKey = _ref3$refKey === void 0 ? "ref" : _ref3$refKey, ref = _ref3.ref, onClick = _ref3.onClick, onKeyDown = _ref3.onKeyDown, selectedItem = _ref3.selectedItem, index = _ref3.index, rest = _objectWithoutPropertiesLoose(_ref3, ["refKey", "ref", "onClick", "onKeyDown", "selectedItem", "index"]);
+        var latestState = latest.current.state;
+        var itemIndex = getItemIndex(index, selectedItem, latestState.selectedItems);
+        if (itemIndex < 0) {
+          throw new Error("Pass either selectedItem or index in getSelectedItemProps!");
+        }
+        return _extends((_extends2 = {}, _extends2[refKey] = handleRefs(ref, function(selectedItemNode) {
+          if (selectedItemNode) {
+            selectedItemRefs.current.push(selectedItemNode);
+          }
+        }), _extends2.tabIndex = index === latestState.activeIndex ? 0 : -1, _extends2.onClick = callAllEventHandlers(onClick, function selectedItemHandleClick() {
+          dispatch({
+            type: SelectedItemClick,
+            index
+          });
+        }), _extends2.onKeyDown = callAllEventHandlers(onKeyDown, function selectedItemHandleKeyDown(event) {
+          var key = normalizeArrowKey(event);
+          if (key && selectedItemKeyDownHandlers[key]) {
+            selectedItemKeyDownHandlers[key](event);
+          }
+        }), _extends2), rest);
+      }, [dispatch, latest, selectedItemKeyDownHandlers]);
+      var getDropdownProps = react.useCallback(function(_temp2, _temp3) {
+        var _extends3;
+        var _ref4 = _temp2 === void 0 ? {} : _temp2, _ref4$refKey = _ref4.refKey, refKey = _ref4$refKey === void 0 ? "ref" : _ref4$refKey, ref = _ref4.ref, onKeyDown = _ref4.onKeyDown, onClick = _ref4.onClick, _ref4$preventKeyActio = _ref4.preventKeyAction, preventKeyAction = _ref4$preventKeyActio === void 0 ? false : _ref4$preventKeyActio, rest = _objectWithoutPropertiesLoose(_ref4, ["refKey", "ref", "onKeyDown", "onClick", "preventKeyAction"]);
+        var _ref5 = _temp3 === void 0 ? {} : _temp3, _ref5$suppressRefErro = _ref5.suppressRefError, suppressRefError = _ref5$suppressRefErro === void 0 ? false : _ref5$suppressRefErro;
+        setGetterPropCallInfo("getDropdownProps", suppressRefError, refKey, dropdownRef);
+        return _extends(_extends((_extends3 = {}, _extends3[refKey] = handleRefs(ref, function(dropdownNode) {
+          if (dropdownNode) {
+            dropdownRef.current = dropdownNode;
+          }
+        }), _extends3), !preventKeyAction && {
+          onKeyDown: callAllEventHandlers(onKeyDown, function dropdownHandleKeyDown(event) {
+            var key = normalizeArrowKey(event);
+            if (key && dropdownKeyDownHandlers[key]) {
+              dropdownKeyDownHandlers[key](event);
+            }
+          }),
+          onClick: callAllEventHandlers(onClick, function dropdownHandleClick() {
+            dispatch({
+              type: DropdownClick
+            });
+          })
+        }), rest);
+      }, [dispatch, dropdownKeyDownHandlers, setGetterPropCallInfo]);
+      var addSelectedItem = react.useCallback(function(selectedItem) {
+        dispatch({
+          type: FunctionAddSelectedItem,
+          selectedItem
+        });
+      }, [dispatch]);
+      var removeSelectedItem = react.useCallback(function(selectedItem) {
+        dispatch({
+          type: FunctionRemoveSelectedItem,
+          selectedItem
+        });
+      }, [dispatch]);
+      var setSelectedItems = react.useCallback(function(newSelectedItems) {
+        dispatch({
+          type: FunctionSetSelectedItems,
+          selectedItems: newSelectedItems
+        });
+      }, [dispatch]);
+      var setActiveIndex = react.useCallback(function(newActiveIndex) {
+        dispatch({
+          type: FunctionSetActiveIndex,
+          activeIndex: newActiveIndex
+        });
+      }, [dispatch]);
+      var reset = react.useCallback(function() {
+        dispatch({
+          type: FunctionReset$2
+        });
+      }, [dispatch]);
+      return {
+        getSelectedItemProps,
+        getDropdownProps,
+        addSelectedItem,
+        removeSelectedItem,
+        setSelectedItems,
+        setActiveIndex,
+        reset,
+        selectedItems,
+        activeIndex
+      };
+    }
+    exports.default = Downshift;
+    exports.resetIdCounter = resetIdCounter;
+    exports.useCombobox = useCombobox;
+    exports.useMultipleSelection = useMultipleSelection;
+    exports.useSelect = useSelect;
+  },
+
+  54(require, exports, module) {
     // node_modules/lodash/lodash.js
     ;
     (function() {
@@ -40572,7 +43816,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }).call(this);
   },
 
-  20(require, exports, module) {
+  24(require, exports, module) {
     // node_modules/axios/lib/helpers/bind.js
     "use strict";
     module.exports = function bind(fn, thisArg) {
@@ -40586,10 +43830,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  29(require, exports, module) {
+  33(require, exports, module) {
     // node_modules/axios/lib/utils.js
     "use strict";
-    var bind = require(20 /* ./helpers/bind */);
+    var bind = require(24 /* ./helpers/bind */);
     var toString = Object.prototype.toString;
     function isArray(val) {
       return toString.call(val) === "[object Array]";
@@ -40735,10 +43979,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  21(require, exports, module) {
+  25(require, exports, module) {
     // node_modules/axios/lib/helpers/buildURL.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
+    var utils = require(33 /* ./../utils */);
     function encode(val) {
       return encodeURIComponent(val).replace(/%40/gi, "@").replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]");
     }
@@ -40784,10 +44028,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  11(require, exports, module) {
+  15(require, exports, module) {
     // node_modules/axios/lib/core/InterceptorManager.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
+    var utils = require(33 /* ./../utils */);
     function InterceptorManager() {
       this.handlers = [];
     }
@@ -40813,10 +44057,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = InterceptorManager;
   },
 
-  18(require, exports, module) {
+  22(require, exports, module) {
     // node_modules/axios/lib/core/transformData.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
+    var utils = require(33 /* ./../utils */);
     module.exports = function transformData(data, headers, fns) {
       utils.forEach(fns, function transform(fn) {
         data = fn(data, headers);
@@ -40825,7 +44069,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  9(require, exports, module) {
+  13(require, exports, module) {
     // node_modules/axios/lib/cancel/isCancel.js
     "use strict";
     module.exports = function isCancel(value) {
@@ -40833,10 +44077,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  26(require, exports, module) {
+  30(require, exports, module) {
     // node_modules/axios/lib/helpers/normalizeHeaderName.js
     "use strict";
-    var utils = require(29 /* ../utils */);
+    var utils = require(33 /* ../utils */);
     module.exports = function normalizeHeaderName(headers, normalizedName) {
       utils.forEach(headers, function processHeader(value, name) {
         if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
@@ -40847,7 +44091,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  15(require, exports, module) {
+  19(require, exports, module) {
     // node_modules/axios/lib/core/enhanceError.js
     "use strict";
     module.exports = function enhanceError(error, config, code, request, response) {
@@ -40876,20 +44120,20 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  13(require, exports, module) {
+  17(require, exports, module) {
     // node_modules/axios/lib/core/createError.js
     "use strict";
-    var enhanceError = require(15 /* ./enhanceError */);
+    var enhanceError = require(19 /* ./enhanceError */);
     module.exports = function createError(message, config, code, request, response) {
       var error = new Error(message);
       return enhanceError(error, config, code, request, response);
     };
   },
 
-  17(require, exports, module) {
+  21(require, exports, module) {
     // node_modules/axios/lib/core/settle.js
     "use strict";
-    var createError = require(13 /* ./createError */);
+    var createError = require(17 /* ./createError */);
     module.exports = function settle(resolve, reject, response) {
       var validateStatus = response.config.validateStatus;
       if (!validateStatus || validateStatus(response.status)) {
@@ -40900,7 +44144,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  24(require, exports, module) {
+  28(require, exports, module) {
     // node_modules/axios/lib/helpers/isAbsoluteURL.js
     "use strict";
     module.exports = function isAbsoluteURL(url) {
@@ -40908,7 +44152,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  22(require, exports, module) {
+  26(require, exports, module) {
     // node_modules/axios/lib/helpers/combineURLs.js
     "use strict";
     module.exports = function combineURLs(baseURL, relativeURL) {
@@ -40916,11 +44160,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  12(require, exports, module) {
+  16(require, exports, module) {
     // node_modules/axios/lib/core/buildFullPath.js
     "use strict";
-    var isAbsoluteURL = require(24 /* ../helpers/isAbsoluteURL */);
-    var combineURLs = require(22 /* ../helpers/combineURLs */);
+    var isAbsoluteURL = require(28 /* ../helpers/isAbsoluteURL */);
+    var combineURLs = require(26 /* ../helpers/combineURLs */);
     module.exports = function buildFullPath(baseURL, requestedURL) {
       if (baseURL && !isAbsoluteURL(requestedURL)) {
         return combineURLs(baseURL, requestedURL);
@@ -40929,10 +44173,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  27(require, exports, module) {
+  31(require, exports, module) {
     // node_modules/axios/lib/helpers/parseHeaders.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
+    var utils = require(33 /* ./../utils */);
     var ignoreDuplicateOf = ["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"];
     module.exports = function parseHeaders(headers) {
       var parsed = {};
@@ -40961,10 +44205,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  25(require, exports, module) {
+  29(require, exports, module) {
     // node_modules/axios/lib/helpers/isURLSameOrigin.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
+    var utils = require(33 /* ./../utils */);
     module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
       var msie = /(msie|trident)/i.test(navigator.userAgent);
       var urlParsingNode = document.createElement("a");
@@ -40999,10 +44243,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }();
   },
 
-  23(require, exports, module) {
+  27(require, exports, module) {
     // node_modules/axios/lib/helpers/cookies.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
+    var utils = require(33 /* ./../utils */);
     module.exports = utils.isStandardBrowserEnv() ? function standardBrowserEnv() {
       return {
         write: function write(name, value, expires, path, domain, secure) {
@@ -41043,16 +44287,16 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }();
   },
 
-  5(require, exports, module) {
+  9(require, exports, module) {
     // node_modules/axios/lib/adapters/xhr.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
-    var settle = require(17 /* ./../core/settle */);
-    var buildURL = require(21 /* ./../helpers/buildURL */);
-    var buildFullPath = require(12 /* ../core/buildFullPath */);
-    var parseHeaders = require(27 /* ./../helpers/parseHeaders */);
-    var isURLSameOrigin = require(25 /* ./../helpers/isURLSameOrigin */);
-    var createError = require(13 /* ../core/createError */);
+    var utils = require(33 /* ./../utils */);
+    var settle = require(21 /* ./../core/settle */);
+    var buildURL = require(25 /* ./../helpers/buildURL */);
+    var buildFullPath = require(16 /* ../core/buildFullPath */);
+    var parseHeaders = require(31 /* ./../helpers/parseHeaders */);
+    var isURLSameOrigin = require(29 /* ./../helpers/isURLSameOrigin */);
+    var createError = require(17 /* ../core/createError */);
     module.exports = function xhrAdapter(config) {
       return new Promise(function dispatchXhrRequest(resolve, reject) {
         var requestData = config.data;
@@ -41109,7 +44353,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           request = null;
         };
         if (utils.isStandardBrowserEnv()) {
-          var cookies = require(23 /* ./../helpers/cookies */);
+          var cookies = require(27 /* ./../helpers/cookies */);
           var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ? cookies.read(config.xsrfCookieName) : void 0;
           if (xsrfValue) {
             requestHeaders[config.xsrfHeaderName] = xsrfValue;
@@ -41160,11 +44404,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  19(require, exports, module) {
+  23(require, exports, module) {
     // node_modules/axios/lib/defaults.js
     "use strict";
-    var utils = require(29 /* ./utils */);
-    var normalizeHeaderName = require(26 /* ./helpers/normalizeHeaderName */);
+    var utils = require(33 /* ./utils */);
+    var normalizeHeaderName = require(30 /* ./helpers/normalizeHeaderName */);
     var DEFAULT_CONTENT_TYPE = {
       "Content-Type": "application/x-www-form-urlencoded"
     };
@@ -41176,9 +44420,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     function getDefaultAdapter() {
       var adapter;
       if (typeof XMLHttpRequest !== "undefined") {
-        adapter = require(5 /* ./adapters/xhr */);
+        adapter = require(9 /* ./adapters/xhr */);
       } else if (typeof process !== "undefined" && Object.prototype.toString.call(process) === "[object process]") {
-        adapter = require(5 /* ./adapters/http */);
+        adapter = require(9 /* ./adapters/http */);
       }
       return adapter;
     }
@@ -41234,13 +44478,13 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = defaults;
   },
 
-  14(require, exports, module) {
+  18(require, exports, module) {
     // node_modules/axios/lib/core/dispatchRequest.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
-    var transformData = require(18 /* ./transformData */);
-    var isCancel = require(9 /* ../cancel/isCancel */);
-    var defaults = require(19 /* ../defaults */);
+    var utils = require(33 /* ./../utils */);
+    var transformData = require(22 /* ./transformData */);
+    var isCancel = require(13 /* ../cancel/isCancel */);
+    var defaults = require(23 /* ../defaults */);
     function throwIfCancellationRequested(config) {
       if (config.cancelToken) {
         config.cancelToken.throwIfRequested();
@@ -41271,10 +44515,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  16(require, exports, module) {
+  20(require, exports, module) {
     // node_modules/axios/lib/core/mergeConfig.js
     "use strict";
-    var utils = require(29 /* ../utils */);
+    var utils = require(33 /* ../utils */);
     module.exports = function mergeConfig(config1, config2) {
       config2 = config2 || {};
       var config = {};
@@ -41319,14 +44563,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  10(require, exports, module) {
+  14(require, exports, module) {
     // node_modules/axios/lib/core/Axios.js
     "use strict";
-    var utils = require(29 /* ./../utils */);
-    var buildURL = require(21 /* ../helpers/buildURL */);
-    var InterceptorManager = require(11 /* ./InterceptorManager */);
-    var dispatchRequest = require(14 /* ./dispatchRequest */);
-    var mergeConfig = require(16 /* ./mergeConfig */);
+    var utils = require(33 /* ./../utils */);
+    var buildURL = require(25 /* ../helpers/buildURL */);
+    var InterceptorManager = require(15 /* ./InterceptorManager */);
+    var dispatchRequest = require(18 /* ./dispatchRequest */);
+    var mergeConfig = require(20 /* ./mergeConfig */);
     function Axios(instanceConfig) {
       this.defaults = instanceConfig;
       this.interceptors = {
@@ -41386,7 +44630,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = Axios;
   },
 
-  7(require, exports, module) {
+  11(require, exports, module) {
     // node_modules/axios/lib/cancel/Cancel.js
     "use strict";
     function Cancel(message) {
@@ -41399,10 +44643,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = Cancel;
   },
 
-  8(require, exports, module) {
+  12(require, exports, module) {
     // node_modules/axios/lib/cancel/CancelToken.js
     "use strict";
-    var Cancel = require(7 /* ./Cancel */);
+    var Cancel = require(11 /* ./Cancel */);
     function CancelToken(executor) {
       if (typeof executor !== "function") {
         throw new TypeError("executor must be a function.");
@@ -41438,7 +44682,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     module.exports = CancelToken;
   },
 
-  28(require, exports, module) {
+  32(require, exports, module) {
     // node_modules/axios/lib/helpers/spread.js
     "use strict";
     module.exports = function spread(callback) {
@@ -41448,14 +44692,14 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
   },
 
-  6(require, exports, module) {
+  10(require, exports, module) {
     // node_modules/axios/lib/axios.js
     "use strict";
-    var utils = require(29 /* ./utils */);
-    var bind = require(20 /* ./helpers/bind */);
-    var Axios = require(10 /* ./core/Axios */);
-    var mergeConfig = require(16 /* ./core/mergeConfig */);
-    var defaults = require(19 /* ./defaults */);
+    var utils = require(33 /* ./utils */);
+    var bind = require(24 /* ./helpers/bind */);
+    var Axios = require(14 /* ./core/Axios */);
+    var mergeConfig = require(20 /* ./core/mergeConfig */);
+    var defaults = require(23 /* ./defaults */);
     function createInstance(defaultConfig) {
       var context = new Axios(defaultConfig);
       var instance = bind(Axios.prototype.request, context);
@@ -41468,23 +44712,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     axios.create = function create(instanceConfig) {
       return createInstance(mergeConfig(axios.defaults, instanceConfig));
     };
-    axios.Cancel = require(7 /* ./cancel/Cancel */);
-    axios.CancelToken = require(8 /* ./cancel/CancelToken */);
-    axios.isCancel = require(9 /* ./cancel/isCancel */);
+    axios.Cancel = require(11 /* ./cancel/Cancel */);
+    axios.CancelToken = require(12 /* ./cancel/CancelToken */);
+    axios.isCancel = require(13 /* ./cancel/isCancel */);
     axios.all = function all(promises) {
       return Promise.all(promises);
     };
-    axios.spread = require(28 /* ./helpers/spread */);
+    axios.spread = require(32 /* ./helpers/spread */);
     module.exports = axios;
     module.exports.default = axios;
   },
 
-  4(require, exports, module) {
+  8(require, exports, module) {
     // node_modules/axios/index.js
-    module.exports = require(6 /* ./lib/axios */);
+    module.exports = require(10 /* ./lib/axios */);
   },
 
-  34(require, exports, module) {
+  39(require, exports, module) {
     // node_modules/flexsearch/dist/flexsearch.min.js
     "use strict";
     (function(K, R, w) {
@@ -42560,5 +45804,5 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       };
     }()), this);
   }
-}, 79);
+}, 84);
 //# sourceMappingURL=bundle.js.map

@@ -237,18 +237,20 @@ const App = () => {
           }
         }
       }
-      case 'SET_LEVEL': {
+      case 'ZOOM_OUT_TO_LEVEL': {
         const { level } = action.data
+        const newPath = state.path.slice(0, level);
         return {
           ...state,
-          path: state.path.slice(0, level)
+          path: newPath
         }
       }
       case 'ZOOM_TO_LEVEL': {
         const { level } = action.data
+        const newPath = [...state.path, level];
         return {
           ...state,
-          path: [...state.path, level]
+          path: newPath
         }
       }
       // Loads json from the server and uses it as state.
@@ -261,15 +263,23 @@ const App = () => {
     }
   }
 
-
   const [savedState, setSavedState] = useLocalStorage(fallbackState, 'zoomega-state');
   const [state, dispatch] = React.useReducer(reducer, savedState);
   const { cards, path } = state;
 
   // Standard set of breadcrumbs that are just pushed / popped like a stack
-  // Derived from state
+  // Derived from state  
   const currLevel = path[path.length - 1];
   const currCards = cards[currLevel].children
+
+  // Listen to path change
+  React.useEffect(() => {
+    if (path) {
+      console.log('goot a path!')
+      window.location.hash = path.join('/');
+    }
+    setSavedState(state)
+  }, [path]);
 
   // Triggers ZUI animations
   const [isZooming, setIsZooming] = React.useState(false)
@@ -313,7 +323,7 @@ const App = () => {
                 <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
                   <Breadcrumb
                     onClick={() => {
-                      dispatch({ type: 'SET_LEVEL', data: { level: idx + 1 } });
+                      dispatch({ type: 'ZOOM_OUT_TO_LEVEL', data: { level: idx + 1 } });
                       setIsZooming(!isZooming);
                     }}>
                       {card.title}

@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "downshift": "^5.4.5",
     "easymde": "^2.10.1",
     "esbuild": "^0.1.4",
     "express": "^4.17.1",
