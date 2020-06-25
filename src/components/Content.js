@@ -8,9 +8,10 @@ import {
   Slate, Editable, ReactEditor, withReact, useSelected,
   useFocused
 } from 'slate-react'
-import { theme, DEFAULT_CARD_CONTENT } from './../constants'
+import { DEFAULT_CARD_CONTENT } from './../constants'
 import { useSelect } from "downshift";
-import { DispatchContext } from './../App';
+import { DispatchContext, ThemeContext } from './../App';
+import { Flipped } from 'react-flip-toolkit'
 
 const Portal = ({ children }) => {
   return ReactDOM.createPortal(children, document.body)
@@ -23,9 +24,9 @@ const ContentWrapper = styled.div`
   border: none;
   overflow: scroll;
   font-family: sans-serif;
-  font-size: ${theme.body}rem;
+  font-size: ${props => props.theme.body}rem;
   min-height: 150px;
-  padding: ${theme.padding}px;
+  padding: ${props => props.theme.padding}px;
   flex-grow: 1;
 `
 
@@ -65,10 +66,12 @@ const Content = ({
   search,
   setSearch,
   searchResults,
+  setIsTyping,
 }) => {
   const editor = React.useMemo(() => withMentions(withReact(createEditor())), [])
 
   const { dispatch, fuse } = React.useContext(DispatchContext);
+const { theme } = React.useContext(ThemeContext);
 
   // Target is the current position of the node that you're inserting into.
   const [target, setTarget] = React.useState()
@@ -82,7 +85,7 @@ const Content = ({
       case 'code':
         return <CodeElement {...props} />
       case 'mention':
-        return <MentionElement goToLevel={(id)=>dispatch({type: 'SET_LEVEL', data: { id }})}{...props} />
+        return <MentionElement goToLevel={(id) => dispatch({ type: 'SET_LEVEL', data: { id } })}{...props} />
       default:
         return <DefaultElement {...props} />
     }
@@ -137,9 +140,9 @@ const Content = ({
           }
         }
       }
-      if(event.key === '@') {
+      if (event.key === '@') {
         // set search every time you want to reference something
-        dispatch({ type: 'SET_SEARCH_INDEX'});
+        dispatch({ type: 'SET_SEARCH_INDEX' });
       }
       if (target) {
         switch (event.key) {
@@ -167,9 +170,9 @@ const Content = ({
             setTarget(null)
             break
           case ' ':
-          event.preventDefault();
+            event.preventDefault();
 
-            if(search) {
+            if (search) {
               event.preventDefault();
               // Replace the text in  the current node with that text and a space.
               const { selection } = editor
@@ -199,77 +202,82 @@ const Content = ({
   }, [searchResults.length, editor, index, search, target])
 
   return (
-    <ContentWrapper>
-      <Slate editor={editor} value={content} onChange={newValue => {
-        onUpdate(id, 'content', newValue)
-        const { selection } = editor
+    <Flipped inverseFlipId={id}>
+      <ContentWrapper theme={theme}>
+        <Slate
+          editor={editor} value={content} onChange={newValue => {
+            onUpdate(id, 'content', newValue)
+            const { selection } = editor
 
-        if (selection && Range.isCollapsed(selection)) {
-          const [start] = Range.edges(selection)
-          let newStart;
-          const wordBefore = Editor.before(editor, start, { unit: 'word' })
+            if (selection && Range.isCollapsed(selection)) {
+              const [start] = Range.edges(selection)
+              let newStart;
+              const wordBefore = Editor.before(editor, start, { unit: 'word' })
 
-          const before = wordBefore && Editor.before(editor, wordBefore)
-          const beforeRange = before && Editor.range(editor, before, start)
-          const beforeText = beforeRange && Editor.string(editor, beforeRange)
-          const beforeMatch = beforeText && beforeText.match(/^@(\w+)$/)
-          const after = Editor.after(editor, start)
-          const afterRange = Editor.range(editor, start, after)
-          const afterText = Editor.string(editor, afterRange)
-          const afterMatch = afterText.match(/^(\s|$)/)
+              const before = wordBefore && Editor.before(editor, wordBefore)
+              const beforeRange = before && Editor.range(editor, before, start)
+              const beforeText = beforeRange && Editor.string(editor, beforeRange)
+              const beforeMatch = beforeText && beforeText.match(/^@(\w+)$/)
+              const after = Editor.after(editor, start)
+              const afterRange = Editor.range(editor, start, after)
+              const afterText = Editor.string(editor, afterRange)
+              const afterMatch = afterText.match(/^(\s|$)/)
 
-          if (beforeMatch && afterMatch) {
-            // if you've recognized an @ character basically.
-            setTarget(beforeRange)
-            setSearch(beforeMatch[1])
-            // start the search at index 0
-            setIndex(0)
-         
-            return
-          }
-        }
-        setTarget(null)
+              if (beforeMatch && afterMatch) {
+                // if you've recognized an @ character basically.
+                setTarget(beforeRange)
+                setSearch(beforeMatch[1])
+                // start the search at index 0
+                setIndex(0)
 
-      }}
-      >
-        <Editable
-          placeholder="Start writing here"
-          renderElement={renderElement}
-          renderLeaf={renderLeaf}
-          onKeyDown={onKeyDown}
-        />
-        {target && searchResults.length > 0 && (
-          <Portal>
-            <div
-              ref={ref}
-              style={{
-                top: '-9999px',
-                left: '-9999px',
-                position: 'absolute',
-                zIndex: 1,
-                padding: '3px',
-                background: 'white',
-                borderRadius: '4px',
-                boxShadow: '0 1px 5px rgba(0,0,0,.2)',
-              }}
-            >
-              {searchResults.map(({item}, i) => (
-                <div
-                  key={item.id}
-                  style={{
-                    padding: '1px 3px',
-                    borderRadius: '3px',
-                    background: i === index ? '#B4D5FF' : 'transparent',
-                  }}
-                >
-                  <div>{item.title}</div>
-                </div>
-              ))}
-            </div>
-          </Portal>
-        )}
-      </Slate>
-    </ContentWrapper>
+                return
+              }
+            }
+            setTarget(null)
+
+          }}
+        >
+          <Editable
+            placeholder="Start writing here"
+            renderElement={renderElement}
+            renderLeaf={renderLeaf}
+            onKeyDown={onKeyDown}
+            onFocus={(e) => setIsTyping(true)}
+            onBlur={(e) => setIsTyping(false)}
+          />
+          {target && searchResults.length > 0 && (
+            <Portal>
+              <div
+                ref={ref}
+                style={{
+                  top: '-9999px',
+                  left: '-9999px',
+                  position: 'absolute',
+                  zIndex: 1,
+                  padding: '3px',
+                  background: 'white',
+                  borderRadius: '4px',
+                  boxShadow: '0 1px 5px rgba(0,0,0,.2)',
+                }}
+              >
+                {searchResults.map(({ item }, i) => (
+                  <div
+                    key={item.id}
+                    style={{
+                      padding: '1px 3px',
+                      borderRadius: '3px',
+                      background: i === index ? '#B4D5FF' : 'transparent',
+                    }}
+                  >
+                    <div>{item.title}</div>
+                  </div>
+                ))}
+              </div>
+            </Portal>
+          )}
+        </Slate>
+      </ContentWrapper>
+    </Flipped>
   )
 }
 
@@ -289,8 +297,8 @@ const withMentions = editor => {
 }
 
 // some mentions dont have items. fix that.
-const insertMention = (editor, search, {item}) => {
-  if(item)  {
+const insertMention = (editor, search, { item }) => {
+  if (item) {
     const mention = { type: 'mention', search, item, children: [{ text: '' }] }
     Transforms.insertNodes(editor, mention)
     Transforms.move(editor)
@@ -307,7 +315,7 @@ const MentionElement = ({ attributes, children, search, goToLevel, element }) =>
     <span
       {...attributes}
       contentEditable={false}
-      onClick={()=>goToLevel(item.id)}
+      onClick={() => goToLevel(item.id)}
       style={{
         padding: '3px 3px 2px',
         margin: '0 1px',

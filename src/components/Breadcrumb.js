@@ -1,36 +1,55 @@
 import * as React from 'react';
 import { Flipped } from 'react-flip-toolkit';
 import styled from 'styled-components';
-import { theme } from './../constants'
+import { ThemeContext } from './../App';
 
-
-const BreadcrumbWrapper = styled.button`
-    padding: ${theme.padding/2}px ${theme.padding}px;
+const ButtonWrapper = styled.button`
+    padding: ${props => props.theme.padding/2}px ${props => props.theme.padding}px;
     background-color: transparent;
-    color: ${theme.textPrimary};
+    color: ${props => props.theme.textPrimary};
     border-radius: 5px;
     pointer-events: all;
     border: none;
     font-size: 1.2rem;
     transition: 0.2s background-color;
     &:hover {
-      background-color: #E5E5E5;
+      background-color: ${props=>props.theme.background};
+    }
+    &:focus {
+      outline: none;
     }
 `
 
-// const Wrapper = ({ message }) => {
-//   return <StyledWrapper>{message}</StyledWrapper>
-// }
+const InputWrapper = styled.input`
+    padding: ${props => props.theme.padding/2}px ${props => props.theme.padding*1.2}px;
+    background-color: transparent;
+    color: ${props => props.theme.textPrimary};
+    border-radius: 5px;
+    pointer-events: all;
+    border: none;
+    font-size: 1.2rem;
+    width: auto;
+    transition: 0.2s background-color;
+    &:hover {
+      background-color: ${props=>props.theme.background};
+    }
+    
+`
 
 const Breadcrumb = ({
   isActive,
   children,
   ...props
 }) => {
-  return (
-    <BreadcrumbWrapper {...props}>
-    {children}
-    </BreadcrumbWrapper>
-  )
+  const { theme } = React.useContext(ThemeContext);
+  return isActive ? (
+    <InputWrapper theme={theme} {...props}>
+        {children}
+    </InputWrapper>
+  ) : (
+    <ButtonWrapper theme={theme} {...props}>
+        {children}
+    </ButtonWrapper>
+  );
 }
 export default Breadcrumb;

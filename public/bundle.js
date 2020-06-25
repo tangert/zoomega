@@ -25808,13 +25808,23 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   84(require, App) {
     // src/constants.js
     const CARD_SIZE = 200;
-    const theme = {
+    const lightTheme = {
       padding: 8,
-      background: "white",
+      background: "#F0F0F0",
       foreground: "white",
       textPrimary: "rgba(0,0,0,1)",
       textSecondary: "rgba(0,0,0,0.6)",
       border: "rgba(0,0,0,0.25)",
+      header: 0.8,
+      body: 1
+    };
+    const darkTheme = {
+      padding: 8,
+      background: "#000000",
+      foreground: "#1e1e1e",
+      textPrimary: "rgba(255,255,255,1)",
+      textSecondary: "rgba(255,255,255.6)",
+      border: "rgba(255,255,255,0.25)",
       header: 0.8,
       body: 1
     };
@@ -25826,7 +25836,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }];
 
     // src/components/Content.js
-    const React4 = require(73 /* react */, true /* ES6 import */), ReactDOM2 = require(65 /* react-dom */, true /* ES6 import */), styled_components4 = require(83 /* styled-components */, true /* ES6 import */), slate = require(82 /* slate */, true /* ES6 import */), slate_react = require(81 /* slate-react */, true /* ES6 import */), downshift = require(36 /* downshift */, true /* ES6 import */);
+    const React4 = require(73 /* react */, true /* ES6 import */), ReactDOM2 = require(65 /* react-dom */, true /* ES6 import */), styled_components4 = require(83 /* styled-components */, true /* ES6 import */), slate = require(82 /* slate */, true /* ES6 import */), slate_react = require(81 /* slate-react */, true /* ES6 import */), downshift = require(36 /* downshift */, true /* ES6 import */), react_flip_toolkit4 = require(66 /* react-flip-toolkit */, true /* ES6 import */);
     const Portal = ({children}) => {
       return ReactDOM2.createPortal(children, document.body);
     };
@@ -25837,9 +25847,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   border: none;
   overflow: scroll;
   font-family: sans-serif;
-  font-size: ${theme.body}rem;
+  font-size: ${(props) => props.theme.body}rem;
   min-height: 150px;
-  padding: ${theme.padding}px;
+  padding: ${(props) => props.theme.padding}px;
   flex-grow: 1;
 `;
     const BoldMark = ({children}) => React4.createElement("strong", null, children);
@@ -25863,9 +25873,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
       }, props.children);
     };
-    const Content3 = ({id, content, onUpdate, search, setSearch, searchResults}) => {
+    const Content3 = ({id, content, onUpdate, search, setSearch, searchResults, setIsTyping}) => {
       const editor = React4.useMemo(() => withMentions(slate_react.withReact(slate.createEditor())), []);
       const {dispatch, fuse: fuse3} = React4.useContext(DispatchContext);
+      const {theme} = React4.useContext(ThemeContext);
       const [target, setTarget] = React4.useState();
       const [index, setIndex] = React4.useState(0);
       const ref = React4.useRef();
@@ -25994,7 +26005,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           el.style.left = `${rect.left + window.pageXOffset}px`;
         }
       }, [searchResults.length, editor, index, search, target]);
-      return React4.createElement(ContentWrapper, null, React4.createElement(slate_react.Slate, {
+      return React4.createElement(react_flip_toolkit4.Flipped, {
+        inverseFlipId: id
+      }, React4.createElement(ContentWrapper, {
+        theme
+      }, React4.createElement(slate_react.Slate, {
         editor,
         value: content,
         onChange: (newValue) => {
@@ -26027,7 +26042,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         placeholder: "Start writing here",
         renderElement,
         renderLeaf,
-        onKeyDown
+        onKeyDown,
+        onFocus: (e) => setIsTyping(true),
+        onBlur: (e) => setIsTyping(false)
       }), target && searchResults.length > 0 && React4.createElement(Portal, null, React4.createElement("div", {
         ref,
         style: {
@@ -26047,7 +26064,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           borderRadius: "3px",
           background: i === index ? "#B4D5FF" : "transparent"
         }
-      }, React4.createElement("div", null, item.title)))))));
+      }, React4.createElement("div", null, item.title))))))));
     };
     const withMentions = (editor) => {
       const {isInline, isVoid} = editor;
@@ -26102,11 +26119,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: ${(props) => props.theme.foreground};
+  color: ${(props) => props.theme.textPrimary};
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  padding: ${theme.padding * 2}px;
+  padding: ${(props) => props.theme.padding * 2}px;
   border: 1px solid rgba(0,0,0,0.1);
   transition-property: box-shadow;
   transition-duration: .1s;
@@ -26121,7 +26139,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   display: flex;
   align-items: center;
   justify-content flex-start;
-  padding-top: ${theme.padding}px;
+  padding-top: ${(props) => props.theme.padding}px;
   overflow-x: scroll;
 `;
     const CardPreview = styled_components3.default.div`
@@ -26130,13 +26148,12 @@ For more info, visit https://fb.me/react-mock-scheduler`);
   justify-content: center;
   width: auto;
   white-space: nowrap;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid ${(props) => props.theme.textSecondary};
   transition: box-shadow, color;
   transition: .1s;
-  color: rgba(0,0,0,0.7);
-  font-size:  ${theme.header}rem;
-  padding: ${theme.padding}px;
-  margin-right: ${theme.padding / 2}px;
+  font-size:  ${(props) => props.theme.header}rem;
+  padding: ${(props) => props.theme.padding}px;
+  margin-right: ${(props) => props.theme.padding / 2}px;
   border-radius: 5px;
 `;
     const ActionRow = styled_components3.default.div`
@@ -26147,19 +26164,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
 `;
     const Input = styled_components3.default.input`
   border: none;
-  font-size: ${theme.header}rem;
+  font-size: ${(props) => props.theme.header}rem;
   opacity: 0.7;
   &:focus {
     opacity: 1.0
   }
 `;
     const ActionButton = styled_components3.default.button`
-  color: black;
   background-color: transparent;
-  border: grey;
   border-radius: 50px;
   opacity: 0;
   transition: 0.2s;
+  margin: 4px;
+  color: ${(props) => props.theme.textPrimiary};
   ${CardWrapper}:hover & {
     opacity: 1;
   }
@@ -26179,6 +26196,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const [isTyping, setIsTyping] = React3.useState(false);
       const [isFocused, setIsFocused] = React3.useState(false);
       const {dispatch} = React3.useContext(DispatchContext);
+      const {theme} = React3.useContext(ThemeContext);
       const onUpdate = (id2, property, value) => {
         dispatch({
           type: "UPDATE_CARD",
@@ -26220,7 +26238,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "transparent",
-          padding: `${theme.padding * 2}px`
+          padding: `${theme.padding * 2}px`,
+          cursor: isTyping ? "text" : "move"
         },
         minWidth: CARD_SIZE * 1.5,
         minHeight: CARD_SIZE * 1.5,
@@ -26252,12 +26271,15 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             height: ref.offsetHeight
           });
         },
-        resizeHandleComponent: React3.createElement(ResizeHandle, null),
         ...props,
         onBlur: () => setSearch("")
       }, React3.createElement(react_flip_toolkit3.Flipped, {
         flipId: id
-      }, React3.createElement(CardWrapper, null, React3.createElement(ActionRow, null, React3.createElement(react_flip_toolkit3.Flipped, {
+      }, React3.createElement(CardWrapper, {
+        theme
+      }, React3.createElement(ActionRow, {
+        theme
+      }, React3.createElement(react_flip_toolkit3.Flipped, {
         flipId: `layer-id-${id}`
       }, React3.createElement(Input, {
         onFocus: (e) => {
@@ -26267,7 +26289,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         },
         onBlur: () => setIsTyping(false),
         onChange: (e) => onUpdate(id, "title", e.target.value),
-        value: title
+        value: title,
+        theme
       })), React3.createElement("div", null, React3.createElement(ActionButton, {
         onClick: () => onDelete(id)
       }, "x"), React3.createElement(ActionButton, {
@@ -26279,33 +26302,62 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         search,
         setSearch,
         searchResults,
-        dispatch
-      }), React3.createElement(CardPreviewContainer, null, children.map((c) => {
+        dispatch,
+        setIsTyping,
+        theme
+      }), React3.createElement(CardPreviewContainer, {
+        theme
+      }, children.map((c) => {
         return React3.createElement(react_flip_toolkit3.Flipped, {
           key: `child-preview-${c.id}`,
           flipId: c.id
-        }, React3.createElement(CardPreview, null, c.title));
+        }, React3.createElement(CardPreview, null, React3.createElement(react_flip_toolkit3.Flipped, {
+          inverseFlipId: id
+        }, React3.createElement("div", null, c.title))));
       })))));
     };
     const default2 = Card3;
 
     // src/components/Breadcrumb.js
     const React2 = require(73 /* react */, true /* ES6 import */), react_flip_toolkit2 = require(66 /* react-flip-toolkit */, true /* ES6 import */), styled_components2 = require(83 /* styled-components */, true /* ES6 import */);
-    const BreadcrumbWrapper = styled_components2.default.button`
-    padding: ${theme.padding / 2}px ${theme.padding}px;
+    const ButtonWrapper = styled_components2.default.button`
+    padding: ${(props) => props.theme.padding / 2}px ${(props) => props.theme.padding}px;
     background-color: transparent;
-    color: ${theme.textPrimary};
+    color: ${(props) => props.theme.textPrimary};
     border-radius: 5px;
     pointer-events: all;
     border: none;
     font-size: 1.2rem;
     transition: 0.2s background-color;
     &:hover {
-      background-color: #E5E5E5;
+      background-color: ${(props) => props.theme.background};
+    }
+    &:focus {
+      outline: none;
     }
 `;
+    const InputWrapper = styled_components2.default.input`
+    padding: ${(props) => props.theme.padding / 2}px ${(props) => props.theme.padding * 1.2}px;
+    background-color: transparent;
+    color: ${(props) => props.theme.textPrimary};
+    border-radius: 5px;
+    pointer-events: all;
+    border: none;
+    font-size: 1.2rem;
+    width: auto;
+    transition: 0.2s background-color;
+    &:hover {
+      background-color: ${(props) => props.theme.background};
+    }
+    
+`;
     const Breadcrumb3 = ({isActive, children, ...props}) => {
-      return React2.createElement(BreadcrumbWrapper, {
+      const {theme} = React2.useContext(ThemeContext);
+      return isActive ? React2.createElement(InputWrapper, {
+        theme,
+        ...props
+      }, children) : React2.createElement(ButtonWrapper, {
+        theme,
         ...props
       }, children);
     };
@@ -26313,7 +26365,8 @@ For more info, visit https://fb.me/react-mock-scheduler`);
 
     // src/App.js
     require(App, {
-      DispatchContext: () => DispatchContext
+      DispatchContext: () => DispatchContext,
+      ThemeContext: () => ThemeContext
     });
     const React = require(73 /* react */, true /* ES6 import */), ReactDOM = require(65 /* react-dom */, true /* ES6 import */), react_flip_toolkit = require(66 /* react-flip-toolkit */, true /* ES6 import */), lodash = require(54 /* lodash */, true /* ES6 import */), axios = require(8 /* axios */, true /* ES6 import */), styled_components = require(83 /* styled-components */, true /* ES6 import */), fuse = require(39 /* fuse.js */, true /* ES6 import */);
     function useLocalStorage(defaultValue, key) {
@@ -26328,9 +26381,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     }
     const fallbackState = {
       path: ["root"],
+      isDarkMode: false,
       cards: {
         root: {
-          title: "tyler's garden",
+          title: "ur notes",
           id: "root",
           children: [],
           parent: null
@@ -26339,10 +26393,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
     };
     const BreadcrumbSeparator = styled_components.default.div`
   border: none;
-  padding: ${theme.padding / 2}px ${theme.padding / 2}px;
+  padding: ${(props) => props.theme.padding / 2}px ${(props) => props.theme.padding / 2}px;
 `;
     const genID = () => "_" + Math.random().toString(36).substr(2, 9);
     const DispatchContext = React.createContext();
+    const ThemeContext = React.createContext();
     let fuse2;
     const searchOptions = {
       includeScore: true,
@@ -26487,6 +26542,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             fuse2 = new fuse.default(cardList, searchOptions);
             return state2;
           }
+          case "ADD_LINK": {
+            return state2;
+          }
+          case "REMOVE_LINK": {
+            return state2;
+          }
+          case "TOGGLE_DARK_MODE": {
+            const {isDarkMode: isDarkMode2} = state2;
+            return {
+              ...state2,
+              isDarkMode: !isDarkMode2
+            };
+          }
           case "LOAD_STATE": {
             const {data} = action.data;
             return data;
@@ -26499,7 +26567,11 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       const [state, dispatch] = React.useReducer(reducer, savedState);
       const [search, setSearch] = React.useState("");
       const [searchResults, setSearchResults] = React.useState([]);
-      const {cards, path} = state;
+      const {cards, path, isDarkMode} = state;
+      const [theme, setTheme] = React.useState(isDarkMode ? darkTheme : lightTheme);
+      React.useEffect(() => {
+        setTheme(isDarkMode ? darkTheme : lightTheme);
+      }, [isDarkMode]);
       React.useEffect(() => {
         if (!fuse2) {
           const cardList = Object.entries(cards).map((c) => c[1]);
@@ -26544,6 +26616,10 @@ For more info, visit https://fb.me/react-mock-scheduler`);
       };
       return React.createElement(react_flip_toolkit.Flipper, {
         flipKey: isZooming
+      }, React.createElement(ThemeContext.Provider, {
+        value: {
+          theme
+        }
       }, React.createElement(DispatchContext.Provider, {
         value: {
           fuse: fuse2,
@@ -26553,7 +26629,25 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         style: {
           width: "100%",
           height: "100vh",
-          fontFamily: "sans-serif"
+          fontFamily: "sans-serif",
+          backgroundColor: theme.background,
+          color: theme.textPrimary,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          margin: 0,
+          padding: `${theme.padding * 2}px`,
+          overflow: "scroll"
+        }
+      }, React.createElement("div", {
+        style: {
+          position: "fixed",
+          backgroundColor: theme.foreground,
+          boxShadow: "10px 10px 50px 0px rgba(0,0,0,0.3)",
+          padding: `${theme.padding * 2}px`,
+          borderRadius: "10px",
+          transition: "0.1s",
+          zIndex: 9999
         }
       }, React.createElement("div", {
         style: {
@@ -26565,7 +26659,21 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           return React.createElement(react_flip_toolkit.Flipped, {
             key: `layer-id-${loc}`,
             flipId: `layer-id-${loc}`
-          }, React.createElement(default3, null, card.title));
+          }, React.createElement(default3, {
+            isActive: true,
+            value: card.title,
+            style: {
+              width: `${card.title.length}ch`
+            },
+            onChange: (e) => dispatch({
+              type: "UPDATE_CARD",
+              data: {
+                cardId: loc,
+                property: "title",
+                value: e.target.value
+              }
+            })
+          }));
         } else {
           return React.createElement("div", {
             key: idx,
@@ -26578,6 +26686,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
             key: `layer-id-${loc}`,
             flipId: `layer-id-${loc}`
           }, React.createElement(default3, {
+            style: {
+              cursor: "pointer"
+            },
             onClick: () => {
               dispatch({
                 type: "ZOOM_OUT_TO_LEVEL",
@@ -26587,7 +26698,9 @@ For more info, visit https://fb.me/react-mock-scheduler`);
               });
               setIsZooming(!isZooming);
             }
-          }, card.title)), React.createElement(BreadcrumbSeparator, null, "/"));
+          }, card.title)), React.createElement(BreadcrumbSeparator, {
+            theme
+          }, "/"));
         }
       })), React.createElement("button", {
         onClick: () => dispatch({
@@ -26610,11 +26723,19 @@ For more info, visit https://fb.me/react-mock-scheduler`);
         }
       }, "delete all! danger!"), React.createElement("button", {
         onClick: () => setSavedState(state)
-      }, "save"), React.createElement("div", {
+      }, "save"), React.createElement("button", {
+        onClick: () => {
+          dispatch({
+            type: "TOGGLE_DARK_MODE"
+          });
+          setSavedState(state);
+        }
+      }, isDarkMode ? "light" : "dark", " mode")), React.createElement("div", {
         onDoubleClick: (e) => handleCanvasDoubleClick(e),
         style: {
           width: "100%",
-          height: "100vh"
+          height: "100vh",
+          overflow: "scroll"
         }
       }, currCards.map((l, idx) => {
         const {id, title, content, position, size, children} = cards[l];
@@ -26653,7 +26774,7 @@ For more info, visit https://fb.me/react-mock-scheduler`);
           height: "100vh",
           zIndex: -100
         }
-      }))));
+      })))));
     };
     ReactDOM.render(React.createElement(App2, null), document.getElementById("root"));
   },

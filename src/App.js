@@ -6,7 +6,7 @@ import { Flipper, Flipped } from 'react-flip-toolkit'
 import { omit } from 'lodash'
 import axios from 'axios';
 import styled from 'styled-components';
-import { CARD_SIZE, DEFAULT_CARD_CONTENT, theme } from './constants'
+import { CARD_SIZE, DEFAULT_CARD_CONTENT, lightTheme, darkTheme } from './constants'
 import Fuse from 'fuse.js'
 // import * as FlexSearch from 'flexsearch';
 
@@ -125,9 +125,10 @@ const fallbackState = {
   - this way you can access any card at once and iterate through them easily, update and delete cards without dealing with nested operations,
 */
   path: ['root'],
+  isDarkMode: false,
   cards: {
     root: {
-      title: 'tyler\'s garden',
+      title: 'ur notes',
       id: 'root',
       children: [],
       parent: null,
@@ -137,11 +138,13 @@ const fallbackState = {
 
 const BreadcrumbSeparator = styled.div`
   border: none;
-  padding: ${theme.padding / 2}px ${theme.padding / 2}px;
+  padding: ${props => props.theme.padding / 2}px ${props => props.theme.padding / 2}px;
 `
 const genID = () => '_' + Math.random().toString(36).substr(2, 9);
 
 export const DispatchContext = React.createContext();
+export const ThemeContext = React.createContext();
+
 // initalize fuse search.
 let fuse;
 const searchOptions = {
@@ -271,7 +274,7 @@ const App = () => {
         // start the path there
         let buildPath = [id]
         // build up the path all the way to the root.
-        while(curr.parent) {
+        while (curr.parent) {
           curr = cards[curr.parent]
           buildPath = [curr.id, ...buildPath]
         }
@@ -296,7 +299,26 @@ const App = () => {
         console.log(fuse)
         // fuse.setCollection(cards)
         fuse = new Fuse(cardList, searchOptions)
+        // befoe you return state, you calculate backlinks?
         return state;
+      }
+      case 'ADD_LINK': {
+        // everytime you add a link, add a backlink to the receiver!
+        // you can add a links property
+        // links
+        // backlinks
+        return state;
+      }
+      case 'REMOVE_LINK': {
+        // yoou have to go throrugh all of the cards with backlinks / references and remove those too
+        return state
+      }
+      case 'TOGGLE_DARK_MODE': {
+        const { isDarkMode } = state
+        return {
+          ...state,
+          isDarkMode: !isDarkMode
+        }
       }
       // Loads json from the server and uses it as state.
       case 'LOAD_STATE': {
@@ -312,7 +334,13 @@ const App = () => {
   const [state, dispatch] = React.useReducer(reducer, savedState);
   const [search, setSearch] = React.useState('')
   const [searchResults, setSearchResults] = React.useState([])
-  const { cards, path } = state;
+  const { cards, path, isDarkMode } = state;
+  const [theme, setTheme] = React.useState(isDarkMode ? darkTheme : lightTheme)
+
+
+  React.useEffect(()=> {
+    setTheme(isDarkMode ? darkTheme : lightTheme)
+  }, [isDarkMode])
 
   React.useEffect(() => {
     // Pass in search/setsearch into each component
@@ -348,8 +376,8 @@ const App = () => {
 
   onPopState = () => {
     const path = document.location.hash.substring(1).split('/')
-    if(path) {
-      dispatch({ type:'SET_PATH', data: { path } })
+    if (path) {
+      dispatch({ type: 'SET_PATH', data: { path } })
     }
   }
 
@@ -373,55 +401,89 @@ const App = () => {
 
   return (
     <Flipper flipKey={isZooming}>
+    <ThemeContext.Provider value={{theme}}>
       <DispatchContext.Provider value={{ fuse, dispatch }}>
-
         <div style={{
-          width: '100%', height: '100vh',
-          fontFamily: 'sans-serif'
+          width: '100%',
+          height: '100vh',
+          fontFamily: 'sans-serif',
+          backgroundColor: theme.background,
+          color: theme.textPrimary,
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          margin: 0,
+          padding: `${theme.padding*2}px`,
+          overflow: 'scroll',
         }}>
-          <div style={{ display: 'flex' }}>{path.map((loc, idx) => {
-            // if you're at the bottom of the path, render a div. Not a button
-            const card = cards[loc]
-            if (idx === path.length - 1) {
-              return (
-                <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
-                  <Breadcrumb>
-                    {card.title}
-                  </Breadcrumb>
-                </Flipped>
-              )
-            } else {
-              // Navigate to higher levels
-              return (
-                <div key={idx} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+
+          <div style={{
+            position: 'fixed', backgroundColor: theme.foreground, boxShadow: '10px 10px 50px 0px rgba(0,0,0,0.3)',
+            padding: `${theme.padding*2}px`,
+            borderRadius: '10px',
+            transition: '0.1s',
+            zIndex: 9999
+          }}>
+            <div style={{ display: 'flex' }}>{path.map((loc, idx) => {
+              // if you're at the bottom of the path, render a div. Not a button
+
+              //           {
+              // console.log(e.target.value);
+              // dispatch({ type: 'UPDATE_CARD', data: { cardId: loc, property: 'title', value: e.target.value } })}}
+
+              const card = cards[loc]
+              if (idx === path.length - 1) {
+                return (
                   <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
                     <Breadcrumb
-                      onClick={() => {
-                        dispatch({ type: 'ZOOM_OUT_TO_LEVEL', data: { level: idx + 1 } });
-                        setIsZooming(!isZooming);
-                      }}>
-                      {card.title}
-                    </Breadcrumb>
+                      isActive
+                      value={card.title}
+                      style={{ width: `${card.title.length}ch` }}
+                      onChange={(e) =>
+                        dispatch({ type: 'UPDATE_CARD', data: { cardId: loc, property: 'title', value: e.target.value } })
+                      }
+                    />
                   </Flipped>
-                  <BreadcrumbSeparator>/</BreadcrumbSeparator>
-                </div>
-              )
+                )
+              } else {
+                // Navigate to higher levels
+                return (
+                  <div key={idx} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+                    <Flipped key={`layer-id-${loc}`} flipId={`layer-id-${loc}`}>
+                      <Breadcrumb
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => {
+                          dispatch({ type: 'ZOOM_OUT_TO_LEVEL', data: { level: idx + 1 } });
+                          setIsZooming(!isZooming);
+                        }}>
+                        {card.title}
+                      </Breadcrumb>
+                    </Flipped>
+                    <BreadcrumbSeparator theme={theme}>/</BreadcrumbSeparator>
+                  </div>
+                )
+              }
+            })}
+            </div>
+            <button onClick={() => dispatch({ type: 'ADD_CARD', data: { currLevel: currLevel } })}>
+              new layer
+        </button>
+            <button onClick={() => {
+              const shouldDelete = confirm('this will delete all ur stuff from this layer. u sure?')
+              if (shouldDelete) {
+                dispatch({ type: 'REMOVE_ALL_CARDS', data: { currLevel: currLevel } })
+              }
+            }}>
+              delete all! danger!
+        </button>
+            <button onClick={() => setSavedState(state)}>save</button>
+            <button onClick={() => {
+              dispatch({ type: 'TOGGLE_DARK_MODE'});
+              setSavedState(state);
             }
-          })}
+            }>{isDarkMode ? 'light' : 'dark'} mode</button>
           </div>
-          <button onClick={() => dispatch({ type: 'ADD_CARD', data: { currLevel: currLevel } })}>
-            new layer
-        </button>
-          <button onClick={() => {
-            const shouldDelete = confirm('this will delete all ur stuff from this layer. u sure?')
-            if (shouldDelete) {
-              dispatch({ type: 'REMOVE_ALL_CARDS', data: { currLevel: currLevel } })
-            }
-          }}>
-            delete all! danger!
-        </button>
-          <button onClick={() => setSavedState(state)}>save</button>
-          <div onDoubleClick={(e) => handleCanvasDoubleClick(e)} style={{ width: '100%', height: '100vh' }}>
+          <div onDoubleClick={(e) => handleCanvasDoubleClick(e)} style={{ width: '100%', height: '100vh', overflow: 'scroll' }}>
             {currCards.map((l, idx) => {
               const { id, title, content, position, size, children } = cards[l]
               return (
@@ -459,6 +521,7 @@ const App = () => {
           }} />
         </Flipped>
       </DispatchContext.Provider>
+      </ThemeContext.Provider>
     </Flipper>
   )
 }

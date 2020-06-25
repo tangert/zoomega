@@ -3,20 +3,21 @@ import { Flipped } from 'react-flip-toolkit';
 import { Resizable } from 're-resizable';
 import { Rnd } from 'react-rnd';
 import styled from 'styled-components';
-import { CARD_SIZE, theme } from './../constants'
+import { CARD_SIZE } from './../constants'
 import Content from './Content'
-import { DispatchContext } from './../App';
+import { DispatchContext, ThemeContext } from './../App';
 
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: ${props => props.theme.foreground};
+  color: ${props => props.theme.textPrimary};
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  padding: ${theme.padding * 2}px;
+  padding: ${props => props.theme.padding * 2}px;
   border: 1px solid rgba(0,0,0,0.1);
   transition-property: box-shadow;
   transition-duration: .1s;
@@ -32,7 +33,7 @@ const CardPreviewContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content flex-start;
-  padding-top: ${theme.padding}px;
+  padding-top: ${props => props.theme.padding}px;
   overflow-x: scroll;
 `
 const CardPreview = styled.div`
@@ -41,13 +42,12 @@ const CardPreview = styled.div`
   justify-content: center;
   width: auto;
   white-space: nowrap;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid ${props => props.theme.textSecondary};
   transition: box-shadow, color;
   transition: .1s;
-  color: rgba(0,0,0,0.7);
-  font-size:  ${theme.header}rem;
-  padding: ${theme.padding}px;
-  margin-right: ${theme.padding / 2}px;
+  font-size:  ${props => props.theme.header}rem;
+  padding: ${props => props.theme.padding}px;
+  margin-right: ${props => props.theme.padding / 2}px;
   border-radius: 5px;
 `
 
@@ -60,19 +60,19 @@ const ActionRow = styled.div`
 
 const Input = styled.input`
   border: none;
-  font-size: ${theme.header}rem;
+  font-size: ${props => props.theme.header}rem;
   opacity: 0.7;
   &:focus {
     opacity: 1.0
   }
 `
 const ActionButton = styled.button`
-  color: black;
   background-color: transparent;
-  border: grey;
   border-radius: 50px;
   opacity: 0;
   transition: 0.2s;
+  margin: 4px;
+  color: ${props => props.theme.textPrimiary};
   ${CardWrapper}:hover & {
     opacity: 1;
   }
@@ -108,6 +108,7 @@ const Card = ({
   const [isTyping, setIsTyping] = React.useState(false)
   const [isFocused, setIsFocused] = React.useState(false)
   const { dispatch } = React.useContext(DispatchContext);
+  const { theme } = React.useContext(ThemeContext);
 
   const onUpdate = (id, property, value) => {
     dispatch({ type: 'UPDATE_CARD', data: { cardId: id, property: property, value: value } })
@@ -138,7 +139,8 @@ const Card = ({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'transparent',
-        padding: `${theme.padding * 2}px`
+        padding: `${theme.padding * 2}px`,
+        cursor: isTyping ? 'text' : 'move'
       }}
       minWidth={CARD_SIZE * 1.5}
       minHeight={CARD_SIZE * 1.5}
@@ -155,15 +157,14 @@ const Card = ({
       onResizeStop={(e, direction, ref, delta, position) => {
         onUpdate(id, 'size', { width: ref.offsetWidth, height: ref.offsetHeight })
       }}
-      resizeHandleComponent={<ResizeHandle />}
       {...props}
       onBlur={() => setSearch('')}
     >
       <Flipped flipId={id}>
-        <CardWrapper>
+        <CardWrapper theme={theme}>
 
           { /* Main controls for the card. */}
-          <ActionRow>
+          <ActionRow theme={theme}>
             <Flipped flipId={`layer-id-${id}`}>
               <Input onFocus={(e) => {
                 setIsTyping(true);
@@ -173,7 +174,9 @@ const Card = ({
 
                 onBlur={() => setIsTyping(false)}
                 onChange={e => onUpdate(id, 'title', e.target.value)}
-                value={title} />
+                value={title}
+                theme={theme}
+              />
             </Flipped>
             <div>
               <ActionButton onClick={() => onDelete(id)}>x</ActionButton>
@@ -189,15 +192,21 @@ const Card = ({
             setSearch={setSearch}
             searchResults={searchResults}
             dispatch={dispatch}
+            setIsTyping={setIsTyping}
+            theme={theme}
           />
 
           { /* Visualize which cards are in here! */}
-          <CardPreviewContainer>
+          <CardPreviewContainer theme={theme}>
             {children.map(c => {
               return (
                 <Flipped key={`child-preview-${c.id}`} flipId={c.id}>
                   <CardPreview>
-                    {c.title}
+                    <Flipped inverseFlipId={id}>
+                      <div>
+                        {c.title}
+                      </div>
+                    </Flipped>
                   </CardPreview>
                 </Flipped>
               );
