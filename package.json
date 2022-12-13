@@ -14,7 +14,7 @@
     "downshift": "^5.4.5",
     "easymde": "^2.10.1",
     "esbuild": "^0.1.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "flexsearch": "^0.6.32",
     "fuse.js": "^6.2.0",
     "immutable": "^4.0.0-rc.12",
